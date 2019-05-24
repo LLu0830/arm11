@@ -10,6 +10,5 @@ int main(int argc, char **argv) {
     while (!feof(fp)) {
         fread(mem, sizeof(uint32_t), 1, fp);
     }
-    printf("Hello world.");
     return EXIT_SUCCESS;
 }
