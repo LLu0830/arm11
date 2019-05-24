@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/rinibanerjee/Desktop/C_Group_31/Rini/src/assemble.c" "/Users/rinibanerjee/Desktop/C_Group_31/Rini/src/cmake-build-debug/CMakeFiles/src.dir/assemble.c.o"
-  "/Users/rinibanerjee/Desktop/C_Group_31/Rini/src/emulate.c" "/Users/rinibanerjee/Desktop/C_Group_31/Rini/src/cmake-build-debug/CMakeFiles/src.dir/emulate.c.o"
+  "/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/assemble.c" "/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles/src.dir/assemble.c.o"
+  "/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/emulate.c" "/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles/src.dir/emulate.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
