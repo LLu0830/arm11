@@ -90,7 +90,13 @@
 		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/emulate.c">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/emulate.h">
+		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/registers.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/utility.c">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/utility.h">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/CMakeLists.txt">

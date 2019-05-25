@@ -2,11 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "dataprocessing_execute.h"
+#include "registers.h"
 #include <math.h>
-
-struct registers {
-    uint32_t *reg;
-};
 
 int main(int argc, char **argv) {
     struct registers ARM_registers;
