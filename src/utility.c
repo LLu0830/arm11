@@ -7,11 +7,12 @@
 
 #include "utility.h"
 #include <stdlib.h>
+#include <math.h>
 
-int get_nth_bit(uint32_t b, int n) {
-    return ((b >> (unsigned int) n) & 1U);
+int read_n_bits(uint32_t b, int start_pos, int number_of_bits) {
+    return ((b >> (unsigned int) start_pos) & (unsigned int) (pow(2, number_of_bits) - 1));
 }
 
-int get_four_bits(uint32_t b, int start_pos) {
-    return ((b >> (unsigned int) start_pos) & 15U);
+uint32_t write_one(uint32_t b, int pos) {
+    return (b | 1U << (unsigned int) pos);
 }
