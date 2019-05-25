@@ -150,6 +150,33 @@ assemble.c.s:
 	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/assemble.c.s
 .PHONY : assemble.c.s
 
+dataprocessing_execute.o: dataprocessing_execute.c.o
+
+.PHONY : dataprocessing_execute.o
+
+# target to build an object file
+dataprocessing_execute.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.o
+.PHONY : dataprocessing_execute.c.o
+
+dataprocessing_execute.i: dataprocessing_execute.c.i
+
+.PHONY : dataprocessing_execute.i
+
+# target to preprocess a source file
+dataprocessing_execute.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.i
+.PHONY : dataprocessing_execute.c.i
+
+dataprocessing_execute.s: dataprocessing_execute.c.s
+
+.PHONY : dataprocessing_execute.s
+
+# target to generate assembly for a file
+dataprocessing_execute.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.s
+.PHONY : dataprocessing_execute.c.s
+
 emulate.o: emulate.c.o
 
 .PHONY : emulate.o
@@ -189,6 +216,9 @@ help:
 	@echo "... assemble.o"
 	@echo "... assemble.i"
 	@echo "... assemble.s"
+	@echo "... dataprocessing_execute.o"
+	@echo "... dataprocessing_execute.i"
+	@echo "... dataprocessing_execute.s"
 	@echo "... emulate.o"
 	@echo "... emulate.i"
 	@echo "... emulate.s"

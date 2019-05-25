@@ -81,7 +81,16 @@
 		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/assemble.c">
 			<Option target="src"/>
 		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/dataprocessing_execute.c">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/dataprocessing_execute.h">
+			<Option target="src"/>
+		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/emulate.c">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/emulate.h">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/CMakeLists.txt">
