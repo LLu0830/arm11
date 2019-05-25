@@ -204,6 +204,33 @@ emulate.c.s:
 	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/emulate.c.s
 .PHONY : emulate.c.s
 
+utility.o: utility.c.o
+
+.PHONY : utility.o
+
+# target to build an object file
+utility.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/utility.c.o
+.PHONY : utility.c.o
+
+utility.i: utility.c.i
+
+.PHONY : utility.i
+
+# target to preprocess a source file
+utility.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/utility.c.i
+.PHONY : utility.c.i
+
+utility.s: utility.c.s
+
+.PHONY : utility.s
+
+# target to generate assembly for a file
+utility.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/utility.c.s
+.PHONY : utility.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... emulate.o"
 	@echo "... emulate.i"
 	@echo "... emulate.s"
+	@echo "... utility.o"
+	@echo "... utility.i"
+	@echo "... utility.s"
 .PHONY : help
 
 

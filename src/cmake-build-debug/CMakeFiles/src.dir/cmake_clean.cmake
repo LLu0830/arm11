@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/assemble.c.o"
   "CMakeFiles/src.dir/emulate.c.o"
   "CMakeFiles/src.dir/dataprocessing_execute.c.o"
+  "CMakeFiles/src.dir/utility.c.o"
   "src.pdb"
   "src"
 )
