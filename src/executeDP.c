@@ -31,8 +31,9 @@ void executeDP(struct registers ARM11_registers, uint32_t b) {
         uint32_t shift = get_n_bits(op2, 4, 8);
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
-            uint32_t thisInt = get_n_bits(op2, 7, 5);
+            uint32_t shiftAmount = get_n_bits(op2, 7, 5);
             uint32_t shiftType = get_n_bits(op2, 5, 2);
+
 //            make an enum and switch case statement based on that (function with int input, enum output)
         }
     }

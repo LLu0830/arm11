@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/rinibanerjee/Desktop/C_Group_31/src/fetch.c" "/Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles/src.dir/fetch.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/multiplyInstruction/Multiply.c" "/Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles/src.dir/multiplyInstruction/Multiply.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/pipeline.c" "/Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles/src.dir/pipeline.c.o"
+  "/Users/rinibanerjee/Desktop/C_Group_31/src/registers.c" "/Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles/src.dir/registers.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/utility.c" "/Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles/src.dir/utility.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

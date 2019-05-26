@@ -2,13 +2,12 @@
 // Created by Rini Banerjee on 2019-05-25.
 //
 
-#include <stdio.h>
-
 #ifndef SRC_REGISTERS_H
 #define SRC_REGISTERS_H
 
 struct registers {
-    uint32_t *reg;
+    int regs[17];
+    uint32_t vals[17];
 };
 
 #endif //SRC_REGISTERS_H
