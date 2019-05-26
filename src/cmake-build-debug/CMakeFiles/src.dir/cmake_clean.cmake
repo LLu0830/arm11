@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/fetch.c.o"
   "CMakeFiles/src.dir/pipeline.c.o"
   "CMakeFiles/src.dir/utility.c.o"
+  "CMakeFiles/src.dir/registers.c.o"
   "src.pdb"
   "src"
 )

@@ -447,6 +447,33 @@ pipeline.c.s:
 	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/pipeline.c.s
 .PHONY : pipeline.c.s
 
+registers.o: registers.c.o
+
+.PHONY : registers.o
+
+# target to build an object file
+registers.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/registers.c.o
+.PHONY : registers.c.o
+
+registers.i: registers.c.i
+
+.PHONY : registers.i
+
+# target to preprocess a source file
+registers.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/registers.c.i
+.PHONY : registers.c.i
+
+registers.s: registers.c.s
+
+.PHONY : registers.s
+
+# target to generate assembly for a file
+registers.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/registers.c.s
+.PHONY : registers.c.s
+
 utility.o: utility.c.o
 
 .PHONY : utility.o
@@ -519,6 +546,9 @@ help:
 	@echo "... pipeline.o"
 	@echo "... pipeline.i"
 	@echo "... pipeline.s"
+	@echo "... registers.o"
+	@echo "... registers.i"
+	@echo "... registers.s"
 	@echo "... utility.o"
 	@echo "... utility.i"
 	@echo "... utility.s"
