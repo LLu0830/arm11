@@ -12,70 +12,46 @@
 #include "memory.h"
 #include "executeMUL.h"
 #include "utility.h"
-#include "multiplyInstruction/DefinedTypes.h"
+#include "DefinedTypes.h"
+#include "instruction.h"
 
-void executeMUL(struct registers ARM11_registers, uint32_t fetched) {
+void executeMUL(instruction_t instruction, uint32_t fetched) {
 // check if condition field is satisfied
 
 // get cond 4bits
-    uint32_t mask = 0xf << 28;
 
-    fetched &= mask;
-
-    fetched >> 28;
-
-
-
-//    switch (b) {
-//        case 0000:
-//            break;
-//        case 0001:
-//            break;
-//        case 1010:
-//            break;
-//        case 1011:
-//            break;
-//
-//    }
-
+    instruction.conditionType = 0xf & (fetched >> 28);
 
 // holds the A bit
-    bool abit = 0x1 & fetched >> 21;
+    instruction.accumulate = 0x1 & fetched >> 21;
 
 // holds the S bit
-    bool sbit = 0x1 & fetched >> 20;
+    instruction.scc = 0x1 & fetched >> 20;
 
 // rd,rn,rs,rm it should be a 4-bits address, I'm not sure about the type..
-    register_address rd = fetched >> 16 & 0xf;
+    instruction.rd = fetched >> 16 & 0xf;
 
-    register_address rn = fetched >> 12 & 0xf;
+    instruction.rn = fetched >> 12 & 0xf;
 
-    register_address rs = fetched >> 8 & 0xf;
+    instruction.rs = fetched >> 8 & 0xf;
 
-    register_address rm = fetched & 0xf;
-    
-    
-    
-    
-    
-    
-    
-    uint32_t result;
-    
+    instruction.rm = fetched & 0xf;
+
+
     if (abit){
         //Accumulate is set, performs a multiply and accumulate
-        
+
     } else {
         // performs only multiply
-        
-        
+
+
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
 
 
 

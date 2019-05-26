@@ -32,13 +32,13 @@ typedef enum{
 
 
 typedef enum{
-    EQ,
-    NE,
-    GE,
-    LT,
-    GT,
-    LE,
-    AL
+    EQ = 0x0,
+    NE = 0x1,
+    GE = 0xA,
+    LT = 0xB,
+    GT = 0xC,
+    LE = 0xD,
+    AL = 0xE
 } Cond;
 
 

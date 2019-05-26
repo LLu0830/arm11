@@ -5,4 +5,6 @@
 #ifndef SRC_DECODE_H
 #define SRC_DECODE_H
 
+void
+
 #endif //SRC_DECODE_H
