@@ -15,6 +15,7 @@
 #include "DefinedTypes.h"
 #include "instruction.h"
 
+
 void executeMUL(instruction_type instruction, uint32_t fetched) {
 // check if condition field is satisfied
 
@@ -43,12 +44,13 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
     int positionRn = binaryToDecimal(instruction.rn);
     int positionRm = binaryToDecimal(instruction.rm);
     int positionRs = binaryToDecimal(instruction.rs);
+    int positionRd = binaryToDecimal(instruction.rd);
 
     //registers[position] get the address in the memory???
 
-    uint32_t valueRn = *(uint32_t *) registers[positionRn];
-    uint32_t valueRm = *(uint32_t *) registers[positionRm];
-    uint32_t valueRs = *(uint32_t *) registers[positionRs];
+    uint32_t valueRn = registers[positionRn];
+    uint32_t valueRm = registers[positionRm];
+    uint32_t valueRs = registers[positionRs];
 
 
 
@@ -60,15 +62,22 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
         result = (valueRm) * (valueRs);
     }
 
-    *instruction.rd = result;
+    registers[positionRd] = result;
 
 
     if (instruction.scc) {
         // update N,Z flag in CPSR
         // N - the 31st bit of the result   Z - only if the result is zero
+        if (result == 0) {
+            registers[CPSRPosition] = (CPSR_helper.Z << 28) ^ registers[CPSRPosition];
+        }
 
+        //get 31bit, if equal to N, unchange // else update
 
+        if ((result >> 31) != (registers[CPSRPosition] >> 31)) {
+            registers[CPSRPosition] = (CPSR_helper.N << 28) ^ registers[CPSRPosition];
 
+        }
 
     }
 
