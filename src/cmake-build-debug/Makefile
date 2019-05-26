@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/rinibanerjee/Desktop/C_Group_31/Rini/src
+CMAKE_SOURCE_DIR = /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/rinibanerjee/Desktop/C_Group_31/Rini/src/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/C_Group_31/Rini/src/cmake-build-debug/CMakeFiles /Users/rinibanerjee/Desktop/C_Group_31/Rini/src/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/C_Group_31/Rini/src/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ assemble.c.s:
 	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/assemble.c.s
 .PHONY : assemble.c.s
 
+dataprocessing_execute.o: dataprocessing_execute.c.o
+
+.PHONY : dataprocessing_execute.o
+
+# target to build an object file
+dataprocessing_execute.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.o
+.PHONY : dataprocessing_execute.c.o
+
+dataprocessing_execute.i: dataprocessing_execute.c.i
+
+.PHONY : dataprocessing_execute.i
+
+# target to preprocess a source file
+dataprocessing_execute.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.i
+.PHONY : dataprocessing_execute.c.i
+
+dataprocessing_execute.s: dataprocessing_execute.c.s
+
+.PHONY : dataprocessing_execute.s
+
+# target to generate assembly for a file
+dataprocessing_execute.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.s
+.PHONY : dataprocessing_execute.c.s
+
 emulate.o: emulate.c.o
 
 .PHONY : emulate.o
@@ -177,6 +204,33 @@ emulate.c.s:
 	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/emulate.c.s
 .PHONY : emulate.c.s
 
+utility.o: utility.c.o
+
+.PHONY : utility.o
+
+# target to build an object file
+utility.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/utility.c.o
+.PHONY : utility.c.o
+
+utility.i: utility.c.i
+
+.PHONY : utility.i
+
+# target to preprocess a source file
+utility.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/utility.c.i
+.PHONY : utility.c.i
+
+utility.s: utility.c.s
+
+.PHONY : utility.s
+
+# target to generate assembly for a file
+utility.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/utility.c.s
+.PHONY : utility.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,9 +243,15 @@ help:
 	@echo "... assemble.o"
 	@echo "... assemble.i"
 	@echo "... assemble.s"
+	@echo "... dataprocessing_execute.o"
+	@echo "... dataprocessing_execute.i"
+	@echo "... dataprocessing_execute.s"
 	@echo "... emulate.o"
 	@echo "... emulate.i"
 	@echo "... emulate.s"
+	@echo "... utility.o"
+	@echo "... utility.i"
+	@echo "... utility.s"
 .PHONY : help
 
 
