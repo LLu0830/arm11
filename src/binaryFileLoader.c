@@ -9,4 +9,10 @@
 #include "binaryFileLoader.h"
 #include "utility.h"
 
-//Add binary file loader - we already did that, so just copy it here??
+void binaryFileLoader(int argc, char **argv) {
+    FILE *fp;
+    fp = fopen(argv[0], "rb");
+    while (!feof(fp)) {
+        fread(mem, size32, 1, fp);
+    }
+}
