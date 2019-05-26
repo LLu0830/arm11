@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "dataprocessing_execute.h"
+#include "pipeline.h"
+#include "memory.h"
+#include "binaryFileLoader.h"
 #include "registers.h"
 #include <math.h>
 

@@ -3,13 +3,16 @@
 //
 
 #include <stdlib.h>
-#include "dataprocessing_execute.h"
+#include "executeDP.h"
 #include "registers.h"
 #include "utility.h"
+#include <stdio.h>
+#include "memory.h"
+
 
 // using utility function
 
-void execute_data_processing(struct registers ARM11_registers, uint32_t b) {
+void executeDP(struct registers ARM11_registers, uint32_t b) {
     int i = get_n_bits(b, 25, 1);
     int opCode = get_n_bits(b, 21, 4);
     int s = get_n_bits(b, 20, 1);
