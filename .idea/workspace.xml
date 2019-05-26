@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d690f1f-7a2a-43bc-8b71-845abc85ac14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/instruction.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/multiplyInstruction/Multiply.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instruction.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/multiplyInstruction/Multiply.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/multiplyInstruction/Multiply.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,20 +29,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/multiplyInstruction/Multiply.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="95">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/instruction.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+            <state relative-caret-position="314">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -56,8 +55,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/multiplyInstruction/Multiply.c" />
         <option value="$PROJECT_DIR$/src/instruction.h" />
+        <option value="$PROJECT_DIR$/src/multiplyInstruction/Multiply.c" />
       </list>
     </option>
   </component>
@@ -82,6 +81,12 @@
               <item name="C_Group_31" type="b2602c69:ProjectViewProjectNode" />
               <item name="C_Group_31" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="C_Group_31" type="b2602c69:ProjectViewProjectNode" />
+              <item name="C_Group_31" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="multiplyInstruction" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -117,17 +122,18 @@
       <option name="presentableId" value="Default" />
       <updated>1558626276734</updated>
       <workItem from="1558626280422" duration="27000" />
-      <workItem from="1558709078677" duration="1391000" />
+      <workItem from="1558709078677" duration="3122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1418000" />
+    <option name="totallyTimeSpent" value="3149000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="603" y="0" width="619" height="776" extended-state="0" />
+    <frame x="12" y="115" width="1196" height="732" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1705151" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18859649" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -139,7 +145,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30602783" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -160,17 +166,17 @@
     <entry file="file://$PROJECT_DIR$/src/emulate.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/multiplyInstruction/Multiply.c">
+    <entry file="file://$PROJECT_DIR$/src/instruction.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="314">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/instruction.h">
+    <entry file="file://$PROJECT_DIR$/src/multiplyInstruction/Multiply.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
