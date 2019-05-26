@@ -15,7 +15,7 @@
 #include "DefinedTypes.h"
 #include "instruction.h"
 
-void executeMUL(instruction_t instruction, uint32_t fetched) {
+void executeMUL(instruction_type instruction, uint32_t fetched) {
 // check if condition field is satisfied
 
 // get cond 4bits
@@ -38,17 +38,32 @@ void executeMUL(instruction_t instruction, uint32_t fetched) {
     instruction.rm = fetched & 0xf;
 
 
-    if (abit){
-        //Accumulate is set, performs a multiply and accumulate
 
+    uint32_t result;
+    uint32_t *valueRn = (uint32_t *) instruction.rn;
+    uint32_t *valueRm = (uint32_t *) instruction.rm;
+    uint32_t *valueRs = (uint32_t *) instruction.rs;
+
+
+    if (instruction.accumulate){
+        //Accumulate is set, performs a multiply and accumulate
+        result = (*valueRm) * (*valueRs) + (*valueRn);
     } else {
         // performs only multiply
+        result = (*valueRm) * (*valueRs);
+    }
+
+    
+
+
+    if (instruction.scc) {
+        // update N,Z flag in CPSR
+        // N - the 31st bit of the result   Z - only if the result is zero
+
+
 
 
     }
-
-
-
 
 
 

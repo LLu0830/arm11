@@ -24,7 +24,7 @@ typedef struct {
     OpCode operationType;
 
     //12/24bits operand
-    uint32_t offsets_operand;
+    uint32_t offsets_or_operand;
     //...
 
     // in data processing
@@ -46,5 +46,5 @@ typedef struct {
     bool storeBit;
 
 
-}instruction_t;
+}instruction_type;
 #endif //C_GROUP_31_INSTRUCTION_H

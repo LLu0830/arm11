@@ -26,7 +26,8 @@ typedef enum{
     DataProcessing,
     Multiply,
     SingleDataTransfer,
-    Branch
+    Branch,
+    Halt
 }InstructionType;
 
 
@@ -41,6 +42,23 @@ typedef enum{
     AL = 0xE
 } Cond;
 
+
+typedef struct{
+
+    uint8_t
+    //last result negative
+    bool N;
+
+    //last result zero
+    bool Z;
+
+    //caused a bit to be carried out
+    bool C;
+
+    //last result overflowed
+    bool V;
+
+} CPSR;
 
 typedef uint8_t register_address;
 
