@@ -6,9 +6,9 @@
 #ifndef C_GROUP_31_STATE_H
 #define C_GROUP_31_STATE_H
 
-#define int numOfRegisters = 12;
-#define int numOfAddresses = 65536;
-
+#define numOfRegisters 12;
+#define numOfAddresses 65536;
+#define CPSRPosition 16
 
 struct stateOfMachine{
 

@@ -76,7 +76,6 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
 
         if ((result >> 31) != (registers[CPSRPosition] >> 31)) {
             registers[CPSRPosition] = (CPSR_helper.N << 28) ^ registers[CPSRPosition];
-
         }
 
     }
