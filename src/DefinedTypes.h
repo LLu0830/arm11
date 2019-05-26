@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <limits.h>
-#ifndef C_GROUP_31_INSTRUCTION_H
-#define C_GROUP_31_INSTRUCTION_H
+#ifndef C_GROUP_31_TYPES_H
+#define C_GROUP_31_TYPES_H
 
-enum OpCode{
+typedef enum{
     AND,
     EOR,
     SUB,
@@ -19,19 +19,19 @@ enum OpCode{
     CMP,
     ORR,
     MOV
-};
+} OpCode;
 
 
-enum InstructionType{
+typedef enum{
     DataProcessing,
     Multiply,
     SingleDataTransfer,
     Branch
-};
+}InstructionType;
 
 
 
-enum Cond{
+typedef enum{
     EQ,
     NE,
     GE,
@@ -39,12 +39,10 @@ enum Cond{
     GT,
     LE,
     AL
-};
+} Cond;
 
 
 typedef uint8_t register_address;
-typedef
-
 
 
 #endif //C_GROUP_31_INSTRUCTION_H
