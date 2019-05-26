@@ -7,6 +7,8 @@
 #include "registers.h"
 #include <math.h>
 
+//A message to Rini from Rini: HELLO!
+
 int main(int argc, char **argv) {
     struct registers ARM_registers;
     int size32 = sizeof(uint32_t);
