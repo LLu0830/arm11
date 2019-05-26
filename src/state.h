@@ -13,11 +13,11 @@
 struct stateOfMachine{
 
     uint32_t registers[numOfRegisters];
+    // CPSR is in registers[16]
+    // when changing CPSR, 0001/0010/0100/1000, XOR operation(^)
 
     uint16_t ARMMemories[numOfAddresses];
 
-    //?
-   // CPSR CPSRState = new CPSR{0,0,0,0};
 
     int PC;
 };

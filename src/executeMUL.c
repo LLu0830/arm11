@@ -28,7 +28,7 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
 // holds the S bit
     instruction.scc = 0x1 & fetched >> 20;
 
-// rd,rn,rs,rm it should be a 4-bits address, I'm not sure about the type..
+// rd,rn,rs,rm it should be a 4-bits address in the array registers, 0-12
     instruction.rd = fetched >> 16 & 0xf;
 
     instruction.rn = fetched >> 12 & 0xf;
@@ -38,22 +38,29 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
     instruction.rm = fetched & 0xf;
 
 
-
     uint32_t result;
-    uint32_t *valueRn = (uint32_t *) instruction.rn;
-    uint32_t *valueRm = (uint32_t *) instruction.rm;
-    uint32_t *valueRs = (uint32_t *) instruction.rs;
+
+    int positionRn = binaryToDecimal(instruction.rn);
+    int positionRm = binaryToDecimal(instruction.rm);
+    int positionRs = binaryToDecimal(instruction.rs);
+
+    //registers[position] get the address in the memory???
+
+    uint32_t valueRn = *(uint32_t *) registers[positionRn];
+    uint32_t valueRm = *(uint32_t *) registers[positionRm];
+    uint32_t valueRs = *(uint32_t *) registers[positionRs];
 
 
-    if (instruction.accumulate){
+
+    if (instruction.accumulate) {
         //Accumulate is set, performs a multiply and accumulate
-        result = (*valueRm) * (*valueRs) + (*valueRn);
+        result = (valueRm) * (valueRs) + (valueRn);
     } else {
         // performs only multiply
-        result = (*valueRm) * (*valueRs);
+        result = (valueRm) * (valueRs);
     }
 
-    
+    *instruction.rd = result;
 
 
     if (instruction.scc) {
@@ -66,10 +73,22 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
     }
 
 
+}
 
 
+int binaryToDecimal(uint8_t binary_val) {
+    int decimal_val = 0;
+    int base = 1;
+    int result = 0;
+    uint8_t mask = 0x1;
 
-
+    while (binary_val > 0) {
+        if (mask & binary_val == 1) {
+            decimal_val += base;
+        }
+        binary_val = binary_val >> 1;
+        base *= 2;
+    }
 
 }
 

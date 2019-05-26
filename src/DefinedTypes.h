@@ -45,20 +45,20 @@ typedef enum{
 
 typedef struct{
 
-    uint8_t
+
     //last result negative
-    bool N;
+    uint8_t N = 0x8;
 
     //last result zero
-    bool Z;
+    uint8_t Z = 0x4;
 
     //caused a bit to be carried out
-    bool C;
+    uint8_t C = 0x2;
 
     //last result overflowed
-    bool V;
+    uint8_t V = 0x0;
 
-} CPSR;
+} CPSR_helper;
 
 typedef uint8_t register_address;
 
