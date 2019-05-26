@@ -13,14 +13,19 @@
 // using utility function
 
 void executeDP(struct registers ARM11_registers, uint32_t b) {
-    int i = get_n_bits(b, 25, 1);
-    int opCode = get_n_bits(b, 21, 4);
-    int s = get_n_bits(b, 20, 1);
-    int rn = get_n_bits(b, 16, 4);
-    int rd = get_n_bits(b, 12, 4);
-    int op2 = get_n_bits(b, 0, 8);
+    uint32_t i = get_n_bits(b, 25, 1);
+    uint32_t opCode = get_n_bits(b, 21, 4);
+    uint32_t s = get_n_bits(b, 20, 1);
+    uint32_t rn = get_n_bits(b, 16, 4);
+    uint32_t rd = get_n_bits(b, 12, 4);
+    uint32_t op2 = get_n_bits(b, 0, 11);
 
-    if (s == 1) {
-        
+    uint32_t result;
+    if (i == 1) {
+        uint32_t rotateAmount = get_n_bits(op2, 8, 4);
+        uint32_t imm = get_n_bits(op2, 0, 8);
+        result = rotateRight(imm, rotateAmount);
+    } else {
+
     }
 }
