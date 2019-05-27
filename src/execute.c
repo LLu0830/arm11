@@ -11,10 +11,10 @@
 //#include "executeMUL.h"
 //#include "executeBR.h"
 #include "instruction.h"
-
+#include "state.h"
 
 //executes all types of instructions
-void execute() {
+void execute(instructionType type, struct stateOfMachine state) {
     switch (instructionType) {
         case 'DP':
             executeDP(struct registers ARM11_registers, uint32_t b);
