@@ -3,6 +3,7 @@
 //
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 #include "execute.h"
 #include "executeDP.h"
 #include "executeSDT.h"
