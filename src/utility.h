@@ -11,5 +11,6 @@ uint32_t get_n_bits();
 uint32_t change_bit();
 uint32_t rotateRightOne();
 uint32_t rotateRight();
+struct stateOfMachine* createNewState();
 
 #endif //SRC_UTILITY_H
