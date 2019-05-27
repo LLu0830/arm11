@@ -23,11 +23,11 @@ typedef enum{
 
 
 typedef enum{
-    DataProcessing,
-    Multiply,
-    SingleDataTransfer,
-    Branch,
-    Halt
+    DP,
+    MUL,
+    SDT,
+    BR,
+    HLT
 }InstructionType;
 
 

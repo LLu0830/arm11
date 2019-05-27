@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "execute.h"
-#include "registers.h"
-#include "memory.h"
 #include "executeDP.h"
 #include "executeSDT.h"
 #include "executeMUL.h"
@@ -25,8 +23,8 @@ enum instructionType {
 //executes all types of instructions
 
 // (Rini) updated functions to make sure this file compiles
-void execute(enum instructionType it, struct registers ARM11_registers, uint32_t b) {
-    switch (it) {
+void execute(instruction_type instruction, struct stateOfMachine state) {
+    switch (instruction.instructionType) {
         case DP:
             executeDP(ARM11_registers, b);
             break;
