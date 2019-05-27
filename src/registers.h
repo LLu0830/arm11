@@ -8,9 +8,7 @@
 #define SRC_REGISTERS_H
 
 struct registers {
-    uint32_t *reg;
-    //uint32_t reg[17];
-
+    uint32_t reg[17];
 };
 
 #endif //SRC_REGISTERS_H
