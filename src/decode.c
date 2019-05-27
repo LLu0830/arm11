@@ -13,7 +13,7 @@
 #include "state.h"
 #include "instruction.h"
 #include "DefinedTypes.h"
-#include "execute.c"
+#include "execute.h"
 //Add decode function
 
 void checkCondition(struct stateOfMachine state, instruction_type instruction) {

@@ -9,8 +9,12 @@
 #define numOfRegisters 17;
 #define numOfAddresses 65536;
 #define CPSRPosition 16
+#define PCPosition 15
+
 
 struct stateOfMachine{
+
+
 
     uint32_t registers[numOfRegisters];
     // CPSR is in registers[16]
@@ -18,7 +22,6 @@ struct stateOfMachine{
     uint16_t ARMMemories[numOfAddresses];
 
 
-    int PC;
 };
 
 

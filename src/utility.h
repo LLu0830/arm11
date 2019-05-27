@@ -9,5 +9,6 @@
 
 int get_n_bits();
 uint32_t write_one();
+struct stateOfMachine* createNewState();
 
 #endif //SRC_UTILITY_H
