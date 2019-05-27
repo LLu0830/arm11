@@ -15,6 +15,5 @@ int main(int argc, char **argv) {
     ARM_registers.reg = calloc(17, size32);
     *mem = calloc((pow(2, 16) / size32), size32);
     binaryFileLoader(argc, **argv);
-
     return EXIT_SUCCESS;
 }

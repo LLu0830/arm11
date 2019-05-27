@@ -14,12 +14,7 @@
 #ifndef SRC_EXECUTE_H
 #define SRC_EXECUTE_H
 
-enum instructionType {
-    'DP',
-    'MUL',
-    'SDT',
-    'BR'
-};
+enum instructionType;
 
 void executeDP();
 void executeMUL();

@@ -3,14 +3,14 @@
 //
 
 #include <stdio.h>
-#include "DefinedTypes.h"
+
 #ifndef SRC_REGISTERS_H
 #define SRC_REGISTERS_H
 
 struct registers {
     uint32_t *reg;
+    //uint32_t reg[17];
 
-    
 };
 
 #endif //SRC_REGISTERS_H
