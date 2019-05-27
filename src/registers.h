@@ -12,7 +12,6 @@
 struct registers {
 //    int regs[17];
 //    uint32_t vals[17];
-    uint32_t *reg;
 
 };
 
