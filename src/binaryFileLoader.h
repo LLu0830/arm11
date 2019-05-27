@@ -5,4 +5,6 @@
 #ifndef SRC_BINARYFILELOADER_H
 #define SRC_BINARYFILELOADER_H
 
+uint32_t * binaryFileLoader();
+
 #endif //SRC_BINARYFILELOADER_H

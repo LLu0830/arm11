@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src
+CMAKE_SOURCE_DIR = /Users/rinibanerjee/Desktop/C_Group_31/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles /Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/Programming/C/C_Group_31/src/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,32 +150,59 @@ assemble.c.s:
 	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/assemble.c.s
 .PHONY : assemble.c.s
 
-dataprocessing_execute.o: dataprocessing_execute.c.o
+binaryFileLoader.o: binaryFileLoader.c.o
 
-.PHONY : dataprocessing_execute.o
+.PHONY : binaryFileLoader.o
 
 # target to build an object file
-dataprocessing_execute.c.o:
-	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.o
-.PHONY : dataprocessing_execute.c.o
+binaryFileLoader.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/binaryFileLoader.c.o
+.PHONY : binaryFileLoader.c.o
 
-dataprocessing_execute.i: dataprocessing_execute.c.i
+binaryFileLoader.i: binaryFileLoader.c.i
 
-.PHONY : dataprocessing_execute.i
+.PHONY : binaryFileLoader.i
 
 # target to preprocess a source file
-dataprocessing_execute.c.i:
-	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.i
-.PHONY : dataprocessing_execute.c.i
+binaryFileLoader.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/binaryFileLoader.c.i
+.PHONY : binaryFileLoader.c.i
 
-dataprocessing_execute.s: dataprocessing_execute.c.s
+binaryFileLoader.s: binaryFileLoader.c.s
 
-.PHONY : dataprocessing_execute.s
+.PHONY : binaryFileLoader.s
 
 # target to generate assembly for a file
-dataprocessing_execute.c.s:
-	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/dataprocessing_execute.c.s
-.PHONY : dataprocessing_execute.c.s
+binaryFileLoader.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/binaryFileLoader.c.s
+.PHONY : binaryFileLoader.c.s
+
+decode.o: decode.c.o
+
+.PHONY : decode.o
+
+# target to build an object file
+decode.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/decode.c.o
+.PHONY : decode.c.o
+
+decode.i: decode.c.i
+
+.PHONY : decode.i
+
+# target to preprocess a source file
+decode.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/decode.c.i
+.PHONY : decode.c.i
+
+decode.s: decode.c.s
+
+.PHONY : decode.s
+
+# target to generate assembly for a file
+decode.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/decode.c.s
+.PHONY : decode.c.s
 
 emulate.o: emulate.c.o
 
@@ -203,6 +230,249 @@ emulate.s: emulate.c.s
 emulate.c.s:
 	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/emulate.c.s
 .PHONY : emulate.c.s
+
+execute.o: execute.c.o
+
+.PHONY : execute.o
+
+# target to build an object file
+execute.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/execute.c.o
+.PHONY : execute.c.o
+
+execute.i: execute.c.i
+
+.PHONY : execute.i
+
+# target to preprocess a source file
+execute.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/execute.c.i
+.PHONY : execute.c.i
+
+execute.s: execute.c.s
+
+.PHONY : execute.s
+
+# target to generate assembly for a file
+execute.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/execute.c.s
+.PHONY : execute.c.s
+
+executeBR.o: executeBR.c.o
+
+.PHONY : executeBR.o
+
+# target to build an object file
+executeBR.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeBR.c.o
+.PHONY : executeBR.c.o
+
+executeBR.i: executeBR.c.i
+
+.PHONY : executeBR.i
+
+# target to preprocess a source file
+executeBR.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeBR.c.i
+.PHONY : executeBR.c.i
+
+executeBR.s: executeBR.c.s
+
+.PHONY : executeBR.s
+
+# target to generate assembly for a file
+executeBR.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeBR.c.s
+.PHONY : executeBR.c.s
+
+executeDP.o: executeDP.c.o
+
+.PHONY : executeDP.o
+
+# target to build an object file
+executeDP.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeDP.c.o
+.PHONY : executeDP.c.o
+
+executeDP.i: executeDP.c.i
+
+.PHONY : executeDP.i
+
+# target to preprocess a source file
+executeDP.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeDP.c.i
+.PHONY : executeDP.c.i
+
+executeDP.s: executeDP.c.s
+
+.PHONY : executeDP.s
+
+# target to generate assembly for a file
+executeDP.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeDP.c.s
+.PHONY : executeDP.c.s
+
+executeMUL.o: executeMUL.c.o
+
+.PHONY : executeMUL.o
+
+# target to build an object file
+executeMUL.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeMUL.c.o
+.PHONY : executeMUL.c.o
+
+executeMUL.i: executeMUL.c.i
+
+.PHONY : executeMUL.i
+
+# target to preprocess a source file
+executeMUL.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeMUL.c.i
+.PHONY : executeMUL.c.i
+
+executeMUL.s: executeMUL.c.s
+
+.PHONY : executeMUL.s
+
+# target to generate assembly for a file
+executeMUL.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeMUL.c.s
+.PHONY : executeMUL.c.s
+
+executeSDT.o: executeSDT.c.o
+
+.PHONY : executeSDT.o
+
+# target to build an object file
+executeSDT.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeSDT.c.o
+.PHONY : executeSDT.c.o
+
+executeSDT.i: executeSDT.c.i
+
+.PHONY : executeSDT.i
+
+# target to preprocess a source file
+executeSDT.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeSDT.c.i
+.PHONY : executeSDT.c.i
+
+executeSDT.s: executeSDT.c.s
+
+.PHONY : executeSDT.s
+
+# target to generate assembly for a file
+executeSDT.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/executeSDT.c.s
+.PHONY : executeSDT.c.s
+
+fetch.o: fetch.c.o
+
+.PHONY : fetch.o
+
+# target to build an object file
+fetch.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/fetch.c.o
+.PHONY : fetch.c.o
+
+fetch.i: fetch.c.i
+
+.PHONY : fetch.i
+
+# target to preprocess a source file
+fetch.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/fetch.c.i
+.PHONY : fetch.c.i
+
+fetch.s: fetch.c.s
+
+.PHONY : fetch.s
+
+# target to generate assembly for a file
+fetch.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/fetch.c.s
+.PHONY : fetch.c.s
+
+multiplyInstruction/Multiply.o: multiplyInstruction/Multiply.c.o
+
+.PHONY : multiplyInstruction/Multiply.o
+
+# target to build an object file
+multiplyInstruction/Multiply.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/multiplyInstruction/Multiply.c.o
+.PHONY : multiplyInstruction/Multiply.c.o
+
+multiplyInstruction/Multiply.i: multiplyInstruction/Multiply.c.i
+
+.PHONY : multiplyInstruction/Multiply.i
+
+# target to preprocess a source file
+multiplyInstruction/Multiply.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/multiplyInstruction/Multiply.c.i
+.PHONY : multiplyInstruction/Multiply.c.i
+
+multiplyInstruction/Multiply.s: multiplyInstruction/Multiply.c.s
+
+.PHONY : multiplyInstruction/Multiply.s
+
+# target to generate assembly for a file
+multiplyInstruction/Multiply.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/multiplyInstruction/Multiply.c.s
+.PHONY : multiplyInstruction/Multiply.c.s
+
+pipeline.o: pipeline.c.o
+
+.PHONY : pipeline.o
+
+# target to build an object file
+pipeline.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/pipeline.c.o
+.PHONY : pipeline.c.o
+
+pipeline.i: pipeline.c.i
+
+.PHONY : pipeline.i
+
+# target to preprocess a source file
+pipeline.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/pipeline.c.i
+.PHONY : pipeline.c.i
+
+pipeline.s: pipeline.c.s
+
+.PHONY : pipeline.s
+
+# target to generate assembly for a file
+pipeline.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/pipeline.c.s
+.PHONY : pipeline.c.s
+
+registers.o: registers.c.o
+
+.PHONY : registers.o
+
+# target to build an object file
+registers.c.o:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/registers.c.o
+.PHONY : registers.c.o
+
+registers.i: registers.c.i
+
+.PHONY : registers.i
+
+# target to preprocess a source file
+registers.c.i:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/registers.c.i
+.PHONY : registers.c.i
+
+registers.s: registers.c.s
+
+.PHONY : registers.s
+
+# target to generate assembly for a file
+registers.c.s:
+	$(MAKE) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/registers.c.s
+.PHONY : registers.c.s
 
 utility.o: utility.c.o
 
@@ -243,12 +513,42 @@ help:
 	@echo "... assemble.o"
 	@echo "... assemble.i"
 	@echo "... assemble.s"
-	@echo "... dataprocessing_execute.o"
-	@echo "... dataprocessing_execute.i"
-	@echo "... dataprocessing_execute.s"
+	@echo "... binaryFileLoader.o"
+	@echo "... binaryFileLoader.i"
+	@echo "... binaryFileLoader.s"
+	@echo "... decode.o"
+	@echo "... decode.i"
+	@echo "... decode.s"
 	@echo "... emulate.o"
 	@echo "... emulate.i"
 	@echo "... emulate.s"
+	@echo "... execute.o"
+	@echo "... execute.i"
+	@echo "... execute.s"
+	@echo "... executeBR.o"
+	@echo "... executeBR.i"
+	@echo "... executeBR.s"
+	@echo "... executeDP.o"
+	@echo "... executeDP.i"
+	@echo "... executeDP.s"
+	@echo "... executeMUL.o"
+	@echo "... executeMUL.i"
+	@echo "... executeMUL.s"
+	@echo "... executeSDT.o"
+	@echo "... executeSDT.i"
+	@echo "... executeSDT.s"
+	@echo "... fetch.o"
+	@echo "... fetch.i"
+	@echo "... fetch.s"
+	@echo "... multiplyInstruction/Multiply.o"
+	@echo "... multiplyInstruction/Multiply.i"
+	@echo "... multiplyInstruction/Multiply.s"
+	@echo "... pipeline.o"
+	@echo "... pipeline.i"
+	@echo "... pipeline.s"
+	@echo "... registers.o"
+	@echo "... registers.i"
+	@echo "... registers.s"
 	@echo "... utility.o"
 	@echo "... utility.i"
 	@echo "... utility.s"

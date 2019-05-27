@@ -9,10 +9,7 @@
 
 int main(int argc, char **argv) {
     struct registers ARM_registers;
-    int size32 = sizeof(uint32_t);
-    ARM_registers.reg = calloc(17, size32);
-    *mem = calloc((pow(2, 16) / size32), size32);
-    binaryFileLoader(argc, **argv);
-
+    ARM_registers.reg = calloc(17, sizeof(uint32_t));
+    uint32_t *mem = binaryFileLoader(argv);
     return EXIT_SUCCESS;
 }
