@@ -17,5 +17,4 @@ struct stateOfMachine{
     uint32_t *mem;
 };
 
-
 #endif //C_GROUP_31_STATE_H

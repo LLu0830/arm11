@@ -10,14 +10,6 @@
 #include <stdbool.h>
 
 
-
-enum shiftType {
-    LSL,
-    LSR,
-    ASR,
-    ROR
-};
-
 void executeDP(struct registers ARM11_registers, uint32_t b) {
     uint32_t i = get_n_bits(b, 25, 1);
     uint32_t opCode = get_n_bits(b, 21, 4);
