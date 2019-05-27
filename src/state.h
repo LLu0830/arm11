@@ -13,15 +13,9 @@
 
 
 struct stateOfMachine{
-
-
-
     uint32_t registers[numOfRegisters];
     // CPSR is in registers[16]
-
     uint16_t ARMMemories[numOfAddresses];
-
-
 };
 
 
