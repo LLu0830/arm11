@@ -29,4 +29,4 @@ add_executable(src
         pipeline.c
         pipeline.h
         utility.c
-        utility.h)
+        utility.h binaryFileLoader.c registers.h)
