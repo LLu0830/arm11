@@ -16,19 +16,19 @@
 #include "execute.h"
 //Add decode function
 
-void checkCondition(struct stateOfMachine state, instruction_type instruction) {
+void checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
     Cond condition = 0xf & (fetched >> 28);
-    switch condition
+    switch (condition)
     {
-        case EQ: {
-            if ((0x1 << 30 & CPSRflag) >> 30) &0x1 == 1){
-                execute(instruction.instructionType, state);
+        case EQ:
+            if (((0x1 << 30 & CPSRflag) >> 30) & 0x1 == 1){
+                return true;
             }
-        }
-
         case NE:
+
+
         case GE:
         case LT:
         case GT:
@@ -37,22 +37,26 @@ void checkCondition(struct stateOfMachine state, instruction_type instruction) {
         //ignored
         //if not satisfy the condition also we also need a termination
     }
-
-    //else terminate here
+    return false;
 }
 
 
-void decode(struct stateOfMachine state, uint32_t fetched) {
+void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
+    // check condition first
+    // get cond 4bits
+    instruction.conditionType = 0xf & (fetched >> 28);
+    if (!checkCondition(state, instruction.conditionType)){
+        //terminate
+    }
     //what type of instruction it is..
     //store the instruction in corresponding instruction
     // and execute
+
 }
 
 
 void decodeMUL(instruction_type instruction, uint32_t fetched, struct stateOfMachine state) {
-    // get cond 4bits
 
-    instruction.conditionType = 0xf & (fetched >> 28);
 
     instruction.instructionType = Multiply;
 // holds the A bit
