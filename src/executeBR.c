@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 #include "state.h"
 #include "executeBR.h"
 #include "utility.h"
