@@ -13,10 +13,8 @@
 typedef struct {
 
     InstructionType instructionType;
-
     //first 4bits condition
     Cond conditionType;
-
 
     //
     register_address rd;
