@@ -39,6 +39,10 @@ void executeDP(struct registers ARM11_registers, uint32_t b) {
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
             uint32_t shiftAmount = get_n_bits(op2, 7, 5);
+            if (shiftAmount == 0) {
+                result = valueInRM;
+                break;
+            }
             uint32_t shiftCode = get_n_bits(op2, 5, 2);
             int carryBit;
             if (shiftCode == 0) {
@@ -48,13 +52,13 @@ void executeDP(struct registers ARM11_registers, uint32_t b) {
             }
             switch (shiftCode) {
                 case 0:
-
+                    result = valueInRM << shiftAmount;
                     break;
                 case 1:
-
+                    result = valueInRM >> shiftAmount;
                     break;
                 case 2:
-
+                    int bit31 = get_n_bits(valueInRM, 31, 0);
                     break;
                 case 3:
 
