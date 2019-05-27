@@ -11,10 +11,6 @@ struct registers {
     uint32_t *reg;
     //uint32_t reg[17];
 
-    int GP[32];
-    int PC[32];
-    int CPSR[32];
-    int PC_int = *(reg + 15);
 };
 
 #endif //SRC_REGISTERS_H
