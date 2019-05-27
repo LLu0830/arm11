@@ -14,7 +14,7 @@
 //Add binary file loader - we already did that, so just copy it here??
 // (Rini) done
 
-uint32_t * binaryFileLoader(char **argv) {
+        uint32_t * binaryFileLoader(char **argv) {
     int size32 = sizeof(uint32_t);
     uint32_t *mem = calloc((pow(2, 16) / size32), size32);
     FILE *fp;
