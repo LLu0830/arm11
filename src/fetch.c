@@ -9,5 +9,11 @@
 #include "fetch.h"
 #include "utility.h"
 
-//add fetch function
+//fetches instruction from memory
+
+uint32_t fetch(uint32_t *mem, int address) {
+    return mem[address];
+}
+
+
 
