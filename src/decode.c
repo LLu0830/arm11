@@ -30,26 +30,32 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
             if (ZMasked != 0) {
                 return true;
             }
+            break;
         case NE:
             if (ZMasked == 0) {
                 return true;
             }
+            break;
         case GE:
             if (NEqualsV) {
                 return true;
             }
+            break;
         case LT:
             if (!NEqualsV) {
                 return true;
             }
+            break;
         case GT:
-            if (ZMasked == 0 && NEqualsV){
+            if (ZMasked == 0 && NEqualsV) {
                 return true;
             }
+            break;
         case LE:
             if ((ZMasked != 0) || !NEqualsV) {
                 return true;
             }
+            break;
     }
     return false;
 }
@@ -102,7 +108,9 @@ void decodeMUL(instruction_type instruction, uint32_t fetched) {
 }
 
 
-void decodeDP(instruction_type instruction, uint32_t fetched) {}
+void decodeDP(instruction_type instruction, uint32_t fetched) {
+
+}
 
 void decodeSDT(instruction_type instruction, uint32_t fetched) {}
 
