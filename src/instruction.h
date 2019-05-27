@@ -1,14 +1,11 @@
 //
 // Created by mw6118 on 26/05/19.
 //
-<<<<<<< HEAD
 
 // (Rini) includes instructionType enum - having this header here reduces repetition
 #import "execute.h"
 
-=======
 #include "DefinedTypes.h"
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
 
@@ -78,5 +75,3 @@ enum Cond{
     LE,
     AL
 };
-=======
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950

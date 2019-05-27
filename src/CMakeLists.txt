@@ -8,7 +8,6 @@ include_directories(.)
 add_executable(src
         multiplyInstruction/Multiply.c
         assemble.c
-        binaryFileLoader.c
         binaryFileLoader.h
         decode.c
         decode.h
@@ -29,6 +28,5 @@ add_executable(src
         memory.h
         pipeline.c
         pipeline.h
-        registers.h
         utility.c
         utility.h)
