@@ -5,7 +5,9 @@
 // (Rini) includes instructionType enum - having this header here reduces repetition
 #import "execute.h"
 
+
 #include "DefinedTypes.h"
+
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
 
@@ -51,8 +53,7 @@ typedef struct {
 
 
 }instruction_type;
-#endif //C_GROUP_31_INSTRUCTION_H
-<<<<<<< HEAD
+
 enum OpCode{
     AND,
     EOR,
@@ -75,3 +76,6 @@ enum Cond{
     LE,
     AL
 };
+
+#endif //C_GROUP_31_INSTRUCTION_H
+
