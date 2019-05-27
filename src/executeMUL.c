@@ -8,8 +8,6 @@
 #include <limits.h>
 
 
-#include "registers.h"
-#include "memory.h"
 #include "executeMUL.h"
 #include "utility.h"
 #include "DefinedTypes.h"

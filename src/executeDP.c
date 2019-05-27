@@ -4,10 +4,9 @@
 
 #include <stdlib.h>
 #include "executeDP.h"
-#include "registers.h"
+#include "state.h"
 #include "utility.h"
 #include <stdio.h>
-#include "memory.h"
 #include <stdbool.h>
 
 

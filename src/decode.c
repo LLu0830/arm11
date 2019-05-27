@@ -5,12 +5,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
-#include "registers.h"
-#include "memory.h"
+#include "state.h"
 #include "decode.h"
 #include "utility.h"
 
-#include "state.h"
 #include "instruction.h"
 #include "DefinedTypes.h"
 #include "execute.h"

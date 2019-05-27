@@ -25,8 +25,7 @@ add_executable(src
         fetch.c
         fetch.h
         instruction.h
-        memory.h
         pipeline.c
         pipeline.h
         utility.c
-        utility.h binaryFileLoader.c registers.h)
+        utility.h binaryFileLoader.c)

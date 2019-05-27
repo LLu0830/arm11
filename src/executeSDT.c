@@ -5,8 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "executeSDT.h"
-#include "registers.h"
-#include "memory.h"
+#include "state.h"
 #include "utility.h"
 
 

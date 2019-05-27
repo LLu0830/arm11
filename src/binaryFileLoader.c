@@ -4,8 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "registers.h"
-#include "memory.h"
+#include "state.h"
 #include "binaryFileLoader.h"
 #include "utility.h"
 #include <math.h>
