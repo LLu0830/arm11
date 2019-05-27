@@ -8,9 +8,16 @@
 #include "utility.h"
 #include <stdio.h>
 #include "memory.h"
+#include <stdbool.h>
 
 
-// using utility functions
+
+enum shiftType {
+    LSL,
+    LSR,
+    ASR,
+    ROR
+};
 
 void executeDP(struct registers ARM11_registers, uint32_t b) {
     uint32_t i = get_n_bits(b, 25, 1);
@@ -27,14 +34,37 @@ void executeDP(struct registers ARM11_registers, uint32_t b) {
         uint32_t imm = get_n_bits(op2, 0, 8);
         result = rotateRight(imm, rotateAmount);
     } else {
-        uint32_t rm = get_n_bits(op2, 0, 4);
+        uint32_t valueInRM = get_n_bits(op2, 0, 4);
         uint32_t shift = get_n_bits(op2, 4, 8);
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
             uint32_t shiftAmount = get_n_bits(op2, 7, 5);
-            uint32_t shiftType = get_n_bits(op2, 5, 2);
+            uint32_t shiftCode = get_n_bits(op2, 5, 2);
+            int carryBit;
+            if (shiftCode == 0) {
+                carryBit = get_n_bits(valueInRM, 32 - shiftAmount, 1);
+            } else {
+                carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
+            }
+            switch (shiftCode) {
+                case 0:
 
-//            make an enum and switch case statement based on that (function with int input, enum output)
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
+
+
 }

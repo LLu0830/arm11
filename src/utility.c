@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-uint32_t read_n_bits(uint32_t b, int start_pos, int number_of_bits) {
+uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
     return ((b >> (unsigned int) start_pos) & (unsigned int) (pow(2, number_of_bits) - 1));
 }
 
