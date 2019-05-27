@@ -17,7 +17,8 @@
 #include "state.h"
 
 
-void executeMUL(instruction_type instruction, uint32_t fetched, struct stateOfMachine state) {
+void executeMUL(instruction_type instruction, struct stateOfMachine state) {
+/**
 // check if condition field is satisfied
 
 // get cond 4bits
@@ -38,11 +39,11 @@ void executeMUL(instruction_type instruction, uint32_t fetched, struct stateOfMa
     instruction.rs = fetched >> 8 & 0xf;
 
     instruction.rm = fetched & 0xf;
-
+*/
 
     uint32_t result;
 
-    int positionRn = (int) (instruction.rn);
+    int positionRn = (int)(instruction.rn);
     int positionRm = (int)(instruction.rm);
     int positionRs = (int)(instruction.rs);
     int positionRd = (int)(instruction.rd);

@@ -10,9 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d690f1f-7a2a-43bc-8b71-845abc85ac14" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/decode.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/decode.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/state.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decode.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/decode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/execute.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/execute.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executeMUL.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/executeMUL.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,25 +38,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="c" value="3811" />
-          <entry key="h" value="1566" />
+          <entry key="c" value="4060" />
+          <entry key="h" value="1570" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="5377" />
+          <entry key="Doxygen file" value="1" />
+          <entry key="ObjectiveC" value="5629" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Makefile" value="1" />
           <entry key="c" value="22" />
-          <entry key="h" value="32" />
+          <entry key="h" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="54" />
+          <entry key="ObjectiveC" value="55" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -71,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/decode.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+            <state relative-caret-position="463">
+              <caret line="83" column="6" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
               <folding>
                 <element signature="e#53#72#0" expanded="true" />
               </folding>
@@ -83,8 +85,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/decode.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            <state relative-caret-position="165">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/execute.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+              <folding>
+                <element signature="e#74#94#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,18 +108,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/execute.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-              <folding>
-                <element signature="e#244#268#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -122,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/executeMUL.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="35" selection-start-line="22" selection-end-line="39" selection-end-column="35" />
+            <state relative-caret-position="681">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#47#66#0" expanded="true" />
               </folding>
@@ -153,17 +155,17 @@
         <option value="$PROJECT_DIR$/src/multiplyInstruction/DefinedTypes.h" />
         <option value="$PROJECT_DIR$/src/Manshu/DefinedTypes.h" />
         <option value="$PROJECT_DIR$/src/registers.h" />
-        <option value="$PROJECT_DIR$/src/decode.h" />
         <option value="$PROJECT_DIR$/src/execute.h" />
-        <option value="$PROJECT_DIR$/src/execute.c" />
         <option value="$PROJECT_DIR$/src/CPSR.h" />
         <option value="$PROJECT_DIR$/src/instruction.h" />
         <option value="$PROJECT_DIR$/src/DefinedTypes.h" />
-        <option value="$PROJECT_DIR$/src/executeMUL.c" />
         <option value="$PROJECT_DIR$/src/state.h" />
         <option value="$PROJECT_DIR$/src/utility.c" />
         <option value="$PROJECT_DIR$/src/utility.h" />
         <option value="$PROJECT_DIR$/src/emulate.c" />
+        <option value="$PROJECT_DIR$/src/executeMUL.c" />
+        <option value="$PROJECT_DIR$/src/execute.c" />
+        <option value="$PROJECT_DIR$/src/decode.h" />
         <option value="$PROJECT_DIR$/src/decode.c" />
       </list>
     </option>
@@ -245,18 +247,18 @@
       <workItem from="1558897581486" duration="5645000" />
       <workItem from="1558965591771" duration="714000" />
       <workItem from="1558967545061" duration="50000" />
-      <workItem from="1558967611708" duration="797000" />
+      <workItem from="1558967611708" duration="2107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24892000" />
+    <option name="totallyTimeSpent" value="26202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="22" width="960" height="1034" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24945055" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945055" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -268,7 +270,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.095022626" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.13348417" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -314,9 +316,6 @@
     <entry file="file://$PROJECT_DIR$/src/executeDP.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/executeMUL.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Makefile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -351,33 +350,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/memory.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/execute.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="e#244#268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/state.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/executeMUL.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="35" selection-start-line="22" selection-end-line="39" selection-end-column="35" />
-          <folding>
-            <element signature="e#47#66#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -388,13 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/decode.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DefinedTypes.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
@@ -402,10 +371,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/executeMUL.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/executeMUL.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#47#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/memory.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/execute.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+          <folding>
+            <element signature="e#74#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decode.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/decode.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+        <state relative-caret-position="463">
+          <caret line="83" column="6" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
           <folding>
             <element signature="e#53#72#0" expanded="true" />
           </folding>

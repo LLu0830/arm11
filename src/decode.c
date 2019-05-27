@@ -61,18 +61,34 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     instruction.conditionType = 0xf & (fetched >> 28);
     if (!checkCondition(state, instruction.conditionType)) {
 
-        //terminate
+        //instruction is ignored, may need another function
     }
+
+
     //what type of instruction it is..
     //store the instruction in corresponding instruction
-    // and execute
+    //and execute
+
+    //branch
+    uint32_t branchCheck = fetched >> 27 & 0x1;
+    if (branchCheck != 0) {
+        decodeBR(instruction, fetched);
+    }
+
+    //SDT
+    uint32_t SDTCheck = fetched >> 26 & 0x1;
+    if (SDTCheck != 0) {
+        decodeSDT(instruction, fetched);
+    }
+
+    //
 
     execute(instruction, state);
 
 }
 
 
-void decodeMUL(instruction_type instruction, uint32_t fetched, struct stateOfMachine state) {
+void decodeMUL(instruction_type instruction, uint32_t fetched) {
     instruction.instructionType = Multiply;
 // holds the A bit
     instruction.accumulate = 0x1 & fetched >> 21;
@@ -83,13 +99,12 @@ void decodeMUL(instruction_type instruction, uint32_t fetched, struct stateOfMac
     instruction.rn = fetched >> 12 & 0xf;
     instruction.rs = fetched >> 8 & 0xf;
     instruction.rm = fetched & 0xf;
-    checkCondition(state, instruction)
 }
 
 
 void decodeDP(instruction_type instruction, uint32_t fetched) {}
 
-void decodeSGT(instruction_type instruction, uint32_t fetched) {}
+void decodeSDT(instruction_type instruction, uint32_t fetched) {}
 
-void decodeB(instruction_type instruction, uint32_t fetched) {}
+void decodeBR(instruction_type instruction, uint32_t fetched) {}
 
