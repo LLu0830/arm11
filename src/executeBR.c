@@ -4,13 +4,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "registers.h"
-#include "memory.h"
+#include <stdint.h>
+#include "state.h"
 #include "executeBR.h"
 #include "utility.h"
 
 
-void executeBR(struct registers ARM11_registers, uint32_t b) {
+void executeBR(struct stateOfMachine ARM11_registers, uint32_t b) {
 
     }
 

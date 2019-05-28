@@ -1,18 +1,22 @@
 //
 // Created by mw6118 on 26/05/19.
 //
-#include "DefinedTypes.h"
+
+// (Rini) includes instructionType enum - having this header here reduces repetition
+
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
+
+#import "execute.h"
+#include "DefinedTypes.h"
+#include <stdbool.h>
 
 
 typedef struct {
 
     InstructionType instructionType;
-
     //first 4bits condition
     Cond conditionType;
-
 
     //
     register_address rd;
@@ -47,4 +51,30 @@ typedef struct {
 
 
 }instruction_type;
+
+// (Rini) throwing errors - repetition?
+enum OpCode{
+    AND,
+    EOR,
+    SUB,
+    RSB,
+    ADD,
+    TST,
+    TEQ,
+    CMP,
+    ORR,
+    MOV
+};
+
+enum Cond{
+    EQ,
+    NE,
+    GE,
+    LT,
+    GT,
+    LE,
+    AL
+};
+
 #endif //C_GROUP_31_INSTRUCTION_H
+

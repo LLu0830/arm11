@@ -8,15 +8,15 @@
 #include <limits.h>
 
 
-#include "registers.h"
-#include "memory.h"
 #include "executeMUL.h"
 #include "utility.h"
 #include "DefinedTypes.h"
 #include "instruction.h"
+#include "state.h"
 
 
-void executeMUL(instruction_type instruction, uint32_t fetched) {
+void executeMUL(instruction_type instruction, struct stateOfMachine state) {
+/**
 // check if condition field is satisfied
 
 // get cond 4bits
@@ -37,20 +37,20 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
     instruction.rs = fetched >> 8 & 0xf;
 
     instruction.rm = fetched & 0xf;
-
+*/
 
     uint32_t result;
 
-    int positionRn = binaryToDecimal(instruction.rn);
-    int positionRm = binaryToDecimal(instruction.rm);
-    int positionRs = binaryToDecimal(instruction.rs);
-    int positionRd = binaryToDecimal(instruction.rd);
+    int positionRn = (int)(instruction.rn);
+    int positionRm = (int)(instruction.rm);
+    int positionRs = (int)(instruction.rs);
+    int positionRd = (int)(instruction.rd);
 
     //registers[position] get the address in the memory???
 
-    uint32_t valueRn = registers[positionRn];
-    uint32_t valueRm = registers[positionRm];
-    uint32_t valueRs = registers[positionRs];
+    uint32_t valueRn = state.registers[positionRn];
+    uint32_t valueRm = state.registers[positionRm];
+    uint32_t valueRs = state.registers[positionRs];
 
 
 
@@ -62,20 +62,20 @@ void executeMUL(instruction_type instruction, uint32_t fetched) {
         result = (valueRm) * (valueRs);
     }
 
-    registers[positionRd] = result;
+    state.registers[positionRd] = result;
 
 
     if (instruction.scc) {
         // update N,Z flag in CPSR
         // N - the 31st bit of the result   Z - only if the result is zero
         if (result == 0) {
-            registers[CPSRPosition] = (CPSR_helper.Z << 28) ^ registers[CPSRPosition];
+            state.registers[CPSRPosition] = (Z << 28) ^ state.registers[CPSRPosition];
         }
 
         //get 31bit, if equal to N, unchange // else update
 
-        if ((result >> 31) != (registers[CPSRPosition] >> 31)) {
-            registers[CPSRPosition] = (CPSR_helper.N << 28) ^ registers[CPSRPosition];
+        if ((result >> 31) != (state.registers[CPSRPosition] >> 31)) {
+            state.registers[CPSRPosition] = (CPSR_helper.N << 28) ^ state.registers[CPSRPosition];
         }
 
     }

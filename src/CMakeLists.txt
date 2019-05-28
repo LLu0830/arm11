@@ -3,6 +3,28 @@ project(src C)
 
 set(CMAKE_C_STANDARD 11)
 
+include_directories(.)
+
 add_executable(src
         assemble.c
-        emulate.c dataprocessing_execute.c dataprocessing_execute.h registers.h utility.c utility.h executeSDT.c executeSDT.h executeBR.c executeBR.h executeMUL.h fetch.c fetch.h decode.c decode.h pipeline.c pipeline.h memory.h binaryFileLoader.c binaryFileLoader.h)
+        binaryFileLoader.h
+        decode.c
+        decode.h
+        emulate.c
+        execute.c
+        execute.h
+        executeBR.c
+        executeBR.h
+        executeDP.c
+        executeDP.h
+        executeMUL.c
+        executeMUL.h
+        executeSDT.c
+        executeSDT.h
+        fetch.c
+        fetch.h
+        instruction.h
+        pipeline.c
+        pipeline.h
+        utility.c
+        utility.h binaryFileLoader.c)
