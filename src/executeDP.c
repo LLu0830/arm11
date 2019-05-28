@@ -9,9 +9,12 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include "DefinedTypes.h"
+
 
 
 void executeDP(struct stateOfMachine ARM11_registers, uint32_t b) {
+//    PUT INSIDE DECODE.C
     uint32_t i = get_n_bits(b, 25, 1);
     uint32_t opCode = get_n_bits(b, 21, 4);
     uint32_t s = get_n_bits(b, 20, 1);

@@ -3,7 +3,7 @@
 //
 
 
-// SUGGESTION: INCLUDE ASSERTION ERRORS TO MAKE SURE N AND START_POS ARE LESS THAN SIZE_OF(B)
+// SUGGESTION: INCLUDE ASSERTIONS TO MAKE SURE N AND START_POS ARE LESS THAN SIZE_OF(B)
 
 #include "utility.h"
 #include "state.h"
@@ -19,7 +19,7 @@ uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
 }
 
 uint32_t change_bit(uint32_t b, int pos, int val) {
-    return ((b & ~(1U << pos)) | (val << pos));
+    return ((b & ~(1U << (unsigned int) pos)) | (unsigned int) ((unsigned int) val << (unsigned int) pos));
 }
 
 
