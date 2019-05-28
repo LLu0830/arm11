@@ -23,8 +23,8 @@ struct registers {
 struct stateOfMachine {
     struct registers registers;
     uint32_t *mem;
+//    (Rini) Katarina was saying that this needs to be a uint8_t?
 };
-
 
 
 

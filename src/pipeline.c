@@ -12,6 +12,7 @@
 #include "pipeline.h"
 
 
+
 //add pipeline
 
 void pipeline(struct stateOfMachine ARM11) {
