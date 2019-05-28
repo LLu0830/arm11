@@ -12,6 +12,7 @@
 
 // (Rini) confused - are we allowed to just access array elements from mem even though it is of the type uint32_t * (a pointer)?
 
+
 //(Lize)
 //needed: instruction after fetched called "fetched",
 // also a _Bool tells if the reg contains fetched instruction, called "has_fetched"

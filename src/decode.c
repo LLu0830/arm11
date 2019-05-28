@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+<<<<<<< HEAD
+=======
+#include <stdbool.h>
+>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
 #include "state.h"
 #include "decode.h"
 #include "utility.h"
@@ -13,7 +17,11 @@
 #include "DefinedTypes.h"
 #include "execute.h"
 //Add decode function
+<<<<<<< HEAD
 //add ARM11.registers.decoded=output
+=======
+
+>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
@@ -93,6 +101,10 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
 
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
+<<<<<<< HEAD
+=======
+//    (Rini) Multiply doesn't exist any more? This needs to be changed
+>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
     instruction.instructionType = Multiply;
 // holds the A bit
     instruction.accumulate = 0x1 & fetched >> 21;
@@ -112,8 +124,12 @@ void decodeDP(instruction_type instruction, uint32_t fetched) {
 
 void decodeSDT(instruction_type instruction, uint32_t fetched) {}
 
+<<<<<<< HEAD
 void decodeBR(instruction_type instruction, uint32_t fetched) {
     instruction.instructionType=BR;
 
 }
+=======
+void decodeBR(instruction_type instruction, uint32_t fetched) {}
+>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
 

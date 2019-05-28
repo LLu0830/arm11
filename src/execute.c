@@ -1,47 +1,45 @@
 //
 // Created by Katarina Kulkova on 24.05.2019.
 //
-
-//#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
 #include "execute.h"
-//#include "registers.h"
-//#include "memory.h"
-//#include "executeDP.h"
-//#include "executeSDT.h"
-//#include "executeMUL.h"
-//#include "executeBR.h"
+#include "executeDP.h"
+#include "executeSDT.h"
+#include "executeMUL.h"
+#include "executeBR.h"
 #include "instruction.h"
+#include "state.h"
+
+//(Rini) changed enum from char to 'plain' type, and moved to this C file from header file
+// throwing errors - Manshu said she would change the number of instructionType enums we have so it's fine
+enum instructionType {
+    DP,
+    MUL,
+    SDT,
+    BR
+};
 
 
 //executes all types of instructions
-void execute() {
-    switch (instructionType) {
-        case 'DP':
-            executeDP(struct registers ARM11_registers, uint32_t b);
+
+// (Rini) updated functions to make sure this file compiles
+void execute(instruction_type instruction, struct stateOfMachine state) {
+    switch (instruction.instructionType) {
+        case DP:
+            executeDP(ARM11_registers, b);
             break;
-        case 'MUL':
-            executeMUL(struct registers ARM11_registers, uint32_t b);
+        case MUL:
+            executeMUL(instruction, state);
             break;
-        case 'SDT':
-            executeSDT(struct registers ARM11_registers, uint32_t b);
+        case SDT:
+            executeSDT(ARM11_registers, b);
             break;
-        case 'BR':
-            executeBR(struct registers ARM11_registers, uint32_t b);
+        case BR:
+            executeBR(ARM11_registers, b);
             break;
         default:
             break;
     }
-}
-
-
-bool checkCondition(instruction_type instruction) {
-    Cond condition = instruction.conditionType;
-
-    switch (condition) {
-        case EQ:
-
-
-        case NE:
-    }
-
 }

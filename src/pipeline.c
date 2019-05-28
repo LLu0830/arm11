@@ -11,6 +11,9 @@
 #include "execute.h"
 #include "pipeline.h"
 
+<<<<<<<
+
+HEAD
 
 //add pipeline
 
@@ -37,3 +40,4 @@ void pipeline(struct stateOfMachine ARM11) {
     //PC
     ARM11.registers.registers[15] += 4;
 }
+

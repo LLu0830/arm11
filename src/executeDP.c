@@ -4,23 +4,72 @@
 
 #include <stdlib.h>
 #include "executeDP.h"
-#include "registers.h"
+#include "state.h"
 #include "utility.h"
+#include <stdint.h>
 #include <stdio.h>
-#include "memory.h"
+#include <stdbool.h>
 
 
-// using utility function
+void executeDP(struct stateOfMachine ARM11_registers, uint32_t b) {
+    uint32_t i = get_n_bits(b, 25, 1);
+    uint32_t opCode = get_n_bits(b, 21, 4);
+    uint32_t s = get_n_bits(b, 20, 1);
+    uint32_t rn = get_n_bits(b, 16, 4);
+    uint32_t rd = get_n_bits(b, 12, 4);
+    uint32_t op2 = get_n_bits(b, 0, 12);
 
-void executeDP(struct registers ARM11_registers, uint32_t b) {
-    int i = get_n_bits(b, 25, 1);
-    int opCode = get_n_bits(b, 21, 4);
-    int s = get_n_bits(b, 20, 1);
-    int rn = get_n_bits(b, 16, 4);
-    int rd = get_n_bits(b, 12, 4);
-    int op2 = get_n_bits(b, 0, 8);
+    uint32_t result;
 
-    if (s == 1) {
-        
+    if (i == 1) {
+        uint32_t rotateAmount = get_n_bits(op2, 8, 4);
+        uint32_t imm = get_n_bits(op2, 0, 8);
+        result = rotateRight(imm, rotateAmount);
+    } else {
+        uint32_t valueInRM = get_n_bits(op2, 0, 4);
+        uint32_t shift = get_n_bits(op2, 4, 8);
+        uint32_t lastBit = get_n_bits(op2, 4, 1);
+        if (lastBit == 0) {
+            uint32_t shiftAmount = get_n_bits(op2, 7, 5);
+            int carryBit;
+            if (shiftAmount == 0) {
+                result = valueInRM;
+                carryBit = 0;
+            } else if (shiftAmount > 32) {
+
+            } else {
+
+            }
+            uint32_t shiftCode = get_n_bits(op2, 5, 2);
+
+            if (shiftCode == 0) {
+                carryBit = get_n_bits(valueInRM, 32 - shiftAmount, 1);
+            } else {
+                carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
+            }
+            switch (shiftCode) {
+                // LSL
+                case 0:
+                    result = valueInRM << shiftAmount;
+                    break;
+                // LSR
+                case 1:
+                    result = valueInRM >> shiftAmount;
+                    break;
+                // ASR
+                case 2:
+                    int bit31 = get_n_bits(valueInRM, 31, 0);
+                    break;
+                // ROR
+                case 3:
+
+                    break;
+                default:
+                    break;
+            }
+
+        }
     }
+
+
 }

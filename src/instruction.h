@@ -3,13 +3,19 @@
 //
 
 // (Rini) includes instructionType enum - having this header here reduces repetition
+
 #import "execute.h"
 
 
 #include "DefinedTypes.h"
 
+
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
+
+#import "execute.h"
+#include "DefinedTypes.h"
+#include <stdbool.h>
 
 
 typedef struct {
@@ -50,9 +56,13 @@ typedef struct {
     bool storeBit;
 
 
-}instruction_type;
+} instruction_type;
 
-enum OpCode{
+<<<<<<< HEAD
+=======
+// (Rini) throwing errors - repetition?
+>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+enum OpCode {
     AND,
     EOR,
     SUB,
@@ -65,7 +75,7 @@ enum OpCode{
     MOV
 };
 
-enum Cond{
+enum Cond {
     EQ,
     NE,
     GE,

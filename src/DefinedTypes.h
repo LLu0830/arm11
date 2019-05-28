@@ -5,10 +5,11 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <limits.h>
+
 #ifndef C_GROUP_31_TYPES_H
 #define C_GROUP_31_TYPES_H
 
-typedef enum{
+typedef enum {
     AND,
     EOR,
     SUB,
@@ -22,18 +23,19 @@ typedef enum{
 } OpCode;
 
 
-typedef enum{
+typedef enum {
     DP,
     MUL,
     SDT,
     BR,
+
     HLT,
     NUL,
-}InstructionType;
+
+} InstructionType;
 
 
-
-typedef enum{
+typedef enum {
     EQ = 0x0,
     NE = 0x1,
     GE = 0xA,
@@ -48,16 +50,16 @@ typedef enum {
 
 
     //last result negative
-    N = 0x8,
+            N = 0x8,
 
     //last result zero
-    Z = 0x4,
+            Z = 0x4,
 
     //caused a bit to be carried out
-    C = 0x2,
+            C = 0x2,
 
     //last result overflowed
-    V = 0x0
+            V = 0x0
 
 } CPSR_helper;
 
