@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 //
 // Created by Katarina Kulkova on 25.05.2019.
 //
@@ -9,6 +11,12 @@
 #include "executeBR.h"
 #include "utility.h"
 
+void twos_complement_extend(int offset) {
+    const int bits = 24;
+    int mask = (1 << bits) - 1;
+    _Bool is_negative = (offset & ~(mask >> 1)) != 0;
+    offset |= -is_negative & ~mask;
+}
 
 void executeBR(struct registers ARM11_registers, uint32_t b) {
     int cond = get_n_bits(b, 28, 4);
@@ -17,23 +25,30 @@ void executeBR(struct registers ARM11_registers, uint32_t b) {
                         cond == 1110);
     if (valid_cond) {
         //2's complement extend
-        const int bits = 24;
-        int mask = (1 << bits) - 1;
-        _Bool is_negative = (offset & ~(mask >> 1)) != 0;
-        offset |= -is_negative & ~mask;
-
-        //reg[PC] needs to be defined
-        ARM11_registers.reg[PC]+=8;
-        //twos_complement(offset);
+        twos_complement_extend(offset);
+        //add offset to PC
+        ARM11_registers[15] += offset;
     }
-
-    // long twos_complement(int offset) {
-    //     int offset[23]
-    // }
-
-//    uint32_t sign_extend(uint32_t x) {
-//        uint32_t m = 1u << (24 - 1);
-//        return (x ^ m) - m;
-//    }
 }
+
+//word_t negate(word_t value) {
+//    return (~value) + 1;
+//}
+//
+//word_t absolute(word_t value) {
+//    if (is_negative(value)) {
+//        return negate(value);
+//    }
+//    return value;
+//}
+//
+//
+//long twos_complement_to_long(word_t value) {
+//    long result = absolute(value);
+//
+//    if (is_negative(value)) {
+//        result *= -1;
+//    }
+//    return result;
+//}
 

@@ -3,24 +3,28 @@
 //
 
 #include "instruction.h"
+#include <stdint.h>
+
 #ifndef C_GROUP_31_STATE_H
 #define C_GROUP_31_STATE_H
 
-#define numOfRegisters 12;
+#define numOfRegisters 17;
 #define numOfAddresses 65536;
 #define CPSRPosition 16
-
-struct stateOfMachine{
-
-    uint32_t registers[numOfRegisters];
-    // CPSR is in registers[16]
-    // when changing CPSR, 0001/0010/0100/1000, XOR operation(^)
-
-    uint16_t ARMMemories[numOfAddresses];
+#define PCPosition 15
 
 
-    int PC;
+struct stateOfMachine {
+    struct registers registers;
+    uint32_t *mem;
 };
 
+
+struct registers {
+    uint32_t registers[17];
+    uint32_t fetched[17];
+    uint32_t decoded[17];
+    _Bool has_fetched;
+} registers;
 
 #endif //C_GROUP_31_STATE_H

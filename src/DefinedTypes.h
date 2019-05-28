@@ -23,11 +23,12 @@ typedef enum{
 
 
 typedef enum{
-    DataProcessing,
-    Multiply,
-    SingleDataTransfer,
-    Branch,
-    Halt
+    DP,
+    MUL,
+    SDT,
+    BR,
+    HLT,
+    NUL,
 }InstructionType;
 
 
@@ -43,20 +44,20 @@ typedef enum{
 } Cond;
 
 
-typedef struct{
+typedef enum {
 
 
     //last result negative
-    uint8_t N = 0x8;
+    N = 0x8,
 
     //last result zero
-    uint8_t Z = 0x4;
+    Z = 0x4,
 
     //caused a bit to be carried out
-    uint8_t C = 0x2;
+    C = 0x2,
 
     //last result overflowed
-    uint8_t V = 0x0;
+    V = 0x0
 
 } CPSR_helper;
 
