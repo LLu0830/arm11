@@ -10,32 +10,35 @@
 #include "decode.h"
 #include "execute.h"
 #include "pipeline.h"
+#include "instruction.h"
+#include "DefinedTypes.h"
 
 
 
 //add pipeline
 
-void pipeline(struct stateOfMachine ARM11) {
+void pipeline(struct stateOfMachine ARM11,struct pipes pipe) {
     //execute
-    if (ARM11.registers.decoded.InstructionType != NUL) {
+    if (pipe.decoded.InstructionType != NUL) {
         execute(decoded, ARM11);
     }
 
+
     //decode
-    if (ARM11.registers.has_fetched) {
-        decode(ARM11, fetched, ARM11.registers.registers.conditionType);
+    if (pipe.has_fetched) {
+        decode(ARM11, pipe.fetched, pipe.decoded.conditionType);
     }
 
     //fetch
     //where does this address come from
-    if (ARM11.registers.registers.decoded.InstructionType != HLT) {
+    if (pipe.decoded.conditionType != HLT) {
         ARM11.registers.fetched = fetch(ARM11.mem, address);
-        ARM11.registers.has_fetched = 1;
+        pipe.has_fetched = true;
     } else {
-        ARM11.registers.has_fetched = 0;
+        pipe.has_fetched = false;
     }
 
     //PC
-    ARM11.registers.registers[15] += 4;
+    ARM11.registers[15] += 4;
 }
 

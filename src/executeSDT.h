@@ -7,6 +7,6 @@
 
 uint32_t loadFrom(uint32_t address);
 void storeTo(uint32_t address);
-void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched);
+void executeSDT(uint32_t instruction, struct stateOfMachine *state);
 
 #endif //SRC_EXECUTESDT_H

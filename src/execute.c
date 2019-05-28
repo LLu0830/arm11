@@ -18,20 +18,20 @@
 //executes all types of instructions
 
 // (Rini) updated functions to make sure this file compiles
-void execute(instruction_type instruction, struct stateOfMachine state) {
+void execute(instruction_type instruction, struct stateOfMachine *state) {
 
     switch (instruction.instructionType) {
         case DP:
-            executeDP(instruction, state);
+            executeDP(instruction, *state);
             break;
         case MUL:
-            executeMUL(instruction, state);
+            executeMUL(instruction, *state);
             break;
         case SDT:
-            executeSDT(instruction, state);
+            executeSDT(instruction, *state);
             break;
         case BR:
-            executeBR(instruction, state);
+            executeBR(instruction, *state);
             break;
         case HLT:
             return;
