@@ -137,22 +137,10 @@
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/instruction.h">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/memory.h">
-			<Option target="src"/>
-		</Unit>
-		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/multiplyInstruction/Multiply.c">
-			<Option target="src"/>
-		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/pipeline.c">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/pipeline.h">
-			<Option target="src"/>
-		</Unit>
-		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/registers.c">
-			<Option target="src"/>
-		</Unit>
-		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/registers.h">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/utility.c">

@@ -6,7 +6,6 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(src
-        multiplyInstruction/Multiply.c
         assemble.c
         binaryFileLoader.h
         decode.c
@@ -25,8 +24,7 @@ add_executable(src
         fetch.c
         fetch.h
         instruction.h
-        memory.h
         pipeline.c
         pipeline.h
         utility.c
-        utility.h binaryFileLoader.c registers.h)
+        utility.h binaryFileLoader.c)

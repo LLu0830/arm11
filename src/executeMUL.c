@@ -8,8 +8,6 @@
 #include <limits.h>
 
 
-#include "registers.h"
-#include "memory.h"
 #include "executeMUL.h"
 #include "utility.h"
 #include "DefinedTypes.h"
@@ -76,7 +74,7 @@ void executeMUL(instruction_type instruction, struct stateOfMachine state) {
 
         //get 31bit, if equal to N, unchange // else update
 
-        if ((result >> 31) != (registers[CPSRPosition] >> 31)) {
+        if ((result >> 31) != (state.registers[CPSRPosition] >> 31)) {
             state.registers[CPSRPosition] = (CPSR_helper.N << 28) ^ state.registers[CPSRPosition];
         }
 

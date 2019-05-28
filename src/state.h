@@ -3,6 +3,7 @@
 //
 
 #include "instruction.h"
+#include <stdint.h>
 #ifndef C_GROUP_31_STATE_H
 #define C_GROUP_31_STATE_H
 
@@ -13,10 +14,8 @@
 
 
 struct stateOfMachine{
-    uint32_t registers[numOfRegisters];
-    // CPSR is in registers[16]
-    uint16_t ARMMemories[numOfAddresses];
+    uint32_t registers[17];
+    uint32_t *mem;
 };
-
 
 #endif //C_GROUP_31_STATE_H

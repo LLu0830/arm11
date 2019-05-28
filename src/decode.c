@@ -5,12 +5,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
-#include "registers.h"
-#include "memory.h"
+#include <stdbool.h>
+#include "state.h"
 #include "decode.h"
 #include "utility.h"
 
-#include "state.h"
 #include "instruction.h"
 #include "DefinedTypes.h"
 #include "execute.h"
@@ -30,26 +29,32 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
             if (ZMasked != 0) {
                 return true;
             }
+            break;
         case NE:
             if (ZMasked == 0) {
                 return true;
             }
+            break;
         case GE:
             if (NEqualsV) {
                 return true;
             }
+            break;
         case LT:
             if (!NEqualsV) {
                 return true;
             }
+            break;
         case GT:
-            if (ZMasked == 0 && NEqualsV){
+            if (ZMasked == 0 && NEqualsV) {
                 return true;
             }
+            break;
         case LE:
             if ((ZMasked != 0) || !NEqualsV) {
                 return true;
             }
+            break;
     }
     return false;
 }
@@ -97,6 +102,7 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
 
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
+//    (Rini) Multiply doesn't exist any more? This needs to be changed
     instruction.instructionType = Multiply;
 // holds the A bit
     instruction.accumulate = 0x1 & fetched >> 21;
@@ -110,7 +116,9 @@ void decodeMUL(instruction_type instruction, uint32_t fetched) {
 }
 
 
-void decodeDP(instruction_type instruction, uint32_t fetched) {}
+void decodeDP(instruction_type instruction, uint32_t fetched) {
+
+}
 
 void decodeSDT(instruction_type instruction, uint32_t fetched) {}
 
