@@ -5,4 +5,4 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(src
         assemble.c
-        emulate.c dataprocessing_execute.c dataprocessing_execute.h registers.h utility.c utility.h executeSDT.c executeSDT.h executeBR.c executeBR.h executeMUL.h fetch.c fetch.h decode.c decode.h pipeline.c pipeline.h memory.h binaryFileLoader.c binaryFileLoader.h)
+        emulate.c dataprocessing_execute.c dataprocessing_execute.h utility.c utility.h executeSDT.c executeSDT.h executeBR.c executeBR.h executeMUL.h fetch.c fetch.h decode.c decode.h pipeline.c pipeline.h memory.h binaryFileLoader.c binaryFileLoader.h)

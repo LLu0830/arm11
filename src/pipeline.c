@@ -22,12 +22,13 @@ void pipeline(struct stateOfMachine ARM11) {
 
     //decode
     if (ARM11.registers.has_fetched) {
-        decode(ARM11, fetched, instr);
+        decode(ARM11, fetched, ARM11.registers.registers.conditionType);
     }
 
     //fetch
+    //where does this address come from
     if (ARM11.registers.registers.decoded.InstructionType != HLT) {
-        ARM11.registers.fetched = fetch(*mem, address);
+        ARM11.registers.fetched = fetch(ARM11.mem, address);
         ARM11.registers.has_fetched = 1;
     } else {
         ARM11.registers.has_fetched = 0;
