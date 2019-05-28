@@ -74,7 +74,7 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     //store the instruction in corresponding instruction
     //and execute
 
-    //branch
+    //BR
     uint32_t branchCheck = fetched >> 27 & 0x1;
     if (branchCheck != 0) {
         decodeBR(instruction, fetched);
@@ -94,12 +94,18 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
         decodeMUL(instruction, fetched);
     }
 
-
+    //HLT
+    if (fetched == 0) {
+        decodeHLT(instruction, fetched);
+    }
 
     execute(instruction, state);
-
 }
 
+
+void decodeHLT(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType = HLT;
+}
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
 //    (Rini) Multiply doesn't exist any more? This needs to be changed
