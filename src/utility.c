@@ -107,13 +107,21 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, uint32_t shiftType) {
 
 
 struct stateOfMachine createNewState() {
-    struct stateOfMachine state = (struct stateOfMachine*) malloc(sizeof(struct stateOfMahcine*));
-    state->instruction_type = (struct instruction_type*) malloc(sizeof(struct instruction_type*));
+    struct stateOfMachine state = (struct stateOfMachine *) malloc(sizeof(struct stateOfMahcine *));
+    state->instruction_type = (struct instruction_type *) malloc(sizeof(struct instruction_type *));
     return state;
+}
 
 uint32_t negate(uint32_t b) {
     return (~b) + 1;
 }
+
+uint32_t makeASRmask(int shiftAmount) {
+    uint32_t reverseMask = (1U << (unsigned int) (32 - shiftAmount - 1)) - 1;
+    return reverseMask ^ 0U;
+}
+
+
 
 
 //uint32_t write_one(uint32_t b, int pos) {
