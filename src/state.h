@@ -13,15 +13,23 @@
 #define CPSRPosition 16
 #define PCPosition 15
 
-<<<<<<< HEAD
+struct registers {
+    uint32_t registers[17];
+    uint32_t fetched[17];
+    InstructionType decoded[17];
+    _Bool has_fetched;
+};
 
 struct stateOfMachine {
-    uint32_t registers[17];
+    struct registers registers;
     uint32_t *mem;
+//    (Rini) Katarina was saying that this needs to be a uint8_t?
 };
 
 
-
-
+//struct stateOfMachine {
+//    uint32_t registers[17];
+//    uint8_t *mem;
+//};
 
 #endif //C_GROUP_31_STATE_H

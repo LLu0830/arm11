@@ -14,31 +14,27 @@
 
 //(Rini) changed enum from char to 'plain' type, and moved to this C file from header file
 // throwing errors - Manshu said she would change the number of instructionType enums we have so it's fine
-enum instructionType {
-    DP,
-    MUL,
-    SDT,
-    BR
-};
-
 
 //executes all types of instructions
 
 // (Rini) updated functions to make sure this file compiles
-void execute(instruction_type instruction, struct stateOfMachine state) {
+void execute(instruction_type instruction, struct stateOfMachine *state) {
+
     switch (instruction.instructionType) {
         case DP:
-            executeDP(ARM11_registers, b);
+            executeDP(instruction, *state);
             break;
         case MUL:
-            executeMUL(instruction, state);
+            executeMUL(instruction, *state);
             break;
         case SDT:
-            executeSDT(ARM11_registers, b);
+            executeSDT(instruction, *state);
             break;
         case BR:
-            executeBR(ARM11_registers, b);
+            executeBR(instruction, *state);
             break;
+        case HLT:
+            return;
         default:
             break;
     }

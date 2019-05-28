@@ -5,10 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
-<<<<<<< HEAD
-=======
 #include <stdbool.h>
->>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
 #include "state.h"
 #include "decode.h"
 #include "utility.h"
@@ -17,18 +14,16 @@
 #include "DefinedTypes.h"
 #include "execute.h"
 //Add decode function
-<<<<<<< HEAD
 //add ARM11.registers.decoded=output
-=======
 
->>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
-    uint32_t VMasked = (CPSRflag >> 28) & V;
-    uint32_t NMasked = (CPSRflag >> 28) & N;
-    uint32_t ZMasked = (CPSRflag >> 28) & Z;
-    uint32_t CMasked = (CPSRflag >> 28) & C;
+    uint32_t VMasked = (CPSRflag >> 28U) & (unsigned) V;
+    uint32_t NMasked = (CPSRflag >> 28U) & (unsigned) N;
+    uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
+    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
 
     bool NEqualsV = (VMasked >> 3) == NMasked;
     switch (condition) {
@@ -81,7 +76,7 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     //store the instruction in corresponding instruction
     //and execute
 
-    //branch
+    //BR
     uint32_t branchCheck = fetched >> 27 & 0x1;
     if (branchCheck != 0) {
         decodeBR(instruction, fetched);
@@ -93,19 +88,27 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
         decodeSDT(instruction, fetched);
     }
 
-    //
+    //MUL & DP
+    uint32_t bit4Check = fetched >> 4 & 0x1;
+    if (bit4Check == 0) {
+        decodeDP(instruction, fetched);
+    } else {
+        decodeMUL(instruction, fetched);
+    }
+
+    //HLT
+    if (fetched == 0) {
+        decodeHLT(instruction, fetched);
+    }
 
     execute(instruction, state);
-
 }
 
 
+
+
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
-<<<<<<< HEAD
-=======
-//    (Rini) Multiply doesn't exist any more? This needs to be changed
->>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
-    instruction.instructionType = Multiply;
+    instruction.instructionType = MUL;
 // holds the A bit
     instruction.accumulate = 0x1 & fetched >> 21;
 // holds the S bit
@@ -119,17 +122,17 @@ void decodeMUL(instruction_type instruction, uint32_t fetched) {
 
 
 void decodeDP(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType = DP;
+}
+
+void decodeSDT(instruction_type instruction, uint32_t fetched) {
 
 }
 
-void decodeSDT(instruction_type instruction, uint32_t fetched) {}
-
-<<<<<<< HEAD
 void decodeBR(instruction_type instruction, uint32_t fetched) {
-    instruction.instructionType=BR;
-
+    instruction.instructionType = BR;
 }
-=======
-void decodeBR(instruction_type instruction, uint32_t fetched) {}
->>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
 
+void decodeHLT(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType = HLT;
+}

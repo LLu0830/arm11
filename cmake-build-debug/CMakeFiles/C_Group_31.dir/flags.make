@@ -6,5 +6,5 @@ C_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk 
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/rinibanerjee/Desktop/C_Group_31/src/. 
+C_INCLUDES = -I/Users/rinibanerjee/Desktop/C_Group_31/src 
 

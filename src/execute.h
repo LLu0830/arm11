@@ -5,7 +5,8 @@
 #ifndef SRC_EXECUTE_H
 #define SRC_EXECUTE_H
 
-enum instructionType;
-void execute();
+#include "instruction.h"
+
+void execute(instruction_type instruction, struct stateOfMachine state);
 
 #endif // SRC_EXECUTE_H
