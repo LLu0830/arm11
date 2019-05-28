@@ -9,6 +9,7 @@
 #include "state.h"
 #include "utility.h"
 
+
 uint32_t loadFrom(uint32_t address);
 void storeTo(uint32_t address);
 
@@ -53,6 +54,7 @@ void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
     else {
         //unsigned 12 bit immediate offset
         offset = offset;
+
         //I guess this else is not needed, but I am keeping it just in case
         // I don't understand the spec that well
     }
@@ -90,6 +92,7 @@ void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
         //word loaded from memory
         return loadFrom(address, rd);
     }
+
     else {
         //word stored into memory
         uint32_t rdContent = stateOfMachine.registers[rd];
