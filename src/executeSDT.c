@@ -92,7 +92,7 @@ void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
         //word loaded from memory
         return loadFrom(address, rd);
     }
-    
+
     else {
         //word stored into memory
         uint32_t rdContent = stateOfMachine.registers[rd];
