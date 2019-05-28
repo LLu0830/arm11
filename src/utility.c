@@ -3,7 +3,7 @@
 //
 
 
-// SUGGESTION: INCLUDE ASSERTION ERRORS TO MAKE SURE N AND START_POS ARE LESS THAN SIZE_OF(B)
+// SUGGESTION: INCLUDE ASSERTIONS TO MAKE SURE N AND START_POS ARE LESS THAN SIZE_OF(B)
 
 #include "utility.h"
 #include "state.h"
@@ -19,7 +19,7 @@ uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
 }
 
 uint32_t change_bit(uint32_t b, int pos, int val) {
-    return ((b & ~(1U << pos)) | (val << pos));
+    return ((b & ~(1U << (unsigned int) pos)) | (unsigned int) ((unsigned int) val << (unsigned int) pos));
 }
 
 
@@ -107,13 +107,21 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, uint32_t shiftType) {
 
 
 struct stateOfMachine createNewState() {
-    struct stateOfMachine state = (struct stateOfMachine*) malloc(sizeof(struct stateOfMahcine*));
-    state->instruction_type = (struct instruction_type*) malloc(sizeof(struct instruction_type*));
+    struct stateOfMachine state = (struct stateOfMachine *) malloc(sizeof(struct stateOfMahcine *));
+    state->instruction_type = (struct instruction_type *) malloc(sizeof(struct instruction_type *));
     return state;
+}
 
 uint32_t negate(uint32_t b) {
     return (~b) + 1;
 }
+
+uint32_t makeASRmask(int shiftAmount) {
+    uint32_t reverseMask = (1U << (unsigned int) (32 - shiftAmount - 1)) - 1;
+    return reverseMask ^ 0U;
+}
+
+
 
 
 //uint32_t write_one(uint32_t b, int pos) {

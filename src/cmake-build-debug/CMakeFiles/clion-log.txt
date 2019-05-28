@@ -8,4 +8,6 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
+-- Configuring done
+
 -- Build files have been written to: /Users/rinibanerjee/Desktop/C_Group_31/src/cmake-build-debug

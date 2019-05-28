@@ -16,6 +16,7 @@ uint32_t shiftLeft(uint32_t b, int n);
 uint32_t shiftRight(uint32_t b, int n);
 uint32_t arShiftRight(uint32_t b, int n);
 uint32_t shiftRegister(uint32_t b, uint32_t amount, uint32_t shiftType);
+uint32_t makeASRmask(int shiftAmount);
 
 
 #endif //SRC_UTILITY_H
