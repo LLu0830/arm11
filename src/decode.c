@@ -86,7 +86,7 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
         decodeSDT(instruction, fetched);
     }
 
-    //
+    //MUL & DP
     uint32_t bit4Check = fetched >> 4 & 0x1;
     if (bit4Check == 0) {
         decodeDP(instruction, fetched);

@@ -52,29 +52,6 @@ typedef struct {
 
 }instruction_type;
 
-// (Rini) throwing errors - repetition?
-enum OpCode{
-    AND,
-    EOR,
-    SUB,
-    RSB,
-    ADD,
-    TST,
-    TEQ,
-    CMP,
-    ORR,
-    MOV
-};
-
-enum Cond{
-    EQ,
-    NE,
-    GE,
-    LT,
-    GT,
-    LE,
-    AL
-};
 
 #endif //C_GROUP_31_INSTRUCTION_H
 
