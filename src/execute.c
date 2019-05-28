@@ -64,11 +64,16 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
     return false;
 }
 
+
+
+
+
 void execute(instruction_type instruction, struct stateOfMachine state) {
     if (!checkCondition(state, instruction.conditionType)) {
         return;
-        //instruction is ignored, may need another function
+        //instruction is ignored
     }
+
     switch (instruction.instructionType) {
         case DP:
             executeDP(instruction, state);

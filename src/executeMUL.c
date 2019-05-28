@@ -29,10 +29,10 @@ void executeMUL(instruction_type instruction, struct stateOfMachine state) {
 
     if (instruction.accumulate) {
         //Accumulate is set, performs a multiply and accumulate
-        result = (valueRm) * (valueRs) + (valueRn);
+        result = valueRm * valueRs + valueRn;
     } else {
         // performs only multiply
-        result = (valueRm) * (valueRs);
+        result = valueRm * valueRs;
     }
 
     state.registers[(int) (instruction.rd)] = result;

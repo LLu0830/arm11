@@ -20,7 +20,8 @@ struct stateOfMachine {
 
 
 struct registers {
-    uint32_t registers[17];
+    uint32_t registers[numOfRegisters];
+    // why only 17 fetched instructions?
     uint32_t fetched[17];
     InstructionType decoded[17];
     _Bool has_fetched;

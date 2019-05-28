@@ -63,7 +63,6 @@ void decodeHLT(instruction_type instruction, uint32_t fetched) {
 }
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
-//    (Rini) Multiply doesn't exist any more? This needs to be changed
     instruction.instructionType = MUL;
 // holds the A bit
     instruction.accumulate = 0x1 & fetched >> 21;
@@ -79,7 +78,7 @@ void decodeMUL(instruction_type instruction, uint32_t fetched) {
 
 void decodeDP(instruction_type instruction, uint32_t b) {
     // Jason says can keep it like in the executeDP file.
-    // May ignore the following
+    // May ignore the following or change a few lines in executeDP
 
     instruction.instructionType = DP;
 //    instruction.conditionType = get_n_bits(b, 28, 4);
