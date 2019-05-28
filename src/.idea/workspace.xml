@@ -1,898 +1,758 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="src" targetName="src" />
-    </generated>
-  </component>
-  <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
-    </configurations>
-  </component>
-  <component name="ChangeListManager">
+    <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+        <generated />
+    </component>
+    <component name="CMakeSettings">
+        <configurations>
+            <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+        </configurations>
+    </component>
+    <component name="ChangeListManager">
+        <<<<<<< HEAD
+        <list default="true" id="21016665-75d1-44d2-b219-e78ed494b23b" name="Default Changelist" comment="">
+        <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+        <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
+        <change beforePath="$PROJECT_DIR$/src/pipeline.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipeline.c" afterDir="false" />
+        <change beforePath="$PROJECT_DIR$/src/registers.h" beforeDir="false" />
+        =======
+        <<<<<<< HEAD
+        <list default="true" id="fc703bfa-eae4-4bdd-ab7c-f71bfacaa71e" name="Default Changelist" comment="">
+        <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+        <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+        <change beforePath="$PROJECT_DIR$/src/instruction.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction.h" afterDir="false" />
+        =======
+        <list default="true" id="3d690f1f-7a2a-43bc-8b71-845abc85ac14" name="Default Changelist" comment="">
+            <<<<<<< HEAD
+            <change beforePath="$PROJECT_DIR$/src/emulate.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/emulate.c" afterDir="false" />
+            =======
+            >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+            <change beforePath="$PROJECT_DIR$/src/state.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/state.h" afterDir="false" />
+            >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+            >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+        </list>
+        <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+        <option name="SHOW_DIALOG" value="false" />
+        <option name="HIGHLIGHT_CONFLICTS" value="true" />
+        <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+        <option name="LAST_RESOLUTION" value="IGNORE" />
+    </component>
+    <component name="ClangdSettings">
+        <option name="formatViaClangd" value="false" />
+    </component>
+    <component name="FileEditorManager">
+        <<<<<<< HEAD
+        <leaf>
+        =======
+        <<<<<<< HEAD
+        <leaf>
+        <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/executeMUL.c">
+        <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+        <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+        =======
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <<<<<<< HEAD
+            <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/execute.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="324">
+                            <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+                            <folding>
+                                <element signature="e#53#71#0" expanded="true" />
+                            </folding>
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/execute.h">
+            =======
+            >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/decode.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="-221">
+                            <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/emulate.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="340">
+                            <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <<<<<<< HEAD
+                <entry file="file://$PROJECT_DIR$/src/DefinedTypes.h">
+                <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="578">
+                <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+                =======
+                <entry file="file://$PROJECT_DIR$/src/memory.h">
+                    >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <<<<<<< HEAD
+                <entry file="file://$PROJECT_DIR$/src/fetch.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="60">
+                            <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+                            <folding>
+                                <element signature="e#53#72#0" expanded="true" />
+                            </folding>
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/multiplyInstruction/Multiply.c">
+                <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                <caret line="4" selection-start-line="4" selection-end-line="4" />
+                =======
+                <entry file="file://$PROJECT_DIR$/src/state.h">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="285">
+                            <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+                            >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+                            >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+                            >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <<<<<<< HEAD
+            <file pinned="false" current-in-tab="true">
+            =======
+            <file pinned="false" current-in-tab="false">
+                <<<<<<< HEAD
+                <entry file="file://$PROJECT_DIR$/src/fetch.c">
+                =======
+                <<<<<<< HEAD
+                <entry file="file://$PROJECT_DIR$/src/instruction.h">
+                <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+                =======
+                <entry file="file://$PROJECT_DIR$/src/pipeline.c">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/emulate.c">
+                    >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="204">
+                            <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/executeBR.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="279">
+                            <caret line="23" column="75" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <<<<<<< HEAD
+                <entry file="file://$PROJECT_DIR$/src/state.h">
+                <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+                =======
+                >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+                <entry file="file://$PROJECT_DIR$/src/decode.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="1330">
+                            <caret line="83" column="6" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
+                            >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/execute.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <<<<<<< HEAD
+                        <state relative-caret-position="225">
+                        <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+                        =======
+                        <<<<<<< HEAD
+                        <state relative-caret-position="-418">
+                        <caret line="13" selection-start-line="13" selection-end-line="13" />
+                        =======
+                        <state relative-caret-position="315">
+                            <caret line="21" selection-start-line="21" selection-end-line="21" />
+                            >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/pipeline.h">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/pipeline.c">
+                    <provider selected="true" editor-type-id="text-editor">
+                        <<<<<<< HEAD
+                        <state relative-caret-position="344">
+                        <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+                        =======
+                        <state relative-caret-position="435">
+                            <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+                            >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+                            >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+                            >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+                        </state>
+                    </provider>
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/binaryFileLoader.h">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/binaryFileLoader.c">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/decode.c">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/decode.h">
+                    <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+            </file>
+        </leaf>
+    </component>
+    <component name="Git.Settings">
+        <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    </component>
+    <component name="IdeDocumentHistory">
+        <option name="CHANGED_PATHS">
+            <list>
+                <option value="$PROJECT_DIR$/src/multiplyInstruction/Multiply.c" />
+                <option value="$PROJECT_DIR$/src/multiplyInstruction/executeMUL.c" />
+                <option value="$PROJECT_DIR$/src/multiplyInstruction/DefinedTypes.h" />
+                <option value="$PROJECT_DIR$/src/Manshu/DefinedTypes.h" />
+                <option value="$PROJECT_DIR$/src/registers.h" />
+                <option value="$PROJECT_DIR$/src/execute.h" />
+                <option value="$PROJECT_DIR$/src/CPSR.h" />
+                <<<<<<< HEAD
+                <option value="$PROJECT_DIR$/src/executeMUL.c" />
+                <option value="$PROJECT_DIR$/src/instruction.h" />
+                <option value="$PROJECT_DIR$/src/fetch.c" />
+                <option value="$PROJECT_DIR$/src/executeBR.c" />
+                <option value="$PROJECT_DIR$/src/emulate.c" />
+                <option value="$PROJECT_DIR$/src/DefinedTypes.h" />
+                <option value="$PROJECT_DIR$/src/decode.c" />
+                <option value="$PROJECT_DIR$/src/state.h" />
+                <option value="$PROJECT_DIR$/src/pipeline.c" />
+            </list>
+        </option>
+    </component>
+    =======
+    <<<<<<< HEAD
+    =======
+    <option value="$PROJECT_DIR$/src/instruction.h" />
+    <<<<<<< HEAD
+    <option value="$PROJECT_DIR$/src/emulate.c" />
+</list>
+        </option>
+        </component>
+<component name="ProjectFrameBounds" fullScreen="true">
+<option name="x" value="160" />
+<option name="y" value="113" />
+<option name="width" value="960" />
+<option name="height" value="542" />
+=======
+>>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+<option value="$PROJECT_DIR$/src/DefinedTypes.h" />
+<option value="$PROJECT_DIR$/src/state.h" />
+<option value="$PROJECT_DIR$/src/utility.c" />
+<option value="$PROJECT_DIR$/src/utility.h" />
+<option value="$PROJECT_DIR$/src/emulate.c" />
+<option value="$PROJECT_DIR$/src/executeMUL.c" />
+<option value="$PROJECT_DIR$/src/execute.c" />
+<option value="$PROJECT_DIR$/src/decode.h" />
+<option value="$PROJECT_DIR$/src/instruction.h" />
+<option value="$PROJECT_DIR$/src/decode.c" />
+</list>
+        </option>
+        </component>
 <<<<<<< HEAD
-   <list default="true" id="806a35f9-5908-4b1f-8069-224f513f4449" name="Default Changelist" comment="" />
-
-    <list default="true" id="abe6918c-23fa-4119-b700-84395d88fb18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/src.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/src.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executeDP.c" beforeDir="false" afterPath="$PROJECT_DIR$/executeDP.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registers.h" beforeDir="false" afterPath="$PROJECT_DIR$/registers.h" afterDir="false" />
+<component name="ProjectFrameBounds" extendedState="6">
+<option name="x" value="1350" />
+<option name="width" value="1395" />
+<option name="height" value="1746" />
 =======
-    <list default="true" id="f72be932-a115-462c-a97a-03562005a119" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
->>>>>>> 8bd57b6f403082d677b22a161aaa8514ded52b5a
-    </list>
-
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ClangdSettings">
-    <option name="formatViaClangd" value="false" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="FileEditorManager">
-    <leaf>
-<<<<<<< HEAD
-      <file pinned="false" current-in-tab="false">
-<<<<<<< Updated upstream
-        <entry file="file://$PROJECT_DIR$/emulate.c">
-<<<<<<< HEAD
-          <provider selected="true" editor-type-id="text-editor" />
-=======
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/pipeline.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="6" selection-end-column="22" />
-              <folding>
-                <element signature="e#53#72#0" expanded="true" />
-              </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/emulate.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/pipeline.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="82" selection-start-line="8" selection-start-column="82" selection-end-line="8" selection-end-column="82" />
-=======
-        <entry file="file://$PROJECT_DIR$/registers.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/executeMUL.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1227">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
->>>>>>> Stashed changes
-            </state>
-          </provider>
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< Updated upstream
-        <entry file="file://$PROJECT_DIR$/execute.c">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state>
-              <folding>
-                <element signature="e#53#72#0" expanded="true" />
-              </folding>
-=======
-            <state relative-caret-position="216">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-=======
-        <entry file="file://$PROJECT_DIR$/registers.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memory.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-        <entry file="file://$PROJECT_DIR$/memory.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="13" />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/executeDP.c">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state>
-=======
-            <state relative-caret-position="728">
-              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-              <folding>
-                <element signature="e#50#69#0" expanded="true" />
-              </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/binaryFileLoader.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utility.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="13" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/executeMUL.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-379">
-              <folding>
-                <element signature="e#47#66#0" expanded="true" />
-              </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/executeDP.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-<<<<<<< Updated upstream
-              <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="20" selection-end-column="34" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="20" selection-end-column="34" />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/binaryFileLoader.c">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="165">
-              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-=======
-            <state relative-caret-position="374">
-              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-              <folding>
-                <element signature="e#50#69#0" expanded="true" />
-              </folding>
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-=======
-        <entry file="file://$PROJECT_DIR$/executeSDT.c">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="549">
-              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-            <state relative-caret-position="481">
-              <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/execute.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-=======
-        <entry file="file://$PROJECT_DIR$/fetch.h">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="17">
-              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-            <state relative-caret-position="119">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/execute.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-              <folding>
-                <element signature="e#53#72#0" expanded="true" />
-              </folding>
-=======
-        <entry file="file://$PROJECT_DIR$/fetch.c">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="187">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/state.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
->>>>>>> Stashed changes
-=======
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/state.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
->>>>>>> 8bd57b6f403082d677b22a161aaa8514ded52b5a
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/emulate.h" />
-        <option value="$PROJECT_DIR$/dataprocessing_execute.c" />
-        <option value="$PROJECT_DIR$/dataprocessing_execute.h" />
-        <option value="$PROJECT_DIR$/executeSDT.cpp" />
-        <option value="$PROJECT_DIR$/executeBR.h" />
-        <option value="$PROJECT_DIR$/executeMUL.h" />
-        <option value="$PROJECT_DIR$/executeSDT.h" />
-<<<<<<< Updated upstream
-        <option value="$PROJECT_DIR$/fetch.h" />
-=======
-        <option value="$PROJECT_DIR$/execute.h" />
->>>>>>> Stashed changes
-        <option value="$PROJECT_DIR$/decode.h" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/executeSDT.c" />
-=======
-        <option value="$PROJECT_DIR$/binaryFileLoader.h" />
-        <option value="$PROJECT_DIR$/execute.c" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-        <option value="$PROJECT_DIR$/executeBR.c" />
-        <option value="$PROJECT_DIR$/executeMUL.c" />
-        <option value="$PROJECT_DIR$/pipeline.c" />
-        <option value="$PROJECT_DIR$/pipeline.h" />
-        <option value="$PROJECT_DIR$/decode.c" />
-        <option value="$PROJECT_DIR$/binaryFileLoader.h" />
-        <option value="$PROJECT_DIR$/binaryFileLoader.c" />
-        <option value="$PROJECT_DIR$/emulate.c" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/execute.c" />
-        <option value="$PROJECT_DIR$/execute.h" />
-        <option value="$PROJECT_DIR$/instruction.h" />
-        <option value="$PROJECT_DIR$/utility.c" />
-        <option value="$PROJECT_DIR$/utility.h" />
-        <option value="$PROJECT_DIR$/registers.c" />
-        <option value="$PROJECT_DIR$/registers.h" />
-        <option value="$PROJECT_DIR$/executeDP.c" />
-=======
-        <option value="$PROJECT_DIR$/memory.h" />
-        <option value="$PROJECT_DIR$/executeSDT.c" />
-<<<<<<< Updated upstream
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-        <option value="$PROJECT_DIR$/fetch.h" />
-        <option value="$PROJECT_DIR$/fetch.c" />
->>>>>>> Stashed changes
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="720" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
+<component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+<component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+<component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+</component>
+>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+<component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="478" />
+    <option name="y" value="27" />
+    <option name="width" value="1432" />
+    <option name="height" value="1053" />
+    >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+    >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+</component>
+<component name="ProjectView">
     <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
+        <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
+        <pane id="Scope" />
+        <pane id="ProjectPane">
+            <subPane>
+                <expand>
+                    <path>
+                        <item name="C_Group_31" type="b2602c69:ProjectViewProjectNode" />
+                        <item name="C_Group_31" type="462c0819:PsiDirectoryNode" />
+                    </path>
+                    <path>
+                        <item name="C_Group_31" type="b2602c69:ProjectViewProjectNode" />
+                        <item name="C_Group_31" type="462c0819:PsiDirectoryNode" />
+                        <item name="src" type="462c0819:PsiDirectoryNode" />
+                    </path>
+                </expand>
+                <select />
+            </subPane>
+        </pane>
     </panes>
-  </component>
-  <component name="PropertiesComponent">
+</component>
+<component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RunDashboard">
+</component>
+<component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+        <recent name="$PROJECT_DIR$/src" />
+        <recent name="$PROJECT_DIR$/src/multiplyInstruction" />
+    </key>
+</component>
+<component name="RunDashboard">
     <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
+        <list>
+            <RuleState>
+                <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+            </RuleState>
+            <RuleState>
+                <option name="name" value="StatusDashboardGroupingRule" />
+            </RuleState>
+        </list>
     </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="src" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;Desktop/Programming/C/Project/arm11_1819_testsuite&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src" TARGET_NAME="src" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src" RUN_TARGET_NAME="src">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SvnConfiguration">
+</component>
+<component name="SvnConfiguration">
     <configuration />
-  </component>
-  <component name="TaskManager">
+</component>
+<component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="abe6918c-23fa-4119-b700-84395d88fb18" name="Default Changelist" comment="" />
-      <created>1558622024754</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1558622024754</updated>
-      <workItem from="1558622026346" duration="1542000" />
-      <workItem from="1558628086121" duration="1724000" />
-      <workItem from="1558703082632" duration="1550000" />
-      <workItem from="1558732563337" duration="809000" />
-      <workItem from="1558735056004" duration="539000" />
-      <workItem from="1558782756625" duration="7802000" />
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-      <workItem from="1558828534489" duration="3027000" />
-      <workItem from="1558880328121" duration="6014000" />
-=======
-      <workItem from="1558828534489" duration="8956000" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-      <workItem from="1558828534489" duration="13153000" />
->>>>>>> Stashed changes
+        <changelist id="3d690f1f-7a2a-43bc-8b71-845abc85ac14" name="Default Changelist" comment="" />
+        <created>1558626276734</created>
+        <option name="number" value="Default" />
+        <option name="presentableId" value="Default" />
+        <updated>1558626276734</updated>
+        <workItem from="1558626280422" duration="27000" />
+        <<<<<<< HEAD
+        <workItem from="1558709078677" duration="1391000" />
+        <workItem from="1558880089335" duration="27000" />
+        <workItem from="1558880216241" duration="99000" />
+        =======
+        <workItem from="1558709078677" duration="3122000" />
+        <workItem from="1558890558355" duration="72000" />
+        <workItem from="1558890696175" duration="4661000" />
+        <workItem from="1558896044151" duration="199000" />
+        <workItem from="1558896257970" duration="662000" />
+        <workItem from="1558897581486" duration="5645000" />
+        <<<<<<< HEAD
+        <workItem from="1558965591771" duration="714000" />
+        <workItem from="1558967545061" duration="50000" />
+        <workItem from="1558967611708" duration="2107000" />
+        =======
+        >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+        >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="21287000" />
-=======
-    <option name="totallyTimeSpent" value="22922000" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-    <option name="totallyTimeSpent" value="27119000" />
->>>>>>> Stashed changes
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="722" extended-state="6" />
+</component>
+<component name="TimeTrackingManager">
+    <<<<<<< HEAD
+    <option name="totallyTimeSpent" value="23680000" />
+</component>
+<component name="ToolWindowManager">
+    <frame x="-7" y="7" width="899" height="1065" extended-state="0" />
     <editor active="true" />
-=======
-    <option name="totallyTimeSpent" value="23007000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
     <layout>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
-=======
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27427185" />
-=======
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27427185" />
->>>>>>> Stashed changes
-=======
-    <option name="totallyTimeSpent" value="23613000" />
-  </component>
-  <component name="ToolWindowManager">
+    <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21215732" />
+    =======
+    <<<<<<< HEAD
+    <option name="totallyTimeSpent" value="26885000" />
+    =======
+    <<<<<<< HEAD
+    <option name="totallyTimeSpent" value="1544000" />
+</component>
+<component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24959612" />
->>>>>>> 8bd57b6f403082d677b22a161aaa8514ded52b5a
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="CMake" order="11" visible="true" weight="0.3780822" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+    <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21243942" />
+    =======
+    <option name="totallyTimeSpent" value="21880000" />
+    >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+</component>
+<component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1228" height="783" extended-state="6" />
+    <layout>
+        <<<<<<< HEAD
+        <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+        =======
+        <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19008264" />
+        >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+        >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+        >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+        <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+        <window_info id="Favorites" order="2" side_tool="true" />
+        <window_info anchor="bottom" id="Message" order="0" />
+        <window_info anchor="bottom" id="Find" order="1" />
+        <window_info anchor="bottom" id="Run" order="2" />
+        <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+        <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+        <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+        <window_info anchor="bottom" id="TODO" order="6" />
+        <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+        <window_info anchor="bottom" id="Version Control" order="8" />
+        <<<<<<< HEAD
+        <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19978517" />
+        =======
+        <<<<<<< HEAD
+        <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32874617" />
+        =======
+        <<<<<<< HEAD
+        <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.18767123" />
+        =======
+        <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3114754" />
+        >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+        >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+        >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+        <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+        <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+        <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+        <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+        <window_info anchor="right" id="Database" order="3" />
     </layout>
-<<<<<<< Updated upstream
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27427185" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.21643835" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.37738854" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-<<<<<<< HEAD
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2786753" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.37738854" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-=======
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-    </layout-to-restore>
-=======
->>>>>>> Stashed changes
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
+</component>
+<component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/emulate.h" />
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor" />
+</component>
+<component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Rini/src/emulate.c" />
+    <entry file="file://$PROJECT_DIR$/Rini/src/multiplyInstruction/Multiply.c" />
+    <<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/multiplyInstruction/Multiply.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+                <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataprocessing_execute.c" />
-    <entry file="file://$PROJECT_DIR$/dataprocessing_execute.h" />
-    <entry file="file://$PROJECT_DIR$/multiplyInstruction/Multiply.c">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/instruction.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+                <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/executeSDT.cpp" />
-    <entry file="file://$PROJECT_DIR$/executeMUL.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/binaryFileLoader.c">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assemble.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/decode.c">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/binaryFileLoader.h">
-=======
-    <entry file="file://$PROJECT_DIR$/emulate.h" />
-    <entry file="file://$PROJECT_DIR$/registers.c" />
-    <entry file="file://$PROJECT_DIR$/utility.h" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/execute.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/fetch.c">
+    <provider selected="true" editor-type-id="text-editor">
+    <state relative-caret-position="60">
+    <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+    <folding>
+        <element signature="e#53#72#0" expanded="true" />
+    </folding>
+    =======
+    <entry file="file://$PROJECT_DIR$/src/multiplyInstruction/Multiply.c" />
+    <entry file="file://$PROJECT_DIR$/src/CPSR.h" />
+    <<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/decode.h">
+    =======
+    <entry file="file://$PROJECT_DIR$/src/execute.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+                <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+        </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/decode.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/.idea/workspace.xml">
+        >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+                <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/decode.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/pipeline.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/emulate.c">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/Makefile">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-=======
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-    <entry file="file://$PROJECT_DIR$/executeBR.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/pipeline.c">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/executeBR.h">
-=======
-    <entry file="file://$PROJECT_DIR$/dataprocessing_execute.c" />
-    <entry file="file://$PROJECT_DIR$/dataprocessing_execute.h" />
-    <entry file="file://$PROJECT_DIR$/multiplyInstruction/Multiply.c" />
-    <entry file="file://$PROJECT_DIR$/executeSDT.cpp" />
-    <entry file="file://$PROJECT_DIR$/instruction.h">
->>>>>>> 8bd57b6f403082d677b22a161aaa8514ded52b5a
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/registers.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+                <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            </state>
+        </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/executeDP.h">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/utility.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+                <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/executeMUL.c">
-=======
-    <entry file="file://$PROJECT_DIR$/executeBR.h">
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379">
-          <folding>
-            <element signature="e#47#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/executeMUL.c">
+    <provider selected="true" editor-type-id="text-editor">
+    <state relative-caret-position="372">
+    <caret line="80" lean-forward="true" selection-start-line="79" selection-start-column="9" selection-end-line="80" />
+    =======
+    <entry file="file://$PROJECT_DIR$/src/utility.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+                <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+                >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/executeSDT.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/.idea/workspace.xml">
+        <provider selected="true" editor-type-id="text-editor">
+            <<<<<<< HEAD
+            <state relative-caret-position="435">
+                <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+            </state>
+        </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/execute.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#53#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/memory.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/execute.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/instruction.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+                <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+                <folding>
+                    <element signature="e#126#145#0" expanded="true" />
+                </folding>
+            </state>
+        </provider>
     </entry>
-=======
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-    <entry file="file://$PROJECT_DIR$/executeSDT.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/binaryFileLoader.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/fetch.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/fetch.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+                <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instruction.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/executeBR.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+                <caret line="23" column="75" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+            </state>
+        </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/fetch.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/emulate.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+                <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memory.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/DefinedTypes.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+                <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/binaryFileLoader.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding>
-            <element signature="e#53#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/decode.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-221">
+                <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utility.h">
-=======
-    <entry file="file://$PROJECT_DIR$/executeMUL.h">
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/pipeline.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/execute.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/execute.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+                <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/execute.c">
-=======
-    <entry file="file://$PROJECT_DIR$/pipeline.c">
->>>>>>> Stashed changes
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="165">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-=======
-        <state relative-caret-position="517">
-          <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding>
-            <element signature="e#53#72#0" expanded="true" />
-          </folding>
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/registers.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+                <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="15" selection-end-column="29" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/emulate.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-end-line="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/state.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+                <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pipeline.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#53#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/pipeline.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+            <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            =======
+            <state relative-caret-position="195">
+                <caret line="13" column="52" lean-forward="true" selection-start-line="13" selection-end-line="14" />
+            </state>
+        </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/pipeline.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="82" selection-start-line="8" selection-start-column="82" selection-end-line="8" selection-end-column="82" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/state.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+                <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utility.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding>
-            <element signature="e#146#166#0" expanded="true" />
-          </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/executeBR.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/DefinedTypes.h">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-162">
+                <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/emulate.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/executeMUL.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/executeDP.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/memory.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/binaryFileLoader.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-<<<<<<< Updated upstream
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/execute.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <<<<<<< HEAD
+            <state>
+            <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+            <folding>
+                <element signature="e#74#94#0" expanded="true" />
+            </folding>
+            =======
+            <state relative-caret-position="285">
+                <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+                >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+                >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registers.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-=======
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/decode.h">
+        <<<<<<< HEAD
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+                <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utility.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="13" />
->>>>>>> Stashed changes
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/executeDP.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51" />
+        </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/registers.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/instruction.h">
+        <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-418">
+        <caret line="13" selection-start-line="13" selection-end-line="13" />
+        =======
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/executeDP.c">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state>
-=======
-        <state relative-caret-position="374">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
->>>>>>> 7dfb35cbede032a574590f4832abb998e5317f22
-          <folding>
-            <element signature="e#50#69#0" expanded="true" />
-          </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/memory.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/binaryFileLoader.h">
+        <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/fetch.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/emulate.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+                <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registers.h">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/execute.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <<<<<<< HEAD
+            <state relative-caret-position="324">
+            <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <folding>
+                <element signature="e#53#71#0" expanded="true" />
+            </folding>
+            =======
+            <state relative-caret-position="315">
+                <caret line="21" selection-start-line="21" selection-end-line="21" />
+                >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/executeMUL.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1227">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/executeMUL.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <<<<<<< HEAD
+            <state relative-caret-position="608">
+                <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fetch.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/decode.c">
+        <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1330">
+            <caret line="83" column="6" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
+            =======
+            <state relative-caret-position="435">
+                <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+                >>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
+                >>>>>>> c1f5f3af3e563f8b7153f145176b63ad67cd1a62
+                >>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+            </state>
+        </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/state.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executeSDT.c">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="549">
-          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
->>>>>>> dec3e21c2400928967b863e88f33ca1db3888950
-=======
-        <state relative-caret-position="481">
-          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-  </component>
+</component>
 </project>

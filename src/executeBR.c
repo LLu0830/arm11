@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 //
 // Created by Katarina Kulkova on 25.05.2019.
 //
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "registers.h"
+#include "state.h"
 #include "memory.h"
 #include "executeBR.h"
 #include "utility.h"
@@ -19,7 +16,8 @@ void twos_complement_extend(int offset) {
     offset |= -is_negative & ~mask;
 }
 
-void executeBR(struct registers ARM11_registers, uint32_t b) {
+
+void executeBR(struct stateOfMachine ARM11_registers, uint32_t b) {
     int cond = get_n_bits(b, 28, 4);
     int offset = get_n_bits(b, 0, 23);
     _Bool valid_cond = (cond == 0000 || cond == 0001 || cond == 1010 || cond == 1011 || cond == 1100 || cond == 1101 ||

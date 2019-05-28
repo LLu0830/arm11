@@ -4,11 +4,6 @@
 
 // (Rini) includes instructionType enum - having this header here reduces repetition
 
-#import "execute.h"
-
-
-#include "DefinedTypes.h"
-
 
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
