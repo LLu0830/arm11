@@ -18,9 +18,10 @@
 //add pipeline
 
 void pipeline(struct stateOfMachine ARM11,struct pipes pipe) {
+
     //execute
     if (pipe.decoded.InstructionType != NUL) {
-        execute(decoded, ARM11);
+        execute(pipe.decoded, ARM11);
     }
 
 
@@ -32,7 +33,7 @@ void pipeline(struct stateOfMachine ARM11,struct pipes pipe) {
     //fetch
     //where does this address come from
     if (pipe.decoded.conditionType != HLT) {
-        ARM11.registers.fetched = fetch(ARM11.mem, address);
+        ARM11.registers.fetched = fetch(ARM11);
         pipe.has_fetched = true;
     } else {
         pipe.has_fetched = false;
