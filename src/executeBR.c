@@ -10,7 +10,7 @@
 #include "utility.h"
 
 
-void executeBR(struct registers ARM11_registers, uint32_t b) {
+void executeBR(struct stateOfMachine ARM11_registers, uint32_t b) {
 
     }
 

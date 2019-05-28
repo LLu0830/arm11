@@ -12,7 +12,7 @@
 uint32_t loadFrom(uint32_t address);
 void storeTo(uint32_t address);
 
-void executeSDT(struct registers ARM11_registers, uint32_t fetched) {
+void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
 
     uint32_t iFlag = get_n_bits(fetched, 25, 1);
     uint32_t pFlag = get_n_bits(fetched, 24, 1);
@@ -29,7 +29,7 @@ void executeSDT(struct registers ARM11_registers, uint32_t fetched) {
         //offset is shifted register
         uint32_t shift;
         uint32_t rm = get_n_bits(offset, 0, 4);
-        uint32_t rmContent = stateOfMachine.registers[rm];
+        uint32_t rmContent = ARM11_registers.registers[rm];
         uint32_t intOrReg = get_n_bits(offset, 4, 1);
         uint32_t shiftType = get_n_bits(offset, 5, 2);
 
@@ -40,13 +40,13 @@ void executeSDT(struct registers ARM11_registers, uint32_t fetched) {
         else {
             //shift specified by register rs
             uint32_t rs = get_n_bits(offset, 8, 4);
-            uint32_t rsContent = stateOfMachine.registers[rs];
+            uint32_t rsContent = ARM11_registers.registers[rs];
             //should be last byte of rs, is it it though??? :
             shift = get_n_bits(rsContent, 0, 8);
             //could also be get_n_bits(rsContent, 24, 8); ???
         }
 
-        uint32_t rmContent = stateOfMachine.registers[rm];
+        rmContent = ARM11_registers.registers[rm];
         //TO DO: shiftRegister function
         offset = shiftRegister(rmContent, shift, shiftType);
     }

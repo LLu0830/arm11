@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include "state.h"
 #include "decode.h"
 #include "utility.h"
@@ -93,6 +94,7 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
 
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
+//    (Rini) Multiply doesn't exist any more? This needs to be changed
     instruction.instructionType = Multiply;
 // holds the A bit
     instruction.accumulate = 0x1 & fetched >> 21;

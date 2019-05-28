@@ -25,7 +25,7 @@ uint32_t change_bit(uint32_t b, int pos, int val) {
 
 //rotate right by 1
 uint32_t rotateRightOne(uint32_t b) {
-    int rightMostBit = read_n_bits(b, 0, 1);
+    int rightMostBit = get_n_bits(b, 0, 1);
     uint32_t newInt = b >> 1U;
     return change_bit(newInt, 0, rightMostBit);
 }
