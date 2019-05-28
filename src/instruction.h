@@ -4,6 +4,12 @@
 
 // (Rini) includes instructionType enum - having this header here reduces repetition
 
+#import "execute.h"
+
+
+#include "DefinedTypes.h"
+
+
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
 
@@ -46,35 +52,11 @@ typedef struct {
     //in Single Data Transfer
     bool immediateOffset;
     bool Pre_Post;
-    bool upBit;
+    bool upBit;>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+
     bool storeBit;
 
 
-}instruction_type;
-
-// (Rini) throwing errors - repetition?
-enum OpCode{
-    AND,
-    EOR,
-    SUB,
-    RSB,
-    ADD,
-    TST,
-    TEQ,
-    CMP,
-    ORR,
-    MOV
-};
-
-enum Cond{
-    EQ,
-    NE,
-    GE,
-    LT,
-    GT,
-    LE,
-    AL
-};
-
+} instruction_type;
 #endif //C_GROUP_31_INSTRUCTION_H
 

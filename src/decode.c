@@ -14,6 +14,7 @@
 #include "DefinedTypes.h"
 #include "execute.h"
 //Add decode function
+//add ARM11.registers.decoded=output
 
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
@@ -74,7 +75,7 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     //store the instruction in corresponding instruction
     //and execute
 
-    //branch
+    //BR
     uint32_t branchCheck = fetched >> 27 & 0x1;
     if (branchCheck != 0) {
         decodeBR(instruction, fetched);
@@ -86,12 +87,26 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
         decodeSDT(instruction, fetched);
     }
 
-    //
+    //MUL & DP
+    uint32_t bit4Check = fetched >> 4 & 0x1;
+    if (bit4Check == 0) {
+        decodeDP(instruction, fetched);
+    } else {
+        decodeMUL(instruction, fetched);
+    }
+
+    //HLT
+    if (fetched == 0) {
+        decodeHLT(instruction, fetched);
+    }
 
     execute(instruction, state);
-
 }
 
+
+void decodeHLT(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType = HLT;
+}
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
 //    (Rini) Multiply doesn't exist any more? This needs to be changed
@@ -114,5 +129,7 @@ void decodeDP(instruction_type instruction, uint32_t fetched) {
 
 void decodeSDT(instruction_type instruction, uint32_t fetched) {}
 
-void decodeBR(instruction_type instruction, uint32_t fetched) {}
+void decodeBR(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType=BR;
 
+}
