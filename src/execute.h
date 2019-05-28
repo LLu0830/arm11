@@ -5,7 +5,7 @@
 #ifndef SRC_EXECUTE_H
 #define SRC_EXECUTE_H
 
-enum instructionType;
 void execute();
+bool checkCondition(struct stateOfMachine state, Cond condition);
 
 #endif // SRC_EXECUTE_H
