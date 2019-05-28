@@ -11,19 +11,8 @@
 #include <stdbool.h>
 #include "DefinedTypes.h"
 
-
-
-void executeDP(struct stateOfMachine ARM11_registers, uint32_t b) {
-//    PUT INSIDE DECODE.C
-    uint32_t i = get_n_bits(b, 25, 1);
-    uint32_t opCode = get_n_bits(b, 21, 4);
-    uint32_t s = get_n_bits(b, 20, 1);
-    uint32_t rn = get_n_bits(b, 16, 4);
-    uint32_t rd = get_n_bits(b, 12, 4);
-    uint32_t op2 = get_n_bits(b, 0, 12);
-
+uint32_t getValFromOp2(uint32_t op2, uint32_t i) {
     uint32_t result;
-
     if (i == 1) {
         uint32_t rotateAmount = get_n_bits(op2, 8, 4);
         uint32_t imm = get_n_bits(op2, 0, 8);
@@ -72,10 +61,18 @@ void executeDP(struct stateOfMachine ARM11_registers, uint32_t b) {
                         break;
                 }
             }
-
-
         }
     }
+}
 
+void executeDP(struct stateOfMachine ARM11_registers, uint32_t instruction) {
+//    PUT INSIDE DECODE.C
+    uint32_t i = get_n_bits(b, 25, 1);
+    uint32_t opCode = get_n_bits(b, 21, 4);
+    uint32_t s = get_n_bits(b, 20, 1);
+    uint32_t rn = get_n_bits(b, 16, 4);
+    uint32_t rd = get_n_bits(b, 12, 4);
+    uint32_t op2 = get_n_bits(b, 0, 12);
 
+    uint32_t resultFromOp2 = getValFromOp2(op2, i);
 }

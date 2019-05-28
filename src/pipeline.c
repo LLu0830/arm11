@@ -11,9 +11,6 @@
 #include "execute.h"
 #include "pipeline.h"
 
-<<<<<<<
-
-HEAD
 
 //add pipeline
 

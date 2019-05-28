@@ -11,5 +11,6 @@ void decodeMUL(instruction_type instruction, uint32_t fetched);
 void decodeDP(instruction_type instruction, uint32_t fetched);
 void decodeSDT(instruction_type instruction, uint32_t fetched);
 void decodeBR(instruction_type instruction, uint32_t fetched);
+void decodeHLT(instruction_type instruction, uint32_t fetched);
 
 #endif //SRC_DECODE_H
