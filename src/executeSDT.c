@@ -45,7 +45,7 @@ void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
             shift = get_n_bits(rsContent, 0, 8);
             //could also be get_n_bits(rsContent, 24, 8); ???
         }
-
+        
         rmContent = ARM11_registers.registers[rm];
         //TO DO: shiftRegister function
         offset = shiftRegister(rmContent, shift, shiftType);
