@@ -68,7 +68,7 @@ void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
 //    }
 
     if (uFlag == 0) {
-        offset = negate(offset);
+        offset = - offset;
     }
 
     //Uses post or pre indexing
@@ -76,14 +76,14 @@ void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
         //add/substract offset from base register before transferring data
         //pre-indexing
         // should not change base register
-        address = stateOfMachine.registers[rn] + offset;
+        address = ARM11_registers.registers[rn] + offset;
     }
     else {
         //add/substract offset from base register after transferring data
         //post-indexing
         //changes base register
-        address = stateOfMachine.registers[rn];
-        stateOfMachine.registers[rn] = address + offset;
+        address = ARM11_registers.registers[rn];
+        ARM11_registers.registers[rn] = address + offset;
     }
 
 
@@ -95,21 +95,20 @@ void executeSDT(struct stateOfMachine ARM11_registers, uint32_t fetched) {
 
     else {
         //word stored into memory
-        uint32_t rdContent = stateOfMachine.registers[rd];
+        uint32_t rdContent = ARM11_registers.registers[rd];
         storeTo(address, rdContent)
     }
 
 }
 
-//may be horribly wrong :(
 //loads word from address in memory to registers
 uint32_t loadFrom(uint32_t address, uint32_t destination) {
     uint32_t word = stateOfMachine.mem[address];
-    struct stateOfMachine.registers[destination] = word;
+    ARM11_registers.registers[destination] = word;
 }
 
 //stores word to address in memory
 void storeTo(uint32_t address, uint32_t word) {
-    struct stateOfMachine.mem[address] = word;
+    ARM11_registers.mem[address] = word;
 }
 
