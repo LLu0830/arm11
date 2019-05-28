@@ -11,6 +11,7 @@
 
 void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
 
+
     uint32_t iFlag = get_n_bits(instruction, 25, 1);
     uint32_t pFlag = get_n_bits(instruction, 24, 1);
     uint32_t uFlag = get_n_bits(instruction, 23, 1);

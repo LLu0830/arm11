@@ -16,13 +16,14 @@
 //Add decode function
 //add ARM11.registers.decoded=output
 
+
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
-    uint32_t VMasked = (CPSRflag >> 28) & V;
-    uint32_t NMasked = (CPSRflag >> 28) & N;
-    uint32_t ZMasked = (CPSRflag >> 28) & Z;
-    uint32_t CMasked = (CPSRflag >> 28) & C;
+    uint32_t VMasked = (CPSRflag >> 28U) & (unsigned) V;
+    uint32_t NMasked = (CPSRflag >> 28U) & (unsigned) N;
+    uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
+    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
 
     bool NEqualsV = (VMasked >> 3) == NMasked;
     switch (condition) {
@@ -104,13 +105,10 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
 }
 
 
-void decodeHLT(instruction_type instruction, uint32_t fetched) {
-    instruction.instructionType = HLT;
-}
+
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
-//    (Rini) Multiply doesn't exist any more? This needs to be changed
-    instruction.instructionType = Multiply;
+    instruction.instructionType = MUL;
 // holds the A bit
     instruction.accumulate = 0x1 & fetched >> 21;
 // holds the S bit
@@ -124,12 +122,17 @@ void decodeMUL(instruction_type instruction, uint32_t fetched) {
 
 
 void decodeDP(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType = DP;
+}
+
+void decodeSDT(instruction_type instruction, uint32_t fetched) {
 
 }
 
-void decodeSDT(instruction_type instruction, uint32_t fetched) {}
-
 void decodeBR(instruction_type instruction, uint32_t fetched) {
-    instruction.instructionType=BR;
+    instruction.instructionType = BR;
+}
 
+void decodeHLT(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType = HLT;
 }

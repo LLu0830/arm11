@@ -13,9 +13,7 @@
 #include "instruction.h"
 #include "DefinedTypes.h"
 
-<<<<<<<
 
-HEAD
 
 //add pipeline
 
