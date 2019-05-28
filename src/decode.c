@@ -14,6 +14,7 @@
 #include "DefinedTypes.h"
 #include "execute.h"
 //Add decode function
+//add ARM11.registers.decoded=output
 
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
@@ -128,5 +129,7 @@ void decodeDP(instruction_type instruction, uint32_t fetched) {
 
 void decodeSDT(instruction_type instruction, uint32_t fetched) {}
 
-void decodeBR(instruction_type instruction, uint32_t fetched) {}
+void decodeBR(instruction_type instruction, uint32_t fetched) {
+    instruction.instructionType=BR;
 
+}
