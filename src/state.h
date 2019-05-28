@@ -13,8 +13,6 @@
 #define CPSRPosition 16
 #define PCPosition 15
 
-<<<<<<< HEAD
-
 struct stateOfMachine {
     struct registers registers;
     uint32_t *mem;
