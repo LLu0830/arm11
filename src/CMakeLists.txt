@@ -6,7 +6,6 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(src
-        multiplyInstruction/Multiply.c
         assemble.c
         binaryFileLoader.h
         decode.c

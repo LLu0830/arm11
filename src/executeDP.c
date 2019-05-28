@@ -11,7 +11,7 @@
 #include <stdbool.h>
 
 
-void executeDP(struct registers ARM11_registers, uint32_t b) {
+void executeDP(struct stateOfMachine ARM11_registers, uint32_t b) {
     uint32_t i = get_n_bits(b, 25, 1);
     uint32_t opCode = get_n_bits(b, 21, 4);
     uint32_t s = get_n_bits(b, 20, 1);
@@ -31,27 +31,36 @@ void executeDP(struct registers ARM11_registers, uint32_t b) {
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
             uint32_t shiftAmount = get_n_bits(op2, 7, 5);
+            int carryBit;
             if (shiftAmount == 0) {
                 result = valueInRM;
-                break;
+                carryBit = 0;
+            } else if (shiftAmount > 32) {
+
+            } else {
+
             }
             uint32_t shiftCode = get_n_bits(op2, 5, 2);
-            int carryBit;
+
             if (shiftCode == 0) {
                 carryBit = get_n_bits(valueInRM, 32 - shiftAmount, 1);
             } else {
                 carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
             }
             switch (shiftCode) {
+                // LSL
                 case 0:
                     result = valueInRM << shiftAmount;
                     break;
+                // LSR
                 case 1:
                     result = valueInRM >> shiftAmount;
                     break;
+                // ASR
                 case 2:
                     int bit31 = get_n_bits(valueInRM, 31, 0);
                     break;
+                // ROR
                 case 3:
 
                     break;
