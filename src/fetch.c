@@ -20,10 +20,12 @@
 //needed: instruction after fetched called "fetched",
 // also a _Bool tells if the reg contains fetched instruction, called "has_fetched"
 
-uint32_t fetch(struct stateOfMachine ARM11, uint8_t *mem) {
-    uint8_t *mem=ARM11.mem;
+uint32_t fetch(struct stateOfMachine ARM11) {
+    uint8_t mem=ARM11.mem;
     uint32_t f = 0;
     uint32_t PC=(int) ARM11.registers[15];
-    f=(*mem+PC)|(*(mem+PC+1)<<8)|(*(mem+PC+2)<<16)|(*(mem+PC+2)<<24);
+    for (int i = 0; i < 4; i++) {
+        f |= ((uint32_t) * (mem + PC + i) << (i * 8));
+    }
     return f;
 }
