@@ -15,6 +15,8 @@
 #include "state.h"
 
 
+// (Rini) This function is throwing an error ("conflicting types for 'executeMUL') - not sure why
+
 void executeMUL(instruction_type instruction, struct stateOfMachine state) {
     uint32_t result;
 /**

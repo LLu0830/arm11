@@ -22,23 +22,6 @@ uint32_t change_bit(uint32_t b, int pos, int val) {
     return ((b & ~(1U << (unsigned int) pos)) | (unsigned int) ((unsigned int) val << (unsigned int) pos));
 }
 
-
-////rotate right by 1
-//uint32_t rotateRightOne(uint32_t b) {
-//    int rightMostBit = get_n_bits(b, 0, 1);
-//    uint32_t newInt = b >> 1U;
-//    return change_bit(newInt, 0, rightMostBit);
-//}
-//
-////rotate right by n
-//uint32_t rotateRight(uint32_t b, int n) {
-//    int newInt = rotateRightOne(b);
-//    for (int i = 1; i < n; i++) {
-//        newInt = rotateRightOne(newInt);
-//    }
-//    return newInt;
-//}
-
 //better rotate right function
 uint32_t rotateRight(uint32_t b, int n) {
     return (b >> n) | (b << (sizeof(uint32_t) - n));
@@ -53,7 +36,6 @@ uint32_t shiftLeft(uint32_t b, int n) {
 uint32_t shiftRight(uint32_t b, int n) {
     return b >> n;
 }
-
 
 //executes arithmetic shift right by n
 uint32_t arShiftRight(uint32_t b, int n) {
@@ -72,25 +54,21 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, ShiftType shiftType) {
     switch (shiftType) {
         case LSL:
             //logical left (lsl)
-            shiftLeft(b, amount);
-            break;
+            return shiftLeft(b, amount);
         case LSR:
             //logical right (lsr)
-            shiftRight(b, amount);
-            break;
+            return shiftRight(b, amount);
         case ASR:
             //arithmetic right (asr)
-            arShiftRight(b, amount);
-            break;
+            return arShiftRight(b, amount);
         case ROR:
             //rotate right (ror)
-            rotateRight(b, amount);
-            break;
+            return rotateRight(b, amount);
         default:
+            printf('Unrecognized shift type');
             break;
     }
 }
-
 
 struct stateOfMachine createNewState() {
     struct stateOfMachine state = (struct stateOfMachine *) malloc(sizeof(struct stateOfMahcine *));
@@ -98,16 +76,10 @@ struct stateOfMachine createNewState() {
     return state;
 }
 
-//uint32_t negate(uint32_t b) {
-//    return (~b) + 1;
-//}
-
 uint32_t makeASRmask(int shiftAmount) {
     uint32_t reverseMask = (1U << (unsigned int) (32 - shiftAmount - 1)) - 1;
     return reverseMask ^ 0U;
 }
-
-
 
 
 //uint32_t write_one(uint32_t b, int pos) {

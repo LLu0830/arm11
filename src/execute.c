@@ -73,19 +73,18 @@ void execute(instruction_type instruction, struct stateOfMachine state) {
         return;
         //instruction is ignored
     }
-
     switch (instruction.instructionType) {
         case DP:
-            executeDP(instruction, state);
+            executeDP(instruction, *state);
             break;
         case MUL:
-            executeMUL(instruction, state);
+            executeMUL(instruction, *state);
             break;
         case SDT:
-            executeSDT(instruction, state);
+            executeSDT(instruction, *state);
             break;
         case BR:
-            executeBR(instruction, state);
+            executeBR(instruction, *state);
             break;
         case HLT:
             return;
@@ -93,5 +92,3 @@ void execute(instruction_type instruction, struct stateOfMachine state) {
             break;
     }
 }
-
-//Comment for Manshu's eyes

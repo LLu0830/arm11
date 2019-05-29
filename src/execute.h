@@ -19,4 +19,6 @@
 void execute(instruction_type instruction, struct stateOfMachine state);
 bool checkCondition(struct stateOfMachine state, Cond condition);
 
+void execute(instruction_type instruction, struct stateOfMachine state);
+
 #endif // SRC_EXECUTE_H

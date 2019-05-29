@@ -5,4 +5,8 @@
 #ifndef SRC_EXECUTESDT_H
 #define SRC_EXECUTESDT_H
 
+uint32_t loadFrom(uint32_t address);
+void storeTo(uint32_t address);
+void executeSDT(uint32_t instruction, struct stateOfMachine *state);
+
 #endif //SRC_EXECUTESDT_H

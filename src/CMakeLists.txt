@@ -7,9 +7,6 @@ include_directories(.)
 
 add_executable(src
         assemble.c
-<<<<<<< HEAD
-        emulate.c dataprocessing_execute.c dataprocessing_execute.h utility.c utility.h executeSDT.c executeSDT.h executeBR.c executeBR.h executeMUL.h fetch.c fetch.h decode.c decode.h pipeline.c pipeline.h memory.h binaryFileLoader.c binaryFileLoader.h)
-=======
         binaryFileLoader.h
         decode.c
         decode.h
@@ -31,4 +28,3 @@ add_executable(src
         pipeline.h
         utility.c
         utility.h binaryFileLoader.c)
->>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
