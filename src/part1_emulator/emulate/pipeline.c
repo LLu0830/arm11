@@ -14,7 +14,7 @@
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
 
 
-#define PCPosition 15;
+#define PCPosition 15
 
 //add pipeline
 

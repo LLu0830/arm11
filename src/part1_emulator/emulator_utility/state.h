@@ -6,8 +6,8 @@
 #include <stdint.h>
 #include "part1_emulator/emulate/pipeline.h"
 
-//#ifndef C_GROUP_31_STATE_H
-//#define C_GROUP_31_STATE_H
+#ifndef C_GROUP_31_STATE_H
+#define C_GROUP_31_STATE_H
 
 #define numOfRegisters 17;
 #define numOfAddresses 65536;

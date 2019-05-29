@@ -4,12 +4,12 @@
 
 #include <stdlib.h>
 #include "executeDP.h"
-#include "emulator_utility/state.h"
-#include "emulator_utility/utility.h"
+#include "part1_emulator/emulator_utility/state.h"
+#include "part1_emulator/emulator_utility/utility.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "emulator_utility/DefinedTypes.h"
+#include "part1_emulator/emulator_utility/DefinedTypes.h"
 #include <assert.h>
 
 void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit) {
@@ -110,7 +110,10 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *wr
     return result;
 }
 
-void executeDP(struct stateOfMachine ARM11, uint32_t instruction) {
+
+
+
+void executeDP(uint32_t instruction, struct stateOfMachine ARM11) {
 //    PUT INSIDE DECODE.C
     uint32_t i = get_n_bits(instruction, 25, 1);
     uint32_t opCode = get_n_bits(instruction, 21, 4);
@@ -138,7 +141,46 @@ void executeDP(struct stateOfMachine ARM11, uint32_t instruction) {
 
 //    Setting C bit
 
+    switch (opCode) {
+        case AND:
+        case EOR:
+        case ORR:
+        case TEQ:
+        case TST:
+        case MOV:
+            // if i flag is zero then it is a shift operation
+            if (!i) {
+                change_bit(ARM11.registers[CPSRPosition], 29, carryBit);
+            }
+            break;
 
+        case ADD:
+            if (result < rnValue || result < op2Value) {
+                change_bit(ARM11.registers[CPSRPosition], 29, 1);
+            } else {
+                change_bit(ARM11.registers[CPSRPosition], 29, 0);
+            }
+            break;
+
+        case SUB:
+        case CMP:
+            //rn - operand2
+            if (op2Value > rnValue) {
+                change_bit(ARM11.registers[CPSRPosition], 29, 0);
+            } else {
+                change_bit(ARM11.registers[CPSRPosition], 29, 1);
+            }
+            break;
+
+        case RSB:
+            // operand2 - rn
+            if (rn - op2Value) {
+                change_bit(ARM11.registers[CPSRPosition], 29, 0);
+            } else {
+                change_bit(ARM11.registers[CPSRPosition], 29, 1);
+            }
+            break;
+    }
 
 //    Setting Z bit
 
@@ -152,3 +194,6 @@ void executeDP(struct stateOfMachine ARM11, uint32_t instruction) {
     change_bit(cpsr, 31, bit31);
 
 }
+
+
+
