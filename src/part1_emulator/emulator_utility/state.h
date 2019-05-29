@@ -20,14 +20,4 @@ struct stateOfMachine {
     uint8_t *mem;
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #endif //C_GROUP_31_STATE_H
-=======
-
-//#endif //C_GROUP_31_STATE_H
->>>>>>> 84651c74bdb066eed4db975fabe2d5e7824acc9d
-=======
-#endif //C_GROUP_31_STATE_H
-
->>>>>>> 09b82cf18d1538aaf6e29601046d843cdbe4996b
