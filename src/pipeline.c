@@ -17,7 +17,7 @@
 
 //add pipeline
 
-void pipeline(struct stateOfMachine ARM11,struct pipes pipe) {
+void pipeline(struct stateOfMachine ARM11, struct pipes pipe) {
 
     while() {
         //execute

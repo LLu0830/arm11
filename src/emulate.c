@@ -13,7 +13,11 @@ int main(int argc, char **argv) {
 
     ARM11.mem = binaryFileLoader(argv);
     memset(ARM11.registers, 0, 17);
+<<<<<<< HEAD
     pipeline(ARM11, pipe);
+=======
+    pipeline(ARM11);
+>>>>>>> 84651c74bdb066eed4db975fabe2d5e7824acc9d
 
     return EXIT_SUCCESS;
 }

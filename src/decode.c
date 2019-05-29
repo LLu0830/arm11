@@ -52,8 +52,6 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     if (fetched == 0) {
         decodeHLT(instruction, fetched);
     }
-
-    execute(instruction, state);
 }
 
 
@@ -77,14 +75,14 @@ void decodeDP(instruction_type instruction, uint32_t b) {
     // Jason says can keep it like in the executeDP file.
     // May ignore the following or change a few lines in executeDP
 
-    instruction.instructionType = DP;
+//    instruction.instructionType = DP;
 //    instruction.conditionType = get_n_bits(b, 28, 4);
-    instruction.immediateOperand = get_n_bits(b, 25, 1);
-    instruction.operationType = get_n_bits(b, 21, 4);
-    instruction.scc = get_n_bits(b, 20, 1);
-    instruction.rn = get_n_bits(b, 16, 4);
-    instruction.rd = get_n_bits(b, 12, 4);
-    instruction.offsets_or_operand2 = get_n_bits(b, 0, 12);
+//    instruction.immediateOperand = get_n_bits(b, 25, 1);
+//    instruction.operationType = get_n_bits(b, 21, 4);
+//    instruction.scc = get_n_bits(b, 20, 1);
+//    instruction.rn = get_n_bits(b, 16, 4);
+//    instruction.rd = get_n_bits(b, 12, 4);
+//    instruction.offsets_or_operand2 = get_n_bits(b, 0, 12);
 }
 
 void decodeSDT(instruction_type instruction, uint32_t fetched) {
