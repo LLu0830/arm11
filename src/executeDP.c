@@ -12,12 +12,12 @@
 #include "DefinedTypes.h"
 #include <assert.h>
 
-void getValFromOp2(uint32_t op2, uint32_t i, uint32_t * result, uint32_t * carryBit) {
+void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit) {
     *result = 0;
     if (i == 1) {
         uint32_t rotateAmount = get_n_bits(op2, 8, 4);
         uint32_t imm = get_n_bits(op2, 0, 8);
-        result = rotateRight(imm, rotateAmount);
+        *result = rotateRight(imm, rotateAmount);
     } else {
         uint32_t valueInRM = get_n_bits(op2, 0, 4);
         uint32_t shift = get_n_bits(op2, 4, 8);
@@ -67,7 +67,7 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t * result, uint32_t * carry
 
 //INCOMPLETE - Do I need to make the uints signed here (for the subtraction)?
 
-uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int * writeFlag) {
+uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *writeFlag) {
     uint32_t result = 0;
     *writeFlag = 1;
     switch (opCode) {
@@ -86,27 +86,28 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int * w
         case 0x4:
             result = rnValue + op2Value;
             break;
-        case 0x5:
+        case 0x8:
             result = rnValue & op2Value;
             *writeFlag = 0;
             break;
-        case 0x6:
+        case 0x9:
             result = rnValue ^ op2Value;
             *writeFlag = 0;
             break;
-        case 0x7:
+        case 0xa:
             result = rnValue - op2Value;
             *writeFlag = 0;
             break;
-        case 0x8:
+        case 0xb:
             result = rnValue | op2Value;
             break;
-        case 0x9:
+        case 0xc:
             result = op2Value;
             break;
         default:
             break;
     }
+    return result;
 }
 
 void executeDP(struct stateOfMachine ARM11, uint32_t instruction) {
@@ -120,18 +121,34 @@ void executeDP(struct stateOfMachine ARM11, uint32_t instruction) {
 
 
     assert(rn >= 0 && rn <= 16);
-    uint32_t rnValue = ARM11.registers.registers[rn];
+    uint32_t rnValue = ARM11.registers[rn];
     uint32_t op2Value, carryBit;
     getValFromOp2(op2, i, &op2Value, &carryBit);
 
     int writeFlag;
     uint32_t result = getResult(opCode, rnValue, op2Value, &writeFlag);
 
+
+//    Checking if result needs to be written to register
     if (writeFlag) {
-        ARM11.registers.registers[rd] = result;
+        ARM11.registers[rd] = result;
     }
 
-//    More stuff with the carry bit (including with addition and subtraction - ask others for help if necessary)
+    uint32_t cpsr = ARM11.registers[16];
 
+//    Setting C bit
+
+
+
+//    Setting Z bit
+
+    if (result == 0) {
+        change_bit(cpsr, 30, 1);
+    }
+
+//    Setting N bit
+
+    uint32_t bit31 = get_n_bits(result, 31, 1);
+    change_bit(cpsr, 31, bit31);
 
 }
