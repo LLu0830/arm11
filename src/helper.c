@@ -20,14 +20,28 @@ void helper(struct stateOfMachine state, uint32_t carryBit, OpCode operation, ui
             break;
 
         case ADD:
-
-            if (carryBit) {
-
+            if (result < rnValue || result < op2Value) {
+                change_bit(state.registers[CPSRPosition], 29, 1);
+            } else {
+                change_bit(state.registers[CPSRPosition], 29, 0);
             }
+            break;
         case SUB:
-        case RSB:
         case CMP:
-
-
+            //rn - operand2
+            if (op2Value > rnValue) {
+                change_bit(state.registers[CPSRPosition], 29, 0);
+            } else {
+                change_bit(state.registers[CPSRPosition], 29, 1);
+            }
+            break;
+        case RSB:
+            // operand2 - rn
+            if (rn - op2Value) {
+                change_bit(state.registers[CPSRPosition], 29, 0);
+            } else {
+                change_bit(state.registers[CPSRPosition], 29, 1);
+            }
+            break;
     }
 }
