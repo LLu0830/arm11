@@ -4,14 +4,14 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "state.h"
+#include "emulator_utility/state.h"
 #include "memory.h"
 #include "executeBR.h"
-#include "utility.h"
-#include "DefinedTypes.h"
+#include "emulator_utility/utility.h"
+#include "emulator_utility/DefinedTypes.h"
 
-#include "instruction.h"
-#include "pipeline.h"
+#include "emulator_utility/instruction.h"
+#include "emulate/pipeline.h"
 
 
 //2's complement extend

@@ -4,12 +4,12 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "state.h"
+#include "emulator_utility/state.h"
 #include "fetch.h"
-#include "utility.h"
-#include "pipeline.h"
-#include "instruction.h"
-#include "DefinedTypes.h"
+#include "emulator_utility/utility.h"
+#include "emulate/pipeline.h"
+#include "emulator_utility/instruction.h"
+#include "emulator_utility/DefinedTypes.h"
 
 //fetches instruction from memory
 

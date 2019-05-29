@@ -9,10 +9,10 @@
 #include "executeSDT.h"
 #include "executeMUL.h"
 #include "executeBR.h"
-#include "instruction.h"
-#include "state.h"
+#include "part1_emulator/emulator_utility/instruction.h"
+#include "part1_emulator/emulator_utility/state.h"
 #include <stdbool.h>
-#include "DefinedTypes.h"
+#include "part1_emulator/emulator_utility/DefinedTypes.h"
 
 //(Rini) changed enum from char to 'plain' type, and moved to this C file from header file
 // throwing errors - Manshu said she would change the number of instructionType enums we have so it's fine
@@ -25,10 +25,10 @@
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
-    uint32_t VMasked = (CPSRflag >> 28) & V;
-    uint32_t NMasked = (CPSRflag >> 28) & N;
-    uint32_t ZMasked = (CPSRflag >> 28) & Z;
-    uint32_t CMasked = (CPSRflag >> 28) & C;
+    uint32_t VMasked = (CPSRflag >> 28U) & (unsigned) V;
+    uint32_t NMasked = (CPSRflag >> 28U) & (unsigned) N;
+    uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
+    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
 
     bool NEqualsV = (VMasked >> 3) == NMasked;
     switch (condition) {
@@ -61,6 +61,8 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
             if ((ZMasked != 0) || !NEqualsV) {
                 return true;
             }
+            break;
+        default:
             break;
     }
     return false;

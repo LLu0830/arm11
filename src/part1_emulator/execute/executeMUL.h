@@ -5,7 +5,7 @@
 #ifndef SRC_EXECUTEMUL_H
 #define SRC_EXECUTEMUL_H
 
-#include "instruction.h"
+#include "emulator_utility/instruction.h"
 
 void executeMUL(instruction_type instruction, struct stateOfMachine state);
 

@@ -41,7 +41,7 @@ uint32_t shiftRight(uint32_t b, int n) {
 //executes arithmetic shift right by n
 uint32_t arShiftRight(uint32_t b, int n) {
     uint32_t result;
-    if ((int_32) b < 0) {
+    if ((uint32_t) b < 0) {
        result = ~(~b >> n);
     }
     else {
@@ -66,15 +66,9 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, ShiftType shiftType) {
             //rotate right (ror)
             return rotateRight(b, amount);
         default:
-            printf('Unrecognized shift type');
+            printf("Unrecognized shift type");
             break;
     }
-}
-
-struct stateOfMachine createNewState() {
-    struct stateOfMachine state = (struct stateOfMachine *) malloc(sizeof(struct stateOfMahcine *));
-    state->instruction_type = (struct instruction_type *) malloc(sizeof(struct instruction_type *));
-    return state;
 }
 
 uint32_t makeASRmask(int shiftAmount) {
@@ -83,7 +77,4 @@ uint32_t makeASRmask(int shiftAmount) {
 }
 
 
-//uint32_t write_one(uint32_t b, int pos) {
-//    return (b | 1U << (unsigned int) pos);
-//}
 
