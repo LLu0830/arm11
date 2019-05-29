@@ -6,8 +6,8 @@
 #include <stdint.h>
 #include "pipeline.h"
 
-#ifndef C_GROUP_31_STATE_H
-#define C_GROUP_31_STATE_H
+//#ifndef C_GROUP_31_STATE_H
+//#define C_GROUP_31_STATE_H
 
 #define numOfRegisters 17;
 #define numOfAddresses 65536;
@@ -20,4 +20,4 @@ struct stateOfMachine {
 };
 
 
-#endif //C_GROUP_31_STATE_H
+//#endif //C_GROUP_31_STATE_H

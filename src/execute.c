@@ -11,6 +11,8 @@
 #include "executeBR.h"
 #include "instruction.h"
 #include "state.h"
+#include <stdbool.h>
+#include "DefinedTypes.h"
 
 //(Rini) changed enum from char to 'plain' type, and moved to this C file from header file
 // throwing errors - Manshu said she would change the number of instructionType enums we have so it's fine

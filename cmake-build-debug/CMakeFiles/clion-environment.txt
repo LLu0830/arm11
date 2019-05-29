@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-ToolSet: 5.0 (local)@C:\mingw
-Options: 
-=======
-ToolSet: 1.0 (local)Options: 
->>>>>>> 49171ec9e5e4232bfd74f4e3400f699ec5806962
-
-Options:

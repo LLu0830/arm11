@@ -5,6 +5,6 @@
 #ifndef SRC_BINARYFILELOADER_H
 #define SRC_BINARYFILELOADER_H
 
-uint32_t * binaryFileLoader(char **argv);
+uint8_t * binaryFileLoader(char **argv);
 
 #endif //SRC_BINARYFILELOADER_H
