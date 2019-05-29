@@ -18,8 +18,9 @@ uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
     return ((b >> (unsigned int) start_pos) & (unsigned int) (pow(2, number_of_bits) - 1));
 }
 
-uint32_t change_bit(uint32_t b, int pos, int val) {
-    return ((b & ~(1U << (unsigned int) pos)) | (unsigned int) ((unsigned int) val << (unsigned int) pos));
+void change_bit(uint32_t b, int pos, int val) {
+    uint32_t new_b = ((b & ~(1U << (unsigned int) pos)) | (unsigned int) ((unsigned int) val << (unsigned int) pos));
+    b = new_b;
 }
 
 //better rotate right function
