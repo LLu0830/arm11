@@ -86,22 +86,22 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int * w
         case 0x4:
             result = rnValue + op2Value;
             break;
-        case 0x5:
+        case 0x8:
             result = rnValue & op2Value;
             *writeFlag = 0;
             break;
-        case 0x6:
+        case 0x9:
             result = rnValue ^ op2Value;
             *writeFlag = 0;
             break;
-        case 0x7:
+        case 0xa:
             result = rnValue - op2Value;
             *writeFlag = 0;
             break;
-        case 0x8:
+        case 0xb:
             result = rnValue | op2Value;
             break;
-        case 0x9:
+        case 0xc:
             result = op2Value;
             break;
         default:
@@ -120,7 +120,7 @@ void executeDP(struct stateOfMachine ARM11, uint32_t instruction) {
 
 
     assert(rn >= 0 && rn <= 16);
-    uint32_t rnValue = ARM11.registers.registers[rn];
+    uint32_t rnValue = ARM11.registers[rn];
     uint32_t op2Value, carryBit;
     getValFromOp2(op2, i, &op2Value, &carryBit);
 
@@ -128,7 +128,7 @@ void executeDP(struct stateOfMachine ARM11, uint32_t instruction) {
     uint32_t result = getResult(opCode, rnValue, op2Value, &writeFlag);
 
     if (writeFlag) {
-        ARM11.registers.registers[rd] = result;
+        ARM11.registers[rd] = result;
     }
 
 //    More stuff with the carry bit (including with addition and subtraction - ask others for help if necessary)
