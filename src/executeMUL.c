@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include <limits.h>
 
@@ -17,17 +18,23 @@
 
 // (Rini) This function is throwing an error ("conflicting types for 'executeMUL') - not sure why
 
-void executeMUL(instruction_type instruction, struct stateOfMachine state) {
+void executeMUL(uint32_t fetched, struct stateOfMachine state) {
     uint32_t result;
-/**
-    int positionRn = (int)(instruction.rn);
-    int positionRm = (int)(instruction.rm);
-    int positionRs = (int)(instruction.rs);
-    int positionRd = (int)(instruction.rd);
-*/
-    uint32_t valueRn = state.registers[(int) (instruction.rn)];
-    uint32_t valueRm = state.registers[(int) (instruction.rm)];
-    uint32_t valueRs = state.registers[(int) (instruction.rs)];
+
+//    instruction.instructionType = MUL;
+// holds the A bit
+    bool accumulate = 0x1 & fetched >> 21;
+// holds the S bit
+    bool scc = 0x1 & fetched >> 20;
+// rd,rn,rs,rm it should be a 4-bits address in the array registers, 0-12
+    register_address rd = fetched >> 16 & 0xf;
+    register_address rn = fetched >> 12 & 0xf;
+    register_address rs = fetched >> 8 & 0xf;
+    register_address rm = fetched & 0xf;
+
+    uint32_t valueRn = state.registers[(int) rn];
+    uint32_t valueRm = state.registers[(int) rm];
+    uint32_t valueRs = state.registers[(int) rs];
 
     if (instruction.accumulate) {
         //Accumulate is set, performs a multiply and accumulate
@@ -37,9 +44,9 @@ void executeMUL(instruction_type instruction, struct stateOfMachine state) {
         result = valueRm * valueRs;
     }
 
-    state.registers[(int) (instruction.rd)] = result;
+    state.registers[(int) rd] = result;
 
-    if (instruction.scc) {
+    if (scc) {
         // update N,Z flag in CPSR
         // N - the 31st bit of the result   Z - only if the result is zero
         if (result == 0) {

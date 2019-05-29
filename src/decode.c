@@ -52,7 +52,6 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     if (fetched == 0) {
         decodeHLT(instruction, fetched);
     }
-
 }
 
 
