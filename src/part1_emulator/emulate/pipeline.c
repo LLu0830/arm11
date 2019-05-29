@@ -20,14 +20,9 @@
 
 void pipeline(struct stateOfMachine ARM11, struct pipes pipe) {
 
-    //execute
-    if (pipe.decoded.InstructionType != NUL) {
-        execute(pipe.decoded, ARM11);
-    }
-    //decode
-    //pipe.decoded=(uint32_t) 0;
+    //decode and execute
     if (pipe.has_fetched) {
-        decode(ARM11, pipe.fetched, pipe.decoded.conditionType);
+        execute(ARM11, pipe.fetched);
     }
     //fetch
     //where does this address come from
