@@ -60,14 +60,14 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
     instruction.instructionType = MUL;
 // holds the A bit
-    instruction.accumulate = 0x1 & fetched >> 21;
+    instruction.accumulate = get_n_bits(fetched, 21, 1);
 // holds the S bit
-    instruction.scc = 0x1 & fetched >> 20;
+    instruction.scc = get_n_bits(fetched, 20, 1);
 // rd,rn,rs,rm it should be a 4-bits address in the array registers, 0-12
-    instruction.rd = fetched >> 16 & 0xf;
-    instruction.rn = fetched >> 12 & 0xf;
-    instruction.rs = fetched >> 8 & 0xf;
-    instruction.rm = fetched & 0xf;
+    instruction.rd = get_n_bits(fetched, 16, 4);
+    instruction.rn = get_n_bits(fetched, 12, 4);
+    instruction.rs = get_n_bits(fetched, 8, 4);
+    instruction.rm = get_n_bits(fetched, 0, 4);
 }
 
 

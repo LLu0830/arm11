@@ -19,65 +19,15 @@
 
 //executes all types of instructions
 
-// (Rini) updated functions to make sure this file compiles
 
+//NEEDS CHANGING - CURRENTLY NOT COMPILING
 
-bool checkCondition(struct stateOfMachine state, Cond condition) {
-    //check condition fist
-    uint32_t CPSRflag = state.registers[CPSRPosition];
-    uint32_t VMasked = (CPSRflag >> 28U) & (unsigned) V;
-    uint32_t NMasked = (CPSRflag >> 28U) & (unsigned) N;
-    uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
-    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
-
-    bool NEqualsV = (VMasked >> 3) == NMasked;
-    switch (condition) {
-        case EQ:
-            if (ZMasked != 0) {
-                return true;
-            }
-            break;
-        case NE:
-            if (ZMasked == 0) {
-                return true;
-            }
-            break;
-        case GE:
-            if (NEqualsV) {
-                return true;
-            }
-            break;
-        case LT:
-            if (!NEqualsV) {
-                return true;
-            }
-            break;
-        case GT:
-            if (ZMasked == 0 && NEqualsV) {
-                return true;
-            }
-            break;
-        case LE:
-            if ((ZMasked != 0) || !NEqualsV) {
-                return true;
-            }
-            break;
-        default:
-            break;
-    }
-    return false;
-}
-
-
-
-
-
-void execute(instruction_type instruction, struct stateOfMachine state) {
+void execute(InstructionType type, struct stateOfMachine state) {
     if (!checkCondition(state, instruction.conditionType)) {
         return;
         //instruction is ignored
     }
-    switch (instruction.instructionType) {
+    switch (type) {
         case DP:
             executeDP(instruction, *state);
             break;
