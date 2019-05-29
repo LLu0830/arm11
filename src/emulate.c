@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
     struct stateOfMachine ARM11;
 
     ARM11.mem = binaryFileLoader(argv);
-    memset(ARM11.registers.registers, 0, 17);
+    memset(ARM11.registers, 0, 17);
     pipeline(ARM11);
 
     return EXIT_SUCCESS;
