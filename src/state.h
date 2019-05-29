@@ -19,5 +19,5 @@ struct stateOfMachine {
     uint8_t *mem;
 };
 
+#endif //C_GROUP_31_STATE_H
 
-//#endif //C_GROUP_31_STATE_H
