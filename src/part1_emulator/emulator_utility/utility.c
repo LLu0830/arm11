@@ -130,11 +130,13 @@ InstructionType get_type(uint32_t fetched) {
     //store the instruction in corresponding instruction
     //and execute
 
-    uint8_t cond = get_n_bits(fetched, 28, 4);
     //HLT
     if (fetched == 0) {
         return HLT;
     }
+
+    uint8_t cond = get_n_bits(fetched, 28, 4);
+
 
     //BR
     uint32_t branchCheck = (fetched >> 27) & 0x1;
