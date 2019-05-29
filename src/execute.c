@@ -20,9 +20,6 @@
 // (Rini) updated functions to make sure this file compiles
 
 
-
-
-
 void execute(InstructionType type, struct stateOfMachine state) {
     if (!checkCondition(state, instruction.conditionType)) {
         return;
