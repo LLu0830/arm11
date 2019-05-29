@@ -4,6 +4,7 @@
 
 #include "instruction.h"
 #include <stdint.h>
+#include "pipeline.h"
 
 #ifndef C_GROUP_31_STATE_H
 #define C_GROUP_31_STATE_H
@@ -14,19 +15,9 @@
 #define PCPosition 15
 
 struct stateOfMachine {
-    struct registers registers;
-    uint32_t *mem;
+    uint32_t registers[17];
+    uint8_t *mem;
 };
-
-
-struct registers {
-    uint32_t registers[numOfRegisters];
-    // why only 17 fetched instructions?
-    uint32_t fetched[17];
-    InstructionType decoded[17];
-    _Bool has_fetched;
-} registers;
-
 
 
 #endif //C_GROUP_31_STATE_H
