@@ -18,50 +18,6 @@
 //add ARM11.registers.decoded=output
 
 
-bool checkCondition(struct stateOfMachine state, Cond condition) {
-    //check condition fist
-    uint32_t CPSRflag = state.registers[CPSRPosition];
-    uint32_t VMasked = (CPSRflag >> 28U) & (unsigned) V;
-    uint32_t NMasked = (CPSRflag >> 28U) & (unsigned) N;
-    uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
-    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
-
-    bool NEqualsV = (VMasked >> 3) == NMasked;
-    switch (condition) {
-        case EQ:
-            if (ZMasked != 0) {
-                return true;
-            }
-            break;
-        case NE:
-            if (ZMasked == 0) {
-                return true;
-            }
-            break;
-        case GE:
-            if (NEqualsV) {
-                return true;
-            }
-            break;
-        case LT:
-            if (!NEqualsV) {
-                return true;
-            }
-            break;
-        case GT:
-            if (ZMasked == 0 && NEqualsV) {
-                return true;
-            }
-            break;
-        case LE:
-            if ((ZMasked != 0) || !NEqualsV) {
-                return true;
-            }
-            break;
-    }
-    return false;
-}
-
 
 void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
     // check condition first
