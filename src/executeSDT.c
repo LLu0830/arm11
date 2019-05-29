@@ -21,6 +21,7 @@ void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
     uint32_t offset = get_n_bits(instruction, 0, 12);
 
     uint32_t address;
+    uint32_t minAddress = 0;
 
     //Offset is immediate offset or shifted register
     if  (iFlag) {
@@ -69,7 +70,7 @@ void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
         state->registers[rn] = address + offset;
     }
 
-    if (address > 65535 || address < 0) {
+    if (address > numOfAddresses || address < minAddress) {
         printf('Invalid memory access');
     }
     else {

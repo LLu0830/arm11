@@ -47,7 +47,7 @@ typedef struct {
     //in Single Data Transfer
     bool immediateOffset;
     bool Pre_Post;
-    bool upBit;>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+    bool upBit;//>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
 
     bool storeBit;
 
