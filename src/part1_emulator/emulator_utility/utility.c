@@ -122,4 +122,39 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
     return false;
 }
 
+InstructionType get_type(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
+    // check condition first
+    // get cond 4bits
+    instruction.conditionType = 0xf & (fetched >> 28U);
+    //what type of instruction it is..
+    //store the instruction in corresponding instruction
+    //and execute
+
+    //HLT
+    if (fetched == 0) {
+        return HLT;
+    }
+
+    //BR
+    uint32_t branchCheck = (fetched >> 27) & 0x1;
+    if (branchCheck != 0) {
+        return BR;
+    }
+
+    //SDT
+    uint32_t SDTCheck = (fetched >> 26) & 0x1;
+    if (SDTCheck != 0) {
+        return SDT;
+    }
+
+    //MUL & DP
+    uint32_t bit4Check = (fetched >> 4) & 0x1;
+    if (bit4Check == 0) {
+        return DP;
+    } else {
+        return MUL;
+    }
+}
+
+
 
