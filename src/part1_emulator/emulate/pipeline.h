@@ -18,8 +18,8 @@
 
 struct pipes{
     uint32_t fetched;
-    instruction_type decoded;
     bool has_fetched;
+
 };
 
 void pipeline(struct stateOfMachine ARM11, struct pipes pipe);
