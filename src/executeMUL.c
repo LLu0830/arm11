@@ -23,14 +23,14 @@ void executeMUL(uint32_t fetched, struct stateOfMachine state) {
 
 //    instruction.instructionType = MUL;
 // holds the A bit
-    bool accumulate = 0x1 & fetched >> 21;
+    bool accumulate = get_n_bits(fetched, 21, 1);
 // holds the S bit
-    bool scc = 0x1 & fetched >> 20;
+    bool scc = get_n_bits(fetched, 20, 1);
 // rd,rn,rs,rm it should be a 4-bits address in the array registers, 0-12
-    register_address rd = fetched >> 16 & 0xf;
-    register_address rn = fetched >> 12 & 0xf;
-    register_address rs = fetched >> 8 & 0xf;
-    register_address rm = fetched & 0xf;
+    register_address rd = get_n_bits(fetched, 16, 4);
+    register_address rn = get_n_bits(fetched, 12, 4);
+    register_address rs = get_n_bits(fetched, 8, 4);
+    register_address rm = get_n_bits(fetched, 0, 4);
 
     uint32_t valueRn = state.registers[(int) rn];
     uint32_t valueRm = state.registers[(int) rm];
