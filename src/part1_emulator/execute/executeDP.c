@@ -4,12 +4,12 @@
 
 #include <stdlib.h>
 #include "executeDP.h"
-#include "state.h"
-#include "utility.h"
+#include "emulator_utility/state.h"
+#include "emulator_utility/utility.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "DefinedTypes.h"
+#include "emulator_utility/DefinedTypes.h"
 #include <assert.h>
 
 void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit) {

@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "executeSDT.h"
-#include "state.h"
-#include "utility.h"
+#include "part1_emulator/emulator_utility/state.h"
+#include "part1_emulator/emulator_utility/utility.h"
 
 void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
 

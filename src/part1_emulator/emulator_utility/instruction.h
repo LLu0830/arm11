@@ -8,10 +8,9 @@
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
 
-#import "execute.h"
+#import "part1_emulator/execute/execute.h"
 #include "DefinedTypes.h"
 #include <stdbool.h>
-
 
 typedef struct {
 
@@ -53,7 +52,7 @@ typedef struct {
 
     bool storeBit;
 
+}instruction_type;
 
-} instruction_type;
 #endif //C_GROUP_31_INSTRUCTION_H
 

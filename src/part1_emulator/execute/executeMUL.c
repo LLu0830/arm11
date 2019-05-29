@@ -10,10 +10,10 @@
 
 
 #include "executeMUL.h"
-#include "utility.h"
-#include "DefinedTypes.h"
-#include "instruction.h"
-#include "state.h"
+#include "part1_emulator/emulator_utility/utility.h"
+#include "part1_emulator/emulator_utility/DefinedTypes.h"
+#include "part1_emulator/emulator_utility/instruction.h"
+#include "part1_emulator/emulator_utility/state.h"
 
 
 // (Rini) This function is throwing an error ("conflicting types for 'executeMUL') - not sure why

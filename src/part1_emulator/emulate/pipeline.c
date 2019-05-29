@@ -4,14 +4,14 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "state.h"
-#include "utility.h"
-#include "fetch.h"
-#include "decode.h"
-#include "execute.h"
+#include "part1_emulator/emulator_utility/state.h"
+#include "part1_emulator/emulator_utility/utility.h"
+#include "part1_emulator/fetch/fetch.h"
+#include "part1_emulator/decode/decode.h"
+#include "part1_emulator/execute/execute.h"
 #include "pipeline.h"
-#include "instruction.h"
-#include "DefinedTypes.h"
+#include "part1_emulator/emulator_utility/instruction.h"
+#include "part1_emulator/emulator_utility/DefinedTypes.h"
 
 
 #define PCPosition 15;

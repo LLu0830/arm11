@@ -12,6 +12,7 @@ void pipeline(struct stateOfMachine ARM11);
 =======
 
 #include <stdbool.h>
+#include "part1_emulator/emulator_utility/instruction.h"
 
 // define fetch, decode and execute functions probably??
 // but if we do that here, we may not need their respective headers??? Am confused
