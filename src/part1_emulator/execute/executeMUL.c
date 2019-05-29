@@ -36,7 +36,7 @@ void executeMUL(uint32_t fetched, struct stateOfMachine state) {
     uint32_t valueRm = state.registers[(int) rm];
     uint32_t valueRs = state.registers[(int) rs];
 
-    if (instruction.accumulate) {
+    if (accumulate) {
         //Accumulate is set, performs a multiply and accumulate
         result = valueRm * valueRs + valueRn;
     } else {

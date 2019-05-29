@@ -3,6 +3,8 @@
 //
 
 #include <stdlib.h>
+#include <stdbool.h>
+#include "DefinedTypes.h"
 
 #ifndef SRC_UTILITY_H
 #define SRC_UTILITY_H
@@ -14,9 +16,10 @@ struct stateOfMachine* createNewState();
 uint32_t shiftLeft(uint32_t b, int n);
 uint32_t shiftRight(uint32_t b, int n);
 uint32_t arShiftRight(uint32_t b, int n);
-uint32_t shiftRegister(uint32_t b, uint32_t amount, uint32_t shiftType);
+uint32_t shiftRegister(uint32_t b, uint32_t amount, ShiftType shiftType);
 uint32_t makeASRmask(int shiftAmount);
 bool checkCondition(struct stateOfMachine state, Cond condition);
+InstructionType get_type(uint32_t fetched);
 
 
 #endif //SRC_UTILITY_H
