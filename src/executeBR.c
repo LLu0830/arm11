@@ -9,6 +9,7 @@
 #include "executeBR.h"
 #include "utility.h"
 #include "DefinedTypes.h"
+
 #include "instruction.h"
 #include "pipeline.h"
 
@@ -28,7 +29,9 @@ void executeBR(struct stateOfMachine ARM11_registers, uint32_t b) {
     int offset = get_n_bits(b, 0, 23);
     _Bool valid_cond = (cond == EQ || cond == NE || cond == GE || cond == LT || cond == GT || cond == LE ||
                         cond == AL);
-    if (valid_cond==1) {
+    if (valid_cond) {
+        //2's complement extend
+        twos_complement_extend(offset);
         //add offset to PC
         ARM11_registers[15] += twos_complement_extend(offset);
     }

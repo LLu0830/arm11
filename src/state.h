@@ -4,9 +4,10 @@
 
 #include "instruction.h"
 #include <stdint.h>
+#include "pipeline.h"
 
-#ifndef C_GROUP_31_STATE_H
-#define C_GROUP_31_STATE_H
+//#ifndef C_GROUP_31_STATE_H
+//#define C_GROUP_31_STATE_H
 
 #define numOfRegisters 17;
 #define numOfAddresses 65536;
@@ -18,5 +19,5 @@ struct stateOfMachine {
     uint8_t *mem;
 };
 
-
 #endif //C_GROUP_31_STATE_H
+
