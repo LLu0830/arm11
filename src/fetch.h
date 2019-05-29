@@ -5,6 +5,6 @@
 #ifndef SRC_FETCH_H
 #define SRC_FETCH_H
 
-uint32_t fetch(uint32_t *mem, int address);
+uint32_t fetch(struct stateOfMachine ARM11);
 
 #endif //SRC_FETCH_H
