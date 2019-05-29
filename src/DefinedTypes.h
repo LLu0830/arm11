@@ -28,7 +28,6 @@ typedef enum {
     MUL,
     SDT,
     BR,
-
     HLT,
     NUL,
 
