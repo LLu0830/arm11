@@ -4,6 +4,7 @@
 
 #include "instruction.h"
 #include <stdint.h>
+#include "pipeline.h"
 
 #ifndef C_GROUP_31_STATE_H
 #define C_GROUP_31_STATE_H
