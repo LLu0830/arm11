@@ -14,9 +14,19 @@
 #define PCPosition 15
 
 struct stateOfMachine {
-    uint32_t registers[17];
-    uint8_t *mem;
+    struct registers registers;
+    uint32_t *mem;
 };
+
+
+struct registers {
+    uint32_t registers[numOfRegisters];
+    // why only 17 fetched instructions?
+    uint32_t fetched[17];
+    InstructionType decoded[17];
+    _Bool has_fetched;
+} registers;
+
 
 
 #endif //C_GROUP_31_STATE_H

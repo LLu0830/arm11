@@ -28,8 +28,8 @@ typedef struct {
     //opcode in dataprocessing
     OpCode operationType;
 
-    //12/24bits operand
-    uint32_t offsets_or_operand;
+    //12/24bits operand2
+    uint32_t offsets_or_operand2;
     //...
 
     // in data processing
@@ -47,7 +47,7 @@ typedef struct {
     //in Single Data Transfer
     bool immediateOffset;
     bool Pre_Post;
-    bool upBit;>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+    bool upBit;
 
     bool storeBit;
 
