@@ -4,13 +4,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "emulator_utility/state.h"
+#include "part1_emulator/emulator_utility/state.h"
 #include "memory.h"
 #include "executeBR.h"
-#include "emulator_utility/utility.h"
-#include "emulator_utility/DefinedTypes.h"
+#include "part1_emulator/emulator_utility/utility.h"
+#include "part1_emulator/emulator_utility/DefinedTypes.h"
 
-#include "emulator_utility/instruction.h"
+#include "part1_emulator/emulator_utility/instruction.h"
 #include "emulate/pipeline.h"
 
 
@@ -24,7 +24,7 @@ int twos_complement_extend(int offset) {
 }
 
 
-void executeBR(struct stateOfMachine ARM11_registers, uint32_t b) {
+void executeBR(uint32_t b, struct stateOfMachine ARM11_registers) {
     int cond = get_n_bits(b, 28, 4);
     int offset = get_n_bits(b, 0, 23);
     _Bool valid_cond = (cond == EQ || cond == NE || cond == GE || cond == LT || cond == GT || cond == LE ||
@@ -33,7 +33,7 @@ void executeBR(struct stateOfMachine ARM11_registers, uint32_t b) {
         //2's complement extend
         twos_complement_extend(offset);
         //add offset to PC
-        ARM11_registers[15] += twos_complement_extend(offset);
+        ARM11_registers.registers[15] += twos_complement_extend(offset);
     }
 }
 

@@ -18,7 +18,7 @@
 //add ARM11.registers.decoded=output
 
 
-
+/**
 void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
     // check condition first
     // get cond 4bits
@@ -54,7 +54,7 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     }
 }
 
-
+*/
 
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {

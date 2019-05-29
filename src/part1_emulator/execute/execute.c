@@ -9,6 +9,7 @@
 #include "executeSDT.h"
 #include "executeMUL.h"
 #include "executeBR.h"
+#include "part1_emulator/emulator_utility/utility.h"
 #include "part1_emulator/emulator_utility/instruction.h"
 #include "part1_emulator/emulator_utility/state.h"
 #include <stdbool.h>
@@ -22,23 +23,26 @@
 
 //NEEDS CHANGING - CURRENTLY NOT COMPILING
 
-void execute(InstructionType type, struct stateOfMachine state) {
-    if (!checkCondition(state, instruction.conditionType)) {
+void execute(stateOfMachine state, uint32_t fetched) {
+    InstructionType type = get_type(fetched);
+    Cond cond = get_n_bits(fetched, 28, 4);
+    if (!checkCondition(state, cond)) {
         return;
         //instruction is ignored
     }
+
     switch (type) {
         case DP:
-            executeDP(instruction, *state);
+            executeDP(fetched, state);
             break;
         case MUL:
-            executeMUL(instruction, *state);
+            executeMUL(fetched, state);
             break;
         case SDT:
-            executeSDT(instruction, *state);
+            executeSDT(fetched, *state);
             break;
         case BR:
-            executeBR(instruction, *state);
+            executeBR(fetched, state);
             break;
         case HLT:
             return;
