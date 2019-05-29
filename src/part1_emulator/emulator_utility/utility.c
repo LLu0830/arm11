@@ -41,7 +41,7 @@ uint32_t shiftRight(uint32_t b, int n) {
 //executes arithmetic shift right by n
 uint32_t arShiftRight(uint32_t b, int n) {
     uint32_t result;
-    if ((int_32) b < 0) {
+    if ((uint32_t) b < 0) {
        result = ~(~b >> n);
     }
     else {
@@ -66,15 +66,9 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, ShiftType shiftType) {
             //rotate right (ror)
             return rotateRight(b, amount);
         default:
-            printf('Unrecognized shift type');
+            printf("Unrecognized shift type");
             break;
     }
-}
-
-struct stateOfMachine createNewState() {
-    struct stateOfMachine state = (struct stateOfMachine *) malloc(sizeof(struct stateOfMahcine *));
-    state->instruction_type = (struct instruction_type *) malloc(sizeof(struct instruction_type *));
-    return state;
 }
 
 uint32_t makeASRmask(int shiftAmount) {
@@ -82,14 +76,13 @@ uint32_t makeASRmask(int shiftAmount) {
     return reverseMask ^ 0U;
 }
 
-
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
-    uint32_t VMasked = (CPSRflag >> 28) & V;
-    uint32_t NMasked = (CPSRflag >> 28) & N;
-    uint32_t ZMasked = (CPSRflag >> 28) & Z;
-    uint32_t CMasked = (CPSRflag >> 28) & C;
+    uint32_t VMasked = (CPSRflag >> 28U) & (unsigned) V;
+    uint32_t NMasked = (CPSRflag >> 28U) & (unsigned) N;
+    uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
+    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
 
     bool NEqualsV = (VMasked >> 3) == NMasked;
     switch (condition) {
@@ -123,13 +116,45 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
                 return true;
             }
             break;
+        default:
+            break;
     }
     return false;
 }
 
+InstructionType get_type(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
+    // check condition first
+    // get cond 4bits
+    instruction.conditionType = 0xf & (fetched >> 28U);
+    //what type of instruction it is..
+    //store the instruction in corresponding instruction
+    //and execute
+
+    //HLT
+    if (fetched == 0) {
+        return HLT;
+    }
+
+    //BR
+    uint32_t branchCheck = (fetched >> 27) & 0x1;
+    if (branchCheck != 0) {
+        return BR;
+    }
+
+    //SDT
+    uint32_t SDTCheck = (fetched >> 26) & 0x1;
+    if (SDTCheck != 0) {
+        return SDT;
+    }
+
+    //MUL & DP
+    uint32_t bit4Check = (fetched >> 4) & 0x1;
+    if (bit4Check == 0) {
+        return DP;
+    } else {
+        return MUL;
+    }
+}
 
 
-//uint32_t write_one(uint32_t b, int pos) {
-//    return (b | 1U << (unsigned int) pos);
-//}
 

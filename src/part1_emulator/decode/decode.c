@@ -6,14 +6,14 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "state.h"
+#include "part1_emulator/emulator_utility/state.h"
 #include "decode.h"
 
 
-#include "utility.h"
-#include "instruction.h"
-#include "DefinedTypes.h"
-#include "execute.h"
+#include "part1_emulator/emulator_utility/utility.h"
+#include "part1_emulator/emulator_utility/instruction.h"
+#include "part1_emulator/emulator_utility/DefinedTypes.h"
+#include "part1_emulator/execute/execute.h"
 //Add decode function
 //add ARM11.registers.decoded=output
 
@@ -22,35 +22,35 @@
 void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
     // check condition first
     // get cond 4bits
-    instruction.conditionType = 0xf & (fetched >> 28);
+    instruction.conditionType = 0xf & (fetched >> 28U);
     //what type of instruction it is..
     //store the instruction in corresponding instruction
     //and execute
 
+    //HLT
+    if (fetched == 0) {
+        decodeHLT(instruction, fetched);
+    }
+
     //BR
-    uint32_t branchCheck = fetched >> 27 & 0x1;
+    uint32_t branchCheck = (fetched >> 27) & 0x1;
     if (branchCheck != 0) {
         decodeBR(instruction, fetched);
     }
 
     //SDT
-    uint32_t SDTCheck = fetched >> 26 & 0x1;
+    uint32_t SDTCheck = (fetched >> 26) & 0x1;
     if (SDTCheck != 0) {
         decodeSDT(instruction, fetched);
     }
 
     //MUL & DP
-    uint32_t bit4Check = fetched >> 4 & 0x1;
+    uint32_t bit4Check = (fetched >> 4) & 0x1;
     if (bit4Check == 0) {
         decodeDP(instruction, fetched);
         //instruction.instructionType = DP;
     } else {
         decodeMUL(instruction, fetched);
-    }
-
-    //HLT
-    if (fetched == 0) {
-        decodeHLT(instruction, fetched);
     }
 }
 

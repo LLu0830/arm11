@@ -4,9 +4,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "state.h"
+#include "part1_emulator/emulator_utility/state.h"
 #include "binaryFileLoader.h"
-#include "utility.h"
+#include "part1_emulator/emulator_utility/utility.h"
 #include <math.h>
 
 //Add binary file loader - we already did that, so just copy it here??

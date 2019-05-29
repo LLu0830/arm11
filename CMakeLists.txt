@@ -7,27 +7,27 @@ include_directories(src)
 
 add_executable(C_Group_31
         src/assemble.c
-        src/binaryFileLoader.c
-        src/binaryFileLoader.h
-        src/decode.c
-        src/decode.h
-        src/DefinedTypes.h
-        src/emulate.c
-        src/execute.c
-        src/execute.h
-        src/executeBR.c
-        src/executeBR.h
-        src/executeDP.c
-        src/executeDP.h
-        src/executeMUL.c
-        src/executeMUL.h
-        src/executeSDT.c
-        src/executeSDT.h
-        src/fetch.c
-        src/fetch.h
-        src/instruction.h
-        src/pipeline.c
-        src/pipeline.h
-        src/state.h
-        src/utility.c
-        src/utility.h)
+        src/part1_emulator/emulate/binaryFileLoader.c
+        src/part1_emulator/emulate/binaryFileLoader.h
+        src/part1_emulator/decode/decode.c
+        src/part1_emulator/decode/decode.h
+        "src/part1_emulator/emulator_utility/DefinedTypes.h"
+        src/part1_emulator/emulate.c
+        src/part1_emulator/execute/execute.c
+        src/part1_emulator/execute/execute.h
+        src/part1_emulator/execute/executeBR.c
+        src/part1_emulator/execute/executeBR.h
+        src/part1_emulator/execute/executeDP.c
+        src/part1_emulator/execute/executeDP.h
+        src/part1_emulator/execute/executeMUL.c
+        src/part1_emulator/execute/executeMUL.h
+        src/part1_emulator/execute/executeSDT.c
+        src/part1_emulator/execute/executeSDT.h
+        src/part1_emulator/fetch/fetch.c
+        src/part1_emulator/fetch/fetch.h
+        "src/part1_emulator/emulator_utility/instruction.h"
+        src/part1_emulator/emulate/pipeline.c
+        src/part1_emulator/emulate/pipeline.h
+        "src/part1_emulator/emulator_utility/state.h"
+        "src/part1_emulator/emulator_utility/utility.c"
+        "src/part1_emulator/emulator_utility/utility.h" "src/part1_emulator/emulator_utility/instruction.c")
