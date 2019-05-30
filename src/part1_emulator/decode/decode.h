@@ -7,7 +7,7 @@
 
 #include "../emulator_utility/instruction.h"
 
-void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction);
+instruction_type decode(struct stateOfMachine state, uint32_t fetched);
 void decodeMUL(instruction_type instruction, uint32_t fetched);
 void decodeDP(instruction_type instruction, uint32_t fetched);
 void decodeSDT(instruction_type instruction, uint32_t fetched);
