@@ -21,7 +21,6 @@ void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
     uint32_t offset = get_n_bits(instruction, 0, 12);
 
     uint32_t address;
-    uint32_t minAddress = 0;
 
     //Offset is immediate offset or shifted register
     if  (iFlag) {
