@@ -5,13 +5,10 @@
 #include "pipeline.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
-#include "../emulator_utility/state.h"
 #include "../emulator_utility/utility.h"
 #include "../fetch/fetch.h"
 #include "../decode/decode.h"
 #include "../execute/execute.h"
-#include "../emulator_utility/instruction.h"
 #include "../emulator_utility/DefinedTypes.h"
 
 void pipeline(struct stateOfMachine ARM11) {

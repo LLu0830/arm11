@@ -2,12 +2,10 @@
 // Created by Katarina Kulkova on 25.05.2019.
 //
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "../emulator_utility/state.h"
 #include "binaryFileLoader.h"
-#include "../emulator_utility/utility.h"
-#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 
 //binary file loader

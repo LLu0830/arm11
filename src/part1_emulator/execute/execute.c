@@ -15,8 +15,8 @@
 
 //executes all types of instructions
 
-void execute(struct instruction_type instruction, struct stateOfMachine *state) {
-    if (!checkCondition(state, instruction.conditionType)) {
+void execute(instruction_type instruction, struct stateOfMachine *state) {
+    if (!checkCondition(*state, instruction.conditionType)) {
         return;
         //instruction is ignored if the condition does not hold
     }

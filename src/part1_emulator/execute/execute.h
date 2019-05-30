@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
-#include "execute.h"
 #include "executeDP.h"
 #include "executeSDT.h"
 #include "executeMUL.h"
@@ -18,6 +17,6 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/state.h"
 
-void execute(instruction_type instruction, struct stateOfMachine state);
+void execute(instruction_type instruction, struct stateOfMachine *state);
 
 #endif // SRC_EXECUTE_H

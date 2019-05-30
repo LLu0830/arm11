@@ -2,7 +2,6 @@
 // Created by Rini Banerjee on 2019-05-25.
 //
 
-#include <stdlib.h>
 #include <stdbool.h>
 #include "DefinedTypes.h"
 
