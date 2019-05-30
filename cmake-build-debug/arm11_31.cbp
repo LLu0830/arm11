@@ -118,9 +118,6 @@
 		<Unit filename="/homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/instruction.h">
 			<Option target="arm11_31"/>
 		</Unit>
-		<Unit filename="/homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/instructions.h">
-			<Option target="arm11_31"/>
-		</Unit>
 		<Unit filename="/homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/state.h">
 			<Option target="arm11_31"/>
 		</Unit>
