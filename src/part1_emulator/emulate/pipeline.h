@@ -7,9 +7,9 @@
 #define SRC_PIPELINE_H
 
 
-#include "part1_emulator/emulator_utility/state.h"
+#include "../emulator_utility/state.h"
 #include <stdbool.h>
-#include "part1_emulator/emulator_utility/instruction.h"
+#include "../emulator_utility/instruction.h"
 
 
 void pipeline(struct stateOfMachine ARM11);

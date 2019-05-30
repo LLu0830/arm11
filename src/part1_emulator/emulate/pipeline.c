@@ -6,14 +6,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "part1_emulator/emulator_utility/state.h"
-#include "part1_emulator/emulator_utility/utility.h"
-#include "part1_emulator/fetch/fetch.h"
-#include "part1_emulator/decode/decode.h"
-#include "part1_emulator/execute/execute.h"
-#include "part1_emulator/emulator_utility/instruction.h"
-#include "part1_emulator/emulator_utility/DefinedTypes.h"
-#include "part1_emulator/emulator_utility/utility.c"
+#include "../emulator_utility/state.h"
+#include "../emulator_utility/utility.h"
+#include "../fetch/fetch.h"
+#include "../decode/decode.h"
+#include "../execute/execute.h"
+#include "../emulator_utility/instruction.h"
+#include "../emulator_utility/DefinedTypes.h"
 
 void pipeline(struct stateOfMachine ARM11) {
 

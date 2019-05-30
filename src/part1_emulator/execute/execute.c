@@ -9,12 +9,13 @@
 #include "executeSDT.h"
 #include "executeMUL.h"
 #include "executeBR.h"
-#include "part1_emulator/emulator_utility/instruction.h"
-#include "part1_emulator/emulator_utility/state.h"
-#include "part1_emulator/emulator_utility/utility.h"
+#include "../emulator_utility/instruction.h"
+#include "../emulator_utility/state.h"
+#include "../emulator_utility/utility.h"
 
 //executes all types of instructions
 void execute(instruction_type instruction, struct stateOfMachine *state) {
+
     if (!checkCondition(state, instruction.conditionType)) {
         return;
         //instruction is ignored if the condition does not hold
