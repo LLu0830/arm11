@@ -15,23 +15,23 @@
 
 //executes all types of instructions
 
-void execute(struct instruction_type instruction, struct stateOfMachine *state) {
-    if (!checkCondition(state, instruction.conditionType)) {
+void execute(struct pipes *pipe, struct stateOfMachine *state) {
+    if (!checkCondition(state, pipe->decoded.conditionType)) {
         return;
         //instruction is ignored if the condition does not hold
     }
-    switch (instruction.instructionType) {
+    switch (pipe->decoded.instructionType) {
         case DP:
-            executeDP(instruction, *state);
+            executeDP(pipe->decoded.instructionType, *state);
             break;
         case MUL:
-            executeMUL(instruction, *state);
+            executeMUL(pipe->decoded.instructionType, *state);
             break;
         case SDT:
-            executeSDT(instruction, *state);
+            executeSDT(pipe->decoded.instructionType, *state);
             break;
         case BR:
-            executeBR(instruction, *state);
+            executeBR(pipe->decoded.instructionType, *state);
             break;
         case HLT:
             return;
