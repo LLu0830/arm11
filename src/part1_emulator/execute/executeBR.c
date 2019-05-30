@@ -32,7 +32,8 @@ void executeBR(instruction_type instruction, struct stateOfMachine ARM11_registe
     //2's complement extend
     twos_complement_extend(offset);
     //add offset to PC
-    ARM11_registers.registers[15] += twos_complement_extend(offset);
+    pipes.has_fetched = false;
+    ARM11_registers.registers[PCPosition] += (twos_complement_extend(offset) - pipelineOffset);
 
 
 }
