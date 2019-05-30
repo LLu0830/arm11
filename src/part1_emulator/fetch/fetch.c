@@ -7,14 +7,13 @@
 #include "part1_emulator/emulator_utility/state.h"
 #include "fetch.h"
 #include "part1_emulator/emulator_utility/utility.h"
-#include "emulate/pipeline.h"
+#include "part1_emulator/emulate/pipeline.h"
 #include "part1_emulator/emulator_utility/instruction.h"
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
 
 //fetches instruction from memory
 
 // (Rini) confused - are we allowed to just access array elements from mem even though it is of the type uint32_t * (a pointer)?
-
 
 uint32_t fetch(struct stateOfMachine ARM11) {
     uint8_t *mem = ARM11.mem;
