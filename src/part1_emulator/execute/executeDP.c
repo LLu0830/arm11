@@ -123,6 +123,7 @@ void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
     uint32_t op2 = instruction.offsets_or_operand2;
 
 
+
     assert(rn >= 0 && rn <= 16);
     uint32_t rnValue = ARM11.registers[rn];
     uint32_t op2Value, carryBit;
@@ -137,6 +138,7 @@ void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
         ARM11.registers[rd] = result;
     }
 
+    //shouldn't it be a pointer???
     uint32_t cpsr = ARM11.registers[16];
 
 //    Setting C bit for operations not involving barrel shifter
