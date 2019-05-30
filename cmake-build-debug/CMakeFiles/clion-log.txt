@@ -1,4 +1,13 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/rinibanerjee/Desktop/C_Group_31
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug
+<<<<<<< HEAD
+/usr/lib/clion-2018.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /homes/mw6118/CLionProjects/arm11_31
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.14 or higher is required.  You are running version 3.12.0
+
+
+=======
+"D:\Programs\CLion\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Imperial\c\C_Group_31
+CMake Error: CMake was unable to find a build program corresponding to "MinGW Makefiles".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.
+CMake Error: CMake was unable to find a build program corresponding to "MinGW Makefiles".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+>>>>>>> 50c3eae7b86046fbbff487cfc2b64127c7aa8b2d
+-- Configuring incomplete, errors occurred!

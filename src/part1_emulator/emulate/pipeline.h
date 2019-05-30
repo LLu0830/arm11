@@ -6,6 +6,7 @@
 #ifndef SRC_PIPELINE_H
 #define SRC_PIPELINE_H
 
+
 #include "part1_emulator/emulator_utility/state.h"
 #include <stdbool.h>
 #include "part1_emulator/emulator_utility/instruction.h"
@@ -14,9 +15,11 @@
 void pipeline(struct stateOfMachine ARM11);
 
 struct pipes{
-    uint32_t instruction;
+    uint32_t fetched;
+    uint32_t toExecute;
+    InstructionType decodedType;
     bool has_fetched;
-
+    bool has_decoded;
 };
 
 

@@ -70,7 +70,8 @@ void executeSDT(instruction_type instruction, struct stateOfMachine *state) {
         state->registers[rn] = address + offset;
     }
 
-    if (address > 65535 || address < 0) {
+
+    if (address > numOfAddresses || address < minAddress) {
         printf("Invalid memory access");
     }
     else {
@@ -85,14 +86,4 @@ void executeSDT(instruction_type instruction, struct stateOfMachine *state) {
     }
 }
 
-////loads word from address in memory to registers
-//void loadFrom(uint32_t address, uint32_t destination, struct stateOfMachine *machine) {
-//    uint32_t word = machine->mem[address];
-//    machine->registers[destination] = word;
-//}
-
-////stores word to address in memory
-//void storeTo(uint32_t address, uint32_t word, struct stateOfMachine *machine) {
-//    machine->mem[address] = word;
-//}
 

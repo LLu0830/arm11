@@ -123,5 +123,34 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
 }
 
 
+//setter functions for CPSR flags
+//may be wrong, since I am confused about little and big Endian in the spec
+void setN(struct stateOfMachine ARM11, uint32_t value){
+    uint32_t result = ARM11.registers[CPSRPosition];
+    change_bit(result, 31, value);
+    ARM11.registers[CPSRPosition] = result;
+}
+
+void setZ(struct stateOfMachine ARM11, uint32_t value){
+    uint32_t result = ARM11.registers[CPSRPosition];
+    change_bit(result, 30, value);
+    ARM11.registers[CPSRPosition] = result;
+}
+
+void setC(struct stateOfMachine ARM11, uint32_t value){
+    uint32_t result = ARM11.registers[CPSRPosition];
+    change_bit(result, 29, value);
+    ARM11.registers[CPSRPosition] = result;
+}
+
+void setV(struct stateOfMachine ARM11, uint32_t value){
+    uint32_t result = ARM11.registers[CPSRPosition];
+    change_bit(result, 28, value);
+    ARM11.registers[CPSRPosition] = result;
+}
+
+
+
+
 
 
