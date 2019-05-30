@@ -28,8 +28,8 @@ void pipeline(struct stateOfMachine ARM11) {
     while (ARM11.running) {
 
         //executes decoded instruction
-        if (pipe.has_decoded && pipe.decodedType != HLT) {
-            execute(*ARM11, pipe.toExecute, pipe.decodedType);
+        if (pipe.has_decoded && pipe.decoded.instructionType != HLT) {
+            execute(pipe.decoded, *ARM11);
         }
         //sets condition of loop to false, thus terminating the program
         else {
@@ -38,13 +38,12 @@ void pipeline(struct stateOfMachine ARM11) {
 
         //decoding fetched instruction
         if (pipe.has_fetched) {
-            pipe.toExecute = pipe.fetched;
+            pipe.decoded = decode(ARM11, fetched);
             pipe.has_decoded = true;
-            pipe.decodedType = get_type(pipe.toExecute);
         }
 
         //fetching new instruction
-        pipe.fetched = fetch(ARM11, ARM11->registers[PCPosition]);
+        pipe.fetched = fetch(*ARM11, ARM11->registers[PCPosition]);
         pipe.has_fetched = true;
 
         //increasing program counter (PC)

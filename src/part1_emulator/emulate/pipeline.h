@@ -16,8 +16,7 @@ void pipeline(struct stateOfMachine ARM11);
 
 struct pipes{
     uint32_t fetched;
-    uint32_t toExecute;
-    InstructionType decodedType;
+    instruction_type decoded;
     bool has_fetched;
     bool has_decoded;
 };
