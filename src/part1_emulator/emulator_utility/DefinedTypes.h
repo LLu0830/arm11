@@ -50,7 +50,6 @@ typedef enum{
 
 typedef enum {
 
-
     //last result negative
             N = 0x8,
 
