@@ -26,14 +26,13 @@ int twos_complement_extend(int offset) {
 }
 
 
-void executeBR(struct pipes pipes, struct stateOfMachine ARM11_registers) {
-    int cond = instruction.conditionType;
-    int offset = instruction.offsets_or_operand2;
+void executeBR(struct pipes *pipe, struct stateOfMachine *ARM11) {
+    int offset = pipe->decoded.offsets_or_operand2;
     //2's complement extend
     twos_complement_extend(offset);
     //add offset to PC
-    pipes.has_fetched = false;
-    ARM11_registers.registers[PCPosition] += (twos_complement_extend(offset) - pipelineOffset);
+    pipe->has_fetched = false;
+    ARM11->registers[PCPosition] += (twos_complement_extend(offset));
 }
 
 

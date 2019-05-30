@@ -114,7 +114,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *wr
 
 
 
-void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
+void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
     uint32_t i = instruction.immediateOperand;
     uint32_t opCode = instruction.operationType;
     uint32_t s = instruction.scc;
@@ -125,7 +125,7 @@ void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
 
 
     assert(rn >= 0 && rn <= 16);
-    uint32_t rnValue = ARM11.registers[rn];
+    uint32_t rnValue = ARM11->registers[rn];
     uint32_t op2Value, carryBit;
     getValFromOp2(op2, i, &op2Value, &carryBit);
 
@@ -135,11 +135,11 @@ void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
 
 //    Checking if result needs to be written to register
     if (writeFlag) {
-        ARM11.registers[rd] = result;
+        ARM11->registers[rd] = result;
     }
 
     //shouldn't it be a pointer???
-    uint32_t cpsr = ARM11.registers[16];
+    uint32_t cpsr = ARM11->registers[16];
 
 //    Setting C bit for operations not involving barrel shifter
 
@@ -147,15 +147,15 @@ void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
         case MOV:
             // if i flag is zero then it is a shift operation
             if (!i) {
-                change_bit(ARM11.registers[CPSRPosition], 29, carryBit);
+                change_bit(ARM11->registers[CPSRPosition], 29, carryBit);
             }
             break;
 
         case ADD:
             if (result < rnValue || result < op2Value) {
-                change_bit(ARM11.registers[CPSRPosition], 29, 1);
+                change_bit(ARM11->registers[CPSRPosition], 29, 1);
             } else {
-                change_bit(ARM11.registers[CPSRPosition], 29, 0);
+                change_bit(ARM11->registers[CPSRPosition], 29, 0);
             }
             break;
         case SUB:
@@ -163,18 +163,18 @@ void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
         case CMP:
             //rn - operand2
             if (op2Value > rnValue) {
-                change_bit(ARM11.registers[CPSRPosition], 29, 0);
+                change_bit(ARM11->registers[CPSRPosition], 29, 0);
             } else {
-                change_bit(ARM11.registers[CPSRPosition], 29, 1);
+                change_bit(ARM11->registers[CPSRPosition], 29, 1);
             }
             break;
 
         case RSB:
             // operand2 - rn
             if (rn - op2Value) {
-                change_bit(ARM11.registers[CPSRPosition], 29, 0);
+                change_bit(ARM11->registers[CPSRPosition], 29, 0);
             } else {
-                change_bit(ARM11.registers[CPSRPosition], 29, 1);
+                change_bit(ARM11->registers[CPSRPosition], 29, 1);
             }
             break;
         default:

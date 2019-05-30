@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <pipeline.h>
 #include "execute.h"
 #include "executeDP.h"
 #include "executeSDT.h"
@@ -16,22 +17,22 @@
 //executes all types of instructions
 
 void execute(struct pipes *pipe, struct stateOfMachine *state) {
-    if (!checkCondition(state, pipe->decoded.conditionType)) {
+    if (!checkCondition(*state, pipe->decoded.conditionType)) {
         return;
         //instruction is ignored if the condition does not hold
     }
     switch (pipe->decoded.instructionType) {
         case DP:
-            executeDP(pipe->decoded.instructionType, *state);
+            executeDP(pipe->decoded, state);
             break;
         case MUL:
-            executeMUL(pipe->decoded.instructionType, *state);
+            executeMUL(pipe->decoded, state);
             break;
         case SDT:
-            executeSDT(pipe->decoded.instructionType, *state);
+            executeSDT(pipe->decoded, state);
             break;
         case BR:
-            executeBR(pipe->decoded.instructionType, *state);
+            executeBR(pipe, state);
             break;
         case HLT:
             return;

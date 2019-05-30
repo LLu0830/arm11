@@ -12,6 +12,7 @@
 #include <math.h>
 #include <stdint.h>
 #include "DefinedTypes.h"
+#include <stdio.h>
 
 
 uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
