@@ -26,7 +26,7 @@ int twos_complement_extend(int offset) {
 }
 
 
-void executeBR(instruction_type instruction, struct stateOfMachine ARM11_registers, struct pipes pipes) {
+void executeBR(struct pipes pipes, struct stateOfMachine ARM11_registers) {
     int cond = instruction.conditionType;
     int offset = instruction.offsets_or_operand2;
     //2's complement extend
