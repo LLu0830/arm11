@@ -5,14 +5,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "part1_emulator/emulator_utility/state.h"
-#include "memory.h"
 #include "executeBR.h"
 #include "part1_emulator/emulator_utility/utility.h"
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
-
 #include "part1_emulator/emulator_utility/instruction.h"
 #include "part1_emulator/emulate/pipeline.h"
 
+//pipeline has a side effect - PC is 8 bytes ahead of instruction
+//being executed, therefore the pipeline offset has to be subtracted from address
+//in PC value
+#define pipelineOffset = 8;
 
 //2's complement extend
 int twos_complement_extend(int offset) {
@@ -31,6 +33,7 @@ void executeBR(instruction_type instruction, struct stateOfMachine ARM11_registe
     twos_complement_extend(offset);
     //add offset to PC
     ARM11_registers.registers[15] += twos_complement_extend(offset);
+
 
 }
 

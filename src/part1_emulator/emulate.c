@@ -11,9 +11,14 @@
 int main(int argc, char **argv) {
     struct stateOfMachine ARM11;
 
+    ARM11.running = true;
     ARM11.mem = binaryFileLoader(argv);
     memset(ARM11.registers, 0, 17);
+
     pipeline(ARM11);
+
+    free(ARM11.registers);
+    free(ARM11.mem);
 
     return EXIT_SUCCESS;
 }

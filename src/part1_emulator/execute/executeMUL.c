@@ -16,6 +16,7 @@
 #include "part1_emulator/emulator_utility/state.h"
 
 void executeMUL(instruction_type instruction, struct stateOfMachine state) {
+
     uint32_t result;
 
 //    instruction.instructionType = MUL;
@@ -29,9 +30,10 @@ void executeMUL(instruction_type instruction, struct stateOfMachine state) {
     register_address rs = instruction.rs;
     register_address rm = instruction.rm;
 
-    uint32_t valueRn = state.registers[(int) rn];
-    uint32_t valueRm = state.registers[(int) rm];
-    uint32_t valueRs = state.registers[(int) rs];
+
+    uint32_t valueRn = state->registers[rn];
+    uint32_t valueRm = state->registers[rm];
+    uint32_t valueRs = state->registers[rs];
 
     if (accumulate) {
         //Accumulate is set, performs a multiply and accumulate
@@ -41,19 +43,18 @@ void executeMUL(instruction_type instruction, struct stateOfMachine state) {
         result = valueRm * valueRs;
     }
 
-    state.registers[(int) rd] = result;
+    state->registers[rd] = result;
 
     if (scc) {
         // update N,Z flag in CPSR
         // N - the 31st bit of the result   Z - only if the result is zero
         if (result == 0) {
-            state.registers[CPSRPosition] = (Z << 28) ^ state.registers[CPSRPosition];
+            setZ(state, 1);
         }
 
-        //get 31bit, if equal to N, unchange // else update
-        if ((result >> 31) != (state.registers[CPSRPosition] >> 31)) {
-            state.registers[CPSRPosition] = (N << 28) ^ state.registers[CPSRPosition];
-        }
+        //get 31bit, if equal to N, unchanged, else update
+        uint32_t value = get_n_bits(result, 31, 1);
+        setN(state, value);
 
     }
 
