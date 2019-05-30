@@ -113,7 +113,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *wr
 
 
 
-void executeDP(uint32_t instruction, struct stateOfMachine ARM11) {
+void executeDP(uint32_t instruction, struct stateOfMachine *ARM11) {
 //    PUT INSIDE DECODE.C
     uint32_t i = get_n_bits(instruction, 25, 1);
     uint32_t opCode = get_n_bits(instruction, 21, 4);

@@ -25,7 +25,7 @@ int twos_complement_extend(int offset) {
     return offset;
 }
 
-void executeBR(uint32_t instruction, struct stateOfMachine ARM11_registers) {
+void executeBR(uint32_t instruction, struct stateOfMachine *ARM11) {
     int cond = get_n_bits(instruction, 28, 4);
     int offset = get_n_bits(instruction, 0, 23);
     _Bool valid_cond = (cond == EQ || cond == NE || cond == GE || cond == LT || cond == GT || cond == LE ||

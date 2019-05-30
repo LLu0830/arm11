@@ -18,7 +18,7 @@
 
 // (Rini) This function is throwing an error ("conflicting types for 'executeMUL') - not sure why
 
-void executeMUL(uint32_t fetched, struct stateOfMachine state) {
+void executeMUL(uint32_t fetched, struct stateOfMachine *state) {
     uint32_t result;
 
 //    instruction.instructionType = MUL;
