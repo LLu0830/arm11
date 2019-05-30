@@ -25,7 +25,7 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
 
     switch (pipe->decoded.instructionType) {
         case DP:
-            executeDP(pipe->decoded, *state);
+            executeDP(pipe->decoded, state);
             break;
         case MUL:
             executeMUL(pipe->decoded, state);
@@ -34,7 +34,7 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
             executeSDT(pipe->decoded, state);
             break;
         case BR:
-            executeBR(pipe->decoded, *state);
+            executeBR(pipe, state);
             break;
         case HLT:
             return;

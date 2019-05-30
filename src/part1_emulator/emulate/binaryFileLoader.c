@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 //binary file loader
 uint8_t * binaryFileLoader(char **argv) {
     int size8 = sizeof(uint8_t);

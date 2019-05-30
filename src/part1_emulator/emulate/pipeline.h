@@ -10,9 +10,10 @@
 #include "../emulator_utility/state.h"
 #include <stdbool.h>
 #include "../emulator_utility/instruction.h"
+#include <stdint.h>
 
 
-void pipeline(struct stateOfMachine ARM11);
+void pipeline(struct stateOfMachine *ARM11);
 
 struct pipes{
     uint32_t fetched;

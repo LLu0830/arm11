@@ -7,7 +7,7 @@
 #include "../emulator_utility/state.h"
 #include "fetch.h"
 #include "../emulator_utility/utility.h"
-#include "emulate/pipeline.h"
+#include "../emulate/pipeline.h"
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/DefinedTypes.h"
 
