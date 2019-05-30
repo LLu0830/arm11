@@ -19,6 +19,8 @@ utility.o: part1_emulator/emulator_utility/utility.h part1_emulator/emulator_uti
 
 fetch.o: part1_emulator/fetch/fetch.h part1_emulator/fetch/fetch.c
 
+decode: part1_emulator/decode/decode.o
+
 decode.o: part1_emulator/decode/decode.h part1_emulator/decode/decode.c
 
 execute.o: part1_emulator/execute/execute.h part1_emulator/execute/execute.c
@@ -28,8 +30,6 @@ executeDP.o: part1_emulator/execute/executeDP.h part1_emulator/execute/executeDP
 executeSDT.o: part1_emulator/execute/executeSDT.h part1_emulator/execute/executeSDT.c
 
 executeMUL.o: part1_emulator/execute/executeMUL.h part1_emulator/execute/executeMUL.c
-
-executeBR: part1_emulator/execute/executeBR.o
 
 executeBR.o: part1_emulator/execute/executeBR.h part1_emulator/execute/executeBR.c
 
