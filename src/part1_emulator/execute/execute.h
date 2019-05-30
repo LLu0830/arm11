@@ -17,6 +17,6 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/state.h"
 
-void execute(instruction_type instruction, struct stateOfMachine *state);
+void execute(struct pipes *pipe, struct stateOfMachine *state);
 
 #endif // SRC_EXECUTE_H

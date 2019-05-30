@@ -19,6 +19,10 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, ShiftType shiftType);
 uint32_t makeASRmask(int shiftAmount);
 bool checkCondition(struct stateOfMachine state, Cond condition);
 InstructionType get_type(uint32_t fetched);
+void setN(struct stateOfMachine ARM11, uint32_t value);
+void setZ(struct stateOfMachine ARM11, uint32_t value);
+void setC(struct stateOfMachine ARM11, uint32_t value);
+void setV(struct stateOfMachine ARM11, uint32_t value);
 
 
 #endif //SRC_UTILITY_H
