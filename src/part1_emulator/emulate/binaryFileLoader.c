@@ -4,9 +4,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "part1_emulator/emulator_utility/state.h"
+#include "../emulator_utility/state.h"
 #include "binaryFileLoader.h"
-#include "part1_emulator/emulator_utility/utility.h"
+#include "../emulator_utility/utility.h"
 #include <math.h>
 
 

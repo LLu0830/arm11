@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "part1_emulator/emulate/pipeline.h"
 #include "part1_emulator/emulator_utility/utility.h"
 #include "part1_emulator/emulate/binaryFileLoader.h"
-#include <math.h>
 #include "part1_emulator/emulator_utility/state.h"
 
 int main(int argc, char **argv) {

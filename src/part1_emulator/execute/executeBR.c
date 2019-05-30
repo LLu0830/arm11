@@ -4,12 +4,12 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "part1_emulator/emulator_utility/state.h"
+#include "../emulator_utility/state.h"
 #include "executeBR.h"
-#include "part1_emulator/emulator_utility/utility.h"
-#include "part1_emulator/emulator_utility/DefinedTypes.h"
-#include "part1_emulator/emulator_utility/instruction.h"
-#include "part1_emulator/emulate/pipeline.h"
+#include "../emulator_utility/utility.h"
+#include "../emulator_utility/DefinedTypes.h"
+#include "../emulator_utility/instruction.h"
+#include "../emulate/pipeline.h"
 
 //pipeline has a side effect - PC is 8 bytes ahead of instruction
 //being executed, therefore the pipeline offset has to be subtracted from address
