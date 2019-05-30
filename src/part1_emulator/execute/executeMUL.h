@@ -7,6 +7,6 @@
 
 #include "../emulator_utility/instruction.h"
 
-void executeMUL(instruction_type instruction, struct stateOfMachine state);
+void executeMUL(instruction_type instruction, struct stateOfMachine *state);
 
 #endif //SRC_EXECUTEMUL_H

@@ -15,7 +15,7 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/state.h"
 
-void executeMUL(instruction_type instruction, struct stateOfMachine state) {
+void executeMUL(instruction_type instruction, struct stateOfMachine *state) {
 
     uint32_t result;
 
@@ -49,6 +49,7 @@ void executeMUL(instruction_type instruction, struct stateOfMachine state) {
         // update N,Z flag in CPSR
         // N - the 31st bit of the result   Z - only if the result is zero
         if (result == 0) {
+
             setZ(state, 1);
         }
 
