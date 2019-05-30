@@ -27,7 +27,7 @@ instruction_type decode(struct stateOfMachine state, uint32_t fetched) {
     //inititalize instruction_type and return it
 
     instruction_type instruction;
-    instruction.conditionType = get_n_bits(b, 28, 4);
+    instruction.conditionType = get_n_bits(fetched, 28, 4);
 
     //HLT
     if (fetched == 0) {
@@ -35,13 +35,13 @@ instruction_type decode(struct stateOfMachine state, uint32_t fetched) {
     }
 
     //BR
-    uint32_t branchCheck = get_n_bit(fetched, 27, 1);
+    uint32_t branchCheck = get_n_bits(fetched, 27, 1);
     if (branchCheck != 0) {
         decodeBR(instruction, fetched);
     }
 
     //SDT
-    uint32_t SDTCheck = get_n_bit(fetched, 26, 1);
+    uint32_t SDTCheck = get_n_bits(fetched, 26, 1);
     if (SDTCheck != 0) {
         decodeSDT(instruction, fetched);
     }
@@ -49,11 +49,11 @@ instruction_type decode(struct stateOfMachine state, uint32_t fetched) {
 
 //    FIX CHECK BETWEEN MUL & DP
     //MUL & DP
-    uint32_t bit4Check = get_n_bit(fetched, 4, 1);
+    uint32_t bit4Check = get_n_bits(fetched, 4, 1);
     if (bit4Check == 0) {
         decodeDP(instruction, fetched);
     } else {
-        uint32_t bit7Check = get_n_bit(fetched, 7, 1);
+        uint32_t bit7Check = get_n_bits(fetched, 7, 1);
         if (bit7Check == 0) {
             decodeDP(instruction, fetched);
         } else {

@@ -33,8 +33,6 @@ void executeBR(instruction_type instruction, struct stateOfMachine ARM11_registe
     twos_complement_extend(offset);
     //add offset to PC
     ARM11_registers.registers[15] += twos_complement_extend(offset);
-
-
 }
 
 

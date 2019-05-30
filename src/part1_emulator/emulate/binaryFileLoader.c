@@ -11,7 +11,7 @@
 
 
 //binary file loader
-uint32_t * binaryFileLoader(char **argv) {
+uint8_t * binaryFileLoader(char **argv) {
     int size8 = sizeof(uint8_t);
     uint8_t *mem = calloc(numOfAddresses, size8);
     FILE *fp;
