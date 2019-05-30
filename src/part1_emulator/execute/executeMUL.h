@@ -7,6 +7,6 @@
 
 #include "part1_emulator/emulator_utility/instruction.h"
 
-void executeMUL(uint32_t fetched, struct stateOfMachine state);
+void executeMUL(instruction_type instruction, struct stateOfMachine state);
 
 #endif //SRC_EXECUTEMUL_H

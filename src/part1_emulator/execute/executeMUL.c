@@ -15,22 +15,19 @@
 #include "part1_emulator/emulator_utility/instruction.h"
 #include "part1_emulator/emulator_utility/state.h"
 
-
-// (Rini) This function is throwing an error ("conflicting types for 'executeMUL') - not sure why
-
-void executeMUL(uint32_t fetched, struct stateOfMachine state) {
+void executeMUL(instruction_type instruction, struct stateOfMachine state) {
     uint32_t result;
 
 //    instruction.instructionType = MUL;
 // holds the A bit
-    bool accumulate = get_n_bits(fetched, 21, 1);
+    bool accumulate = instruction.accumulate;
 // holds the S bit
-    bool scc = get_n_bits(fetched, 20, 1);
+    bool scc = instruction.scc;
 // rd,rn,rs,rm it should be a 4-bits address in the array registers, 0-12
-    register_address rd = get_n_bits(fetched, 16, 4);
-    register_address rn = get_n_bits(fetched, 12, 4);
-    register_address rs = get_n_bits(fetched, 8, 4);
-    register_address rm = get_n_bits(fetched, 0, 4);
+    register_address rd = instruction.rd;
+    register_address rn = instruction.rn;
+    register_address rs = instruction.rs;
+    register_address rm = instruction.rm;
 
     uint32_t valueRn = state.registers[(int) rn];
     uint32_t valueRm = state.registers[(int) rm];
@@ -60,24 +57,4 @@ void executeMUL(uint32_t fetched, struct stateOfMachine state) {
 
     }
 
-
 }
-
-/**
-int binaryToDecimal(uint8_t binary_val) {
-    int decimal_val = 0;
-    int base = 1;
-    int result = 0;
-    uint8_t mask = 0x1;
-
-    while (binary_val > 0) {
-        if (mask & binary_val == 1) {
-            decimal_val += base;
-        }
-        binary_val = binary_val >> 1;
-        base *= 2;
-    }
-
-}
-
-*/

@@ -5,20 +5,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include "part1_emulator/emulator_utility/instruction.h"
 #include "executeSDT.h"
 #include "part1_emulator/emulator_utility/state.h"
 #include "part1_emulator/emulator_utility/utility.h"
 
-void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
+void executeSDT(instruction_type instruction, struct stateOfMachine *state) {
 
 
-    uint32_t iFlag = get_n_bits(instruction, 25, 1);
-    uint32_t pFlag = get_n_bits(instruction, 24, 1);
-    uint32_t uFlag = get_n_bits(instruction, 23, 1);
-    uint32_t lFlag = get_n_bits(instruction, 20, 1);
-    uint32_t rn = get_n_bits(instruction, 16, 4); //base register
-    uint32_t rd = get_n_bits(instruction, 12, 4);  //source/destination register
-    uint32_t offset = get_n_bits(instruction, 0, 12);
+    uint32_t iFlag = instruction.immediateOffset;
+    uint32_t pFlag = instruction.Pre_Post;
+    uint32_t uFlag = instruction.upBit;
+    uint32_t lFlag = instruction.storeBit;
+    uint32_t rn = instruction.rn; //base register
+    uint32_t rd = instruction.rd;  //source/destination register
+    uint32_t offset = instruction.offsets_or_operand2;
 
     uint32_t address;
 
@@ -70,7 +71,7 @@ void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
     }
 
     if (address > 65535 || address < 0) {
-        printf('Invalid memory access');
+        printf("Invalid memory access");
     }
     else {
         //Loads word from memory or stores word to memory

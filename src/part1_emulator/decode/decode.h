@@ -5,6 +5,8 @@
 #ifndef SRC_DECODE_H
 #define SRC_DECODE_H
 
+#include <part1_emulator/emulator_utility/instruction.h>
+
 void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction);
 void decodeMUL(instruction_type instruction, uint32_t fetched);
 void decodeDP(instruction_type instruction, uint32_t fetched);

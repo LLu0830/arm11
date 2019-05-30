@@ -24,7 +24,7 @@ typedef struct {
     register_address rs;
     register_address rm;
 
-    //opcode in dataprocessing
+    //opcode in data processing
     OpCode operationType;
 
     //12/24bits operand2

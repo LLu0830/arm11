@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
 #include <assert.h>
+#include <part1_emulator/emulator_utility/instruction.h>
 
 void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit) {
     *result = 0;
@@ -113,14 +114,13 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *wr
 
 
 
-void executeDP(uint32_t instruction, struct stateOfMachine ARM11) {
-//    PUT INSIDE DECODE.C
-    uint32_t i = get_n_bits(instruction, 25, 1);
-    uint32_t opCode = get_n_bits(instruction, 21, 4);
-    uint32_t s = get_n_bits(instruction, 20, 1);
-    int rn = get_n_bits(instruction, 16, 4);
-    int rd = get_n_bits(instruction, 12, 4);
-    uint32_t op2 = get_n_bits(instruction, 0, 12);
+void executeDP(instruction_type instruction, struct stateOfMachine ARM11) {
+    uint32_t i = instruction.immediateOperand;
+    uint32_t opCode = instruction.operationType;
+    uint32_t s = instruction.scc;
+    int rn = instruction.rn;
+    int rd = instruction.rd;
+    uint32_t op2 = instruction.offsets_or_operand2;
 
 
     assert(rn >= 0 && rn <= 16);
@@ -139,14 +139,9 @@ void executeDP(uint32_t instruction, struct stateOfMachine ARM11) {
 
     uint32_t cpsr = ARM11.registers[16];
 
-//    Setting C bit
+//    Setting C bit for operations not involving barrel shifter
 
     switch (opCode) {
-        case AND:
-        case EOR:
-        case ORR:
-        case TEQ:
-        case TST:
         case MOV:
             // if i flag is zero then it is a shift operation
             if (!i) {
@@ -161,8 +156,8 @@ void executeDP(uint32_t instruction, struct stateOfMachine ARM11) {
                 change_bit(ARM11.registers[CPSRPosition], 29, 0);
             }
             break;
-
         case SUB:
+
         case CMP:
             //rn - operand2
             if (op2Value > rnValue) {
@@ -179,6 +174,8 @@ void executeDP(uint32_t instruction, struct stateOfMachine ARM11) {
             } else {
                 change_bit(ARM11.registers[CPSRPosition], 29, 1);
             }
+            break;
+        default:
             break;
     }
 

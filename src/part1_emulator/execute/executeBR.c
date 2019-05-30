@@ -11,7 +11,7 @@
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
 
 #include "part1_emulator/emulator_utility/instruction.h"
-#include "emulate/pipeline.h"
+#include "part1_emulator/emulate/pipeline.h"
 
 
 //2's complement extend
@@ -24,17 +24,14 @@ int twos_complement_extend(int offset) {
 }
 
 
-void executeBR(uint32_t b, struct stateOfMachine ARM11_registers) {
-    int cond = get_n_bits(b, 28, 4);
-    int offset = get_n_bits(b, 0, 23);
-    _Bool valid_cond = (cond == EQ || cond == NE || cond == GE || cond == LT || cond == GT || cond == LE ||
-                        cond == AL);
-    if (valid_cond) {
-        //2's complement extend
-        twos_complement_extend(offset);
-        //add offset to PC
-        ARM11_registers.registers[15] += twos_complement_extend(offset);
-    }
+void executeBR(instruction_type instruction, struct stateOfMachine ARM11_registers) {
+    int cond = instruction.conditionType;
+    int offset = instruction.offsets_or_operand2;
+    //2's complement extend
+    twos_complement_extend(offset);
+    //add offset to PC
+    ARM11_registers.registers[15] += twos_complement_extend(offset);
+
 }
 
 
