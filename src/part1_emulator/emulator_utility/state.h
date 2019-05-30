@@ -18,7 +18,7 @@
 
 
 struct stateOfMachine {
-    uint32_t registers[17];
+    uint32_t registers[numOfRegisters];
     uint8_t *mem;
     bool running;
 };

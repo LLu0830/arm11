@@ -24,22 +24,27 @@ void pipeline(struct stateOfMachine *ARM11) {
     while (ARM11->running) {
 
         //executes decoded instruction
-        if (pipe.has_decoded && pipe.decoded.instructionType != HLT) {
-            execute(&pipe, ARM11);
-        }
-        //sets condition of loop to false, thus terminating the program
-        else {
+        if (pipe.decoded.instructionType != HLT) {
+            if (pipe.has_decoded) {
+                printf("Instruction: %X\n", pipe.fetched);
+                printf("Ins Type: %X\n", HLT);
+                execute(&pipe, ARM11);
+            }
+        } else {
             ARM11->running = false;
         }
+        //sets condition of loop to false, thus terminating the program
+
 
         //decoding fetched instruction
         if (pipe.has_fetched) {
-            pipe.decoded = decode(*ARM11, pipe.fetched);
+            pipe.decoded = decode(pipe.fetched);
             pipe.has_decoded = true;
         }
 
         //fetching new instruction
         pipe.fetched = fetch(ARM11, ARM11->registers[PCPosition]);
+//        pipe.fetched = fetch(ARM11);
         pipe.has_fetched = true;
 
         //increasing program counter (PC)

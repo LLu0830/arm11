@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
-#include <pipeline.h>
+#include "../emulate/pipeline.h"
 #include "execute.h"
 #include "executeDP.h"
 #include "executeSDT.h"
@@ -23,7 +23,7 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
     }
     InstructionType type = pipe->decoded.instructionType;
 
-    switch (pipe->decoded.instructionType) {
+    switch (type) {
         case DP:
             executeDP(pipe->decoded, state);
             break;

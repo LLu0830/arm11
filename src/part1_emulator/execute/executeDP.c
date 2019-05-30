@@ -21,7 +21,7 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
         *result = rotateRight(imm, rotateAmount);
     } else {
         uint32_t valueInRM = get_n_bits(op2, 0, 4);
-        uint32_t shift = get_n_bits(op2, 4, 8);
+//        uint32_t shift = get_n_bits(op2, 4, 8);
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
             uint32_t shiftAmount = get_n_bits(op2, 7, 5);
@@ -117,7 +117,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *wr
 void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
     uint32_t i = instruction.immediateOperand;
     uint32_t opCode = instruction.operationType;
-    uint32_t s = instruction.scc;
+//    uint32_t s = instruction.scc;
     int rn = instruction.rn;
     int rd = instruction.rd;
     uint32_t op2 = instruction.offsets_or_operand2;
@@ -144,6 +144,11 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
 //    Setting C bit for operations not involving barrel shifter
 
     switch (opCode) {
+        case AND:
+        case EOR:
+        case TST:
+        case TEQ:
+        case ORR:
         case MOV:
             // if i flag is zero then it is a shift operation
             if (!i) {
@@ -159,7 +164,6 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
             }
             break;
         case SUB:
-
         case CMP:
             //rn - operand2
             if (op2Value > rnValue) {
