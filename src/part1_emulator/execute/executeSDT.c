@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "part1_emulator/emulator_utility/instruction.h"
+#include "../emulator_utility/instruction.h"
 #include "executeSDT.h"
-#include "part1_emulator/emulator_utility/state.h"
-#include "part1_emulator/emulator_utility/utility.h"
+#include "../emulator_utility/state.h"
+#include "../emulator_utility/utility.h"
 
 void executeSDT(instruction_type instruction, struct stateOfMachine *state) {
 

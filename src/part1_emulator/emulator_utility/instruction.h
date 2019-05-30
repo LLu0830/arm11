@@ -8,7 +8,7 @@
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
 
-#import "part1_emulator/execute/execute.h"
+#import "../execute/execute.h"
 #include "DefinedTypes.h"
 #include <stdbool.h>
 
