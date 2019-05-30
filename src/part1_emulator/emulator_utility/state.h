@@ -3,7 +3,6 @@
 //
 
 
-#include "instruction.h"
 #include <stdint.h>
 #include <stdbool.h>
 //#include "part1_emulator/emulate/pipeline.h"
@@ -11,9 +10,9 @@
 #ifndef C_GROUP_31_STATE_H
 #define C_GROUP_31_STATE_H
 
-#define numOfRegisters 17;
-#define numOfAddresses 65536;
-#define minAddress 0;
+#define numOfRegisters 17
+#define numOfAddresses 65536
+#define minAddress 0
 #define CPSRPosition 16
 #define PCPosition 15
 

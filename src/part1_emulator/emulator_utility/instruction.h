@@ -8,7 +8,6 @@
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
 
-#include "../execute/execute.h"
 #include "DefinedTypes.h"
 #include <stdbool.h>
 
@@ -47,7 +46,7 @@ typedef struct {
     bool immediateOffset;
     bool Pre_Post;
 
-    bool upBit;//>>>>>>> b0a83b923c19818035ee06d5f905b2df93c76e5c
+    bool upBit;
 
 
     bool storeBit;
