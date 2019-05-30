@@ -84,14 +84,4 @@ void executeSDT(uint32_t instruction, struct stateOfMachine *state) {
     }
 }
 
-////loads word from address in memory to registers
-//void loadFrom(uint32_t address, uint32_t destination, struct stateOfMachine *machine) {
-//    uint32_t word = machine->mem[address];
-//    machine->registers[destination] = word;
-//}
-
-////stores word to address in memory
-//void storeTo(uint32_t address, uint32_t word, struct stateOfMachine *machine) {
-//    machine->mem[address] = word;
-//}
 

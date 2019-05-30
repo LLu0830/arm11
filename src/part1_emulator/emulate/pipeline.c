@@ -29,7 +29,7 @@ void pipeline(struct stateOfMachine ARM11) {
 
         //executes decoded instruction
         if (pipe.has_decoded && pipe.decodedType != HLT) {
-            execute(ARM11, pipe.toExecute, pipe.decodedType);
+            execute(*ARM11, pipe.toExecute, pipe.decodedType);
         }
         //sets condition of loop to false, thus terminating the program
         else {

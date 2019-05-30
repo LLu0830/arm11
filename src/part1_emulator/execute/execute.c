@@ -16,7 +16,7 @@
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
 
 //executes all types of instructions
-void execute(struct stateOfMachine state, uint32_t instruction, InstructionType type) {
+void execute(struct stateOfMachine *state, uint32_t instruction, InstructionType type) {
     Cond cond = get_n_bits(instruction, 28, 4);
     if (!checkCondition(*state, cond)) {
         return;
