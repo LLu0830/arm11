@@ -15,10 +15,7 @@
 
 //executes all types of instructions
 
-// (Rini) updated functions to make sure this file compiles
-
-
-void execute(struct instruction_type instruction, struct stateOfMachine state) {
+void execute(struct instruction_type instruction, struct stateOfMachine *state) {
     if (!checkCondition(state, instruction.conditionType)) {
         return;
         //instruction is ignored if the condition does not hold
