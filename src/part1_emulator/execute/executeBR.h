@@ -5,7 +5,7 @@
 #ifndef SRC_EXECUTEBR_H
 #define SRC_EXECUTEBR_H
 
-#include "pipeline.h"
+#include "../emulate/pipeline.h"
 #include "../emulator_utility/instruction.h"
 
 int twos_complement_extend(int offset);

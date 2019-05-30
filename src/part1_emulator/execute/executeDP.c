@@ -11,7 +11,7 @@
 #include <stdbool.h>
 #include "../emulator_utility/DefinedTypes.h"
 #include <assert.h>
-#include <../emulator_utility/instruction.h>
+#include "../emulator_utility/instruction.h"
 
 void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit) {
     *result = 0;
