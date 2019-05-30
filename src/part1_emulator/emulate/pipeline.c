@@ -24,12 +24,12 @@ void pipeline(struct stateOfMachine ARM11) {
     pipe.has_fetched = false;
     pipe.has_decoded = false;
 
-    //three stage pipeline
+    //three stage pipeline, terminates when ARM11 is not running
     while (ARM11.running) {
 
         //executes decoded instruction
         if (pipe.has_decoded && pipe.decodedType != HLT) {
-            execute(ARM11, pipe.decoded);
+            execute(ARM11, pipe.toExecute);
         }
         //sets condition of loop to false, thus terminating the program
         else {
@@ -38,8 +38,9 @@ void pipeline(struct stateOfMachine ARM11) {
 
         //decoding fetched instruction
         if (pipe.has_fetched) {
-            pipe.decoded = pipe.fetched;
+            pipe.toExecute = pipe.fetched;
             pipe.has_decoded = true;
+            pipe.decodedType = get_type(pipe.toExecute);
         }
 
         //fetching new instruction
