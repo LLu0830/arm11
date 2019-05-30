@@ -118,8 +118,8 @@ void executeDP(uint32_t instruction, struct stateOfMachine *ARM11) {
     uint32_t i = get_n_bits(instruction, 25, 1);
     uint32_t opCode = get_n_bits(instruction, 21, 4);
     uint32_t s = get_n_bits(instruction, 20, 1);
-    int rn = get_n_bits(instruction, 16, 4);
-    int rd = get_n_bits(instruction, 12, 4);
+    uint32_t rn = get_n_bits(instruction, 16, 4);
+    uint32_t rd = get_n_bits(instruction, 12, 4);
     uint32_t op2 = get_n_bits(instruction, 0, 12);
 
 
