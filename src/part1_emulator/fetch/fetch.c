@@ -16,6 +16,7 @@
 // (Rini) confused - are we allowed to just access array elements from mem even though it is of the type uint32_t * (a pointer)?
 
 
+
 //uint32_t fetch(struct stateOfMachine ARM11) {
 //    uint32_t f = 0;
 //    uint32_t PC = (int) ARM11.registers[15];
