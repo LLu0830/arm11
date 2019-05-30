@@ -86,7 +86,7 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
     uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
 //    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
 
-    bool NEqualsV = (VMasked >> 3) == NMasked;
+    bool NEqualsV = (NMasked >> 3) == VMasked;
     switch (condition) {
         case EQ:
             if (ZMasked != 0) {

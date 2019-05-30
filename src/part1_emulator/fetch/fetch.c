@@ -27,5 +27,6 @@
 //}
 
 uint32_t fetch(struct stateOfMachine *ARM11, uint32_t address) {
+    printf("in fetch %X \n", *((uint32_t * )(ARM11->mem + address)));
     return *((uint32_t * )(ARM11->mem + address));
 }

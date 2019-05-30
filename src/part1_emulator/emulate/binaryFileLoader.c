@@ -14,7 +14,9 @@ uint8_t * binaryFileLoader(char **argv) {
     FILE *fp;
     fp = fopen(argv[0], "rb");
     while (!feof(fp)) {
+
         fread(mem, size8, 1, fp);
     }
+
     return mem;
 }
