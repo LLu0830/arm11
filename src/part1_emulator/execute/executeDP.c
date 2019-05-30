@@ -137,6 +137,7 @@ void executeDP(uint32_t instruction, struct stateOfMachine *ARM11) {
         ARM11.registers[rd] = result;
     }
 
+    //shouldn't it be a pointer???
     uint32_t cpsr = ARM11.registers[16];
 
 //    Setting C bit
