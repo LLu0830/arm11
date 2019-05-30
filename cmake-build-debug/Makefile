@@ -258,33 +258,6 @@ src/part1_emulator/emulate/pipeline.c.s:
 	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part1_emulator/emulate/pipeline.c.s
 .PHONY : src/part1_emulator/emulate/pipeline.c.s
 
-src/part1_emulator/emulator_utility/instruction.o: src/part1_emulator/emulator_utility/instruction.c.o
-
-.PHONY : src/part1_emulator/emulator_utility/instruction.o
-
-# target to build an object file
-src/part1_emulator/emulator_utility/instruction.c.o:
-	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part1_emulator/emulator_utility/instruction.c.o
-.PHONY : src/part1_emulator/emulator_utility/instruction.c.o
-
-src/part1_emulator/emulator_utility/instruction.i: src/part1_emulator/emulator_utility/instruction.c.i
-
-.PHONY : src/part1_emulator/emulator_utility/instruction.i
-
-# target to preprocess a source file
-src/part1_emulator/emulator_utility/instruction.c.i:
-	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part1_emulator/emulator_utility/instruction.c.i
-.PHONY : src/part1_emulator/emulator_utility/instruction.c.i
-
-src/part1_emulator/emulator_utility/instruction.s: src/part1_emulator/emulator_utility/instruction.c.s
-
-.PHONY : src/part1_emulator/emulator_utility/instruction.s
-
-# target to generate assembly for a file
-src/part1_emulator/emulator_utility/instruction.c.s:
-	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part1_emulator/emulator_utility/instruction.c.s
-.PHONY : src/part1_emulator/emulator_utility/instruction.c.s
-
 src/part1_emulator/emulator_utility/utility.o: src/part1_emulator/emulator_utility/utility.c.o
 
 .PHONY : src/part1_emulator/emulator_utility/utility.o
@@ -498,9 +471,6 @@ help:
 	@echo "... src/part1_emulator/emulate/pipeline.o"
 	@echo "... src/part1_emulator/emulate/pipeline.i"
 	@echo "... src/part1_emulator/emulate/pipeline.s"
-	@echo "... src/part1_emulator/emulator_utility/instruction.o"
-	@echo "... src/part1_emulator/emulator_utility/instruction.i"
-	@echo "... src/part1_emulator/emulator_utility/instruction.s"
 	@echo "... src/part1_emulator/emulator_utility/utility.o"
 	@echo "... src/part1_emulator/emulator_utility/utility.i"
 	@echo "... src/part1_emulator/emulator_utility/utility.s"

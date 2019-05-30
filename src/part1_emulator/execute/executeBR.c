@@ -24,18 +24,14 @@ int twos_complement_extend(int offset) {
 }
 
 
-//LIZE NEEDS TO WORK ON THIS
 void executeBR(instruction_type instruction, struct stateOfMachine ARM11_registers) {
     int cond = instruction.conditionType;
     int offset = instruction.offsets_or_operand2;
-    _Bool valid_cond = (cond == EQ || cond == NE || cond == GE || cond == LT || cond == GT || cond == LE ||
-                        cond == AL);
-    if (valid_cond) {
-        //2's complement extend
-        twos_complement_extend(offset);
-        //add offset to PC
-        ARM11_registers.registers[15] += twos_complement_extend(offset);
-    }
+    //2's complement extend
+    twos_complement_extend(offset);
+    //add offset to PC
+    ARM11_registers.registers[15] += twos_complement_extend(offset);
+
 }
 
 

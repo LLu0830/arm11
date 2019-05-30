@@ -11,7 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/C_Group_31.dir/src/part1_emulator/fetch/fetch.c.o"
   "CMakeFiles/C_Group_31.dir/src/part1_emulator/emulate/pipeline.c.o"
   "CMakeFiles/C_Group_31.dir/src/part1_emulator/emulator_utility/utility.c.o"
-  "CMakeFiles/C_Group_31.dir/src/part1_emulator/emulator_utility/instruction.c.o"
   "C_Group_31.pdb"
   "C_Group_31"
 )

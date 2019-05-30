@@ -107,9 +107,6 @@
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/DefinedTypes.h">
 			<Option target="C_Group_31"/>
 		</Unit>
-		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/instruction.c">
-			<Option target="C_Group_31"/>
-		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/instruction.h">
 			<Option target="C_Group_31"/>
 		</Unit>
