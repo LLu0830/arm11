@@ -8,7 +8,7 @@
 #ifndef C_GROUP_31_INSTRUCTION_H
 #define C_GROUP_31_INSTRUCTION_H
 
-#import "../execute/execute.h"
+#include "../execute/execute.h"
 #include "DefinedTypes.h"
 #include <stdbool.h>
 
