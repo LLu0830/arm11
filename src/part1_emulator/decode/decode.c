@@ -24,7 +24,7 @@ instruction_type decode(struct stateOfMachine state, uint32_t fetched) {
     //what type of instruction it is..
     //store the instruction in corresponding instruction
     //and execute
-    //inititalize instruction_type and return it
+    //initialize instruction_type and return it
 
     instruction_type instruction;
     instruction.conditionType = get_n_bits(fetched, 28, 4);

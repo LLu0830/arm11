@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 ToolSet: w64 5.0 (local)@D:\Programs\Haskell\8.4.3\mingw
->>>>>>> 50c3eae7b86046fbbff487cfc2b64127c7aa8b2d
 Options: 
 
 Options:
