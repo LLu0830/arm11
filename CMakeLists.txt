@@ -30,4 +30,4 @@ add_executable(C_Group_31
         src/part1_emulator/emulate/pipeline.h
         "src/part1_emulator/emulator_utility/state.h"
         "src/part1_emulator/emulator_utility/utility.c"
-        "src/part1_emulator/emulator_utility/utility.h" "src/part1_emulator/emulator_utility/instruction.c")
+        "src/part1_emulator/emulator_utility/utility.h")

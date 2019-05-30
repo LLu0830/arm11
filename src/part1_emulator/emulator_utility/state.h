@@ -2,9 +2,6 @@
 // Created by mw6118 on 26/05/19.
 //
 
-#include "instruction.h"
-#include <stdint.h>
-#include "part1_emulator/emulate/pipeline.h"
 
 #ifndef C_GROUP_31_STATE_H
 #define C_GROUP_31_STATE_H
@@ -13,6 +10,7 @@
 #define numOfAddresses 65536;
 #define CPSRPosition 16
 #define PCPosition 15
+
 
 struct stateOfMachine {
     uint32_t registers[17];

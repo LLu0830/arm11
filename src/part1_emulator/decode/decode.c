@@ -18,7 +18,7 @@
 //add ARM11.registers.decoded=output
 
 
-/**
+
 void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
     // check condition first
     // get cond 4bits
@@ -44,6 +44,8 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
         decodeSDT(instruction, fetched);
     }
 
+
+//    FIX CHECK BETWEEN MUL & DP
     //MUL & DP
     uint32_t bit4Check = (fetched >> 4) & 0x1;
     if (bit4Check == 0) {
@@ -54,7 +56,6 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     }
 }
 
-*/
 
 
 void decodeMUL(instruction_type instruction, uint32_t fetched) {
@@ -72,17 +73,14 @@ void decodeMUL(instruction_type instruction, uint32_t fetched) {
 
 
 void decodeDP(instruction_type instruction, uint32_t b) {
-    // Jason says can keep it like in the executeDP file.
-    // May ignore the following or change a few lines in executeDP
-
-//    instruction.instructionType = DP;
-//    instruction.conditionType = get_n_bits(b, 28, 4);
-//    instruction.immediateOperand = get_n_bits(b, 25, 1);
-//    instruction.operationType = get_n_bits(b, 21, 4);
-//    instruction.scc = get_n_bits(b, 20, 1);
-//    instruction.rn = get_n_bits(b, 16, 4);
-//    instruction.rd = get_n_bits(b, 12, 4);
-//    instruction.offsets_or_operand2 = get_n_bits(b, 0, 12);
+    instruction.instructionType = DP;
+    instruction.conditionType = get_n_bits(b, 28, 4);
+    instruction.immediateOperand = get_n_bits(b, 25, 1);
+    instruction.operationType = get_n_bits(b, 21, 4);
+    instruction.scc = get_n_bits(b, 20, 1);
+    instruction.rn = get_n_bits(b, 16, 4);
+    instruction.rd = get_n_bits(b, 12, 4);
+    instruction.offsets_or_operand2 = get_n_bits(b, 0, 12);
 }
 
 void decodeSDT(instruction_type instruction, uint32_t fetched) {

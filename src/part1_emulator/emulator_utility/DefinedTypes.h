@@ -10,16 +10,16 @@
 #define C_GROUP_31_TYPES_H
 
 typedef enum {
-    AND,
-    EOR,
-    SUB,
-    RSB,
-    ADD,
-    TST,
-    TEQ,
-    CMP,
-    ORR,
-    MOV
+    AND = 0,
+    EOR = 0x1,
+    SUB = 0x2,
+    RSB = 0x3,
+    ADD = 0x4,
+    TST = 0x8,
+    TEQ = 0x9,
+    CMP = 0xa,
+    ORR = 0xb,
+    MOV = 0xc
 } OpCode;
 
 
