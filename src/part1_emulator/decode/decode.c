@@ -19,13 +19,15 @@
 
 
 
-void decode(struct stateOfMachine state, uint32_t fetched, instruction_type instruction) {
-    // check condition first
-    // get cond 4bits
-    instruction.conditionType = 0xf & (fetched >> 28U);
+instruction_type decode(struct stateOfMachine state, uint32_t fetched) {
+
     //what type of instruction it is..
     //store the instruction in corresponding instruction
     //and execute
+    //inititalize instruction_type and return it
+
+    instruction_type instruction;
+    instruction.conditionType = get_n_bits(b, 28, 4);
 
     //HLT
     if (fetched == 0) {
@@ -33,13 +35,13 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
     }
 
     //BR
-    uint32_t branchCheck = (fetched >> 27) & 0x1;
+    uint32_t branchCheck = get_n_bit(fetched, 27, 1);
     if (branchCheck != 0) {
         decodeBR(instruction, fetched);
     }
 
     //SDT
-    uint32_t SDTCheck = (fetched >> 26) & 0x1;
+    uint32_t SDTCheck = get_n_bit(fetched, 26, 1);
     if (SDTCheck != 0) {
         decodeSDT(instruction, fetched);
     }
@@ -47,13 +49,20 @@ void decode(struct stateOfMachine state, uint32_t fetched, instruction_type inst
 
 //    FIX CHECK BETWEEN MUL & DP
     //MUL & DP
-    uint32_t bit4Check = (fetched >> 4) & 0x1;
+    uint32_t bit4Check = get_n_bit(fetched, 4, 1);
     if (bit4Check == 0) {
         decodeDP(instruction, fetched);
-        //instruction.instructionType = DP;
     } else {
-        decodeMUL(instruction, fetched);
+        uint32_t bit7Check = get_n_bit(fetched, 7, 1);
+        if (bit7Check == 0) {
+            decodeDP(instruction, fetched);
+        } else {
+            decodeMUL(instruction, fetched);
+        }
     }
+
+
+    return instruction;
 }
 
 
@@ -98,7 +107,6 @@ void decodeSDT(instruction_type instruction, uint32_t fetched) {
 
 void decodeBR(instruction_type instruction, uint32_t b) {
     instruction.instructionType = BR;
-//    instruction.conditionType = get_n_bits(b, 28, 4);
     instruction.offsets_or_operand2 = get_n_bits(b, 0, 23);
 }
 
