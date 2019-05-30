@@ -17,7 +17,7 @@
 #include "emulator_utility/instruction.h"
 #include "emulator_utility/state.h"
 
-void execute(instruction_type instruction, struct stateOfMachine state);
+void execute(struct stateOfMachine state, uint32_t instruction, InstructionType type);
 bool checkCondition(struct stateOfMachine state, Cond condition);
 
 void execute(instruction_type instruction, struct stateOfMachine state);

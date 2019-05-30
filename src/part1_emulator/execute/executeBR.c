@@ -5,14 +5,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "part1_emulator/emulator_utility/state.h"
-#include "memory.h"
 #include "executeBR.h"
 #include "part1_emulator/emulator_utility/utility.h"
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
-
 #include "part1_emulator/emulator_utility/instruction.h"
-#include "emulate/pipeline.h"
+#include "part1_emulator/emulate/pipeline.h"
 
+//pipeline has a side effect - PC is 8 bytes ahead of instruction
+//being executed, therefore the pipeline offset has to be subtracted from address
+//in PC value
+#define pipelineOffset = 8;
 
 //2's complement extend
 int twos_complement_extend(int offset) {
@@ -23,17 +25,16 @@ int twos_complement_extend(int offset) {
     return offset;
 }
 
-
-void executeBR(uint32_t b, struct stateOfMachine ARM11_registers) {
-    int cond = get_n_bits(b, 28, 4);
-    int offset = get_n_bits(b, 0, 23);
+void executeBR(uint32_t instruction, struct stateOfMachine ARM11_registers) {
+    int cond = get_n_bits(instruction, 28, 4);
+    int offset = get_n_bits(instruction, 0, 23);
     _Bool valid_cond = (cond == EQ || cond == NE || cond == GE || cond == LT || cond == GT || cond == LE ||
                         cond == AL);
     if (valid_cond) {
         //2's complement extend
         twos_complement_extend(offset);
         //add offset to PC
-        ARM11_registers.registers[15] += twos_complement_extend(offset);
+        ARM11->registers[PCPosition] += (twos_complement_extend(offset) - pipelineOffset);
     }
 }
 

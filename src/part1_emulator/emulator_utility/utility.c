@@ -154,10 +154,11 @@ InstructionType get_type(uint32_t fetched) {
     uint32_t bit4Check = (fetched >> 4) & 0x1;
     if (bit4Check == 0) {
         return DP;
-    } else {
+    }
+    //is this really okay???
+    else {
         return MUL;
     }
-
 
 }
 

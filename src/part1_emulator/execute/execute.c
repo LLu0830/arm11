@@ -15,34 +15,26 @@
 #include <stdbool.h>
 #include "part1_emulator/emulator_utility/DefinedTypes.h"
 
-//(Rini) changed enum from char to 'plain' type, and moved to this C file from header file
-// throwing errors - Manshu said she would change the number of instructionType enums we have so it's fine
-
 //executes all types of instructions
-
-
-//NEEDS CHANGING - CURRENTLY NOT COMPILING
-
-void execute(stateOfMachine state, uint32_t fetched) {
-    InstructionType type = get_type(fetched);
-    Cond cond = get_n_bits(fetched, 28, 4);
-    if (!checkCondition(state, cond)) {
+void execute(struct stateOfMachine state, uint32_t instruction, InstructionType type) {
+    Cond cond = get_n_bits(instruction, 28, 4);
+    if (!checkCondition(*state, cond)) {
         return;
-        //instruction is ignored
+        //instruction is ignored if the condition does not hold
     }
 
     switch (type) {
         case DP:
-            executeDP(fetched, state);
+            executeDP(instruction, *state);
             break;
         case MUL:
-            executeMUL(fetched, state);
+            executeMUL(instruction, *state);
             break;
         case SDT:
-            executeSDT(fetched, *state);
+            executeSDT(instruction, *state);
             break;
         case BR:
-            executeBR(fetched, state);
+            executeBR(instruction, *state);
             break;
         case HLT:
             return;
