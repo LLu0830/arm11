@@ -67,7 +67,7 @@ instruction_type decode(struct stateOfMachine state, uint32_t fetched) {
 
 
 
-void decodeMUL(instruction_type instruction, uint32_t fetched) {
+void decodeMUL(struct instruction_type instruction, uint32_t fetched) {
     instruction.instructionType = MUL;
 // holds the A bit
     instruction.accumulate = get_n_bits(fetched, 21, 1);
@@ -81,7 +81,7 @@ void decodeMUL(instruction_type instruction, uint32_t fetched) {
 }
 
 
-void decodeDP(instruction_type instruction, uint32_t b) {
+void decodeDP(struct instruction_type instruction, uint32_t b) {
     instruction.instructionType = DP;
     instruction.conditionType = get_n_bits(b, 28, 4);
     instruction.immediateOperand = get_n_bits(b, 25, 1);
@@ -92,7 +92,7 @@ void decodeDP(instruction_type instruction, uint32_t b) {
     instruction.offsets_or_operand2 = get_n_bits(b, 0, 12);
 }
 
-void decodeSDT(instruction_type instruction, uint32_t fetched) {
+void decodeSDT(struct instruction_type instruction, uint32_t fetched) {
     instruction.instructionType = SDT;
     instruction.immediateOffset = get_n_bits(fetched, 25, 1);
     instruction.Pre_Post = get_n_bits(fetched, 24, 1);
@@ -105,11 +105,11 @@ void decodeSDT(instruction_type instruction, uint32_t fetched) {
 }
 
 
-void decodeBR(instruction_type instruction, uint32_t b) {
+void decodeBR(struct instruction_type instruction, uint32_t b) {
     instruction.instructionType = BR;
     instruction.offsets_or_operand2 = get_n_bits(b, 0, 23);
 }
 
-void decodeHLT(instruction_type instruction, uint32_t fetched) {
+void decodeHLT(struct instruction_type instruction, uint32_t fetched) {
     instruction.instructionType = HLT;
 }
