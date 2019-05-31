@@ -7,7 +7,7 @@
 #define C_GROUP_31_TYPES_H
 
 typedef enum {
-    AND = 0,
+    AND = 0x0,
     EOR = 0x1,
     SUB = 0x2,
     RSB = 0x3,

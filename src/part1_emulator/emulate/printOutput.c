@@ -17,7 +17,7 @@ void printOut(struct stateOfMachine *state) {
     printf("PC  : %11d (0x%08X)\n", (int) state->registers[PCPosition], state->registers[PCPosition]);
     printf("CPSR: %11d (0x%08X)\n", (int) state->registers[CPSRPosition], state->registers[CPSRPosition]);
 
-    printf("Non-zero memory:");
+    printf("Non-zero memory:\n");
 
     for (int curr = 0; true; curr = curr + 4) {
         uint32_t f = 0;
@@ -26,6 +26,8 @@ void printOut(struct stateOfMachine *state) {
         }
         if (f == 0) {
             break;
+        } else {
+            printf("%x\n", f);
         }
     }
 
