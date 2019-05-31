@@ -67,9 +67,6 @@ instruction_type decode(uint32_t fetched) {
             return decodeMUL(instruction, fetched);
         }
     }
-
-
-    return *instruction;
 }
 
 
