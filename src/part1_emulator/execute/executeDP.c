@@ -74,14 +74,9 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
     switch (opCode) {
         case AND:
             printf("In AND\n");
-<<<<<<< HEAD
-            result = rnValue & op2Value;
-=======
-//            printf("rnValue: %x\n", rnValue);
             printf("op2Value: %x\n", op2Value);
             result = rnValue & op2Value;
             printf("%x\n", result);
->>>>>>> 44593c2b61cfab6f96fb898f975274fb127bf6b4
             break;
         case EOR:
             result = rnValue ^ op2Value;

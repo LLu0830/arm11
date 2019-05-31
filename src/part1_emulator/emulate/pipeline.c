@@ -28,8 +28,8 @@ void pipeline(struct stateOfMachine *ARM11) {
         //executes decoded instruction
         if (pipe->decoded.instructionType != HLT) {
             if (pipe->has_decoded) {
-                printf("execute in pipeline (fetched): %X\n", pipe->fetched);
-                printf("execute in pipeline (Instruction Type): %X\n", pipe->decoded.instructionType);
+//                printf("execute in pipeline (fetched): %X\n", pipe->fetched);
+//                printf("execute in pipeline (Instruction Type): %X\n", pipe->decoded.instructionType);
 
                 execute(pipe, ARM11);
             }
@@ -41,9 +41,9 @@ void pipeline(struct stateOfMachine *ARM11) {
 
         //decoding fetched instruction
         if (pipe->has_fetched) {
-            printf("decode in pipeline (instruction type before decode): %X\n", pipe->decoded.instructionType);
+//            printf("decode in pipeline (instruction type before decode): %X\n", pipe->decoded.instructionType);
             pipe->decoded = decode(pipe->fetched);
-            printf("decode in pipeline (instruction type after decode): %x\n", pipe->decoded.instructionType);
+//            printf("decode in pipeline (instruction type after decode): %x\n", pipe->decoded.instructionType);
             pipe->has_decoded = true;
         }
 
