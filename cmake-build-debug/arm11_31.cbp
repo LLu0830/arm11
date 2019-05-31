@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="arm11_31"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="arm11_31">
+				<Option output="/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/arm11_31" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/decode"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/fetch"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 arm11_31"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="arm11_31/fast">
+				<Option output="/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/arm11_31" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/decode"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/fetch"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 arm11_31/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/assemble.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/decode/decode.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/decode/decode.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate/binaryFileLoader.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate/binaryFileLoader.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate/pipeline.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate/pipeline.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/DefinedTypes.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/instruction.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/state.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/utility.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulator_utility/utility.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/execute.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/execute.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeBR.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeBR.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeDP.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeDP.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeMUL.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeMUL.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeSDT.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/execute/executeSDT.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/fetch/fetch.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/fetch/fetch.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

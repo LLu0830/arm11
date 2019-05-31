@@ -1,0 +1,60 @@
+%++++++++++++++++++++++++++++++++++++++++
+% Don't modify this section unless you know what you're doing!
+\documentclass[letterpaper,11pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{dirtytalk}
+\usepackage{textcomp}
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+%++++++++++++++++++++++++++++++++++++++++
+
+
+\begin{document}
+
+\title{Checkpoint Report}
+\author{C Group 31\\* Rini Banerjee (rb3018), Katarina Kulkova (kk6418),\\* Lize Lu (ll7818), Manshu Wang (mw6118)}
+\date{}
+\maketitle
+
+\section{Group Organisation}
+For Part I (The Emulator), we met during the first lab session and decided that each group member should work on the code for decoding and executing one ARM instruction, since there are four in total. We also made a document including the functions we believed we would need; we put this in a Google Drive folder so that all of us could access this at any time, and update it if we realised we needed to add any other features. We then split the work among ourselves, making sure that every function was \textquotesingle covered\textquotesingle \-  by at least one member of the group. \\*
+
+\noindent{We have been meeting regularly, so that if anyone has any questions or suggestions for any part of the code, we can get through it quickly and efficiently. We each have our own branch on GitLab, and always communicate with each other before merging into the master branch; this is to ensure no member\textquotesingle s code is mistakenly overwritten by another\textquotesingle s.\\*
+}
+
+\noindent{We think our group is working together quite well. One possible improvement for the next parts of our project would be to come up with the overall structure for our code earlier, since this would help us split the work among ourselves more quickly and waste less time figuring out what we need to do.}
+
+
+\section{Implementation Strategies}
+\subsection{How we structured our emulator}
+We have divided our emulator into five directories: fetch, decode, execute, emulate and emulatorutility. The emulate.c file (which contains the main function for Part I) is outside all of these directories, and all of these are included in the part1emulator directory inside src.\\*
+
+\noindent Here is a brief synopsis of how we structured each directory:
+
+\begin{itemize}
+    \item fetch: includes fetch.c and a corresponding header file. fetch.c uses the current value of the PC and the ARM11 structure we have created to fetch the next instruction from memory
+    \item decode: includes decode.c and a corresponding header file. decode.c contains the decode function, which takes an instruction, works out what type of instruction it is and then decodes it, splitting it into its components and storing this information in the struct instructiontype
+    \item execute: includes execute.c, executeBR.c, executeDP.c, executeMUL.c, executeSDT.c and corresponding header files. execute.c has a function, execute, which executes a decoded instruction in our struct for representing ARM11 (stateOfMachine), using a switch-case statement on the type of instruction to call functions from executeBR.c, executeDP.c, executeMUL.c, or executeSDT.c
+    \item emulate: includes binaryFileLoader.c, pipeline.c and corresponding header files. The function binaryFileLoader in binaryFileLoader.c loads instructions from the binary file specified in the command line argument into memory, and pipeline.c runs the three-stage pipeline needed to simulate the fetch-decode-execute cycle in the main function of emulate.c
+    \item emulatorutility: contains utility.c and a corresponding header file, DefinedTypes.h, instruction.h and state.h. utility.c contains utility functions for manipulation of binary numbers (e.g., masks). DefinedTypes.h contains enums that are used to define constants (e.g., an enum for the different types of instruction that the emulator should be able to recognise). instruction.h defines a struct called instructiontype that is used to store the decoded parts of an instruction. state.h defines a struct for representing ARM11, called stateOfMachine - this contains the 17 registers and their contents; the instructions taken from the binary file specified as a command line argument; and a boolean that represents whether or not the processor is running (i.e., whether the program has been terminated)
+\end{itemize}
+And emulate.c contains the main function for running the emulator.
+
+\subsection{Which bits from Part I might we be able to reuse in Part II?}
+We believe that state.h and DefinedTypes.h may be useful in Part II. state.h will be useful for representing the ARM11 registers and instructions, while DefinedTypes.h contains many enums that seem to be relevant for Part II as well - for example, when recognising assembly language instructions.
+
+\subsection{Future implementation tasks that may be challenging}
+
+Although we cannot tell yet exactly which parts of the project we will find challenging in the future, we anticipate that some sections of Part II will be difficult for us (for example, creating the symbol table abstract data type). In addition, none of us have used a Raspberry Pi before, so we may need some time to adjust to using such a new form of technology.
+
+\end{document}
