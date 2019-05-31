@@ -73,11 +73,6 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, ShiftType shiftType) {
     return 0;
 }
 
-uint32_t makeASRmask(int shiftAmount) {
-    uint32_t reverseMask = (1U << (unsigned int) (32 - shiftAmount - 1)) - 1;
-    return reverseMask ^ 0U;
-}
-
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];

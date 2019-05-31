@@ -21,7 +21,6 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
         *result = rotateRight(imm, rotateAmount);
     } else {
         uint32_t valueInRM = get_n_bits(op2, 0, 4);
-//        uint32_t shift = get_n_bits(op2, 4, 8);
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
             uint32_t shiftAmount = get_n_bits(op2, 7, 5);
@@ -33,34 +32,12 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
                 *carryBit = 0;
             } else {
                 uint32_t shiftCode = get_n_bits(op2, 5, 2);
-
                 if (shiftCode == 0) {
                     *carryBit = get_n_bits(valueInRM, 32 - shiftAmount, 1);
                 } else {
                     *carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
                 }
-                switch (shiftCode) {
-                    case 0:
-                        *result = valueInRM << shiftAmount;
-                        break;
-                    case 1:
-                        *result = valueInRM >> shiftAmount;
-                        break;
-                    case 2: {
-                        int bit31 = get_n_bits(valueInRM, 31, 0);
-                        *result = valueInRM >> shiftAmount;
-                        if (bit31 != 0) {
-                            uint32_t mask = makeASRmask(shiftAmount);
-                            *result = *result | mask;
-                        }
-                        break;
-                    }
-                    case 3:
-                        *result = rotateRight(valueInRM, shiftAmount);
-                        break;
-                    default:
-                        break;
-                }
+                *result = shiftRegister(valueInRM, shiftAmount, shiftCode);
             }
         }
     }
@@ -137,10 +114,7 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
         ARM11->registers[rd] = result;
     }
 
-    //shouldn't it be a pointer???
-    uint32_t cpsr = ARM11->registers[16];
     setC(ARM11, 0);
-
 
     if (s) {
         return;
