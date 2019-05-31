@@ -21,7 +21,6 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
         *result = rotateRight(imm, rotateAmount);
     } else {
         uint32_t valueInRM = get_n_bits(op2, 0, 4);
-//        uint32_t shift = get_n_bits(op2, 4, 8);
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
             uint32_t shiftAmount = get_n_bits(op2, 7, 5);
@@ -33,40 +32,17 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
                 *carryBit = 0;
             } else {
                 uint32_t shiftCode = get_n_bits(op2, 5, 2);
-
                 if (shiftCode == 0) {
                     *carryBit = get_n_bits(valueInRM, 32 - shiftAmount, 1);
                 } else {
                     *carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
                 }
-                switch (shiftCode) {
-                    case 0:
-                        *result = valueInRM << shiftAmount;
-                        break;
-                    case 1:
-                        *result = valueInRM >> shiftAmount;
-                        break;
-                    case 2: {
-                        int bit31 = get_n_bits(valueInRM, 31, 0);
-                        *result = valueInRM >> shiftAmount;
-                        if (bit31 != 0) {
-                            uint32_t mask = makeASRmask(shiftAmount);
-                            *result = *result | mask;
-                        }
-                        break;
-                    }
-                    case 3:
-                        *result = rotateRight(valueInRM, shiftAmount);
-                        break;
-                    default:
-                        break;
-                }
+                *result = shiftRegister(valueInRM, shiftAmount, shiftCode);
             }
         }
     }
 }
 
-//INCOMPLETE - Do I need to make the uints signed here (for the subtraction)?
 
 uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *writeFlag) {
     uint32_t result = 0;
@@ -117,7 +93,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *wr
 void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
     uint32_t i = instruction.immediateOperand;
     uint32_t opCode = instruction.operationType;
-//    uint32_t s = instruction.scc;
+    uint32_t s = instruction.scc;
     int rn = instruction.rn;
     int rd = instruction.rd;
     uint32_t op2 = instruction.offsets_or_operand2;
@@ -138,10 +114,13 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
         ARM11->registers[rd] = result;
     }
 
-    //shouldn't it be a pointer???
-    uint32_t cpsr = ARM11->registers[16];
+    setC(ARM11, 0);
 
-//    Setting C bit for operations not involving barrel shifter
+    if (s) {
+        return;
+    }
+
+    //    Setting C bit for operations not involving barrel shifter
 
     switch (opCode) {
         case AND:
@@ -151,34 +130,26 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
         case ORR:
         case MOV:
             // if i flag is zero then it is a shift operation
-            if (!i) {
-                change_bit(ARM11->registers[CPSRPosition], 29, carryBit);
-            }
+            setC(ARM11, carryBit);
             break;
 
         case ADD:
-            if (result < rnValue || result < op2Value) {
-                change_bit(ARM11->registers[CPSRPosition], 29, 1);
-            } else {
-                change_bit(ARM11->registers[CPSRPosition], 29, 0);
+            if (result > 0xffff) {
+                setC(ARM11, 1);
             }
             break;
         case SUB:
         case CMP:
             //rn - operand2
-            if (op2Value > rnValue) {
-                change_bit(ARM11->registers[CPSRPosition], 29, 0);
-            } else {
-                change_bit(ARM11->registers[CPSRPosition], 29, 1);
+            if (op2Value < rnValue) {
+                setC(ARM11, 1);
             }
             break;
 
         case RSB:
             // operand2 - rn
-            if (rn - op2Value) {
-                change_bit(ARM11->registers[CPSRPosition], 29, 0);
-            } else {
-                change_bit(ARM11->registers[CPSRPosition], 29, 1);
+            if (rnValue < op2Value) {
+                setC(ARM11, 1);
             }
             break;
         default:
@@ -188,13 +159,13 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
 //    Setting Z bit
 
     if (result == 0) {
-        change_bit(cpsr, 30, 1);
+        setZ(ARM11, 1);
     }
 
 //    Setting N bit
 
     uint32_t bit31 = get_n_bits(result, 31, 1);
-    change_bit(cpsr, 31, bit31);
+    setN(ARM11, bit31);
 
 }
 

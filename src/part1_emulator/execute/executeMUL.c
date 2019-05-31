@@ -49,12 +49,12 @@ void executeMUL(instruction_type instruction, struct stateOfMachine *state) {
         // update N,Z flag in CPSR
         // N - the 31st bit of the result   Z - only if the result is zero
         if (result == 0) {
-            setZ(*state, 1);
+            setZ(state, 1);
         }
 
         //get 31bit, if equal to N, unchanged, else update
         uint32_t value = get_n_bits(result, 31, 1);
-        setN(*state, value);
+        setN(state, value);
 
     }
 

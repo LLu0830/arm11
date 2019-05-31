@@ -28,8 +28,8 @@ instruction_type decode(uint32_t fetched) {
 
 //    struct stateOfMachine state = *stateP;
 
-    instruction_type instructionMain = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    instruction_type *instruction = &instructionMain;
+    instruction_type initialisedInstruction = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    instruction_type *instruction = &initialisedInstruction;
 
     instruction->conditionType = get_n_bits(fetched, 28, 4);
 
@@ -52,7 +52,6 @@ instruction_type decode(uint32_t fetched) {
     }
 
 
-//    FIX CHECK BETWEEN MUL & DP
     //MUL & DP
     uint32_t bit4Check = get_n_bits(fetched, 4, 1);
     if (bit4Check == 0) {
@@ -67,9 +66,6 @@ instruction_type decode(uint32_t fetched) {
             return decodeMUL(instruction, fetched);
         }
     }
-
-
-    return *instruction;
 }
 
 
