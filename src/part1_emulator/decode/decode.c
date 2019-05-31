@@ -104,6 +104,7 @@ instruction_type decodeDP(instruction_type *instruction, uint32_t b) {
     instruction->rn = get_n_bits(b, 16, 4);
     instruction->rd = get_n_bits(b, 12, 4);
     instruction->offsets_or_operand2 = get_n_bits(b, 0, 12);
+//    printf("Immediate operand in decode: %x\n", instruction->immediateOperand);
 
     return *instruction;
 
