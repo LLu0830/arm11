@@ -16,7 +16,7 @@
 
 
 uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
-    return ((b >> (unsigned int) start_pos) & (unsigned int) ((1 << number_of_bits) - 1));
+    return ((b >> start_pos) & ((1 << number_of_bits) - 1));
 }
 
 void change_bit(uint32_t b, int pos, int val) {
@@ -26,7 +26,7 @@ void change_bit(uint32_t b, int pos, int val) {
 
 //better rotate right function
 uint32_t rotateRight(uint32_t b, int n) {
-    return (b >> n) | (b << (sizeof(uint32_t) - n));
+    return (b >> n) | (b << (32 - n));
 }
 
 //executes logical shift left by n bits
