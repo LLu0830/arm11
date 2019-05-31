@@ -73,11 +73,6 @@ uint32_t shiftRegister(uint32_t b, uint32_t amount, ShiftType shiftType) {
     return 0;
 }
 
-uint32_t makeASRmask(int shiftAmount) {
-    uint32_t reverseMask = (1U << (unsigned int) (32 - shiftAmount - 1)) - 1;
-    return reverseMask ^ 0U;
-}
-
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
@@ -129,28 +124,28 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
 
 //setter functions for CPSR flags
 //may be wrong, since I am confused about little and big Endian in the spec
-void setN(struct stateOfMachine ARM11, uint32_t value){
-    uint32_t result = ARM11.registers[CPSRPosition];
+void setN(struct stateOfMachine *ARM11, uint32_t value){
+    uint32_t result = ARM11->registers[CPSRPosition];
     change_bit(result, 31, value);
-    ARM11.registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = result;
 }
 
-void setZ(struct stateOfMachine ARM11, uint32_t value){
-    uint32_t result = ARM11.registers[CPSRPosition];
+void setZ(struct stateOfMachine *ARM11, uint32_t value){
+    uint32_t result = ARM11->registers[CPSRPosition];
     change_bit(result, 30, value);
-    ARM11.registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = result;
 }
 
-void setC(struct stateOfMachine ARM11, uint32_t value){
-    uint32_t result = ARM11.registers[CPSRPosition];
+void setC(struct stateOfMachine *ARM11, uint32_t value){
+    uint32_t result = ARM11->registers[CPSRPosition];
     change_bit(result, 29, value);
-    ARM11.registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = result;
 }
 
-void setV(struct stateOfMachine ARM11, uint32_t value){
-    uint32_t result = ARM11.registers[CPSRPosition];
+void setV(struct stateOfMachine *ARM11, uint32_t value){
+    uint32_t result = ARM11->registers[CPSRPosition];
     change_bit(result, 28, value);
-    ARM11.registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = result;
 }
 
 

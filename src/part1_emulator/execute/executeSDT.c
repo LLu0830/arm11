@@ -46,7 +46,6 @@ void executeSDT(instruction_type instruction, struct stateOfMachine *state) {
         }
 
         rmContent = state->registers[rm];
-        //TO DO: shiftRegister function
         offset = shiftRegister(rmContent, shift, shiftType);
     }
 
