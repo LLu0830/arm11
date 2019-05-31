@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
-#include <pipeline.h>
+#include "../emulate/pipeline.h"
 #include "execute.h"
 #include "executeDP.h"
 #include "executeSDT.h"
@@ -18,11 +18,15 @@
 
 void execute(struct pipes *pipe, struct stateOfMachine *state) {
     if (!checkCondition(*state, pipe->decoded.conditionType)) {
+        printf("fail in check condition\n");
         return;
         //instruction is ignored if the condition does not hold
     }
-    switch (pipe->decoded.instructionType) {
+    InstructionType type = pipe->decoded.instructionType;
+
+    switch (type) {
         case DP:
+            printf("is executing DP\n");
             executeDP(pipe->decoded, state);
             break;
         case MUL:
@@ -35,6 +39,7 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
             executeBR(pipe, state);
             break;
         case HLT:
+            printf("is executing HLT\n");
             return;
         default:
             break;
