@@ -7,6 +7,6 @@
 
 #include "../emulator_utility/state.h"
 
-void printOut(struct stateOfMachine state);
+void printOut(struct stateOfMachine *state);
 
 #endif //ARM11_31_PRINTOUTPUT_H
