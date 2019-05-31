@@ -23,7 +23,7 @@ void pipeline(struct stateOfMachine *ARM11) {
     pipe->has_decoded = false;
 
     //three stage pipeline, terminates when ARM11 is not running
-    while (ARM11->running) {
+    while (1) {
 
         //executes decoded instruction
         if (pipe->decoded.instructionType != HLT) {
@@ -34,7 +34,6 @@ void pipeline(struct stateOfMachine *ARM11) {
                 execute(pipe, ARM11);
             }
         } else {
-            ARM11->running = false;
             break;
         }
         //sets condition of loop to false, thus terminating the program
