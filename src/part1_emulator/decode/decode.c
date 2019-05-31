@@ -35,19 +35,21 @@ instruction_type decode(uint32_t fetched) {
 
     //HLT
     if (fetched == 0) {
-        printf("decoded type halt\n");
+        printf("type HLT in decoding\n");
         return decodeHLT(instruction, fetched);
     }
 
     //BR
     uint32_t branchCheck = get_n_bits(fetched, 27, 1);
     if (branchCheck != 0) {
+        printf("type BR in decoding\n");
         return decodeBR(instruction, fetched);
     }
 
     //SDT
     uint32_t SDTCheck = get_n_bits(fetched, 26, 1);
     if (SDTCheck != 0) {
+        printf("type SDT in decoding\n");
         return decodeSDT(instruction, fetched);
     }
 
@@ -55,14 +57,15 @@ instruction_type decode(uint32_t fetched) {
     //MUL & DP
     uint32_t bit4Check = get_n_bits(fetched, 4, 1);
     if (bit4Check == 0) {
-        printf("decoded type DP\n");
+        printf("type DP in decoding\n");
         return decodeDP(instruction, fetched);
     } else {
         uint32_t bit7Check = get_n_bits(fetched, 7, 1);
         if (bit7Check == 0) {
-//            printf("decoded type DP\n");
+            printf("type DP in decoding\n");
             return decodeDP(instruction, fetched);
         } else {
+            printf("type MUL in decoding\n");
             return decodeMUL(instruction, fetched);
         }
     }

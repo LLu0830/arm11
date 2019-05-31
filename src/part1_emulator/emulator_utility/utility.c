@@ -113,6 +113,8 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
                 return true;
             }
             break;
+        case AL:
+            return true;
         default:
             break;
     }

@@ -48,37 +48,37 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, int *wr
     uint32_t result = 0;
     *writeFlag = 1;
     switch (opCode) {
-        case 0:
+        case AND:
             result = rnValue & op2Value;
             break;
-        case 0x1:
+        case EOR:
             result = rnValue ^ op2Value;
             break;
-        case 0x2:
+        case SUB:
             result = rnValue - op2Value;
             break;
-        case 0x3:
+        case RSB:
             result = op2Value - rnValue;
             break;
-        case 0x4:
+        case ADD:
             result = rnValue + op2Value;
             break;
-        case 0x8:
+        case TST:
             result = rnValue & op2Value;
             *writeFlag = 0;
             break;
-        case 0x9:
+        case TEQ:
             result = rnValue ^ op2Value;
             *writeFlag = 0;
             break;
-        case 0xa:
+        case CMP:
             result = rnValue - op2Value;
             *writeFlag = 0;
             break;
-        case 0xb:
+        case ORR:
             result = rnValue | op2Value;
             break;
-        case 0xc:
+        case MOV:
             result = op2Value;
             break;
         default:

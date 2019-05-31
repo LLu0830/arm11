@@ -21,9 +21,12 @@ uint32_t fetch(struct stateOfMachine *ARM11) {
     uint32_t f = 0;
     uint32_t PC = (int) ARM11->registers[15];
     for (int i = 0; i < 4; i++) {
-//        f |= (uint32_t) (* (ARM11->mem + PC + i)) << (i * 8);
-        f = (f << 8) | (uint32_t) (* (ARM11->mem + PC + i)) << (i * 8);
+        f |= ((uint32_t) * (ARM11->mem + PC + i)) << (i * 8);
+//        f = (f << 8) | (uint32_t) (* (ARM11->mem + PC + i)) << (i * 8);
     }
+//    uint32_t flipH = 0xF;
+
+
     printf("instruction get from fetch %X \n", f);
     return f;
 }
