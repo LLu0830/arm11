@@ -81,20 +81,20 @@ uint32_t makeASRmask(int shiftAmount) {
 bool checkCondition(struct stateOfMachine state, Cond condition) {
     //check condition fist
     uint32_t CPSRflag = state.registers[CPSRPosition];
-    uint32_t VMasked = (CPSRflag >> 28U) & (unsigned) V;
-    uint32_t NMasked = (CPSRflag >> 28U) & (unsigned) N;
-    uint32_t ZMasked = (CPSRflag >> 28U) & (unsigned) Z;
-//    uint32_t CMasked = (CPSRflag >> 28U) & (unsigned) C;
+    uint32_t VinCPSR = get_n_bits(CPSRflag, 28, 1);
+    uint32_t NinCPSR = get_n_bits(CPSRflag, 31, 1);
+    uint32_t ZinCPSR = get_n_bits(CPSRflag, 30, 1);
 
-    bool NEqualsV = (NMasked >> 3) == VMasked;
+
+    bool NEqualsV = (NinCPSR == VinCPSR);
     switch (condition) {
         case EQ:
-            if (ZMasked != 0) {
+            if (ZinCPSR != 0) {
                 return true;
             }
             break;
         case NE:
-            if (ZMasked == 0) {
+            if (ZinCPSR == 0) {
                 return true;
             }
             break;
@@ -109,12 +109,12 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
             }
             break;
         case GT:
-            if (ZMasked == 0 && NEqualsV) {
+            if ((ZinCPSR == 0) && NEqualsV) {
                 return true;
             }
             break;
         case LE:
-            if ((ZMasked != 0) || !NEqualsV) {
+            if ((ZinCPSR != 0) || !NEqualsV) {
                 return true;
             }
             break;

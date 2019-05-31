@@ -30,11 +30,12 @@ instruction_type decode(uint32_t fetched) {
 
     instruction_type instructionMain = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     instruction_type *instruction = &instructionMain;
+
     instruction->conditionType = get_n_bits(fetched, 28, 4);
 
     //HLT
     if (fetched == 0) {
-        printf("Fetched halt\n");
+        printf("decoded type halt\n");
         return decodeHLT(instruction, fetched);
     }
 
@@ -55,10 +56,12 @@ instruction_type decode(uint32_t fetched) {
     //MUL & DP
     uint32_t bit4Check = get_n_bits(fetched, 4, 1);
     if (bit4Check == 0) {
+        printf("decoded type DP\n");
         return decodeDP(instruction, fetched);
     } else {
         uint32_t bit7Check = get_n_bits(fetched, 7, 1);
         if (bit7Check == 0) {
+//            printf("decoded type DP\n");
             return decodeDP(instruction, fetched);
         } else {
             return decodeMUL(instruction, fetched);
@@ -96,6 +99,7 @@ instruction_type decodeDP(instruction_type *instruction, uint32_t b) {
     instruction->rn = get_n_bits(b, 16, 4);
     instruction->rd = get_n_bits(b, 12, 4);
     instruction->offsets_or_operand2 = get_n_bits(b, 0, 12);
+
     return *instruction;
 
 }

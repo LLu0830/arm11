@@ -18,6 +18,7 @@
 
 void execute(struct pipes *pipe, struct stateOfMachine *state) {
     if (!checkCondition(*state, pipe->decoded.conditionType)) {
+        printf("fail in check condition\n");
         return;
         //instruction is ignored if the condition does not hold
     }
@@ -25,6 +26,7 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
 
     switch (type) {
         case DP:
+            printf("is executing DP\n");
             executeDP(pipe->decoded, state);
             break;
         case MUL:
@@ -37,6 +39,7 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
             executeBR(pipe, state);
             break;
         case HLT:
+            printf("is executing HLT\n");
             return;
         default:
             break;

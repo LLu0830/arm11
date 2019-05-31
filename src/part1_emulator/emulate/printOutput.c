@@ -17,4 +17,12 @@ void printOut(struct stateOfMachine state) {
     printf("PC  : %11d (0x%08X)\n", (int) state.registers[PCPosition], state.registers[PCPosition]);
     printf("CPSR: %11d (0x%08X)\n", (int) state.registers[CPSRPosition], state.registers[CPSRPosition]);
 
+    printf("Non-zero memory:");
+    int i = 0;
+    while (*(state.mem + i) != 0) {
+        printf(" %x\n", *(state.mem + i));
+        i++;
+    }
+
+
 }

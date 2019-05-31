@@ -13,13 +13,13 @@ uint8_t * binaryFileLoader(char **argv) {
     uint8_t *mem = calloc(numOfAddresses, size8);
     FILE *fp;
     fp = fopen(argv[1], "rb");
+    printf("binaryFileLoaderGets: \n");
     while (!feof(fp)) {
         fread(mem, size8, 1, fp);
-
-
+        uint32_t *mem_p = (uint32_t *) mem;
+        printf(" %x\n", *mem_p);
     }
-    uint32_t *mem_p = (uint32_t *) mem;
-    printf("%x\n", *mem_p);
+
 
     return mem;
 }
