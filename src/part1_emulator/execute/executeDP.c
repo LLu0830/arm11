@@ -69,7 +69,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
     switch (opCode) {
         case AND:
             printf("In AND\n");
-            result = op2Value;
+            result = rnValue & op2Value;
             break;
         case EOR:
             result = rnValue ^ op2Value;
@@ -99,7 +99,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
             result = rnValue | op2Value;
             break;
         case MOV:
-            printf("In MOV");
+            printf("In MOV\n");
             result = op2Value;
             break;
         default:
