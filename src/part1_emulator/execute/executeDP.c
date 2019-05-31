@@ -13,14 +13,16 @@
 #include <assert.h>
 #include "../emulator_utility/instruction.h"
 
-void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit) {
+void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit, struct stateOfMachine *ARM11) {
     *result = 0;
     if (i) {
         uint32_t rotateAmount = get_n_bits(op2, 8, 4);
         uint32_t imm = get_n_bits(op2, 0, 8);
         *result = rotateRight(imm, rotateAmount * 2);
     } else {
-        uint32_t valueInRM = get_n_bits(op2, 0, 4);
+        printf("i is false\n");
+        uint32_t rm = get_n_bits(op2, 0, 4);
+        uint32_t valueInRM = ARM11->registers[rm];
         uint32_t lastBit = get_n_bits(op2, 4, 1);
         if (lastBit == 0) {
             uint32_t shiftAmount = get_n_bits(op2, 7, 5);
@@ -28,6 +30,7 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
             if (shiftAmount == 0) {
                 *result = valueInRM;
                 *carryBit = 0;
+                printf("result - operand2 (shiftAmount = 0): %x\n", *result);
                 return;
             } else if (shiftAmount > 32) {
                 switch (shiftCode) {
@@ -47,6 +50,7 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
                     default:
                         *result = 0;
                         *carryBit = 0;
+                        printf("result - operand2 (shiftAmount > 32 and LSL or LSR): %x\n", *result);
                         return;
                     }
             } else {
@@ -58,6 +62,7 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
             } else {
                 *carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
             }
+            printf("result - operand2 - reached the end: %x\n", *result);
         }
     }
 
@@ -69,7 +74,14 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
     switch (opCode) {
         case AND:
             printf("In AND\n");
+<<<<<<< HEAD
             result = rnValue & op2Value;
+=======
+//            printf("rnValue: %x\n", rnValue);
+            printf("op2Value: %x\n", op2Value);
+            result = rnValue & op2Value;
+            printf("%x\n", result);
+>>>>>>> 44593c2b61cfab6f96fb898f975274fb127bf6b4
             break;
         case EOR:
             result = rnValue ^ op2Value;
@@ -122,7 +134,7 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
     assert(rn >= 0 && rn <= 16);
     uint32_t rnValue = ARM11->registers[rn];
     uint32_t op2Value, carryBit;
-    getValFromOp2(op2, i, &op2Value, &carryBit);
+    getValFromOp2(op2, i, &op2Value, &carryBit, ARM11);
 
     bool writeFlag = 1;
     uint32_t result = getResult(opCode, rnValue, op2Value, &writeFlag);
