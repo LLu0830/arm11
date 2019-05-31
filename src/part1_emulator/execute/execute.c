@@ -30,12 +30,15 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
             executeDP(pipe->decoded, state);
             break;
         case MUL:
+            printf("is executing MUL\n");
             executeMUL(pipe->decoded, state);
             break;
         case SDT:
+            printf("is executing SDT\n");
             executeSDT(pipe->decoded, state);
             break;
         case BR:
+            printf("is executing BR\n");
             executeBR(pipe, state);
             break;
         case HLT:

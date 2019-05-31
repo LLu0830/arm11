@@ -35,6 +35,7 @@ void pipeline(struct stateOfMachine *ARM11) {
             }
         } else {
             ARM11->running = false;
+            break;
         }
         //sets condition of loop to false, thus terminating the program
 
