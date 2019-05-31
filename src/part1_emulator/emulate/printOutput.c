@@ -11,10 +11,10 @@ void printOut(struct stateOfMachine state) {
     printf("Registers:\n");
 
     for (int i = 0; i < 13; i++) {
-        printf("$%d  : %d (%x)\n", i, (int)state.registers[i], (uint32_t) state.registers[i]);
+        printf("$%3d: %11d (0x%08X)\n", i, (int)state.registers[i], state.registers[i]);
     }
 
-    printf("PC  : %d (%x)\n", (int) state.registers[PCPosition], (uint32_t) state.registers[PCPosition]);
-    printf("CPSR: %d (%x)\n", (int) state.registers[CPSRPosition], (uint32_t) state.registers[CPSRPosition]);
+    printf("PC  : %11d (0x%08X)\n", (int) state.registers[PCPosition], state.registers[PCPosition]);
+    printf("CPSR: %11d (0x%08X)\n", (int) state.registers[CPSRPosition], state.registers[CPSRPosition]);
 
 }
