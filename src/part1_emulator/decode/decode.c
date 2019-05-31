@@ -56,17 +56,23 @@ instruction_type decode(uint32_t fetched) {
 
     //MUL & DP
     uint32_t bit4Check = get_n_bits(fetched, 4, 1);
-    if (bit4Check == 0) {
+    if (!bit4Check) {
         printf("type DP in decoding\n");
         return decodeDP(instruction, fetched);
     } else {
-        uint32_t bit7Check = get_n_bits(fetched, 7, 1);
-        if (bit7Check == 0) {
+        uint32_t i = get_n_bits(fetched, 25, 1);
+        if (i) {
             printf("type DP in decoding\n");
             return decodeDP(instruction, fetched);
         } else {
-            printf("type MUL in decoding\n");
-            return decodeMUL(instruction, fetched);
+            uint32_t bit7Check = get_n_bits(fetched, 7, 1);
+            if (!bit7Check) {
+                printf("type DP in decoding\n");
+                return decodeDP(instruction, fetched);
+            } else {
+                printf("type MUL in decoding\n");
+                return decodeMUL(instruction, fetched);
+            }
         }
     }
 }
