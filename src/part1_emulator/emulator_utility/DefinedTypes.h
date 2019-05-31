@@ -15,8 +15,8 @@ typedef enum {
     TST = 0x8,
     TEQ = 0x9,
     CMP = 0xa,
-    ORR = 0xb,
-    MOV = 0xc
+    ORR = 0xc,
+    MOV = 0xd
 } OpCode;
 
 
