@@ -127,7 +127,7 @@ Instruction decodeSDT(Instruction *instruction, uint32_t fetched) {
 
 Instruction decodeBR(Instruction *instruction, uint32_t b) {
     instruction->instructionType = BR;
-    instruction->offsets_or_operand2 = get_n_bits(b, 0, 23);
+    instruction->offsets_or_operand2 = get_n_bits(b, 0, 24);
     return *instruction;
 
 }
