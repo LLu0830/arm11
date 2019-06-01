@@ -114,6 +114,14 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
     return result;
 }
 
+int produceBorrow(uint32_t b1, uint32_t b2) {
+    for (int i = 0; i < 32; i++) {
+        if (!get_n_bits(b1, i, 1) && get_n_bits(b2, i, 1)) {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
     bool i = instruction.immediateOperand;
@@ -153,9 +161,7 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
         case MOV:
             // if i flag is zero then it is a shift operation
 //            printf("iFlag is %x\n", i);
-            if (!i) {
-                setC(ARM11, carryBit);
-            }
+            setC(ARM11, carryBit);
             break;
 
         case ADD:
@@ -167,11 +173,12 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
         case SUB:
         case CMP:
             //rn - operand2
-            if (op2Value < rnValue) {
-                setC(ARM11, 0);
-            } else {
-                setC(ARM11, 1);
-            }
+//            if (op2Value < rnValue) {
+//                setC(ARM11, 0);
+//            } else {
+//                setC(ARM11, 1);
+//            }
+            setC(ARM11, produceBorrow(rnValue, op2Value));
             break;
 
         case RSB:
