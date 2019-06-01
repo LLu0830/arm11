@@ -17,10 +17,11 @@ int main(int argc, char **argv) {
 
     pipeline(&ARM11);
 
- //   free(ARM11.registers);
+    printOut(&ARM11);
+
+    //   free(ARM11.registers);
     free(ARM11.mem);
 
-    printOut(&ARM11);
 
     return EXIT_SUCCESS;
 }

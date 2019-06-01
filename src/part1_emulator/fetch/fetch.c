@@ -27,7 +27,7 @@ uint32_t fetch(struct stateOfMachine *ARM11) {
 //    uint32_t flipH = 0xF;
 
 
-    printf("instruction get from fetch %X \n", f);
+//    printf("instruction get from fetch %X \n", f);
     return f;
 }
 

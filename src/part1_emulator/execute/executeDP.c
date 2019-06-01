@@ -76,7 +76,6 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
 //            printf("In AND\n");
 //            printf("op2Value: %x\n", op2Value);
             result = rnValue & op2Value;
-            printf("%x\n", result);
             break;
         case EOR:
             result = rnValue ^ op2Value;
@@ -99,7 +98,6 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
             *writeFlag = 0;
             break;
         case CMP:
-            printf("In CMP\n");
             result = rnValue - op2Value;
             *writeFlag = 0;
             break;
@@ -107,7 +105,6 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
             result = rnValue | op2Value;
             break;
         case MOV:
-            printf("In MOV\n");
             result = op2Value;
             break;
         default:
@@ -126,7 +123,6 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
     int rd = instruction.rd;
     uint32_t op2 = instruction.offsets_or_operand2;
 
-    printf("CPSR value is: %08x before executing DP\n", ARM11->registers[CPSRPosition]);
 
     assert(rn >= 0 && rn <= 16);
     uint32_t rnValue = ARM11->registers[rn];
@@ -136,7 +132,6 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
     bool writeFlag = 1;
     uint32_t result = getResult(opCode, rnValue, op2Value, &writeFlag);
 
-    printf("result is %x\n", result);
 
 //    Checking if result needs to be written to register
     if (writeFlag) {
@@ -145,14 +140,10 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
 
 
     if (!s) {
-        printf("Is not changing CPSR in DP\n");
-        printf("CPSR value is: %08x\n", ARM11->registers[CPSRPosition]);
-
         return;
     }
 
     //    Setting C bit for operations not involving barrel shifter
-    printf("the opcode is %x\n", opCode);
     switch (opCode) {
         case AND:
         case EOR:
@@ -161,7 +152,7 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
         case ORR:
         case MOV:
             // if i flag is zero then it is a shift operation
-            printf("iFlag is %x\n", i);
+//            printf("iFlag is %x\n", i);
             if (!i) {
                 setC(ARM11, carryBit);
             }
@@ -198,17 +189,17 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
 //    Setting Z bit
 
     if (result == 0) {
-        printf("Is changing CPSR ZFlag\n");
+//        printf("Is changing CPSR ZFlag\n");
         setZ(ARM11, 1);
     }
 
 //    Setting N bit
 
     uint32_t bit31 = get_n_bits(result, 31, 1);
-    printf("Is changing CPSR NFlag, the value is %x\n", bit31);
+//    printf("Is changing CPSR NFlag, the value is %x\n", bit31);
     setN(ARM11, bit31);
 
-    printf("CPSR value is: %08x\n", ARM11->registers[CPSRPosition]);
+//    printf("CPSR value is: %08x\n", ARM11->registers[CPSRPosition]);
 
 }
 

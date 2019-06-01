@@ -134,7 +134,6 @@ instruction decodeBR(instruction *instruction, uint32_t b) {
 
 instruction decodeHLT(instruction *instruction, uint32_t fetched) {
     instruction->instructionType = HLT;
-    printf("Ins Type: %x\n", instruction->instructionType);
     return *instruction;
 
 }
