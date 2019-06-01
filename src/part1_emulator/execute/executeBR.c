@@ -17,22 +17,39 @@
 #define pipelineOffset = 8;
 
 //2's complement extend
-int twos_complement_extend(int offset) {
-    const int bits = 24;
-    int mask = (1 << bits) - 1;
-    _Bool is_negative = (offset & ~(mask >> 1)) != 0;
-    offset |= -is_negative & ~mask;
+//int twos_complement_extend(int offset) {
+//    const int bits = 24;
+//    int mask = (1 << bits) - 1;
+//    _Bool is_negative = (offset & ~(mask >> 1)) != 0;
+//    offset |= -is_negative & ~mask;
+//    return offset;
+//}
+//
+//
+//void executeBR(struct pipes *pipe, struct stateOfMachine *ARM11) {
+//    int offset = pipe->decoded.offsets_or_operand2;
+//    //2's complement extend
+//    twos_complement_extend(offset);
+//    //add offset to PC
+//    pipe->has_fetched = false;
+//    ARM11->registers[PCPosition] += (twos_complement_extend(offset));
+//}
+
+
+uint32_t twos_complement_extend(uint32_t offset) {
+    offset <<= 2;
+    if (offset >> 25) {
+        offset |= ((1 << 6) - 1);
+    }
     return offset;
 }
 
 
 void executeBR(struct pipes *pipe, struct stateOfMachine *ARM11) {
-    int offset = pipe->decoded.offsets_or_operand2;
+    uint32_t offset = pipe->decoded.offsets_or_operand2;
     //2's complement extend
-    twos_complement_extend(offset);
     //add offset to PC
     pipe->has_fetched = false;
+    pipe->has_decoded = false;
     ARM11->registers[PCPosition] += (twos_complement_extend(offset));
 }
-
-

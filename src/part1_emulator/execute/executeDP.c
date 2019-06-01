@@ -13,7 +13,7 @@
 #include <assert.h>
 #include "../emulator_utility/instruction.h"
 
-void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBit, struct stateOfMachine *ARM11) {
+void getValFromOp2(uint32_t op2, bool i, uint32_t *result, uint32_t *carryBit, struct stateOfMachine *ARM11) {
     *result = 0;
     if (i) {
         uint32_t rotateAmount = get_n_bits(op2, 8, 4);
@@ -52,7 +52,7 @@ void getValFromOp2(uint32_t op2, uint32_t i, uint32_t *result, uint32_t *carryBi
                         *carryBit = 0;
                         printf("result - operand2 (shiftAmount > 32 and LSL or LSR): %x\n", *result);
                         return;
-                    }
+                }
             } else {
                 *result = shiftRegister(valueInRM, shiftAmount, shiftCode);
             }
@@ -117,10 +117,10 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
 }
 
 
-void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
-    uint32_t i = instruction.immediateOperand;
+void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
+    bool i = instruction.immediateOperand;
     uint32_t opCode = instruction.operationType;
-    uint32_t s = instruction.scc;
+    bool s = instruction.scc;
     int rn = instruction.rn;
     int rd = instruction.rd;
     uint32_t op2 = instruction.offsets_or_operand2;
@@ -162,7 +162,8 @@ void executeDP(instruction_type instruction, struct stateOfMachine *ARM11) {
             break;
 
         case ADD:
-            if (result > 0xffff) {
+//            if (result > 0xffff) {
+            if (result < op2Value || result < rnValue) {
                 setC(ARM11, 1);
             }
             break;

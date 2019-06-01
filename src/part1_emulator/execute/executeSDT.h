@@ -9,6 +9,6 @@
 #include "../emulator_utility/state.h"
 
 
-void executeSDT(instruction_type instruction, struct stateOfMachine *state);
+void executeSDT(instruction instruction, struct stateOfMachine *state);
 
 #endif //SRC_EXECUTESDT_H

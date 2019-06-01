@@ -20,7 +20,7 @@ uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
 }
 
 void change_bit(uint32_t b, int pos, int val) {
-    uint32_t new_b = ((b & ~(1U << (unsigned int) pos)) | (unsigned int) ((unsigned int) val << (unsigned int) pos));
+    uint32_t new_b = ((b & ~(1U << (unsigned int) pos)) |  ((unsigned int) val << (unsigned int) pos));
     b = new_b;
 }
 

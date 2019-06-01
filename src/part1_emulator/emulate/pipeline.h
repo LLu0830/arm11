@@ -17,7 +17,7 @@ void pipeline(struct stateOfMachine *ARM11);
 
 struct pipes{
     uint32_t fetched;
-    instruction_type decoded;
+    instruction decoded;
     bool has_fetched;
     bool has_decoded;
 };
