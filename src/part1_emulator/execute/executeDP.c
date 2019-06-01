@@ -126,6 +126,7 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
     int rd = instruction.rd;
     uint32_t op2 = instruction.offsets_or_operand2;
 
+    printf("CPSR value is: %08x before executing DP\n", ARM11->registers[CPSRPosition]);
 
     assert(rn >= 0 && rn <= 16);
     uint32_t rnValue = ARM11->registers[rn];
@@ -142,10 +143,11 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
         ARM11->registers[rd] = result;
     }
 
-    setC(ARM11, 0);
 
     if (!s) {
         printf("Is not changing CPSR in DP\n");
+        printf("CPSR value is: %08x\n", ARM11->registers[CPSRPosition]);
+
         return;
     }
 
