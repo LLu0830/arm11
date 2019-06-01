@@ -52,4 +52,5 @@ void executeBR(struct pipes *pipe, struct stateOfMachine *ARM11) {
     pipe->has_fetched = false;
     pipe->has_decoded = false;
     ARM11->registers[PCPosition] += (twos_complement_extend(offset));
+    printf("CPSR is %x in BR\n", ARM11->registers[CPSRPosition]);
 }

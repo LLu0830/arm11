@@ -19,9 +19,9 @@ uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
     return ((b >> start_pos) & ((1 << number_of_bits) - 1));
 }
 
-void change_bit(uint32_t b, int pos, int val) {
+uint32_t change_bit(uint32_t b, int pos, int val) {
     uint32_t new_b = ((b & ~(1U << (unsigned int) pos)) |  ((unsigned int) val << (unsigned int) pos));
-    b = new_b;
+    return new_b;
 }
 
 //better rotate right function
@@ -126,26 +126,22 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
 //may be wrong, since I am confused about little and big Endian in the spec
 void setN(struct stateOfMachine *ARM11, uint32_t value){
     uint32_t result = ARM11->registers[CPSRPosition];
-    change_bit(result, 31, value);
-    ARM11->registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = change_bit(result, 31, value);
 }
 
 void setZ(struct stateOfMachine *ARM11, uint32_t value){
     uint32_t result = ARM11->registers[CPSRPosition];
-    change_bit(result, 30, value);
-    ARM11->registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = change_bit(result, 30, value);
 }
 
 void setC(struct stateOfMachine *ARM11, uint32_t value){
     uint32_t result = ARM11->registers[CPSRPosition];
-    change_bit(result, 29, value);
-    ARM11->registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = change_bit(result, 29, value);
 }
 
 void setV(struct stateOfMachine *ARM11, uint32_t value){
     uint32_t result = ARM11->registers[CPSRPosition];
-    change_bit(result, 28, value);
-    ARM11->registers[CPSRPosition] = result;
+    ARM11->registers[CPSRPosition] = change_bit(result, 28, value);
 }
 
 

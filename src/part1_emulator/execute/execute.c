@@ -20,9 +20,6 @@ void execute(struct pipes *pipe, struct stateOfMachine *state) {
     InstructionType type = pipe->decoded.instructionType;
     if (!checkCondition(*state, pipe->decoded.conditionType)) {
         printf("fail in check condition\n");
-        if (type == BR) {
-//            state->registers[PCPosition] -= 4;
-        }
         return;
         //instruction is ignored if the condition does not hold
     }

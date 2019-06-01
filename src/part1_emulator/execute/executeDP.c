@@ -20,7 +20,7 @@ void getValFromOp2(uint32_t op2, bool i, uint32_t *result, uint32_t *carryBit, s
         uint32_t imm = get_n_bits(op2, 0, 8);
         *result = rotateRight(imm, rotateAmount * 2);
     } else {
-        printf("i is false\n");
+//        printf("i is false\n");
         uint32_t rm = get_n_bits(op2, 0, 4);
         uint32_t valueInRM = ARM11->registers[rm];
         uint32_t lastBit = get_n_bits(op2, 4, 1);
@@ -30,7 +30,7 @@ void getValFromOp2(uint32_t op2, bool i, uint32_t *result, uint32_t *carryBit, s
             if (shiftAmount == 0) {
                 *result = valueInRM;
                 *carryBit = 0;
-                printf("result - operand2 (shiftAmount = 0): %x\n", *result);
+//                printf("result - operand2 (shiftAmount = 0): %x\n", *result);
                 return;
             } else if (shiftAmount > 32) {
                 switch (shiftCode) {
@@ -50,7 +50,7 @@ void getValFromOp2(uint32_t op2, bool i, uint32_t *result, uint32_t *carryBit, s
                     default:
                         *result = 0;
                         *carryBit = 0;
-                        printf("result - operand2 (shiftAmount > 32 and LSL or LSR): %x\n", *result);
+//                        printf("result - operand2 (shiftAmount > 32 and LSL or LSR): %x\n", *result);
                         return;
                 }
             } else {
@@ -62,7 +62,7 @@ void getValFromOp2(uint32_t op2, bool i, uint32_t *result, uint32_t *carryBit, s
             } else {
                 *carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
             }
-            printf("result - operand2 - reached the end: %x\n", *result);
+//            printf("result - operand2 - reached the end: %x\n", *result);
         }
     }
 
@@ -73,8 +73,8 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
     uint32_t result;
     switch (opCode) {
         case AND:
-            printf("In AND\n");
-            printf("op2Value: %x\n", op2Value);
+//            printf("In AND\n");
+//            printf("op2Value: %x\n", op2Value);
             result = rnValue & op2Value;
             printf("%x\n", result);
             break;
@@ -99,6 +99,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
             *writeFlag = 0;
             break;
         case CMP:
+            printf("In CMP\n");
             result = rnValue - op2Value;
             *writeFlag = 0;
             break;
@@ -134,6 +135,7 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
     bool writeFlag = 1;
     uint32_t result = getResult(opCode, rnValue, op2Value, &writeFlag);
 
+    printf("result is %x\n", result);
 
 //    Checking if result needs to be written to register
     if (writeFlag) {
@@ -142,12 +144,13 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
 
     setC(ARM11, 0);
 
-    if (s) {
+    if (!s) {
+        printf("Is not changing CPSR in DP\n");
         return;
     }
 
     //    Setting C bit for operations not involving barrel shifter
-
+    printf("the opcode is %x\n", opCode);
     switch (opCode) {
         case AND:
         case EOR:
@@ -156,6 +159,7 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
         case ORR:
         case MOV:
             // if i flag is zero then it is a shift operation
+            printf("iFlag is %x\n", i);
             if (!i) {
                 setC(ARM11, carryBit);
             }
@@ -171,6 +175,8 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
         case CMP:
             //rn - operand2
             if (op2Value < rnValue) {
+                setC(ARM11, 0);
+            } else {
                 setC(ARM11, 1);
             }
             break;
@@ -178,6 +184,8 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
         case RSB:
             // operand2 - rn
             if (rnValue < op2Value) {
+                setC(ARM11, 0);
+            } else {
                 setC(ARM11, 1);
             }
             break;
@@ -188,13 +196,17 @@ void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
 //    Setting Z bit
 
     if (result == 0) {
+        printf("Is changing CPSR ZFlag\n");
         setZ(ARM11, 1);
     }
 
 //    Setting N bit
 
     uint32_t bit31 = get_n_bits(result, 31, 1);
+    printf("Is changing CPSR NFlag, the value is %x\n", bit31);
     setN(ARM11, bit31);
+
+    printf("CPSR value is: %08x\n", ARM11->registers[CPSRPosition]);
 
 }
 

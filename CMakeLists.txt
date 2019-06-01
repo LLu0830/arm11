@@ -16,6 +16,8 @@ add_executable(arm11_31
         src/part1_emulator/emulate/binaryFileLoader.h
         src/part1_emulator/emulate/pipeline.c
         src/part1_emulator/emulate/pipeline.h
+        src/part1_emulator/emulate/printOutput.c
+        src/part1_emulator/emulate/printOutput.h
         src/part1_emulator/emulator_utility/DefinedTypes.h
         src/part1_emulator/emulator_utility/instruction.h
         src/part1_emulator/emulator_utility/state.h
@@ -34,4 +36,4 @@ add_executable(arm11_31
         src/part1_emulator/fetch/fetch.c
         src/part1_emulator/fetch/fetch.h
         src/part1_emulator/emulate.c
-        src/assemble.c src/part1_emulator/emulate/printOutput.c src/part1_emulator/emulate/printOutput.h)
+        src/assemble.c)
