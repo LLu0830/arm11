@@ -10,7 +10,7 @@
 #include "../emulator_utility/state.h"
 #include "../emulator_utility/utility.h"
 
-void executeSDT(instruction_type instruction, struct stateOfMachine *state) {
+void executeSDT(instruction instruction, struct stateOfMachine *state) {
 
 
     uint32_t iFlag = instruction.immediateOffset;

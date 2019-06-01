@@ -15,7 +15,7 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/state.h"
 
-void executeMUL(instruction_type instruction, struct stateOfMachine *state) {
+void executeMUL(instruction instruction, struct stateOfMachine *state) {
 
     uint32_t result;
 
@@ -45,17 +45,21 @@ void executeMUL(instruction_type instruction, struct stateOfMachine *state) {
 
     state->registers[rd] = result;
 
+
     if (scc) {
         // update N,Z flag in CPSR
         // N - the 31st bit of the result   Z - only if the result is zero
         if (result == 0) {
-            setZ(state, 1);
+            state->registers[CPSRPosition] = (Z << 28) ^ (*state).registers[CPSRPosition];
         }
 
-        //get 31bit, if equal to N, unchanged, else update
-        uint32_t value = get_n_bits(result, 31, 1);
-        setN(state, value);
+        //get 31bit, if equal to N, unchange // else update
+
+        if ((result >> 31) != (state->registers[CPSRPosition] >> 31)) {
+            state->registers[CPSRPosition] = (N << 28) ^ state->registers[CPSRPosition];
+
+        }
+
 
     }
-
 }

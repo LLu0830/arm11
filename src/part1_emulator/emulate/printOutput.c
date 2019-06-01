@@ -19,15 +19,14 @@ void printOut(struct stateOfMachine *state) {
 
     printf("Non-zero memory:\n");
 
-    for (int curr = 0; true; curr = curr + 4) {
+    for (int curr = 0; curr < numOfAddresses; curr = curr + 4) {
         uint32_t f = 0;
         for (int i = 0; i < 4; i++) {
             f |= ((uint32_t) *(state->mem + curr + i)) << (i * 8);
         }
         if (f == 0) {
-            break;
         } else {
-            printf("%x\n", f);
+            printf("0x%08x: 0x%08x\n", curr, f);
         }
     }
 

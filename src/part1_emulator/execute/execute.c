@@ -17,12 +17,12 @@
 //executes all types of instructions
 
 void execute(struct pipes *pipe, struct stateOfMachine *state) {
+    InstructionType type = pipe->decoded.instructionType;
     if (!checkCondition(*state, pipe->decoded.conditionType)) {
         printf("fail in check condition\n");
         return;
         //instruction is ignored if the condition does not hold
     }
-    InstructionType type = pipe->decoded.instructionType;
 
     switch (type) {
         case DP:

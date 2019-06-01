@@ -8,11 +8,11 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/state.h"
 
-instruction_type decode(uint32_t fetched);
-instruction_type decodeMUL(instruction_type *instruction, uint32_t fetched);
-instruction_type decodeDP(instruction_type *instruction, uint32_t fetched);
-instruction_type decodeSDT(instruction_type *instruction, uint32_t fetched);
-instruction_type decodeBR(instruction_type *instruction, uint32_t fetched);
-instruction_type decodeHLT(instruction_type *instruction, uint32_t fetched);
+instruction decode(uint32_t fetched);
+instruction decodeMUL(instruction *instruction, uint32_t fetched);
+instruction decodeDP(instruction *instruction, uint32_t fetched);
+instruction decodeSDT(instruction *instruction, uint32_t fetched);
+instruction decodeBR(instruction *instruction, uint32_t fetched);
+instruction decodeHLT(instruction *instruction, uint32_t fetched);
 
 #endif //SRC_DECODE_H
