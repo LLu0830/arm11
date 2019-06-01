@@ -11,7 +11,7 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulate/pipeline.h"
 
-//pipeline has a side effect - PC is 8 bytes ahead of instruction
+//pipeline has a side effect - PC is 8 bytes ahead of Instruction
 //being executed, therefore the pipeline offset has to be subtracted from address
 //in PC value
 #define pipelineOffset = 8;

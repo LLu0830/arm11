@@ -19,17 +19,17 @@
 
 
 
-instruction decode(uint32_t fetched) {
+Instruction decode(uint32_t fetched) {
 
-    //what type of instruction it is..
-    //store the instruction in corresponding instruction
+    //what type of Instruction it is..
+    //store the Instruction in corresponding Instruction
     //and execute
-    //initialize instruction and return it
+    //initialize Instruction and return it
 
 //    struct stateOfMachine state = *stateP;
 
-    instruction initialisedInstruction = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    instruction *instruction = &initialisedInstruction;
+    Instruction initialisedInstruction = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    Instruction *instruction = &initialisedInstruction;
 
     instruction->conditionType = get_n_bits(fetched, 28, 4);
 
@@ -79,7 +79,7 @@ instruction decode(uint32_t fetched) {
 
 
 
-instruction decodeMUL(instruction *instruction, uint32_t fetched) {
+Instruction decodeMUL(Instruction *instruction, uint32_t fetched) {
     instruction->instructionType = MUL;
 // holds the A bit
     instruction->accumulate = get_n_bits(fetched, 21, 1);
@@ -95,7 +95,7 @@ instruction decodeMUL(instruction *instruction, uint32_t fetched) {
 }
 
 
-instruction decodeDP(instruction *instruction, uint32_t b) {
+Instruction decodeDP(Instruction *instruction, uint32_t b) {
     instruction->instructionType = DP;
     instruction->conditionType = get_n_bits(b, 28, 4);
     instruction->immediateOperand = get_n_bits(b, 25, 1);
@@ -104,13 +104,13 @@ instruction decodeDP(instruction *instruction, uint32_t b) {
     instruction->rn = get_n_bits(b, 16, 4);
     instruction->rd = get_n_bits(b, 12, 4);
     instruction->offsets_or_operand2 = get_n_bits(b, 0, 12);
-//    printf("Immediate operand in decode: %x\n", instruction->immediateOperand);
+//    printf("Immediate operand in decode: %x\n", Instruction->immediateOperand);
 
     return *instruction;
 
 }
 
-instruction decodeSDT(instruction *instruction, uint32_t fetched) {
+Instruction decodeSDT(Instruction *instruction, uint32_t fetched) {
     instruction->instructionType = SDT;
     instruction->immediateOffset = get_n_bits(fetched, 25, 1);
     instruction->Pre_Post = get_n_bits(fetched, 24, 1);
@@ -125,14 +125,14 @@ instruction decodeSDT(instruction *instruction, uint32_t fetched) {
 }
 
 
-instruction decodeBR(instruction *instruction, uint32_t b) {
+Instruction decodeBR(Instruction *instruction, uint32_t b) {
     instruction->instructionType = BR;
     instruction->offsets_or_operand2 = get_n_bits(b, 0, 23);
     return *instruction;
 
 }
 
-instruction decodeHLT(instruction *instruction, uint32_t fetched) {
+Instruction decodeHLT(Instruction *instruction, uint32_t fetched) {
     instruction->instructionType = HLT;
     return *instruction;
 

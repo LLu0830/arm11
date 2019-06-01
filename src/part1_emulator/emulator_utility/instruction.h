@@ -51,7 +51,7 @@ typedef struct {
 
     bool storeBit;
 
-}instruction;
+}Instruction;
 
 #endif //C_GROUP_31_INSTRUCTION_H
 

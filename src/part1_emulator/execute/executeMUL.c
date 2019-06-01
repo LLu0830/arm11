@@ -15,11 +15,11 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/state.h"
 
-void executeMUL(instruction instruction, struct stateOfMachine *state) {
+void executeMUL(Instruction instruction, struct stateOfMachine *state) {
 
     uint32_t result;
 
-//    instruction.instructionType = MUL;
+//    Instruction.instructionType = MUL;
 // holds the A bit
     bool accumulate = instruction.accumulate;
 // holds the S bit

@@ -19,26 +19,26 @@
 void execute(struct pipes *pipe, struct stateOfMachine *state) {
     InstructionType type = pipe->decoded.instructionType;
     if (!checkCondition(*state, pipe->decoded.conditionType)) {
-//        printf("fail in check condition\n");
+        printf("fail in check condition\n");
         return;
-        //instruction is ignored if the condition does not hold
+        //Instruction is ignored if the condition does not hold
     }
 
     switch (type) {
         case DP:
-//            printf("is executing DP\n");
+            printf("is executing DP\n");
             executeDP(pipe->decoded, state);
             break;
         case MUL:
-//            printf("is executing MUL\n");
+            printf("is executing MUL\n");
             executeMUL(pipe->decoded, state);
             break;
         case SDT:
-//            printf("is executing SDT\n");
+            printf("is executing SDT\n");
             executeSDT(pipe->decoded, state);
             break;
         case BR:
-//            printf("is executing BR\n");
+            printf("is executing BR\n");
             executeBR(pipe, state);
             break;
         case HLT:

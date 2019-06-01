@@ -33,7 +33,7 @@ void printOut(struct stateOfMachine *state) {
     printf("Non-zero memory:\n");
 
     for (int curr = 0; curr < numOfAddresses; curr = curr + 4) {
-        uint32_t f = *((uint32_t *) (state->mem + curr));
+        uint32_t f = *((uint32_t *) (state->mem + curr)); // this is fetch
 
         if (f == 0) {
         } else {

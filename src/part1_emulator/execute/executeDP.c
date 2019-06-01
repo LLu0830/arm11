@@ -115,7 +115,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
 }
 
 
-void executeDP(instruction instruction, struct stateOfMachine *ARM11) {
+void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
     bool i = instruction.immediateOperand;
     uint32_t opCode = instruction.operationType;
     bool s = instruction.scc;
