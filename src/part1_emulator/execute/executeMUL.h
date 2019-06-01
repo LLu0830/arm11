@@ -8,6 +8,6 @@
 #include "../emulator_utility/instruction.h"
 #include "../emulator_utility/state.h"
 
-void executeMUL(instruction instruction, struct stateOfMachine *state);
+void executeMUL(Instruction instruction, struct stateOfMachine *state);
 
 #endif //SRC_EXECUTEMUL_H

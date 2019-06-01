@@ -46,7 +46,9 @@ CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/pipeline.c.o
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/printOutput.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/printOutput.c
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/printOutput.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/DefinedTypes.h
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/state.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/utility.h
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulator_utility/utility.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/DefinedTypes.h
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/instruction.h

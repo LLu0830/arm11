@@ -45,7 +45,9 @@ CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/pipeline.c.o: ../src/part1_em
 
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/printOutput.c.o: ../src/part1_emulator/emulate/printOutput.c
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/printOutput.c.o: ../src/part1_emulator/emulate/printOutput.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/printOutput.c.o: ../src/part1_emulator/emulator_utility/DefinedTypes.h
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/printOutput.c.o: ../src/part1_emulator/emulator_utility/state.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/printOutput.c.o: ../src/part1_emulator/emulator_utility/utility.h
 
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulator_utility/utility.c.o: ../src/part1_emulator/emulator_utility/DefinedTypes.h
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulator_utility/utility.c.o: ../src/part1_emulator/emulator_utility/instruction.h

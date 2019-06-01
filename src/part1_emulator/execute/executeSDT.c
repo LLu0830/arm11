@@ -10,13 +10,13 @@
 #include "../emulator_utility/state.h"
 #include "../emulator_utility/utility.h"
 
-void executeSDT(instruction instruction, struct stateOfMachine *state) {
+void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
 
-    uint32_t iFlag = instruction.immediateOffset;
-    uint32_t pFlag = instruction.Pre_Post;
-    uint32_t uFlag = instruction.upBit;
-    uint32_t lFlag = instruction.storeBit;
+    bool iFlag = instruction.immediateOffset;
+    bool pFlag = instruction.Pre_Post;
+    bool uFlag = instruction.upBit;
+    bool lFlag = instruction.storeBit;
     uint32_t rn = instruction.rn; //base register
     uint32_t rd = instruction.rd;  //source/destination register
     uint32_t offset = instruction.offsets_or_operand2;
@@ -71,7 +71,7 @@ void executeSDT(instruction instruction, struct stateOfMachine *state) {
 
 
     if (address > numOfAddresses || address < minAddress) {
-        printf("Invalid memory access");
+        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
     }
     else {
         //Loads word from memory or stores word to memory

@@ -8,10 +8,10 @@
 #include "fetch.h"
 //#include "../emulator_utility/utility.h"
 //#include "../emulate/pipeline.h"
-//#include "../emulator_utility/instruction.h"
+//#include "../emulator_utility/Instruction.h"
 //#include "../emulator_utility/DefinedTypes.h"
 
-//fetches instruction from memory
+//fetches Instruction from memory
 
 // (Rini) confused - are we allowed to just access array elements from mem even though it is of the type uint32_t * (a pointer)?
 
@@ -27,11 +27,11 @@ uint32_t fetch(struct stateOfMachine *ARM11) {
 //    uint32_t flipH = 0xF;
 
 
-    printf("instruction get from fetch %X \n", f);
+//    printf("Instruction get from fetch %X \n", f);
     return f;
 }
 
 //uint32_t fetch(struct stateOfMachine *ARM11, uint32_t address) {
-//    printf("instruction get from fetch %X \n", *((uint32_t * )(ARM11->mem + address)));
+//    printf("Instruction get from fetch %X \n", *((uint32_t * )(ARM11->mem + address)));
 //    return *((uint32_t * )(ARM11->mem + address));
 //}
