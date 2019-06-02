@@ -21,7 +21,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     uint32_t rd = instruction.rd;  //source/destination register
     uint32_t offset = instruction.offsets_or_operand2;
 
-    uint32_t address;
+//    uint32_t address;
 
     //Offset is immediate offset or shifted register
     if  (iFlag) {
@@ -59,39 +59,61 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 //    }
 
     //Uses post or pre indexing
+//    if (pFlag) {
+//        //add/subtract offset from base register before transferring data
+//        //pre-indexing
+//        // should not change base register
+////        address = state->registers[rn] + offset;
+//        if (uFlag) {
+//            address = state->registers[rn] + offset;
+//        } else {
+//            address = state->registers[rn] - offset;
+//
+//        }
+//    } else {
+//        //add/subtract offset from base register after transferring data
+//        //post-indexing
+//        //changes base register
+//        address = state->registers[rn];
+//        if (uFlag) {
+//            state->registers[rn] = address + offset;
+//        } else {
+//            state->registers[rn] = address - offset;
+//        }
+//
+//    }
+//
+//
+
+    uint32_t data = 0;
     if (pFlag) {
-        //add/subtract offset from base register before transferring data
-        //pre-indexing
-        // should not change base register
-        address = state->registers[rn] + offset;
-    }
-    else {
-        //add/subtract offset from base register after transferring data
-        //post-indexing
-        //changes base register
-        address = state->registers[rn];
         if (uFlag) {
-            state->registers[rn] = address + offset;
+            data = state->registers[rn] + offset;
         } else {
-            state->registers[rn] = address - offset;
+            data = state->registers[rn] - offset;
         }
-
+    } else {
+        if (uFlag) {
+            state->registers[rn] += offset;
+        } else {
+            state->registers[rn] -= offset;
+        }
+        data = state->registers[rn];
     }
 
-
-    if (address > numOfAddresses || address < minAddress) {
-        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
-    }
-    else {
+    if (data > numOfAddresses || data < minAddress) {
+        printf("Error: Out of bounds memory access at address 0x%08x\n", data);
+    } else {
         //Loads word from memory or stores word to memory
         if (lFlag) {
             //word loaded from memory
-            state->registers[rd] = *((uint32_t * )(state->mem + address));
+            state->registers[rd] = *((uint32_t * )(state->mem + data));
         } else {
             //word stored into memory
-            *((uint32_t * )(state->mem + address)) = state->registers[rd];
+            *((uint32_t * )(state->mem + data)) = state->registers[rd];
         }
     }
+
 }
 
 

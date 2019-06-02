@@ -121,15 +121,18 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
     return result;
 }
 
-uint32_t produceBorrow(uint32_t b1, uint32_t b2) {
-    for (int i = 0; i < 32; i++) {
-        printf("Inside produceBorrow");
-        if (!get_n_bits(b1, i, 1) && get_n_bits(b2, i, 1)) {
-            return 0x0;
-        }
-    }
-    return 0x1;
-}
+//uint32_t produceBorrow(uint32_t b1, uint32_t b2) {
+//    for (int i = 0; i < 32; i++) {
+//        printf("%x ", get_n_bits(b1, i, 1));
+//        printf("%x\n", get_n_bits(b2, i, 1));
+//        if (!get_n_bits(b1, i, 1) && get_n_bits(b2, i, 1)) {
+//            printf("Inside produceBorrow, setC bit to: %x\n", 0);
+//            return 0x0;
+//        }
+//    }
+//    printf("Inside produceBorrow, setC bit to: %x\n", 1);
+//    return 0x1;
+//}
 
 void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
     bool i = instruction.immediateOperand;
@@ -181,21 +184,16 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
         case SUB:
         case CMP:
             //rn - operand2
-//            if (op2Value < rnValue) {
-//                setC(ARM11, 0);
-//            } else {
-//                setC(ARM11, 1);
-//            }
-            setC(ARM11, produceBorrow(rnValue, op2Value));
+//            printf("Inside CMP");
+            setC(ARM11, (uint32_t) (op2Value <= rnValue));
+//            setC(ARM11, produceBorrow(rnValue, op2Value));
             break;
 
         case RSB:
             // operand2 - rn
-            if (rnValue < op2Value) {
-                setC(ARM11, 0);
-            } else {
-                setC(ARM11, 1);
-            }
+            setC(ARM11, (uint32_t) (op2Value >= rnValue));
+
+//            setC(ARM11, produceBorrow(op2Value, rnValue));
             break;
         default:
             break;
