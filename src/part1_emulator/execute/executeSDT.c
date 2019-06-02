@@ -9,9 +9,9 @@
 #include "executeSDT.h"
 #include "../emulator_utility/state.h"
 #include "../emulator_utility/utility.h"
+#include "../execute/executeDP.h"
 
 void executeSDT(Instruction instruction, struct stateOfMachine *state) {
-
 
     bool iFlag = instruction.immediateOffset;
     bool pFlag = instruction.Pre_Post;
@@ -25,34 +25,38 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
     //Offset is immediate offset or shifted register
     if  (iFlag) {
-        //offset is shifted register
-        uint32_t shift;
-        uint32_t rm = get_n_bits(offset, 0, 4);
-        uint32_t rmContent = state->registers[rm];
-        uint32_t intOrReg = get_n_bits(offset, 4, 1);
-        uint32_t shiftType = get_n_bits(offset, 5, 2);
-
-        if (intOrReg) {
-            //shift specified by constant amount
-            shift = get_n_bits(offset, 7, 5);
-        }
-        else {
-            //shift specified by register rs
-            uint32_t rs = get_n_bits(offset, 8, 4);
-            uint32_t rsContent = state->registers[rs];
-            //should be last byte of rs, is it it though??? :
-            shift = get_n_bits(rsContent, 0, 8);
-            //could also be get_n_bits(rsContent, 24, 8); ???
-        }
-
-        rmContent = state->registers[rm];
-        offset = shiftRegister(rmContent, shift, shiftType);
+        uint32_t *result = 0;
+        uint32_t *carryBit = 0;
+        getValFromRegisterOp2(offset, result, carryBit, state);
+        offset = *result;
+//        //offset is shifted register
+//        uint32_t shift;
+//        uint32_t rm = get_n_bits(offset, 0, 4);
+//        uint32_t rmContent = state->registers[rm];
+//        uint32_t intOrReg = get_n_bits(offset, 4, 1);
+//        uint32_t shiftType = get_n_bits(offset, 5, 2);
+//
+//        if (intOrReg) {
+//            //shift specified by constant amount
+//            shift = get_n_bits(offset, 7, 5);
+//        }
+//        else {
+//            //shift specified by register rs
+//            uint32_t rs = get_n_bits(offset, 8, 4);
+//            uint32_t rsContent = state->registers[rs];
+//            //should be last byte of rs, is it it though??? :
+//            shift = get_n_bits(rsContent, 0, 8);
+//            //could also be get_n_bits(rsContent, 24, 8); ???
+//        }
+//
+//        rmContent = state->registers[rm];
+//        offset = shiftRegister(rmContent, shift, shiftType);
     }
 
     //decides whether to add or subtract the offset
-    if (!uFlag) {
-        offset = - offset;
-    }
+//    if (!uFlag) {
+//        offset = - offset;
+//    }
 
     //Uses post or pre indexing
     if (pFlag) {
@@ -66,7 +70,12 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         //post-indexing
         //changes base register
         address = state->registers[rn];
-        state->registers[rn] = address + offset;
+        if (uFlag) {
+            state->registers[rn] = address + offset;
+        } else {
+            state->registers[rn] = address - offset;
+        }
+
     }
 
 

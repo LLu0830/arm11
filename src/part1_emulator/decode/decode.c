@@ -99,7 +99,7 @@ Instruction decodeDP(Instruction *instruction, uint32_t fetched) {
     instruction->instructionType = DP;
     instruction->conditionType = get_n_bits(fetched, 28, 4);
     instruction->immediateOperand = get_n_bits(fetched, 25, 1);
-    instruction->operationType = get_n_bits(b, 21, 4);
+    instruction->operationType = get_n_bits(fetched, 21, 4);
     instruction->scc = get_n_bits(fetched, 20, 1);
     instruction->rn = get_n_bits(fetched, 16, 4);
     instruction->rd = get_n_bits(fetched, 12, 4);
