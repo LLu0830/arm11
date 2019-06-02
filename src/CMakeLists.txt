@@ -27,4 +27,4 @@ add_executable(src
         part1_emulator/emulate/pipeline.c
         part1_emulator/emulate/pipeline.h
         "part1_emulator/emulator_utility/utility.c"
-        "part1_emulator/emulator_utility/utility.h" part1_emulator/emulate/binaryFileLoader.c)
+        "part1_emulator/emulator_utility/utility.h" part1_emulator/emulate/binaryFileLoader.c part2_assembler/assembler_utility/assembler_utility.h part2_assembler/assembler_utility/assembler_utility.c part2_assembler/binaryWriter/binaryWriter.c part2_assembler/binaryWriter/binaryWriter.h part2_assembler/encode/encode.c part2_assembler/encode/encode.h part2_assembler/encode/encodeSDT.c part2_assembler/encode/encodeSDT.h part2_assembler/encode/encodeBR.c part2_assembler/encode/encodeBR.h part2_assembler/assembler_utility/table.h part2_assembler/tokenizer/tokenizer.c part2_assembler/tokenizer/tokenizer.h part2_assembler/readLabels/readLabels.c part2_assembler/readLabels/readLabels.h part2_assembler/readInstruction/readInstruction.c part2_assembler/readInstruction/readInstruction.h)
