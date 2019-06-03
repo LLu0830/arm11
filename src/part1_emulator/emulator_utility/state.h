@@ -20,7 +20,6 @@
 struct stateOfMachine {
     uint32_t registers[numOfRegisters];
     uint8_t *mem;
-    bool running;
 };
 
 #endif //C_GROUP_31_STATE_H

@@ -13,23 +13,30 @@
 #include <assert.h>
 #include "../emulator_utility/instruction.h"
 
+// Gets the result when Operand2 is an immediate value
 void getValFromImmediateOp2(uint32_t op2, uint32_t *result) {
     uint32_t rotateAmount = get_n_bits(op2, 8, 4);
     uint32_t imm = get_n_bits(op2, 0, 8);
     *result = rotateRight(imm, rotateAmount * 2);
 }
 
+// Gets the result when Operand2 is a register
 void getValFromRegisterOp2(uint32_t op2, uint32_t *result, uint32_t *carryBit, struct stateOfMachine *ARM11) {
     uint32_t rm = get_n_bits(op2, 0, 4);
     uint32_t valueInRM = ARM11->registers[rm];
     uint32_t lastBit = get_n_bits(op2, 4, 1);
+
+//    Checks if the shift is by a constant amount
     if (lastBit == 0) {
         uint32_t shiftAmount = get_n_bits(op2, 7, 5);
         uint32_t shiftCode = get_n_bits(op2, 5, 2);
+
+//        If shift is 0, nothing is changed and the result is the value in register rm
         if (shiftAmount == 0) {
             *result = valueInRM;
-//                printf("result - operand2 (shiftAmount = 0): %x\n", *result);
             return;
+
+//        If shift is greater than 32, special cases need to be checked
         } else if (shiftAmount > 32) {
             switch (shiftCode) {
                 case ROR:
@@ -51,37 +58,36 @@ void getValFromRegisterOp2(uint32_t op2, uint32_t *result, uint32_t *carryBit, s
 //                        printf("result - operand2 (shiftAmount > 32 and LSL or LSR): %x\n", *result);
                     return;
             }
+//        If 0 < shiftAmount < 32, helper function used
         } else {
             *result = shiftRegister(valueInRM, shiftAmount, shiftCode);
         }
 
+//      Carry bit calculated based on type of shift
         if (shiftCode == LSL) {
             *carryBit = get_n_bits(valueInRM, 32 - shiftAmount, 1);
         } else {
             *carryBit = get_n_bits(valueInRM, shiftAmount - 1, 1);
         }
-//            printf("result - operand2 - reached the end: %x\n", *result);
     }
 }
 
+// Gets result and carry bit from Operand2
 void getValFromOp2(uint32_t op2, bool i, uint32_t *result, uint32_t *carryBit, struct stateOfMachine *ARM11) {
     *result = 0;
     if (i) {
         getValFromImmediateOp2(op2, result);
     } else {
-//        printf("i is false\n");
         getValFromRegisterOp2(op2, result, carryBit, ARM11);
     }
 
 }
 
-
+//Gets result from value in register rn and value obtained from Operand2, using opCode
 uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *writeFlag) {
     uint32_t result;
     switch (opCode) {
         case AND:
-//            printf("In AND\n");
-//            printf("op2Value: %x\n", op2Value);
             result = rnValue & op2Value;
             break;
         case EOR:
@@ -121,19 +127,8 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
     return result;
 }
 
-//uint32_t produceBorrow(uint32_t b1, uint32_t b2) {
-//    for (int i = 0; i < 32; i++) {
-//        printf("%x ", get_n_bits(b1, i, 1));
-//        printf("%x\n", get_n_bits(b2, i, 1));
-//        if (!get_n_bits(b1, i, 1) && get_n_bits(b2, i, 1)) {
-//            printf("Inside produceBorrow, setC bit to: %x\n", 0);
-//            return 0x0;
-//        }
-//    }
-//    printf("Inside produceBorrow, setC bit to: %x\n", 1);
-//    return 0x1;
-//}
 
+//Executes Data Processing Instruction
 void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
     bool i = instruction.immediateOperand;
     uint32_t opCode = instruction.operationType;
@@ -143,6 +138,7 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
     uint32_t op2 = instruction.offsets_or_operand2;
 
 
+//    Checks that register number is valid for ARM11
     assert(rn >= 0 && rn <= 16);
     uint32_t rnValue = ARM11->registers[rn];
     uint32_t op2Value;
@@ -150,20 +146,22 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
     getValFromOp2(op2, i, &op2Value, &carryBit, ARM11);
 
     bool writeFlag = 1;
+//    Gets result and uses writeFlag to find out whether it needs to be written to memory
     uint32_t result = getResult(opCode, rnValue, op2Value, &writeFlag);
 
 
-//    Checking if result needs to be written to register
+//    Writes result to memory if writeFlag is true
     if (writeFlag) {
         ARM11->registers[rd] = result;
     }
 
 
+//    If the S bit is not set, none of the CPSR flags are changed
     if (!s) {
         return;
     }
 
-    //    Setting C bit for operations not involving barrel shifter
+    //    Sets C bit
     switch (opCode) {
         case AND:
         case EOR:
@@ -171,12 +169,10 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
         case TEQ:
         case ORR:
         case MOV:
-            // if i flag is zero then it is a shift operation
-//            printf("iFlag is %x\n", i);
             setC(ARM11, carryBit);
             break;
-
         case ADD:
+            // Checks for unsigned overflow
             if (result < op2Value || result < rnValue) {
                 setC(ARM11, 1);
             }
@@ -184,35 +180,27 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
         case SUB:
         case CMP:
             //rn - operand2
-//            printf("Inside CMP");
             setC(ARM11, (uint32_t) (op2Value <= rnValue));
-//            setC(ARM11, produceBorrow(rnValue, op2Value));
             break;
 
         case RSB:
             // operand2 - rn
             setC(ARM11, (uint32_t) (op2Value >= rnValue));
-
-//            setC(ARM11, produceBorrow(op2Value, rnValue));
             break;
         default:
             break;
     }
 
-//    Setting Z bit
+//    Sets Z bit
 
     if (result == 0) {
-//        printf("Is changing CPSR ZFlag\n");
         setZ(ARM11, 1);
     }
 
-//    Setting N bit
+//    Sets N bit
 
     uint32_t bit31 = get_n_bits(result, 31, 1);
-//    printf("Is changing CPSR NFlag, the value is %x\n", bit31);
     setN(ARM11, bit31);
-
-//    printf("CPSR value is: %08x\n", ARM11->registers[CPSRPosition]);
 
 }
 
