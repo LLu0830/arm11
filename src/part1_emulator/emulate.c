@@ -19,7 +19,6 @@ int main(int argc, char **argv) {
 
     printOut(&ARM11);
 
-    //   free(ARM11.registers);
     free(ARM11.mem);
 
 

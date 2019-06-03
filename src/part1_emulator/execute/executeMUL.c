@@ -19,18 +19,17 @@ void executeMUL(Instruction instruction, struct stateOfMachine *state) {
 
     uint32_t result;
 
-//    Instruction.instructionType = MUL;
 // holds the A bit
     bool accumulate = instruction.accumulate;
 // holds the S bit
     bool scc = instruction.scc;
-// rd,rn,rs,rm it should be a 4-bits address in the array registers, 0-12
+// rd,rn,rs,rm  should be 4-bit addresses in the array registers, 0-12
     register_address rd = instruction.rd;
     register_address rn = instruction.rn;
     register_address rs = instruction.rs;
     register_address rm = instruction.rm;
 
-
+// Gets values from registers specified above
     uint32_t valueRn = state->registers[rn];
     uint32_t valueRm = state->registers[rm];
     uint32_t valueRs = state->registers[rs];
@@ -48,7 +47,8 @@ void executeMUL(Instruction instruction, struct stateOfMachine *state) {
 
     if (scc) {
         // update N,Z flag in CPSR
-        // N - the 31st bit of the result   Z - only if the result is zero
+        // N - the 31st bit of the result
+        // Z - only if the result is zero
         if (result == 0) {
             state->registers[CPSRPosition] = (Z << 28) ^ (*state).registers[CPSRPosition];
         }

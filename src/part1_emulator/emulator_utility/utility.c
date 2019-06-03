@@ -15,16 +15,18 @@
 #include <stdio.h>
 
 
+//gets bits from b, starting at index start_pos
 uint32_t get_n_bits(uint32_t b, int start_pos, int number_of_bits) {
     return ((b >> start_pos) & ((1 << number_of_bits) - 1));
 }
 
+//changes the bit at pos (in b) to val
 uint32_t change_bit(uint32_t b, int pos, int val) {
     uint32_t new_b = ((b & ~(1U << (unsigned int) pos)) |  ((unsigned int) val << (unsigned int) pos));
     return new_b;
 }
 
-//better rotate right function
+//rotate right function
 uint32_t rotateRight(uint32_t b, int n) {
     return (b >> n) | (b << (32 - n));
 }
@@ -123,7 +125,6 @@ bool checkCondition(struct stateOfMachine state, Cond condition) {
 
 
 //setter functions for CPSR flags
-//may be wrong, since I am confused about little and big Endian in the spec
 void setN(struct stateOfMachine *ARM11, uint32_t value){
     uint32_t result = ARM11->registers[CPSRPosition];
     ARM11->registers[CPSRPosition] = change_bit(result, 31, value);

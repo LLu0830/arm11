@@ -6,9 +6,7 @@ VPATH   = part1_emulator/decode:part1_emulator/emulate:part1_emulator/emulator_u
 
 .PHONY: all clean
 
-all: assemble emulate
-
-assemble: assemble.o
+all: emulate
 
 emulate: emulate.o pipeline.o utility.o fetch.o decode.o execute.o executeDP.o executeSDT.o executeMUL.o executeBR.o binaryFileLoader.o printOutput.o
 
@@ -17,5 +15,4 @@ emulate: emulate.o pipeline.o utility.o fetch.o decode.o execute.o executeDP.o e
 
 clean:
 	rm -f $(wildcard *.o)
-	rm -f assemble
 	rm -f emulate

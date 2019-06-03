@@ -6,6 +6,8 @@
 #ifndef C_GROUP_31_TYPES_H
 #define C_GROUP_31_TYPES_H
 
+//opCodes supported by emulator (with mnemonics)
+
 typedef enum {
     AND = 0x0,
     EOR = 0x1,
@@ -20,6 +22,7 @@ typedef enum {
 } OpCode;
 
 
+// Types of instruction
 typedef enum {
     DP,
     MUL,
@@ -31,6 +34,7 @@ typedef enum {
 } InstructionType;
 
 
+//Condition
 typedef enum {
     EQ = 0x0,
     NE = 0x1,
@@ -41,6 +45,7 @@ typedef enum {
     AL = 0xE
 } Cond;
 
+//Shift types
 typedef enum{
     LSL = 0,
     LSR = 1,
@@ -48,6 +53,7 @@ typedef enum{
     ROR = 3
 } ShiftType;
 
+//CPSR flags
 typedef enum {
 
     //last result negative

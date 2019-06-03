@@ -1,3 +1,5 @@
+
+
 //
 // Created by Katarina Kulkova on 25.05.2019.
 //
@@ -84,5 +86,6 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         }
     }
 }
+
 
 
