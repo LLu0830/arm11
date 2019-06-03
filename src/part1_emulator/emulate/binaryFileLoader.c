@@ -12,18 +12,19 @@ uint8_t *binaryFileLoader(char **argv) {
     int size8 = sizeof(uint8_t);
     uint8_t *mem = calloc(numOfAddresses, size8);
     FILE *fp;
+
+//    Opens the binary file specified as a command line argument
     fp = fopen(argv[1], "rb");
     if (ferror(fp)) {
         perror("Error reading from binary file.\n");
     }
 
-//    printf("binaryFileLoaderGets: \n");
-        while (!feof(fp)) {
+//    Reads from the file into mem as long as the file is non-empty
+    while (!feof(fp)) {
         fread(mem, numOfAddresses, 1, fp);
-//        uint32_t  *mem_p = (uint32_t *) mem;
-//        printf(" %x\n", *mem_p);
     }
 
+//    File closed once reading is finished
     fclose(fp);
 
     return mem;
