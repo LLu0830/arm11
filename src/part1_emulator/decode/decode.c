@@ -95,15 +95,15 @@ Instruction decodeMUL(Instruction *instruction, uint32_t fetched) {
 }
 
 
-Instruction decodeDP(Instruction *instruction, uint32_t b) {
+Instruction decodeDP(Instruction *instruction, uint32_t fetched) {
     instruction->instructionType = DP;
-    instruction->conditionType = get_n_bits(b, 28, 4);
-    instruction->immediateOperand = get_n_bits(b, 25, 1);
-    instruction->operationType = get_n_bits(b, 21, 4);
-    instruction->scc = get_n_bits(b, 20, 1);
-    instruction->rn = get_n_bits(b, 16, 4);
-    instruction->rd = get_n_bits(b, 12, 4);
-    instruction->offsets_or_operand2 = get_n_bits(b, 0, 12);
+    instruction->conditionType = get_n_bits(fetched, 28, 4);
+    instruction->immediateOperand = get_n_bits(fetched, 25, 1);
+    instruction->operationType = get_n_bits(fetched, 21, 4);
+    instruction->scc = get_n_bits(fetched, 20, 1);
+    instruction->rn = get_n_bits(fetched, 16, 4);
+    instruction->rd = get_n_bits(fetched, 12, 4);
+    instruction->offsets_or_operand2 = get_n_bits(fetched, 0, 12);
 //    printf("Immediate operand in decode: %x\n", Instruction->immediateOperand);
 
     return *instruction;
@@ -125,9 +125,9 @@ Instruction decodeSDT(Instruction *instruction, uint32_t fetched) {
 }
 
 
-Instruction decodeBR(Instruction *instruction, uint32_t b) {
+Instruction decodeBR(Instruction *instruction, uint32_t fetched) {
     instruction->instructionType = BR;
-    instruction->offsets_or_operand2 = get_n_bits(b, 0, 23);
+    instruction->offsets_or_operand2 = get_n_bits(fetched, 0, 24);
     return *instruction;
 
 }
