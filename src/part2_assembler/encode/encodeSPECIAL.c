@@ -10,10 +10,10 @@ void encodeSPECIAL(assembler_instruction *instruction) {
     token *mnemonic = instruction->mnemonic;
     uint32_t encoded = instruction->encoded;
 
-    switch (mnemonic->name) {
+    switch (mnemonic) {
         case "andeq":
             //maybe need to check if operand1,2,3 all = 0;
-            if (instruction->arg1->code == 0
+            if (*instruction->arg1 == "r0"
                 && instruction->arg2->code == 0
                 && instruction->arg3->code == 0) {
                 encoded = 0x0;
@@ -21,11 +21,11 @@ void encodeSPECIAL(assembler_instruction *instruction) {
         case "lsl":
             // case DP: Operand2 is a register, shifted by a constant amount
             //set opcode to mov
-            set_bits(&encoded, 21, 0xd);
+            set_4_bits(&encoded, 21, 0xd);
             //set s bit to 0
             encoded = change_bit(encoded, 20, 0);
             //cond field set to 1110
-            set_bits(&encoded, 28, 0xe);
+            set_4_bits(&encoded, 28, 0xe);
             //set i bit to 0
             encoded = change_bit(encoded, 25, 0);
             //

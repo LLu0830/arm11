@@ -7,7 +7,6 @@
 
 
 #include <stdlib.h>
-#include <bits/types/FILE.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
