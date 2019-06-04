@@ -8,16 +8,16 @@
 #include <string.h>
 
 void encodeDPCompute(assembler_instruction *instruction) {
-    char *mnemonic = instruction->mnemonic;
+    token mnemonic = instruction->mnemonic;
 
 
 }
 
 void encodeDPAssign(assembler_instruction *instruction) {
-    char rdString = instruction->arg1;
+    token rdString = instruction->arg1;
     uint32_t i, opCode, rn, rd, operand2;
 //
-    rn = 0xd;
+    opCode = 0xd;
     uint32_t registerNo = (uint32_t) (*rdString - '0');
 
 }
@@ -27,8 +27,8 @@ void encodeDPSetFlags(assembler_instruction *instruction) {
 }
 
 void encodeDP(assembler_instruction *instruction) {
-    char *mnemonic = instruction->mnemonic;
-    switch (*mnemonic) {
+    token *mnemonic = instruction->mnemonic;
+    switch (**mnemonic) {
         case 'm':
             encodeDPCompute(instruction);
             break;
