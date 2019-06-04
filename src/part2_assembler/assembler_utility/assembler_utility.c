@@ -2,22 +2,20 @@
 // Created by Katarina Kulkova on 02.06.2019.
 //
 
-
-
-
-
 #include <stdlib.h>
-#include <bits/types/FILE.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
 #include "assembler_utility.h"
 
+<<<<<<< HEAD
 static bool is_label(char *instruction) {
     return instruction[strlen(instruction) - 1] == ':';
 }
 
+=======
+>>>>>>> a261865cf244e420be96a528a44bb6a7533476fa
 void set_4_bits(uint32_t *b, int pos, uint32_t val) {
     val <<= pos;
     uint32_t mask = 0xf;

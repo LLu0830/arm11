@@ -8,11 +8,12 @@
 #include "encodeMUL.h"
 #include "encodeSDT.h"
 #include "encodeBR.h"
+#include "../assembler_utility/table.h"
 
 
 
-void encode(instruction *instruction) {
-    switch (instruction.type) {
+void encode(assembler_instruction *instruction) {
+    switch (instruction->type) {
         case DP:
             encodeDP(instruction);
         case MUL:
