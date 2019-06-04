@@ -3,49 +3,73 @@
 //
 
 #include <string.h>
+#include <stdlib.h>
 #include "encodeMUL.h"
 #include "../assembler_utility/table.h"
 #include "../assembler_utility/assembler_utility.h"
 #include "../../part1_emulator/emulator_utility/utility.h"
 
+uint32_t getPosFromChar(token pos){
+    strtol((pos + 1), NULL, 16);
+}
+
+
 void encodeMUL(assembler_instruction *instruction) {
     token mnemonic = instruction->mnemonic;
-    uint32_t encoded = instruction->encoded;
+
+    uint32_t const1 = 0x9;
+
     // change S bit to 0
-    instruction->encoded = change_bit(encoded, 20, 0);
+    uint32_t SBit = 0;
 
     //set condition to 1110
-    set_4_bits(&instruction->encoded, 28, 0xE);
+//    set_4_bits(&instruction->encoded, 28, 0xE);
+    uint32_t cond = 0xe;
+
 
     // set 16-19(Rd) with operand1
     token rd = instruction->arg1;
-    uint32_t positionRd  = (unsigned int) *(rd + 1) - '0';
-//    set_4_bits(&instruction->encoded, 16, positionRd);
+    uint32_t positionRd  = getPosFromChar(rd);
 
     //set 0-3(Rm) with operand2
     token rm =instruction->arg2;
-    uint32_t positionRm  = (unsigned int) *(rm + 1) - '0';
-//    set_4_bits(&instruction->encoded, 0, );
+    uint32_t positionRm  = getPosFromChar(rm);
 
     // set 8-11(Rs) with operand3
     token rs = instruction->arg3;
-    uint32_t positionRs  = (unsigned int) *(rs + 1) - '0';
+    uint32_t positionRs  = getPosFromChar(rs);
 
-//    set_4_bits(&instruction->encoded, 8, instruction->arg3);
 
-    uint32_t positionRn;
-    switch (*(mnemonic + 1)) {
-        case 'u':
+    uint32_t positionRn = 0;
+    uint32_t ABit = 0;
+
+    switch (instruction->operationType) {
+        case mul:
             // change A bit to 0
-            encoded = change_bit(encoded, 21, 0);
-
+            ABit = 0;
             break;
-        case 'l':
+        case mla:
             // change A bit to 1
-            encoded = change_bit(encoded, 21, 1);
+            ABit = 1;
             // set 12-15(Rn) with operand4
-
+            token rn = instruction->arg4;
+            positionRn  = (unsigned int) *(rn + 1) - '0';
+            break;
+        default:
+            //should throw error?
             break;
     }
 
+    uint32_t result = 0;
+
+    result |= cond << 28;
+    result |= ABit << 21;
+    result |= SBit << 20;
+    result |= positionRd << 16;
+    result |= positionRn << 12;
+    result |= positionRs << 8;
+    result |= const1 << 4;
+    result |= positionRm;
+
+    instruction->encoded = result;
 }
