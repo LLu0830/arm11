@@ -5,3 +5,7 @@
 #include <stdlib.h>
 #include "readLabels.h"
 #include "../assembler_utility/table.h"
+#include "../emulator_utility/DefinedTypes.h"
+
+int counter;
+bool

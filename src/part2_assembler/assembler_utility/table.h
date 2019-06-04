@@ -7,8 +7,10 @@
 #define SRC_TABLE_H
 
 #include <stdint.h>
-#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
-#include "../../part1_emulator/emulator_utility/instruction.h"
+#include <stdio.h>
+#include "../emulator_utility/DefinedTypes.h"
+#include "../emulator_utility/instruction.h"
+
 //#include "assembler_utility.h"
 
 
@@ -41,6 +43,7 @@ typedef enum {
 
 
 //add the two structs
+
 typedef char* token;
 typedef char* label;
 typedef uint32_t address;
@@ -62,12 +65,24 @@ typedef struct{
 
 
 
+typedef char *label;
+typedef uint32_t address;
+
+
 typedef struct {
-    label *label;
-    address *address;
 
-}label_address;
+    label label;
+    address address;
+    struct label_address *prev;
+    struct label_address *next;
+} label_address;
 
+
+
+typedef struct {
+    label_address *header;
+    label_address *footer;
+}label_address_list;
 
 
 
@@ -98,6 +113,8 @@ typedef struct {
 //table *generate_symbol_table(string_arrays *tokens);
 //address get_address(table_t *table, char *label);
 //void free_table(symbol_table_t *table);
+
+
 
 
 #endif //SRC_TABLE_H

@@ -7,6 +7,7 @@
 #include "../assembler_utility/table.h"
 
 
+
 void encodeBR(assembler_instruction *instruction){
     uint32_t offset=instruction->target_address-instruction->currentAddress-8;
     char result[2];
@@ -42,3 +43,6 @@ uint32_t getCond(char* condition){
     }
     return result;
 }
+
+
+
