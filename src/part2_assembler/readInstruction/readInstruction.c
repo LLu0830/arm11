@@ -8,7 +8,7 @@
 #include "tokenizer.h"
 #include "../assembler_utility/table.h"
 
-void readInstruction(char line[], parsed *instruction){
+void readInstruction(char line[], assembler_instruction *instruction){
     if (!isLable(line)) {
         tokenizer(line, instruction);
     }
