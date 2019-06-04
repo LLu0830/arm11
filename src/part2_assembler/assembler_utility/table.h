@@ -16,7 +16,7 @@
 
 //add the two structs
 typedef struct token{
-    string name;
+    char[] name;
     uint32_t code;
 } token;
 
