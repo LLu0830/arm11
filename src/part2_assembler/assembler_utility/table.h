@@ -21,11 +21,11 @@ typedef struct token{
 } token;
 
 typedef struct assembler_instruction{
-    token mnemonic;
-    token operand1;
-    token operand2;
-    token operand3;
-    token operand4;
+    token *mnemonic;
+    token *arg1;
+    token *arg2;
+    token *arg3;
+    token *arg4;
     InstructionType type;
     uint32_t encoded;
     int counter;//counter in readInstruction
@@ -72,6 +72,7 @@ typedef struct label_address{
 //address get_address(table_t *table, char *label);
 //void free_table(symbol_table_t *table);
 
+>>>>>>> e7c1be3443743732a29b415379728e960c0afa47
 
 #endif //SRC_TABLE_H
 

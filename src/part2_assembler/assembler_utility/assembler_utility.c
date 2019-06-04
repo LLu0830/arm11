@@ -2,12 +2,9 @@
 // Created by Katarina Kulkova on 02.06.2019.
 //
 
-#include <stdlib.h>
-#include "assembler_utility.h"
 
-//
-// Created by Katarina Kulkova on 02.06.2019.
-//
+
+
 
 #include <stdlib.h>
 #include <bits/types/FILE.h>
@@ -15,6 +12,13 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "assembler_utility.h"
+void set_4_bits(uint32_t *b, int pos, uint32_t val) {
+    val <<= pos;
+    uint32_t mask = 0xf;
+    mask <<= pos;
+    *b &= mask;
+    *b |= val;
+}
 
 int lines_in_file(char *file_name) {
     int lines = 0;
