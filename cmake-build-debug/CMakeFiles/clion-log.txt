@@ -1,4 +1,7 @@
 /usr/lib/clion-2018.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /homes/ll7818/Desktop/arm11_31
--- Configuring done
--- Generating done
--- Build files have been written to: /homes/ll7818/Desktop/arm11_31/cmake-build-debug
+CMake Error at CMakeLists.txt:71:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "=======".
+
+
+-- Configuring incomplete, errors occurred!

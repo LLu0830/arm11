@@ -16,15 +16,16 @@
 //find out how to make hash map/ hash table?? in C an implement it here
 
 //add the two structs
+
 typedef char *token;
 
-
 typedef struct {
-    token* mnemonic;
-    token* arg1;
-    token* arg2;
-    token* arg3;
-    token* arg4;
+    token *mnemonic;
+    token *arg1;
+    token *arg2;
+    token *arg3;
+    token *arg4;
+
     InstructionType type;
     uint32_t encoded;
     int counter;//counter in readInstruction
@@ -76,6 +77,7 @@ typedef struct {
 //table *generate_symbol_table(string_arrays *tokens);
 //address get_address(table_t *table, char *label);
 //void free_table(symbol_table_t *table);
+
 
 
 #endif //SRC_TABLE_H
