@@ -1,38 +1,23 @@
-"C:\Program Files\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\ASUS\Desktop\IC\arm11_31
--- The C compiler identification is unknown
--- Check for working C compiler: C:/MinGW/bin/gcc.exe
--- Check for working C compiler: C:/MinGW/bin/gcc.exe -- broken
-CMake Error at C:/Program Files/JetBrains/CLion 2019.1.3/bin/cmake/win/share/cmake-3.14/Modules/CMakeTestCCompiler.cmake:60 (message):
-  The C compiler
+/usr/lib/clion-2018.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /homes/ll7818/Desktop/arm11_31
+-- The C compiler identification is GNU 7.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+CMake Error at CMakeLists.txt:12 (add_executable):
+  Cannot find source file:
 
-    "C:/MinGW/bin/gcc.exe"
+    src/assemble.c
 
-  is not able to compile a simple test program.
-
-  It fails with the following output:
-
-    Change Dir: C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp
-    
-    Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_467e7/fast 
-    C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_467e7.dir\build.make CMakeFiles/cmTC_467e7.dir/build
-    mingw32-make.exe[1]: Entering directory 'C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp'
-    Building C object CMakeFiles/cmTC_467e7.dir/testCCompiler.c.obj
-    C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_467e7.dir\testCCompiler.c.obj   -c C:\Users\ASUS\Desktop\IC\arm11_31\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
-    gcc.exe: error: CreateProcess: No such file or directory
-    CMakeFiles\cmTC_467e7.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_467e7.dir/testCCompiler.c.obj' failed
-    mingw32-make.exe[1]: *** [CMakeFiles/cmTC_467e7.dir/testCCompiler.c.obj] Error 1
-    mingw32-make.exe[1]: Leaving directory 'C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp'
-    Makefile:120: recipe for target 'cmTC_467e7/fast' failed
-    mingw32-make.exe: *** [cmTC_467e7/fast] Error 2
-    
-
-  
-
-  CMake will not be able to correctly generate this project.
-Call Stack (most recent call first):
-  CMakeLists.txt:2 (project)
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
 
 
--- Configuring incomplete, errors occurred!
-See also "C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeError.log".
+CMake Error at CMakeLists.txt:12 (add_executable):
+  No SOURCES given to target: arm11_31
+
+
+-- Build files have been written to: /homes/ll7818/Desktop/arm11_31/cmake-build-debug

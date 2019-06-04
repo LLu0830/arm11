@@ -20,7 +20,7 @@ typedef struct token{
     uint32_t code;
 } token;
 
-typedef struct instruction{
+typedef struct assembler_instruction{
     token mnemonic;
     token operand1;
     token operand2;
@@ -29,7 +29,7 @@ typedef struct instruction{
     InstructionType type;
     uint32_t encoded;
     int counter;//counter in readInstruction
-} instruction;
+} assembler_instruction;
 
 typedef char *label;
 typedef int *address;
