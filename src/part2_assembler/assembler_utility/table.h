@@ -7,22 +7,22 @@
 #define SRC_TABLE_H
 
 #include <stdint.h>
-#include "../emulator_utility/DefinedTypes.h"
-#include "../emulator_utility/instruction.h"
+#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
+#include "../../part1_emulator/emulator_utility/instruction.h"
 //#include "assembler_utility.h"
 
 
 //find out how to make hash map/ hash table?? in C an implement it here
 
 //add the two structs
-typedef char *token;
+typedef char* token;
 
-typedef struct {
-    token *mnemonic;
-    token *arg1;
-    token *arg2;
-    token *arg3;
-    token *arg4;
+typedef struct{
+    token mnemonic;
+    token arg1;
+    token arg2;
+    token arg3;
+    token arg4;
     InstructionType type;
     uint32_t encoded;
     int counter;//counter in readInstruction
@@ -33,8 +33,9 @@ typedef char* label;
 typedef uint32_t * address;
 
 typedef struct {
-    label label;
-    address address;
+    label *label;
+    address *address;
+
 }label_address;
 
 
