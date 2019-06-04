@@ -16,27 +16,34 @@
 struct label_address *labelArray[];
 struct label_address *aPair;
 
-int hashCode(
-        label *label
-) {
-    return *label;
-}
 
-void insert_label(
-        label *label, address *address) {
-    struct label_address *aPair = (struct label_address *) malloc(sizeof(struct label_address *));
-    *aPair->label = label;
-    *aPair->address = address;
-    int hashIndex = hashCode(label);
-    while (labelArray[hashIndex])  != NULL && labelArray[hashIndex]->label != -1) {
-//go to next cell
-        ++hashIndex;
 
-//wrap around the table
-        hashIndex %= SIZE;
-    }
-    labelArray[hashIndex] = aPair;
-}
+
+
+
+
+
+//int hashCode(
+//        label *label
+//) {
+//    return *label;
+//}
+//
+//void insert_label(
+//        label *label, address *address) {
+//    struct label_address *aPair = (struct label_address *) malloc(sizeof(struct label_address *));
+//    *aPairlabel = label;
+//    *aPair->address = address;
+//    int hashIndex = hashCode(label);
+//    while (labelArray[hashIndex])  != NULL && labelArray[hashIndex]->label != -1) {
+////go to next cell
+//        ++hashIndex;
+//
+////wrap around the table
+//        hashIndex %= SIZE;
+//    }
+//    labelArray[hashIndex] = aPair;
+//}
 
 //static instruction *createNewTable(uint16_t numOfInstru)
 //
