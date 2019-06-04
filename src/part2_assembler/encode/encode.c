@@ -8,3 +8,20 @@
 #include "encodeMUL.h"
 #include "encodeSDT.h"
 #include "encodeBR.h"
+
+
+
+void encode(struct instruction * instruction) {
+    switch (instruction.type) {
+        case DP:
+            encodeDP(instruction);
+        case MUL:
+            encodeMUL(instruction);
+        case SDT:
+            encodeSDT(instruction);
+        case BR:
+            encodeBR(instruction);
+        case SPECIAL:
+            encodeSPECIAL(instruction);
+    }
+}
