@@ -2,16 +2,12 @@
 // Created by Katarina Kulkova on 02.06.2019.
 //
 
-
-
-
-
 #include <stdlib.h>
-#include <bits/types/FILE.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include "assembler_utility.h"
+
 void set_4_bits(uint32_t *b, int pos, uint32_t val) {
     val <<= pos;
     uint32_t mask = 0xf;

@@ -15,17 +15,14 @@
 //#include "assembler_utility.h"
 
 
+typedef char *token;
 
-
-
-typedef struct assembler_instruction{
+typedef struct {
     token *mnemonic;
     token *arg1;
     token *arg2;
     token *arg3;
     token *arg4;
-    InstructionType type;
-    uint32_t encoded;
     InstructionType type;
     uint32_t encoded;
 } assembler_instruction;
@@ -34,7 +31,7 @@ typedef struct assembler_instruction{
 typedef char* label;
 typedef uint32_t * address;
 
-typedef struct label_address{
+typedef struct{
     label *label;
     address *address;
 }label_address;
@@ -69,6 +66,7 @@ typedef struct label_address{
 //table *generate_symbol_table(string_arrays *tokens);
 //address get_address(table_t *table, char *label);
 //void free_table(symbol_table_t *table);
+
 
 #endif //SRC_TABLE_H
 
