@@ -8,18 +8,19 @@
 
 #include <stdio.h>
 
+// flips the instruction, so that bit #n becomes bit #(31 - n)
 uint32_t flip(uint32_t f) {
     uint32_t result = 0;
 
     for (int i = 0; i < 32; i = i + 8) {
-        result = (result << 8) | get_n_bits(f, i, 8);
+        result = (result << 8U) | get_n_bits(f, i, 8);
 
     }
     return result;
 }
 
 
-
+// prints values of registers
 void printOut(struct stateOfMachine *state) {
     printf("Registers:\n");
 

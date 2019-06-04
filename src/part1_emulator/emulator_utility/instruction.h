@@ -28,7 +28,6 @@ typedef struct {
 
     //12/24bits operand2
     uint32_t offsets_or_operand2;
-    //...
 
     // in data processing
     bool immediateOperand;

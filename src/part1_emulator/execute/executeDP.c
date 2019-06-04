@@ -55,7 +55,6 @@ void getValFromRegisterOp2(uint32_t op2, uint32_t *result, uint32_t *carryBit, s
                 default:
                     *result = 0;
                     *carryBit = 0;
-//                        printf("result - operand2 (shiftAmount > 32 and LSL or LSR): %x\n", *result);
                     return;
             }
 //        If 0 < shiftAmount < 32, helper function used
