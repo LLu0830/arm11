@@ -36,6 +36,7 @@ void insert_pair(label *label, address *address) {
         list.footer->next=aPair;
         list.footer=aPair;
     }
+    free(aPair);
 }
 
 label_address* lookup_pair(label *label){
