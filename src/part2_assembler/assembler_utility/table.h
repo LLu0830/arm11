@@ -15,10 +15,7 @@
 //find out how to make hash map/ hash table?? in C an implement it here
 
 //add the two structs
-typedef struct {
-    char* name;
-    uint32_t code;
-} token;
+typedef char *token;
 
 typedef struct {
     token *mnemonic;
