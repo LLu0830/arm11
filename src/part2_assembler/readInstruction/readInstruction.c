@@ -13,7 +13,7 @@ bool isLabel(char *string){
     return strchr(string, ':') != NULL;
 }
 
-void readInstruction(char line[], assembler_instruction *instruction){
+void readInstruction(char line, assembler_instruction *instruction){
     if (!isLabel(line)) {
         tokenizer(line, instruction);
     }

@@ -8,11 +8,13 @@
 #include "tokenizer.h"
 #include "../assembler_utility/table.h"
 
-void tokenizer(char instruction, assembler_instruction *toParse) {
-    toParse->mnemonic.name =;
-    toParse->arg1.name =;
-    toParse->arg2.name =;
-    toParse->arg3.name =;
-    toParse->arg4.name =;
+void tokenizer(char instruction, assembler_instruction *to Parse) {
+
+
+    toParse->mnemonic =;
+    toParse->arg1 =;
+    toParse->arg2 =;
+    toParse->arg3 =;
+    toParse->arg4 =;
     toParse->type =;
 }

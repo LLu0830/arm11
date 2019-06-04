@@ -9,29 +9,14 @@
 
 #include <stdlib.h>
 #include <stdint.h>
-#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
-
-typedef struct {
-    char name[];
-    uint32_t code;
-}token;
-
-typedef struct {
-=======
-#include <stdint.h>
+#include <stdio.h>
 #include "../emulator_utility/DefinedTypes.h"
 #include "../emulator_utility/instruction.h"
 //#include "assembler_utility.h"
 
 
-typedef struct token{
-<<<<<<< HEAD
-    char[] name;
-=======
-    char* name;
->>>>>>> 96b04056834fd425ef8ce10bff2a510e25ff8e5a
-    uint32_t code;
-} token;
+
+
 
 typedef struct assembler_instruction{
     token *mnemonic;
@@ -50,20 +35,12 @@ typedef char* label;
 typedef uint32_t * address;
 
 typedef struct label_address{
-<<<<<<< HEAD
-    label label;
-    address address;
-=======
     label *label;
     address *address;
-
->>>>>>> 96b04056834fd425ef8ce10bff2a510e25ff8e5a
 }label_address;
 
 
 
-<<<<<<< HEAD
-=======
 
 
 //typedef struct {
@@ -93,8 +70,5 @@ typedef struct label_address{
 //address get_address(table_t *table, char *label);
 //void free_table(symbol_table_t *table);
 
->>>>>>> e7c1be3443743732a29b415379728e960c0afa47
-
->>>>>>> 96b04056834fd425ef8ce10bff2a510e25ff8e5a
 #endif //SRC_TABLE_H
 
