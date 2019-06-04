@@ -10,6 +10,10 @@
 //
 
 #include <stdlib.h>
+#include <bits/types/FILE.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
 #include "assembler_utility.h"
 
 int lines_in_file(char *file_name) {
@@ -36,31 +40,31 @@ int lines_in_file(char *file_name) {
 }
 
 
-char **load_source_file(char *load_filename, int lines) {
-    FILE *file = fopen(load_filename, "r");
-    if (file == NULL) {
-        perror("Error in opening source file");
-        exit(EXIT_FAILURE);
-    }
-
-    //Set up the correct size array;
-    char **loaded_file = create_2d_array(lines, MAX_LINE_LENGTH);
-
-    // Try to read the file line by line
-    int size = 0;
-    while (size < lines && fgets(loaded_file[size], MAX_LINE_LENGTH, file)) {
-        // Strips any trailing newlinesword_size
-        if (loaded_file[size][0] != '\n' && loaded_file[size][0] != '\r') {
-            loaded_file[size][strcspn(loaded_file[size], "\n")] = 0;
-            size++;
-        }
-    }
-    fclose(file);
-    return loaded_file;
-}
+//char **load_source_file(char *load_filename, int lines) {
+//    FILE *file = fopen(load_filename, "r");
+//    if (file == NULL) {
+//        perror("Error in opening source file");
+//        exit(EXIT_FAILURE);
+//    }
+//
+//    //Set up the correct size array;
+//    char **loaded_file = create_2d_array(lines, MAX_LINE_LENGTH);
+//
+//    // Try to read the file line by line
+//    int size = 0;
+//    while (size < lines && fgets(loaded_file[size], MAX_LINE_LENGTH, file)) {
+//        // Strips any trailing newlinesword_size
+//        if (loaded_file[size][0] != '\n' && loaded_file[size][0] != '\r') {
+//            loaded_file[size][strcspn(loaded_file[size], "\n")] = 0;
+//            size++;
+//        }
+//    }
+//    fclose(file);
+//    return loaded_file;
+//}
 
 //saves array of words to a file, could be used in binary writer
-void save_file(uint_8 *data, char *file_name, int file_size) {
+void save_file(uint8_t *data, char *file_name, int file_size) {
     FILE *file = fopen(file_name, "wb");
     if (file == NULL) {
         perror("Error in opening save file");
@@ -68,11 +72,12 @@ void save_file(uint_8 *data, char *file_name, int file_size) {
     }
 
     for (int i = 0; i < file_size; i++) {
-        fwrite(&data[i], sizeof(word_t), 1, file);
+        fwrite(&data[i], sizeof(uint8_t), 1, file);
     }
 
     fclose(file);
 }
+
 
 //string_arrays_t *make_string_arrays(void) {
 //    string_arrays_t *string_arrays = malloc(sizeof(string_arrays_t));
@@ -91,7 +96,7 @@ void save_file(uint_8 *data, char *file_name, int file_size) {
 //    return string_arrays;
 //}
 //
-///**
+
 // * @brief Adds an array to a string_arrays_t.
 // *
 // * If more memory is required it doubles the array size.
@@ -113,7 +118,7 @@ void save_file(uint_8 *data, char *file_name, int file_size) {
 //    string_arrays->size++;
 //}
 //
-///**
+
 // * @brief Frees all memory used in a string_arrays_t.
 // *
 // * @param string_arrays The string_arrays to free.

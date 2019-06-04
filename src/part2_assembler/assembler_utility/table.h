@@ -16,7 +16,7 @@
 
 //add the two structs
 typedef struct token{
-    string name;
+    char* name;
     uint32_t code;
 } token;
 
@@ -31,12 +31,14 @@ typedef struct assembler_instruction{
     int counter;//counter in readInstruction
 } assembler_instruction;
 
-typedef char *label;
-typedef int *address;
+
+typedef char* label;
+typedef uint32_t * address;
 
 typedef struct label_address{
-    *label label;
-    *address address;
+    label *label;
+    address *address;
+
 }label_address;
 
 
