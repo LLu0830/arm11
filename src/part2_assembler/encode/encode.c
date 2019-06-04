@@ -11,7 +11,6 @@
 #include "../assembler_utility/table.h"
 
 
-
 void encode(assembler_instruction *instruction) {
     switch (instruction->type) {
         case DP:

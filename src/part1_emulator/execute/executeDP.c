@@ -129,9 +129,9 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
 
 //Executes Data Processing Instruction
 void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
-    bool i = instruction.immediateOperand;
+    bool i = instruction.I;
     uint32_t opCode = instruction.operationType;
-    bool s = instruction.scc;
+    bool s = instruction.S;
     int rn = instruction.rn;
     int rd = instruction.rd;
     uint32_t op2 = instruction.offsets_or_operand2;
