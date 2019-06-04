@@ -21,18 +21,7 @@
 //find out how to make hash map/ hash table?? in C an implement it here
 
 //add the two structs
-<<<<<<< HEAD
 
-typedef char *token;
-
-typedef struct {
-    token *mnemonic;
-    token *arg1;
-    token *arg2;
-    token *arg3;
-    token *arg4;
-
-=======
 typedef char* token;
 
 typedef struct{
@@ -41,7 +30,6 @@ typedef struct{
     token arg2;
     token arg3;
     token arg4;
->>>>>>> a261865cf244e420be96a528a44bb6a7533476fa
     InstructionType type;
     uint32_t encoded;
     int counter;//counter in readInstruction
@@ -52,16 +40,13 @@ typedef char *label;
 typedef uint32_t address;
 
 typedef struct {
-<<<<<<< HEAD
+
     label label;
     address address;
     struct label_address *prev;
     struct label_address *next;
 } label_address;
-=======
-    label *label;
-    address *address;
->>>>>>> a261865cf244e420be96a528a44bb6a7533476fa
+
 
 
 typedef struct {
@@ -99,10 +84,8 @@ typedef struct {
 //address get_address(table_t *table, char *label);
 //void free_table(symbol_table_t *table);
 
-<<<<<<< HEAD
 
-=======
->>>>>>> a261865cf244e420be96a528a44bb6a7533476fa
+
 
 #endif //SRC_TABLE_H
 
