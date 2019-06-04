@@ -7,10 +7,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../assembler_utility/table.h"
+#include "../emulator_utility/DefinedTypes.h"
 
 
 label_address *aPair;
- label_address_list list;
+label_address_list *list;
 
 void initialize_list(label_address_list *list) {
     list->header = NULL;
@@ -19,27 +20,27 @@ void initialize_list(label_address_list *list) {
 
 void insert_pair(label *label, address *address) {
     aPair = (struct label_address *) malloc(sizeof(struct label_address *));
-    aPair->label=label;
-    aPair->address=address;
-    strncpy(aPair->label,*label, sizeof(aPair->label));
-    aPair->next=NULL;
+    aPair->label = label;
+    aPair->address = address;
+    strncpy(aPair->label, *label, sizeof(aPair->label));
+    aPair->next = NULL;
 
-    if(list.header==NULL){
-        list.header=aPair;
-        list.footer=aPair;
-    }else{
-        list.footer->next=aPair;
-        list.footer=aPair;
+    if (list.header == NULL) {
+        list.header = aPair;
+        list.footer = aPair;
+    } else {
+        list.footer->next = aPair;
+        list.footer = aPair;
     }
     free(aPair);
 }
 
-label_address* lookup_pair(label *label){
-    label_address* i=list.header;
-    while(i!= NULL){
-        if(i->label=label)
+label_address *lookup_pair(label *label) {
+    label_address *i = list.header;
+    while (i != NULL) {
+        if (i->label = label)
             return i;
-        i=i->next;
+        i = i->next;
     }
     return NULL;
 }
@@ -64,7 +65,7 @@ struct label_address_list *allocList(void) {
 //}
 //
 
-  //  struct label_address *aPair = (struct label_address *) malloc(sizeof(struct label_address *));
+//  struct label_address *aPair = (struct label_address *) malloc(sizeof(struct label_address *));
 //    *aPairlabel = label;
 //    *aPair->address = address;
 //    int hashIndex = hashCode(label);
