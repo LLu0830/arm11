@@ -690,6 +690,33 @@ src/part2_assembler/encode/encodeSDT.c.s:
 	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSDT.c.s
 .PHONY : src/part2_assembler/encode/encodeSDT.c.s
 
+src/part2_assembler/encode/encodeSPECIAL.o: src/part2_assembler/encode/encodeSPECIAL.c.o
+
+.PHONY : src/part2_assembler/encode/encodeSPECIAL.o
+
+# target to build an object file
+src/part2_assembler/encode/encodeSPECIAL.c.o:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o
+.PHONY : src/part2_assembler/encode/encodeSPECIAL.c.o
+
+src/part2_assembler/encode/encodeSPECIAL.i: src/part2_assembler/encode/encodeSPECIAL.c.i
+
+.PHONY : src/part2_assembler/encode/encodeSPECIAL.i
+
+# target to preprocess a source file
+src/part2_assembler/encode/encodeSPECIAL.c.i:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.i
+.PHONY : src/part2_assembler/encode/encodeSPECIAL.c.i
+
+src/part2_assembler/encode/encodeSPECIAL.s: src/part2_assembler/encode/encodeSPECIAL.c.s
+
+.PHONY : src/part2_assembler/encode/encodeSPECIAL.s
+
+# target to generate assembly for a file
+src/part2_assembler/encode/encodeSPECIAL.c.s:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.s
+.PHONY : src/part2_assembler/encode/encodeSPECIAL.c.s
+
 src/part2_assembler/readInstruction/readInstruction.o: src/part2_assembler/readInstruction/readInstruction.c.o
 
 .PHONY : src/part2_assembler/readInstruction/readInstruction.o
@@ -843,6 +870,9 @@ help:
 	@echo "... src/part2_assembler/encode/encodeSDT.o"
 	@echo "... src/part2_assembler/encode/encodeSDT.i"
 	@echo "... src/part2_assembler/encode/encodeSDT.s"
+	@echo "... src/part2_assembler/encode/encodeSPECIAL.o"
+	@echo "... src/part2_assembler/encode/encodeSPECIAL.i"
+	@echo "... src/part2_assembler/encode/encodeSPECIAL.s"
 	@echo "... src/part2_assembler/readInstruction/readInstruction.o"
 	@echo "... src/part2_assembler/readInstruction/readInstruction.i"
 	@echo "... src/part2_assembler/readInstruction/readInstruction.s"

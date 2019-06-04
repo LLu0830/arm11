@@ -317,9 +317,22 @@ CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSDT.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSDT.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/encode/encodeSDT.c -o CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSDT.c.s
 
+CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: CMakeFiles/C_Group_31.dir/flags.make
+CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeSPECIAL.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o   -c /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/encode/encodeSPECIAL.c
+
+CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/encode/encodeSPECIAL.c > CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.i
+
+CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/encode/encodeSPECIAL.c -o CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.s
+
 CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o: CMakeFiles/C_Group_31.dir/flags.make
 CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o: ../src/part2_assembler/readInstruction/readInstruction.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o   -c /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readInstruction/readInstruction.c
 
 CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.i: cmake_force
@@ -332,7 +345,7 @@ CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.
 
 CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o: CMakeFiles/C_Group_31.dir/flags.make
 CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o: ../src/part2_assembler/readLabels/readLabels.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o   -c /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readLabels/readLabels.c
 
 CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.i: cmake_force
@@ -345,7 +358,7 @@ CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.s: cmake_f
 
 CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o: CMakeFiles/C_Group_31.dir/flags.make
 CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o: ../src/part2_assembler/tokenizer/tokenizer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o   -c /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/tokenizer/tokenizer.c
 
 CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.i: cmake_force
@@ -358,7 +371,7 @@ CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.s: cmake_for
 
 CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.o: CMakeFiles/C_Group_31.dir/flags.make
 CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.o: ../src/part2_assembler/assemble.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.o   -c /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/assemble.c
 
 CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.i: cmake_force
@@ -391,6 +404,7 @@ C_Group_31_OBJECTS = \
 "CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeDP.c.o" \
 "CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeMUL.c.o" \
 "CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSDT.c.o" \
+"CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o" \
 "CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o" \
 "CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o" \
 "CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o" \
@@ -419,13 +433,14 @@ C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeBR.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeDP.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeMUL.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSDT.c.o
+C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.o
 C_Group_31: CMakeFiles/C_Group_31.dir/build.make
 C_Group_31: CMakeFiles/C_Group_31.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking C executable C_Group_31"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable C_Group_31"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/C_Group_31.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

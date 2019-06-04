@@ -229,6 +229,12 @@
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/encode/encodeSDT.h">
 			<Option target="C_Group_31"/>
 		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/encode/encodeSPECIAL.c">
+			<Option target="C_Group_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/encode/encodeSPECIAL.h">
+			<Option target="C_Group_31"/>
+		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readInstruction/readInstruction.c">
 			<Option target="C_Group_31"/>
 		</Unit>

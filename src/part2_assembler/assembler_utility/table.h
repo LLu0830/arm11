@@ -31,8 +31,9 @@ typedef struct {
     int counter;//counter in readInstruction
 } assembler_instruction;
 
-typedef char *label;
-typedef int *address;
+
+typedef char* label;
+typedef uint32_t * address;
 
 typedef struct {
     label label;

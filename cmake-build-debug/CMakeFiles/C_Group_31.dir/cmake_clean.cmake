@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeDP.c.o"
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeMUL.c.o"
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSDT.c.o"
+  "CMakeFiles/C_Group_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o"
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o"
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"

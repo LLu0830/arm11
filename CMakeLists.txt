@@ -58,6 +58,8 @@ add_executable(C_Group_31
         src/part2_assembler/encode/encodeMUL.h
         src/part2_assembler/encode/encodeSDT.c
         src/part2_assembler/encode/encodeSDT.h
+        src/part2_assembler/encode/encodeSPECIAL.c
+        src/part2_assembler/encode/encodeSPECIAL.h
         src/part2_assembler/readInstruction/readInstruction.c
         src/part2_assembler/readInstruction/readInstruction.h
         src/part2_assembler/readLabels/readLabels.c
