@@ -1,14 +1,9 @@
-
-
 //
 // Created by Lize Lu on 2019/6/4.
 //
 
-
-
 #define SIZE 20
 
-#include <lzma.h>
 #include <stdlib.h>
 #include "../assembler_utility/table.h"
 
