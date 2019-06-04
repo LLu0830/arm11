@@ -3,14 +3,16 @@
 //
 
 #include <stdlib.h>
-#include <stdint>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdio.h>
 #include "assembler_utility.h"
 
-void set_bits(uint32 *b, int pos, uint32_t val) {
+void set_4_bits(uint32_t *b, int pos, uint32_t val) {
     val <<= pos;
-    uint32_t zeros = 0x0;
-    zeros <<= pos;
-    *b &= zeros;
+    uint32_t mask = 0xf;
+    mask <<= pos;
+    *b &= mask;
     *b |= val;
 }
 
@@ -62,7 +64,7 @@ char **load_source_file(char *load_filename, int lines) {
 }
 
 //saves array of words to a file, could be used in binary writer
-void save_file(uint_8 *data, char *file_name, int file_size) {
+void save_file(uint8_t *data, char *file_name, int file_size) {
     FILE *file = fopen(file_name, "wb");
     if (file == NULL) {
         perror("Error in opening save file");
@@ -131,4 +133,3 @@ void save_file(uint_8 *data, char *file_name, int file_size) {
 //    free(string_arrays->arrays);
 //    free(string_arrays);
 //}
->>>>>>> e7c1be3443743732a29b415379728e960c0afa47

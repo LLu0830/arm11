@@ -1,1 +1,4 @@
-Toolchains are not configured Configure
+/usr/lib/clion-2018.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /homes/mw6118/CLionProjects/arm11_31
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /homes/mw6118/CLionProjects/arm11_31/cmake-build-debug
