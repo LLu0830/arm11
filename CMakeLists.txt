@@ -36,4 +36,4 @@ add_executable(arm11_31
         src/part1_emulator/fetch/fetch.h
         src/part1_emulator/emulate.c
         src/assemble.c
-        src/helper.c)
+        src/helper.c src/part2_assembler/assembler_utility/table.c)
