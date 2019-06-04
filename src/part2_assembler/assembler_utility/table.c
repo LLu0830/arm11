@@ -1,5 +1,3 @@
-
-
 //
 // Created by Lize Lu on 2019/6/4.
 //
@@ -10,10 +8,6 @@
 
 #include "../assembler_utility/table.h"
 
-typedef struct label_address {
-    *label label;
-    *address address;
-} label_address;
 
 struct label_address *labelArray[SIZE];
 struct label_address *aPair;

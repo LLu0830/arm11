@@ -3,14 +3,10 @@
 //
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
 #include "assembler_utility.h"
 
-//
-// Created by Katarina Kulkova on 02.06.2019.
-//
-
-#include <stdlib.h>
-#include "assembler_utility.h"
 
 int lines_in_file(char *file_name) {
     int lines = 0;
