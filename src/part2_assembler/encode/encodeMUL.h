@@ -5,4 +5,6 @@
 #ifndef SRC_ENCODEMUL_H
 #define SRC_ENCODEMUL_H
 
+void encodeMUL(assembler_instruction *instruction);
+
 #endif //SRC_ENCODEMUL_H

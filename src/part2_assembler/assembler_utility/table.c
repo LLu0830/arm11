@@ -4,24 +4,22 @@
 // Created by Lize Lu on 2019/6/4.
 //
 
-#ifndef SRC_TABLE_C
-#define SRC_TABLE_C
+
+
 #define SIZE 20
 
+#include <lzma.h>
+#include <stdlib.h>
 #include "../assembler_utility/table.h"
 
-typedef struct label_address {
-    *label label;
-    *address address;
-} label_address;
 
-struct label_address *labelArray[SIZE];
+struct label_address *labelArray[];
 struct label_address *aPair;
 
 int hashCode(
         label *label
 ) {
-    return label % SIZE;
+    return *label;
 }
 
 void insert_label(
@@ -30,7 +28,7 @@ void insert_label(
     *aPair->label = label;
     *aPair->address = address;
     int hashIndex = hashCode(label);
-    while (labelArray[hashIndex])  != NULL && hashArray[hashIndex]->key != -1) {
+    while (labelArray[hashIndex])  != NULL && labelArray[hashIndex]->label != -1) {
 //go to next cell
         ++hashIndex;
 
