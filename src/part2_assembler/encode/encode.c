@@ -11,7 +11,7 @@
 
 
 
-void encode(struct instruction * instruction) {
+void encode(instruction *instruction) {
     switch (instruction.type) {
         case DP:
             encodeDP(instruction);

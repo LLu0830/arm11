@@ -15,33 +15,17 @@
 //find out how to make hash map/ hash table?? in C an implement it here
 
 //add the two structs
-<<<<<<< HEAD
-typedef struct {
-    string name,
-    uint32_t code
-} token;
-
-typedef struct {
-    token mnemonic,
-    token operand1,
-    token operand2,
-    token operand3,
-    token operand4,
-    InstructionType type,
-    uint32_t encoded
-} instruction;
-=======
 typedef struct token{
-    string name;
+    char[] name;
     uint32_t code;
 } token;
 
 typedef struct assembler_instruction{
-    token mnemonic;
-    token operand1;
-    token operand2;
-    token operand3;
-    token operand4;
+    token *mnemonic;
+    token *arg1;
+    token *arg2;
+    token *arg3;
+    token *arg4;
     InstructionType type;
     uint32_t encoded;
     int counter;//counter in readInstruction

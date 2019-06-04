@@ -3,27 +3,16 @@
 //
 
 #include <stdlib.h>
-<<<<<<< HEAD
 #include <stdint>
 #include "assembler_utility.h"
 
-void set_bits(uint32 b, int pos, uint32_t val) {
+void set_bits(uint32 *b, int pos, uint32_t val) {
     val <<= pos;
     uint32_t zeros = 0x0;
     zeros <<= pos;
-
-    b &= zeros;
-    b |= val;
+    *b &= zeros;
+    *b |= val;
 }
-=======
-#include "assembler_utility.h"
-
-//
-// Created by Katarina Kulkova on 02.06.2019.
-//
-
-#include <stdlib.h>
-#include "assembler_utility.h"
 
 int lines_in_file(char *file_name) {
     int lines = 0;
