@@ -42,6 +42,9 @@ typedef enum {
 
 //add the two structs
 typedef char* token;
+typedef char* label;
+typedef uint32_t address;
+
 
 typedef struct{
     token mnemonic;
@@ -52,12 +55,12 @@ typedef struct{
     InstructionType type;
     Mnemonic operationType;
     uint32_t encoded;
+    address target_address;
+    uint32_t currentAddress;
     int counter;//counter in readInstruction
 } assembler_instruction;
 
 
-typedef char* label;
-typedef uint32_t * address;
 
 typedef struct {
     label *label;
