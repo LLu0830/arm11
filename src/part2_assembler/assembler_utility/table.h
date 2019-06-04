@@ -7,14 +7,10 @@
 #define SRC_TABLE_H
 
 #include <stdint.h>
-<<<<<<< HEAD
 #include <stdio.h>
 #include "../emulator_utility/DefinedTypes.h"
 #include "../emulator_utility/instruction.h"
-=======
-#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
-#include "../../part1_emulator/emulator_utility/instruction.h"
->>>>>>> a261865cf244e420be96a528a44bb6a7533476fa
+
 //#include "assembler_utility.h"
 
 
