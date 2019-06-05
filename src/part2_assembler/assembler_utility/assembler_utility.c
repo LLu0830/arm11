@@ -6,7 +6,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
 #include "assembler_utility.h"
+
+
+static bool is_label(char *instruction) {
+    return instruction[strlen(instruction) - 1] == ':';
+}
+
 
 void set_4_bits(uint32_t *b, int pos, uint32_t val) {
     val <<= pos;
