@@ -2,36 +2,74 @@
 // Created by Katarina Kulkova on 02.06.2019.
 //
 
+#include <string.h>
+#include <stdlib.h>
 #include "encodeMUL.h"
 #include "../assembler_utility/table.h"
 #include "../assembler_utility/assembler_utility.h"
 #include "../../part1_emulator/emulator_utility/utility.h"
 
-void encodeMUL(assembler_instruction *instruction) {
-    token *mnemonic = instruction->mnemonic;
-    uint32_t encoded = instruction->encoded;
-    // change S bit to 0
-    encoded = change_bit(&encoded, 20, 0);
-    //set condition to 1110
-    set_4_bits(&encoded, 28, 0xE);
-    // set 16-19(Rd) with operand1
-    set_4_bits(&encoded, 16, instruction->arg1->code);
-    //set 0-3(Rm) with operand2
-    set_4_bits(&encoded, 0, instruction->arg2->code);
-    // set 8-11(Rs) with operand3
-    set_4_bits(&encoded, 8, instruction->arg3->code);
+uint32_t getPosFromChar(token pos){
+    strtol((pos + 1), NULL, 16);
+}
 
-    switch (mnemonic->name) {
-        case "mul":
+
+void encodeMUL(assembler_instruction *instruction) {
+    token mnemonic = instruction->mnemonic;
+
+    uint32_t const1 = 0x9;
+
+    // change S bit to 0
+    uint32_t SBit = 0;
+
+    //set condition to 1110
+//    set_4_bits(&instruction->encoded, 28, 0xE);
+    uint32_t cond = 0xe;
+
+
+    // set 16-19(Rd) with operand1
+    token rd = instruction->arg1;
+    uint32_t positionRd  = getPosFromChar(rd);
+
+    //set 0-3(Rm) with operand2
+    token rm =instruction->arg2;
+    uint32_t positionRm  = getPosFromChar(rm);
+
+    // set 8-11(Rs) with operand3
+    token rs = instruction->arg3;
+    uint32_t positionRs  = getPosFromChar(rs);
+
+
+    uint32_t positionRn = 0;
+    uint32_t ABit = 0;
+
+    switch (instruction->operationType) {
+        case mul:
             // change A bit to 0
-            encoded = change_bit(encoded, 21, 0);
+            ABit = 0;
             break;
-        case "mla":
+        case mla:
             // change A bit to 1
-            encoded = change_bit(encoded, 21, 1);
+            ABit = 1;
             // set 12-15(Rn) with operand4
-            set_bits(&encoded, 12, instruction->arg4);
+            token rn = instruction->arg4;
+            positionRn  = (unsigned int) *(rn + 1) - '0';
+            break;
+        default:
+            //should throw error?
             break;
     }
 
+    uint32_t result = 0;
+
+    result |= cond << 28;
+    result |= ABit << 21;
+    result |= SBit << 20;
+    result |= positionRd << 16;
+    result |= positionRn << 12;
+    result |= positionRs << 8;
+    result |= const1 << 4;
+    result |= positionRm;
+
+    instruction->encoded = result;
 }

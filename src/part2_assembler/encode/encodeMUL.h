@@ -4,6 +4,7 @@
 
 #ifndef SRC_ENCODEMUL_H
 #define SRC_ENCODEMUL_H
+#include "../assembler_utility/table.h"
 
 void encodeMUL(assembler_instruction *instruction);
 

@@ -13,9 +13,13 @@ bool isLabel(char *string){
     return strchr(string, ':') != NULL;
 }
 
-void readInstruction(char line, assembler_instruction *instruction){
+void readInstruction(FILE *file, int *counter, assembler_instruction *instruction){
+
+    fp = fopen(file);
+
     if (!isLabel(line)) {
         tokenizer(line, instruction);
     }
+
 }
 
