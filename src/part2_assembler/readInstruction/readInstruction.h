@@ -9,6 +9,6 @@
 #include <stdint.h>
 #include "../assembler_utility/table.h"
 
-void readInstruction(char line[], parsed *instruction);
+void readInstruction(FILE *file, int *counter, assembler_instruction *instruction);
 
 #endif //SRC_READINSTRUCTION_H
