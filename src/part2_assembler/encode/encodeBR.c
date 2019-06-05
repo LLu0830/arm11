@@ -11,8 +11,8 @@
 void encodeBR(assembler_instruction *instruction){
     uint32_t offset=(instruction->target_address)-(instruction->currentAddress)-8;
     char result[2];
-    result[0]=(instruction->mnemonic)[0];
-    result[1]=(instruction->mnemonic)[1];
+    result[0]=(instruction->Mnemonic)[0];
+    result[1]=(instruction->Mnemonic)[1];
     uint32_t condition=getCond(result);
     return (condition<<28)|(5<<25)|((offset>>2)&0x00ffffff);
 }

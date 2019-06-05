@@ -48,19 +48,19 @@ typedef enum {
 //add the two structs
 
 
-typedef char* token;
-typedef char* label;
+typedef char *token;
+typedef char *label;
 typedef uint32_t address;
 
 
-typedef struct{
+typedef struct {
     token mnemonic;
     token arg1;
     token arg2;
     token arg3;
     token arg4;
     InstructionType type;
-    Mnemonic operationType;
+    Mnemonic *operationType;
     uint32_t encoded;
 
     address target_address;
@@ -70,12 +70,8 @@ typedef struct{
 } assembler_instruction;
 
 
-
 typedef char *label;
 typedef uint32_t address;
-
-
-
 
 
 typedef struct {
@@ -87,16 +83,16 @@ typedef struct {
 } label_address;
 
 
-
-
 typedef struct {
     label_address *header;
     label_address *footer;
-}label_address_list;
+} label_address_list;
 
+
+//do these have to be static?
 label_address_list initialize_list();
-label_address *initialize_pair()
-void insert_pair(label_address pair,label_address_list *list);
+label_address *initialize_pair();
+void insert_pair(label_address pair, label_address_list *list);
 label_address *lookup_pair(label *label);
 //struct label_address_list *allocList(void);
 
