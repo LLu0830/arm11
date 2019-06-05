@@ -18,7 +18,7 @@ typedef enum {
     TEQ = 0x9,
     CMP = 0xa,
     ORR = 0xc,
-    MOV = 0xd
+    MOV = 0xd,
 } OpCode;
 
 

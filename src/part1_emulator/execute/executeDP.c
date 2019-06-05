@@ -110,6 +110,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
             *writeFlag = 0;
             break;
         case CMP:
+
             result = rnValue - op2Value;
             *writeFlag = 0;
             break;
@@ -194,6 +195,8 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
 
     if (result == 0) {
         setZ(ARM11, 1);
+    } else {
+        setZ(ARM11, 0);
     }
 
 //    Sets N bit
