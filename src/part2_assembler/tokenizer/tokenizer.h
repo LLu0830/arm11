@@ -5,4 +5,11 @@
 #ifndef SRC_TOKENIZER_H
 #define SRC_TOKENIZER_H
 
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdio.h>
+#include "../assembler_utility/table.h"
+
+void tokenizer(char instruction[], parsed *toParse);
+
 #endif //SRC_TOKENIZER_H
