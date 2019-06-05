@@ -9,7 +9,7 @@
 
 
 void encodeBR(assembler_instruction *instruction){
-    uint32_t offset=instruction->target_address-instruction->currentAddress-8;
+    uint32_t offset=(instruction->target_address)-(instruction->currentAddress)-8;
     char result[2];
     result[0]=(instruction->mnemonic)[0];
     result[1]=(instruction->mnemonic)[1];

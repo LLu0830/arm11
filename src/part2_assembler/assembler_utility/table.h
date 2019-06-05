@@ -84,7 +84,11 @@ typedef struct {
     label_address *footer;
 }label_address_list;
 
-
+label_address_list initialize_list();
+label_address initialize_pair();
+void insert_pair(label_address pair,label_address_list *list);
+label_address *lookup_pair(label *label);
+struct label_address_list *allocList(void);
 
 
 //typedef struct {

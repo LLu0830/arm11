@@ -13,15 +13,25 @@
 label_address *aPair;
 label_address_list *list;
 
-void initialize_list(label_address_list *list) {
+label_address_list initialize_list() {
+    label_address_list *list;
     list->header = NULL;
     list->footer = NULL;
+    return list;
 }
 
-void insert_pair(label *label, address *address) {
+label_address initialize_pair(){
+    label_address pair;
+    pair.label=NULL;
+    pair.address=NULL;
+    pair.next=NULL;
+    pair.prev=NULL;
+    return pair;
+}
+void insert_pair(label_address pair,label_address_list *list) {
     aPair = (struct label_address *) malloc(sizeof(struct label_address *));
-    aPair->label = label;
-    aPair->address = address;
+    aPair->label = pair->label;
+    aPair->address = pair->address;
     strncpy(aPair->label, *label, sizeof(aPair->label));
     aPair->next = NULL;
 
