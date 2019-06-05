@@ -64,7 +64,7 @@ typedef struct {
     uint32_t encoded;
 
     address target_address;
-    uint32_t currentAddress;
+    address currentAddress;
     int counter;//counter in readInstruction
 
 } assembler_instruction;

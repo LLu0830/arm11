@@ -4,5 +4,5 @@
 
 #ifndef SRC_ENCODEBR_H
 #define SRC_ENCODEBR_H
-
+void encodeBR(assembler_instruction *instruction);
 #endif //SRC_ENCODEBR_H
