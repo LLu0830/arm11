@@ -6,7 +6,28 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
 #include "assembler_utility.h"
+#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
+#include "../assembler_utility/table.h"
+
+
+static bool is_label(char *instruction) {
+    return instruction[strlen(instruction) - 1] == ':';
+}
+
+//same as the previous one, we should decide which one is better
+bool isLabel(char *string){
+    return strchr(string, ':') != NULL;
+}
+
+//function to copy string
+char *copy_string(char *string){
+    char *result = malloc(strlen(string) + 1);
+    strcpy(result, string);
+    return result;
+}
+
 
 void set_4_bits(uint32_t *b, int pos, uint32_t val) {
     val <<= pos;
@@ -37,6 +58,41 @@ int lines_in_file(char *file_name) {
     }
     fclose(file);
     return lines;
+}
+
+InstructionType get_instruction_type(Mnemonic mnemonic){
+    switch (mnemonic) {
+        case and:
+        case eor:
+        case sub:
+        case rsb:
+        case add:
+        case tst:
+        case teq:
+        case cmp:
+        case orr:
+        case mov:
+            return DP;
+        case mul:
+        case mla:
+            return MUL;
+        case ldr:
+        case str:
+            return SDT;
+        case beq:
+        case bne:
+        case bge:
+        case blt:
+        case bgt:
+        case ble:
+        case b:
+            return BR;
+        case lsl:
+        case andeq:
+            return SPECIAL;
+        default:
+            printf("Invalid instruction type");
+    }
 }
 
 

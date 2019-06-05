@@ -6,10 +6,15 @@
 #ifndef SRC_TABLE_H
 #define SRC_TABLE_H
 
+
+#include <stdlib.h>
 #include <stdint.h>
-#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
-#include "../../part1_emulator/emulator_utility/instruction.h"
+#include <stdio.h>
+#include "../emulator_utility/DefinedTypes.h"
+#include "../emulator_utility/instruction.h"
+
 //#include "assembler_utility.h"
+
 
 
 //find out how to make hash map/ hash table?? in C an implement it here
@@ -41,32 +46,55 @@ typedef enum {
 
 
 //add the two structs
-typedef char* token;
 
-typedef struct{
+
+typedef char *token;
+typedef char *label;
+typedef uint32_t address;
+
+
+typedef struct {
     token mnemonic;
     token arg1;
     token arg2;
     token arg3;
     token arg4;
     InstructionType type;
-    Mnemonic operationType;
+    Mnemonic *operationType;
     uint32_t encoded;
+
+    address target_address;
+    uint32_t currentAddress;
     int counter;//counter in readInstruction
+
 } assembler_instruction;
 
 
-typedef char* label;
-typedef uint32_t * address;
+typedef char *label;
+typedef uint32_t address;
+
 
 typedef struct {
-    label *label;
-    address *address;
 
-}label_address;
+    label label;
+    address address;
+    struct label_address *prev;
+    struct label_address *next;
+} label_address;
 
 
+typedef struct {
+    label_address *header;
+    label_address *footer;
+} label_address_list;
 
+
+//do these have to be static?
+label_address_list initialize_list();
+label_address *initialize_pair();
+void insert_pair(label_address pair, label_address_list *list);
+label_address *lookup_pair(label *label);
+//struct label_address_list *allocList(void);
 
 
 //typedef struct {
@@ -95,6 +123,8 @@ typedef struct {
 //table *generate_symbol_table(string_arrays *tokens);
 //address get_address(table_t *table, char *label);
 //void free_table(symbol_table_t *table);
+
+
 
 
 #endif //SRC_TABLE_H
