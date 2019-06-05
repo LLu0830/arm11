@@ -5,4 +5,6 @@
 #ifndef SRC_ENCODESDT_H
 #define SRC_ENCODESDT_H
 
+void encodeSDT(assembler_instruction *instruction);
+
 #endif //SRC_ENCODESDT_H

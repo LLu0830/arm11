@@ -10,6 +10,6 @@
 #include <stdio.h>
 #include "../assembler_utility/table.h"
 
-void tokenizer(char instruction[], parsed *toParse);
+void tokenizer(char *instruction, assembler_instruction *parsed);
 
 #endif //SRC_TOKENIZER_H
