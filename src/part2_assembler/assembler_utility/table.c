@@ -20,25 +20,28 @@ label_address_list initialize_list() {
     return list;
 }
 
-label_address initialize_pair(){
+label_address *initialize_pair() {
     label_address pair;
-    pair.label=NULL;
-    pair.address=NULL;
-    pair.next=NULL;
-    pair.prev=NULL;
+    pair.label = NULL;
+    pair.address = NULL;
+    pair.next = NULL;
+    pair.prev = NULL;
     return pair;
 }
-void insert_pair(label_address pair,label_address_list *list) {
+
+void insert_pair(label_address pair, label_address_list *list) {
     aPair = (struct label_address *) malloc(sizeof(struct label_address *));
     aPair->label = pair->label;
     aPair->address = pair->address;
     strncpy(aPair->label, *label, sizeof(aPair->label));
+
     aPair->next = NULL;
 
     if (list.header == NULL) {
         list.header = aPair;
         list.footer = aPair;
     } else {
+        aPair->prev = list->footer;
         list.footer->next = aPair;
         list.footer = aPair;
     }
@@ -56,14 +59,14 @@ label_address *lookup_pair(label *label) {
 }
 
 
-struct label_address_list *allocList(void) {
-    struct label_address *aPair = (label_address *) malloc(sizeof(struct label_address *));
-    if (aPair == NULL) {
-        perror("allocList");
-        exit(EXIT_FAILURE);
-    }
-    return aPair;
-}
+//struct label_address_list *allocList(void) {
+//    struct label_address *aPair = (label_address *) malloc(sizeof(struct label_address *));
+//    if (aPair == NULL) {
+//        perror("allocList");
+//        exit(EXIT_FAILURE);
+//    }
+//    return aPair;
+//}
 
 
 
