@@ -7,7 +7,6 @@
 #include "../assembler_utility/table.h"
 
 
-
 uint32_t getCond(char *condition) {
     uint32_t result = 1110;
     switch (*condition) {
@@ -36,10 +35,11 @@ uint32_t getCond(char *condition) {
 }
 
 void encodeBR(assembler_instruction *instruction) {
+
     uint32_t offset = (instruction->target_address) - (instruction->currentAddress) - 8;
     char *result = (instruction->mnemonic);
     uint32_t condition = getCond(result);
-    instruction->encoded= (condition << 28) | (5 << 25) | ((offset >> 2) & 0x00ffffff);
+    instruction->encoded = (condition << 28) | (5 << 25) | ((offset >> 2) & 0x00ffffff);
 }
 
 
