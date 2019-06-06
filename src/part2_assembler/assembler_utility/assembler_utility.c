@@ -12,6 +12,18 @@
 #include "../assembler_utility/table.h"
 
 
+//rotate left function
+uint32_t rotateLeft(uint32_t b, int n) {
+    return (b << n) | (b >> (32 - n));
+}
+
+uint32_t rotateLeftNtimes(uint32_t b, int n) {
+    for (int i = 0; i < n; i++) {
+        b = rotateLeft(b, n);
+    }
+    return b;
+}
+
 static bool is_label(char *instruction) {
     return instruction[strlen(instruction) - 1] == ':';
 }
