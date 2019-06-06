@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include "readInstruction.h"
-#include "tokenizer.h"
+#include "../tokenizer/tokenizer.h"
 #include "../assembler_utility/table.h"
 
 #define MAX_LINE_SIZE 512

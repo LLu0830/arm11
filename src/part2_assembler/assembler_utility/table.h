@@ -60,11 +60,11 @@ typedef struct {
     token arg3;
     token arg4;
     InstructionType type;
-    Mnemonic *operationType;
+    Mnemonic operationType;
     uint32_t encoded;
 
     address target_address;
-    uint32_t currentAddress;
+    address currentAddress;
     int counter;//counter in readInstruction
 
 } assembler_instruction;
@@ -91,8 +91,11 @@ typedef struct {
 
 //do these have to be static?
 label_address_list initialize_list();
+
 label_address *initialize_pair();
+
 void insert_pair(label_address pair, label_address_list *list);
+
 label_address *lookup_pair(label *label);
 //struct label_address_list *allocList(void);
 

@@ -7,36 +7,33 @@
 #include "../assembler_utility/table.h"
 
 
-
-void encodeBR(assembler_instruction *instruction){
-    uint32_t offset=(instruction->target_address)-(instruction->currentAddress)-8;
-    char result[2];
-    result[0]=(instruction->Mnemonic)[0];
-    result[1]=(instruction->Mnemonic)[1];
-    uint32_t condition=getCond(result);
-    return (condition<<28)|(5<<25)|((offset>>2)&0x00ffffff);
+void encodeBR(assembler_instruction *instruction) {
+    uint32_t offset = (instruction->target_address) - (instruction->currentAddress) - 8;
+    char *result = (instruction->Mnemonic);
+    uint32_t condition = getCond(result);
+    return (condition << 28) | (5 << 25) | ((offset >> 2) & 0x00ffffff);
 }
 
-uint32_t getCond(char* condition){
-    uint32_t result=1110;
-    switch (instruction->operationType){
+uint32_t getCond(char *condition) {
+    uint32_t result = 1110;
+    switch (condition) {
         case beq:
-            result=0000;
+            result = 0000;
             break;
         case bge:
-            result=1010;
+            result = 1010;
             break;
         case bgt:
-            result=1100;
+            result = 1100;
             break;
         case ble:
-            result=1101;
+            result = 1101;
             break;
         case blt:
-            result=1011;
+            result = 1011;
             break;
         case bne:
-            result=0001;
+            result = 0001;
             break;
 //        case b:
 //            result=B
