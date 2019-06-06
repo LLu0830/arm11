@@ -195,8 +195,6 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
 
     if (result == 0) {
         setZ(ARM11, 1);
-    } else {
-        setZ(ARM11, 0);
     }
 
 //    Sets N bit

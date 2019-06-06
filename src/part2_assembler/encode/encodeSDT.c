@@ -36,16 +36,39 @@ void encodeSDT(assembler_instruction *instruction){
         L_bit = 0;
     }
 
+    //general loading case
     if(L_bit && (instruction->arg2 == '=')) {
+
+        //pre-indexing
+        P_bit = 1;
+
+        //interpreting as a mov instruction
         if (getValue(instruction->arg2)<MAX_MOV){
             instruction->mnemonic = mov;
             //instruction->arg2 = '#'+strcpy();
             encodeDP(instruction);
         }
+        //not interpreting as a mov instruction
         else{
 
         }
 
+    }
+
+    //pre-indexing cases
+    if (P_bit) {
+        //just RN
+
+        //Rn and expression
+
+        //optional case
+    }
+
+    //post-indexing cases
+    if(!P_bit){
+        //shifting rn by expression bytes
+
+        //optional case
     }
 
     rd = getValue(instruction->arg1);
