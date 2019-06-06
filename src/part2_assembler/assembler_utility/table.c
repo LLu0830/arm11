@@ -17,7 +17,7 @@ label_address_list initialize_list() {
     label_address_list *list;
     list->header = NULL;
     list->footer = NULL;
-    return list;
+    return *list;
 }
 
 label_address *initialize_pair() {
@@ -26,7 +26,7 @@ label_address *initialize_pair() {
     pair.address = NULL;
     pair.next = NULL;
     pair.prev = NULL;
-    return pair;
+    return &pair;
 }
 
 void insert_pair(label_address pair, label_address_list *list) {
@@ -37,19 +37,19 @@ void insert_pair(label_address pair, label_address_list *list) {
 
     aPair->next = NULL;
 
-    if (list.header == NULL) {
-        list.header = aPair;
-        list.footer = aPair;
+    if (list->header == NULL) {
+        list->header = aPair;
+        list->footer = aPair;
     } else {
         aPair->prev = list->footer;
-        list.footer->next = aPair;
-        list.footer = aPair;
+        list->footer->next = aPair;
+        list->footer = aPair;
     }
     free(aPair);
 }
 
 label_address *lookup_pair(label *label) {
-    label_address *i = list.header;
+    label_address *i = list->header;
     while (i != NULL) {
         if (i->label = label)
             return i;
