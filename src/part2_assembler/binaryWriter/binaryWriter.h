@@ -5,4 +5,8 @@
 #ifndef SRC_BINARYWRITER_H
 #define SRC_BINARYWRITER_H
 
+#import <stdio.h>
+
+void binaryWriter(uint32_t *instruction, FILE *fp_write);
+
 #endif //SRC_BINARYWRITER_H
