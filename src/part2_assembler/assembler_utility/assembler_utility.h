@@ -8,6 +8,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+uint32_t rotateLeft(uint32_t b, int n);
+uint32_t rotateLeftNtimes(uint32_t b, int n);
 void set_4_bits(uint32_t *b, int pos, uint32_t val);
 int lines_in_file(char *file_name);
 char **load_source_file(char *load_filename, int lines);

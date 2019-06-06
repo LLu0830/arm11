@@ -7,7 +7,9 @@
 
 #include "../assembler_utility/table.h"
 
-uint32_t getExpressionFromOp2(token op2);
+uint32_t expressionFromOp2(token op2);
+uint32_t registerExpression(token op2Pointer);
+uint32_t getValueFromOp2(token op2Pointer);
 uint32_t getRegisterNumber(token reg);
 void encodeDPCompute(assembler_instruction *assembler_instruction, Instruction *emulator_instruction);
 void encodeDPAssign(assembler_instruction *assembler_instruction, Instruction *emulator_instruction);

@@ -2,9 +2,7 @@
 #include "../part2_assembler/readLabels/readLabels.h"
 #include "../part2_assembler/readInstruction/readInstruction.h"
 #include "../part2_assembler/encode/encode.h"
-#include "../part2_assembler/binaryWriter/binaryWriter.h"
 #include "../part2_assembler/assembler_utility/table.h"
-#import "binaryWriter.h"
 
 int main(int argc, char **argv) {
 //  File pointers for reading from (fpr) and writing to (fpw)
