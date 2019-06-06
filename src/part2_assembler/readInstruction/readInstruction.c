@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
+#include "../assembler_utility/assembler_utility.h"
 #include "readInstruction.h"
 #include "../tokenizer/tokenizer.h"
 #include "../assembler_utility/table.h"

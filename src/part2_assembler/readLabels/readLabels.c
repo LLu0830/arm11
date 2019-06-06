@@ -7,6 +7,14 @@
 #include "../assembler_utility/table.h"
 #include "../emulator_utility/DefinedTypes.h"
 #include "../assembler_utility/assembler_utility.h"
+#include <string.h>
+
+
+int charExist(char *str, char *sub) {
+    char *p = (strstr(str, sub));
+    if (p == NULL)
+        return 0;
+}
 
 uint32_t *readLable(label_address_list *table, FILE *file) {
     if (table == NULL)
@@ -36,9 +44,3 @@ uint32_t *readLable(label_address_list *table, FILE *file) {
     }
 }
 
-
-int charExist(char *str, char *sub) {
-    char *p = (strstr(str, sub));
-    if (p == NULL)
-        return 0;
-}

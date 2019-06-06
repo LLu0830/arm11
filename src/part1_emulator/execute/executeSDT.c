@@ -18,7 +18,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     bool iFlag = instruction.immediateOffset;
     bool pFlag = instruction.Pre_Post;
     bool uFlag = instruction.upBit;
-    bool lFlag = instruction.storeBit;
+    bool lFlag = instruction.L;
     uint32_t rn = instruction.rn; //base register
     uint32_t rd = instruction.rd;  //source/destination register
     uint32_t offset = instruction.offsets_or_operand2;

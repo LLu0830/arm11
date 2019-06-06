@@ -8,6 +8,7 @@
 #include "tokenizer.h"
 #include "../../part1_emulator/emulator_utility/DefinedTypes.h"
 #include "../assembler_utility/assembler_utility.h"
+#include <string.h>
 
 
 void tokenizer(char *instruction, assembler_instruction *parsed) {
