@@ -9,6 +9,7 @@
 #include "readInstruction.h"
 #include "../tokenizer/tokenizer.h"
 #include "../assembler_utility/table.h"
+#include "../assembler_utility/assembler_utility.h"
 
 #define MAX_LINE_SIZE 512
 
