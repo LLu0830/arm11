@@ -6,10 +6,10 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
-#include "../assembler_utility/assembler_utility.h"
 #include "readInstruction.h"
 #include "../tokenizer/tokenizer.h"
 #include "../assembler_utility/table.h"
+#include "../assembler_utility/assembler_utility.h"
 
 #define MAX_LINE_SIZE 512
 
@@ -29,6 +29,7 @@ void readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         fgets(line, sizeof line, file);
         counter++; //is the counter needed? I am not using it right now
         //but the program may not be doing what is required
+        instruction->currentAddress = (address) counter;
 
         //if the line exists and is not a label, it is passed to the tokenizer
         if (!isLabel(line) && (line != NULL)) {
