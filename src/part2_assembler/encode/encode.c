@@ -8,8 +8,8 @@
 #include "encodeMUL.h"
 #include "encodeSDT.h"
 #include "encodeBR.h"
+#include "encodeSPECIAL.h"
 #include "../assembler_utility/table.h"
-
 
 
 void encode(assembler_instruction *instruction) {
@@ -80,7 +80,7 @@ void encode(assembler_instruction *instruction) {
                 instruction->type = DP;
                 instruction->operationType = add;
             } else {
-                if (*(mnemonic + 4) == 'e') {
+                if (*(mnemonic + 3) == 'e') {
                     instruction->type = SPECIAL;
                     instruction->operationType = andeq;
                 } else{
@@ -118,6 +118,7 @@ void encode(assembler_instruction *instruction) {
 
 
 
+//    case HLT here? relevant? (Rini)
     switch (instruction->type) {
         case DP:
             encodeDP(instruction);
@@ -133,6 +134,8 @@ void encode(assembler_instruction *instruction) {
             break;
         case SPECIAL:
             encodeSPECIAL(instruction);
+            break;
+        default:
             break;
     }
 }

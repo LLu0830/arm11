@@ -22,7 +22,7 @@ void executeMUL(Instruction instruction, struct stateOfMachine *state) {
 // holds the A bit
     bool accumulate = instruction.accumulate;
 // holds the S bit
-    bool scc = instruction.scc;
+    bool scc = instruction.S;
 // rd,rn,rs,rm  should be 4-bit addresses in the array registers, 0-12
     register_address rd = instruction.rd;
     register_address rn = instruction.rn;

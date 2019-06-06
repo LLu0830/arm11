@@ -4,11 +4,17 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 #include "encodeSDT.h"
+#include "encodeDP.h"
 #include "../assembler_utility/table.h"
 
-int getRegisterAddress(char *reg) {
-    
+#define MAX_MOV 0xFF;
+
+
+uint32_t getValue(char *string) {
+    char *ptr;
+    return (uint32_t) strtol(reg + 1, &ptr, 2);
 }
 
 void encodeSDT(assembler_instruction *instruction){
@@ -30,8 +36,19 @@ void encodeSDT(assembler_instruction *instruction){
         L_bit = 0;
     }
 
+    if(L_bit && (instruction->arg2 == '=')) {
+        if (getValue(instruction->arg2)<MAX_MOV){
+            instruction->mnemonic = mov;
+            //instruction->arg2 = '#'+strcpy();
+            encodeDP(instruction);
+        }
+        else{
 
+        }
 
-    instruction->arg1
+    }
+
+    rd = getValue(instruction->arg1);
+
 
 }

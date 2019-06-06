@@ -7,11 +7,13 @@
 
 #include "../assembler_utility/table.h"
 
-void encodeDPCompute(assembler_instruction *instruction);
-void encodeDPAssign(assembler_instruction *instruction);
-void encodeDPSetFlags(assembler_instruction *instruction);
-void encodeDP(assembler_instruction *instruction);
-uint32_t concatDP(assembler_instruction *instruction);
+uint32_t getExpressionFromOp2(token op2);
+uint32_t getRegisterNumber(token reg);
+void encodeDPCompute(assembler_instruction *assembler_instruction, Instruction *emulator_instruction);
+void encodeDPAssign(assembler_instruction *assembler_instruction, Instruction *emulator_instruction);
+void encodeDPSetFlags(assembler_instruction *assembler_instruction, Instruction *emulator_instruction);
+void encodeDP(assembler_instruction *assembler_instruction);
+uint32_t concatDP(Instruction *emulator_instruction);
 
 
 #endif //SRC_ENCODEDP_H
