@@ -21,7 +21,7 @@ void encodeSPECIAL(assembler_instruction *instruction) {
                 instruction->encoded = 0x0;
             }
             break;
-        case 'l':
+        case 'l': {
             // case DP: Operand2 is a register, shifted by a constant amount
 
             //cond field set to 1110
@@ -46,6 +46,7 @@ void encodeSPECIAL(assembler_instruction *instruction) {
             uint32_t positionRn = (uint32_t) strtol((rn + 1), NULL, 16);
 
             break;
+        }
         default:
             break;
     }
