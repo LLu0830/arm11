@@ -35,7 +35,7 @@ void readLabels(label_address_list *table, FILE *file) {
             label_address *pair = initialize_pair();
             pair->label = strcspn(temp, ":");
             pair->address = lineNum;
-            insert_pair(pair, *table);
+            insert_pair(pair, table);
             currentindex++;
         }
         free(currentLabel);

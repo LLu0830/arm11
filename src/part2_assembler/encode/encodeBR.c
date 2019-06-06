@@ -3,9 +3,9 @@
 //
 #include "../emulator_utility/DefinedTypes.h"
 #include <stdlib.h>
+#include <assembler_utility.h>
 #include "encodeBR.h"
 #include "../assembler_utility/table.h"
-
 
 
 uint32_t getCond(char *condition) {
@@ -36,10 +36,16 @@ uint32_t getCond(char *condition) {
 }
 
 void encodeBR(assembler_instruction *instruction) {
-    uint32_t offset = (instruction->target_address) - (instruction->currentAddress) - 8;
+    address target;
+    if (isLabel(*instruction->arg1)) {
+        target = lookup_pair(*instruction->arg1);
+    } else {
+        target = *instruction->arg1;
+    }
+    uint32_t offset = target - (instruction->currentAddress) - 8;
     char *result = (instruction->mnemonic);
     uint32_t condition = getCond(result);
-    return (condition << 28) | (5 << 25) | ((offset >> 2) & 0x00ffffff);
+    instruction->encoded = (condition << 28) | (5 << 25) | ((offset >> 2) & 0x00ffffff);
 }
 
 

@@ -13,11 +13,11 @@
 label_address *aPair;
 label_address_list *list;
 
-label_address_list initialize_list() {
+label_address_list *initialize_list() {
     label_address_list *list;
     list->header = NULL;
     list->footer = NULL;
-    return *list;
+    return list;
 }
 
 label_address *initialize_pair() {
@@ -29,11 +29,11 @@ label_address *initialize_pair() {
     return &pair;
 }
 
-void insert_pair(label_address pair, label_address_list *list) {
+void insert_pair(label_address *pair, label_address_list *list) {
     aPair = (struct label_address *) malloc(sizeof(struct label_address *));
     aPair->label = pair->label;
     aPair->address = pair->address;
-    strncpy(aPair->label, *label, sizeof(aPair->label));
+    strncpy(aPair->label, *pair->label, sizeof(aPair->label));
 
     aPair->next = NULL;
 
@@ -48,11 +48,11 @@ void insert_pair(label_address pair, label_address_list *list) {
     free(aPair);
 }
 
-label_address *lookup_pair(label *label) {
+address lookup_pair(label *label) {
     label_address *i = list->header;
     while (i != NULL) {
         if (i->label = label)
-            return i;
+            return i->address;
         i = i->next;
     }
     return NULL;
