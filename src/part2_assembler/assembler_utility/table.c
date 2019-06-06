@@ -48,11 +48,11 @@ void insert_pair(label_address *pair, label_address_list *list) {
     free(aPair);
 }
 
-label_address *lookup_pair(label *label) {
+address lookup_pair(label *label) {
     label_address *i = list->header;
     while (i != NULL) {
         if (i->label = label)
-            return i;
+            return i->address;
         i = i->next;
     }
     return NULL;
