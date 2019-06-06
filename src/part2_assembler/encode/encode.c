@@ -118,6 +118,7 @@ void encode(assembler_instruction *instruction) {
 
 
 
+//    case HLT here? relevant? (Rini)
     switch (instruction->type) {
         case DP:
             encodeDP(instruction);
