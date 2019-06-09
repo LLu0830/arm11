@@ -33,7 +33,7 @@ void insert_pair(label_address *pair, label_address_list *list) {
     label_address *aPair = allocList();
     aPair->label = pair->label;
     aPair->address = pair->address;
-    strncpy(aPair->label, *pair->label, sizeof(aPair->label));
+    //strncpy(aPair->label, *pair->label, sizeof(aPair->label));
     aPair->next = NULL;
 
     if (list->header == NULL) {
