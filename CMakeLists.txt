@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.14)
 project(arm11_31 C)
 
 set(CMAKE_C_STANDARD 11)
@@ -9,7 +9,6 @@ include_directories(src/part1_emulator/emulator_utility)
 include_directories(src/part1_emulator/execute)
 include_directories(src/part1_emulator/fetch)
 include_directories(src/part2_assembler/assembler_utility)
-include_directories(src/part2_assembler/binaryWriter)
 include_directories(src/part2_assembler/encode)
 include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
@@ -46,8 +45,6 @@ add_executable(arm11_31
     src/part2_assembler/assembler_utility/assembler_utility.h
     src/part2_assembler/assembler_utility/table.c
     src/part2_assembler/assembler_utility/table.h
-    src/part2_assembler/binaryWriter/binaryWriter.c
-    src/part2_assembler/binaryWriter/binaryWriter.h
     src/part2_assembler/encode/encode.c
     src/part2_assembler/encode/encode.h
     src/part2_assembler/encode/encodeBR.c
