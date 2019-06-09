@@ -30,7 +30,7 @@ label_address *initialize_pair() {
 }
 
 void insert_pair(label_address *pair, label_address_list *list) {
-    aPair = allocList();
+    label_address *aPair = allocList();
     aPair->label = pair->label;
     aPair->address = pair->address;
     strncpy(aPair->label, *pair->label, sizeof(aPair->label));
