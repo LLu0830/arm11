@@ -13,14 +13,14 @@
 label_address *aPair;
 label_address_list *list;
 
-label_address_list *initialize_list() {
+static label_address_list *initialize_list() {
     label_address_list *list;
     list->header = NULL;
     list->footer = NULL;
     return list;
 }
 
-label_address *initialize_pair() {
+static label_address *initialize_pair() {
     label_address pair;
     pair.label = NULL;
     pair.address = NULL;
@@ -47,7 +47,7 @@ void insert_pair(label_address *pair, label_address_list *list) {
     free(aPair);
 }
 
-address lookup_pair(label *label) {
+static address lookup_pair(label *label) {
     label_address *i = list->header;
     while (i != NULL) {
         if (i->label = label)
