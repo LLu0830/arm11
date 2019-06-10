@@ -96,7 +96,10 @@ static label_address *initialize_pair();
 
 void insert_pair(label_address* pair, label_address_list *list);
 
-static address lookup_pair(label *label);
+
+static address lookup_address(label label);
+
+static label_address *allocList(void);
 //struct label_address_list *allocList(void);
 
 

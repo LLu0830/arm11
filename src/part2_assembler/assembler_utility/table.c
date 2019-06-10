@@ -30,7 +30,7 @@ static label_address *initialize_pair() {
 }
 
 void insert_pair(label_address *pair, label_address_list *list) {
-    label_address *aPair = allocList();
+    label_address *aPair = allocList;
     aPair->label = pair->label;
     aPair->address = pair->address;
     //strncpy(aPair->label, *pair->label, sizeof(aPair->label));
@@ -47,7 +47,7 @@ void insert_pair(label_address *pair, label_address_list *list) {
     free(aPair);
 }
 
-static address lookup_pair(label *label) {
+static address lookup_address(label label) {
     label_address *i = list->header;
     while (i != NULL) {
         if (i->label = label)
@@ -58,7 +58,7 @@ static address lookup_pair(label *label) {
 }
 
 
-struct label_address *allocList(void) {
+static label_address *allocList(void) {
     struct label_address *aPair = (label_address *) malloc(sizeof(struct label_address *));
     if (aPair == NULL) {
         perror("allocList");
