@@ -12,13 +12,16 @@ int main(int argc, char **argv) {
     fp_write = fopen(argv[2], "wb");
     label_address_list table = {NULL, NULL};
     readLabels(&table, fp_read);
+    fclose(fp_read);
 //    only have this for now for Katarina's readInstruction function below - may be removed later
     int counter = 0;
-
+    fp_read = fopen(argv[1], "r");
 //    not sure on what to put as the loop condition
-    while () {
+    while (1) {
         assembler_instruction *instruction = calloc(1, sizeof(assembler_instruction));
-        readInstruction(fp_read, &counter, instruction);
+        if (!readInstruction(fp_read, &counter, instruction)) {
+            break;
+        }
         encode(instruction);
         fwrite(&instruction->encoded, sizeof(uint32_t), 1, fp_write);
         free(instruction);
