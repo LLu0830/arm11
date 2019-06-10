@@ -90,13 +90,13 @@ typedef struct {
 
 
 //do these have to be static?
-label_address_list* initialize_list();
+static label_address_list* initialize_list();
 
-label_address *initialize_pair();
+static label_address *initialize_pair();
 
 void insert_pair(label_address* pair, label_address_list *list);
 
-address lookup_pair(label *label);
+static address lookup_pair(label *label);
 //struct label_address_list *allocList(void);
 
 

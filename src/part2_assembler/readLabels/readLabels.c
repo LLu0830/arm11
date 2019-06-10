@@ -33,8 +33,10 @@ void readLabels(label_address_list *table, FILE *file) {
         if (!isLabel(temp)&& *temp != '\0') {
             lineNum++;
         } else {
+            char *label = calloc(512, sizeof(char));
+            label=strncpy(label,temp,strcpy(strcspn(temp, ":"));
             label_address *pair = initialize_pair();
-            pair->label = strcspn(temp, ":");
+            pair->label = label;
             pair->address = lineNum+1;
             insert_pair(pair, table);
             currentindex++;
