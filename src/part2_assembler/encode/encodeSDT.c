@@ -67,6 +67,8 @@ void encodeSDT(assembler_instruction *instruction){
     }
     else {
         perror('Invalid operation type');
+        exit(EXIT_FAILURE);
+        return;
     }
 
 
@@ -132,6 +134,7 @@ void encodeSDT(assembler_instruction *instruction){
     }
 
     //puts encoded SDT instruction to instruction->encoded
+    //I_bit, P_bit, rn, offset have been initialized at some point
     instruction->encoded = concatSDT(cond, bit_value_1, I_bit, P_bit, U_bit, L_bit, rn, rd, offset);
 
 }
