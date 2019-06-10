@@ -14,7 +14,7 @@
 #define MAX_LINE_SIZE 512
 
 //reads one instruction at a time and passes it to the tokenizer
-bool readInstruction(FILE *file, int *counter, assembler_instruction *instruction){
+bool readInstruction(FILE *file, int *counter, assembler_instruction *instruction) {
 
     //prints error if file pointer is NULL
     if (file == NULL) {
@@ -22,10 +22,8 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
     }
 
     //reads one line from file
-    else
-    if (file != NULL)
-    {
-        char line[MAX_LINE_SIZE];
+    else {
+        char *line = malloc(MAX_LINE_SIZE * sizeof(char));
 
         if (fgets(line, sizeof(line), file) == NULL) {
             return false;

@@ -6,6 +6,7 @@
 #define SRC_ENCODEMUL_H
 #include "../assembler_utility/table.h"
 
+uint32_t getPosFromChar(token pos);
 void encodeMUL(assembler_instruction *instruction);
 
 #endif //SRC_ENCODEMUL_H

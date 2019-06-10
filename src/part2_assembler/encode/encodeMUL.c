@@ -10,20 +10,17 @@
 #include "../../part1_emulator/emulator_utility/utility.h"
 
 uint32_t getPosFromChar(token pos){
-    strtol((pos + 1), NULL, 16);
+    return strtol((pos + 1), NULL, 16);
 }
 
 
 void encodeMUL(assembler_instruction *instruction) {
-    token mnemonic = instruction->mnemonic;
-
     uint32_t const1 = 0x9;
 
     // change S bit to 0
     uint32_t SBit = 0;
 
     //set condition to 1110
-//    set_4_bits(&instruction->encoded, 28, 0xE);
     uint32_t cond = 0xe;
 
 
@@ -56,8 +53,7 @@ void encodeMUL(assembler_instruction *instruction) {
             positionRn  = (unsigned int) *(rn + 1) - '0';
             break;
         default:
-            //should throw error?
-            break;
+            exit(EXIT_FAILURE);
     }
 
     uint32_t result = 0;

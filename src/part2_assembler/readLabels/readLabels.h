@@ -8,7 +8,6 @@
 #include "../assembler_utility/table.h"
 #include <stdio.h>
 
-int charExist(char *str, char *sub);
 void readLabels(label_address_list *table, FILE *file);
 
 #endif //SRC_READLABELS_H

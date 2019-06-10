@@ -70,7 +70,7 @@ void encode(assembler_instruction *instruction) {
             if (snd == 's') {
                 instruction->type = SPECIAL;
                 instruction->operationType = lsl;
-            } else{
+            } else {
                 instruction->type = SDT;
                 instruction->operationType = ldr;
             }
@@ -83,7 +83,7 @@ void encode(assembler_instruction *instruction) {
                 if (*(mnemonic + 3) == 'e') {
                     instruction->type = SPECIAL;
                     instruction->operationType = andeq;
-                } else{
+                } else {
                     instruction->type = DP;
                     instruction->operationType = and;
                 }
@@ -117,8 +117,6 @@ void encode(assembler_instruction *instruction) {
     }
 
 
-
-//    case HLT here? relevant? (Rini)
     switch (instruction->type) {
         case DP:
             encodeDP(instruction);

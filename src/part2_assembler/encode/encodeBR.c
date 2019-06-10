@@ -29,8 +29,6 @@ uint32_t getCond(char *condition) {
         case bne:
             result = 0001;
             break;
-//        case b:
-//            result=B
     }
     return result;
 }
@@ -47,7 +45,7 @@ void encodeBR(assembler_instruction *instruction) {
     uint32_t offset = target - (instruction->currentAddress) - 8;
     char *result = (instruction->mnemonic);
     uint32_t condition = getCond(result);
-    instruction->encoded = (condition << 28) | (5 << 25) | ((offset >> 2) & 0x00ffffff);
+    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
 }
 
 

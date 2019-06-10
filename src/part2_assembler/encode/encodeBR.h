@@ -8,4 +8,5 @@
 #include "../assembler_utility/table.h"
 
 void encodeBR(assembler_instruction *instruction);
+
 #endif //SRC_ENCODEBR_H

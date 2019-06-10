@@ -24,7 +24,7 @@
 
 uint32_t getValue(char *string) {
     char *ptr;
-    return (uint32_t) strtol(string + 1, &ptr, 2);
+    return (uint32_t) strtol(string + 1, &ptr, 10);
 }
 
 //helper function to concatenate all the parts of an SDT instruction
@@ -67,9 +67,8 @@ void encodeSDT(assembler_instruction *instruction){
         L_bit = 0;
     }
     else {
-        perror('Invalid operation type');
+        perror("Invalid operation type");
         exit(EXIT_FAILURE);
-        return;
     }
 
 
@@ -79,18 +78,18 @@ void encodeSDT(assembler_instruction *instruction){
 
     //general loading case
     //address has form <=expression>
-    if(L_bit && (instruction->arg2 == '=')) {
+    if (L_bit && (!strcmp(instruction->arg2, "="))) {
 
         //pre-indexing
         P_bit = 1;
         I_bit = 0;
         rn = 15;
-
+        offset = 0;
         //interpreting as a mov instruction
         if (getValue(instruction->arg2)<MAX_MOV){
             instruction->mnemonic = mov;
-            char *mov_expression = '#';
-            strcat(mov_expression, instruction->arg2[1]);
+            char *mov_expression = "#";
+            strcat(mov_expression, &instruction->arg2[1]);
             instruction->arg2 = mov_expression;
             encodeDP(instruction);
         }
@@ -101,13 +100,11 @@ void encodeSDT(assembler_instruction *instruction){
         }
 
     }
-
-
-    if(instruction->arg2 == '[') {
+    else if (!strcmp(instruction->arg2, "[")) {
         rn = getValue(instruction->arg2+1);
         U_bit = 1;
 
-        if((instruction->arg2+3 == ']')|(instruction->arg2+4 == ']')) {
+        if (!strcmp(instruction->arg2 + 3, "]") || !strcmp(instruction->arg2 + 4, "]")) {
 
             //rn is a register with offset 0
             //[Rn]
@@ -132,10 +129,12 @@ void encodeSDT(assembler_instruction *instruction){
             I_bit = 1;
             offset = getValue(instruction->arg3);
         }
+
+    } else {
+        exit(EXIT_FAILURE);
     }
 
     //puts encoded SDT instruction to instruction->encoded
     //I_bit, P_bit, rn, offset have been initialized at some point
     instruction->encoded = concatSDT(cond, bit_value_1, I_bit, P_bit, U_bit, L_bit, rn, rd, offset);
-
 }
