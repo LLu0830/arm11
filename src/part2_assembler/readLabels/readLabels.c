@@ -32,6 +32,7 @@ void readLabels(label_address_list *table, FILE *file) {
         //strstr(temp, ':') == NULL
         if (!isLabel(temp)&& *temp != '\0') {
             lineNum++;
+            numOfAddress++;
         } else {
             char *label = calloc(512, sizeof(char));
             label=strncpy(label,temp,strcpy(strcspn(temp, ":"));

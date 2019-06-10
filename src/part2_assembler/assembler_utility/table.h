@@ -65,11 +65,11 @@ typedef struct {
 
     address target_address;
     address currentAddress;
-    int counter;//counter in readInstruction
+    uint32_t counter;//counter in readInstruction
 
 } assembler_instruction;
 
-
+int numOfAddress=0;
 typedef char *label;
 typedef uint32_t address;
 
