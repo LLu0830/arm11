@@ -8,18 +8,19 @@
 #include "encodeSDT.h"
 #include "encodeDP.h"
 #include "../assembler_utility/table.h"
+#include "../../part1_emulator/emulator_utility/utility.h"
 
-#define MAX_MOV 0xFF;
-#define COND_POSITION 28;
-#define BIT_VALUE_1_POSITION 26;
-#define I_BIT_POSITION 25;
-#define P_BIT_POSITION 24;
-#define U_BIT_POSITION 23;
-#define L_BIT_POSITION 20;
-#define RN_POSITION 16;
-#define RD_POSITION 12;
-#define OFFSET_POSITION 0;
-#define PIPELINE_OFFSET 8;
+#define MAX_MOV 0xFF
+#define COND_POSITION 28
+#define BIT_VALUE_1_POSITION 26
+#define I_BIT_POSITION 25
+#define P_BIT_POSITION 24
+#define U_BIT_POSITION 23
+#define L_BIT_POSITION 20
+#define RN_POSITION 16
+#define RD_POSITION 12
+#define OFFSET_POSITION 0
+#define PIPELINE_OFFSET 8
 
 uint32_t getValue(char *string) {
     char *ptr;

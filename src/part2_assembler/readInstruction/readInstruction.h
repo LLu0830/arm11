@@ -8,7 +8,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "../assembler_utility/table.h"
+#include <stdbool.h>
 
-void readInstruction(FILE *file, int *counter, assembler_instruction *instruction);
+bool readInstruction(FILE *file, int *counter, assembler_instruction *instruction);
 
 #endif //SRC_READINSTRUCTION_H
