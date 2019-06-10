@@ -75,12 +75,14 @@ void encodeSDT(assembler_instruction *instruction){
         //interpreting as a mov instruction
         if (getValue(instruction->arg2)<MAX_MOV){
             instruction->mnemonic = mov;
-            //instruction->arg2 = '#'+strcpy();
+            char *mov_expression = '#';
+            strcat(mov_expression, instruction->arg2[1]);
+            instruction->arg2 = mov_expression;
             encodeDP(instruction);
         }
         //not interpreting as a mov instruction
         else{
-            offset = instruction->target_address - instruction->currentAddress - PIPELINE_OFFSET;
+            offset = numOfAddress - instruction->currentAddress - PIPELINE_OFFSET;
             U_bit = 1;
         }
 
