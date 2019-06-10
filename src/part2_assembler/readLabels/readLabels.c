@@ -13,14 +13,18 @@
 
 
 void readLabels(label_address_list *table, FILE *file) {
+    //check if the file is empty
+    if (file == NULL) {
+        perror("Error: file is empty.");
+    }
     //generalize a new table if there isn't one
-
     if (table == NULL)
         table = initialize_list();
-    uint32_t lineNum = 0, //currentindex = 0;
-    char *currentLabel = calloc(512, sizeof(char));
+    uint32_t lineNum = 0;
+
+    char *currentLabel = calloc(MAX_LINE_SIZE, sizeof(char));
     char *temp = currentLabel;
-    while (fgets(temp, 512, file) != NULL) {
+    while (fgets(temp, MAX_LINE_SIZE, file) != NULL) {
         //removes the \n at the end of every line
         //temp = strtok(temp, "\n");
         //strstr(temp, ':') == NULL
