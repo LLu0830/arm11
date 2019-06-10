@@ -26,20 +26,15 @@ void readInstruction(FILE *file, int *counter, assembler_instruction *instructio
     if (file != NULL)
     {
         char line[MAX_LINE_SIZE];
-        fgets(line, sizeof line, file);
-//        counter++; //is the counter needed? I am not using it right now
-//        //but the program may not be doing what is required
-//        instruction->currentAddress = (address) counter;
+        fgets(line, sizeof(line), file);
 
         //if the line exists and is not a label, it is passed to the tokenizer
         if (!isLabel(line) && (line != NULL)) {
-            counter++; //is the counter needed? I am not using it right now
-            //but the program may not be doing what is required
+            counter++;
             instruction->currentAddress = (address) counter;
             tokenizer(line, instruction);
         }
-        //line is freed, though this may not be needed??
-        //free(line);
+
     }
 }
 

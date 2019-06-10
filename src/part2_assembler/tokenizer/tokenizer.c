@@ -19,7 +19,5 @@ void tokenizer(char *instruction, assembler_instruction *parsed) {
     parsed->arg2 = copy_string(strtok_r(NULL, ", ", &ptr));
     parsed->arg3 = copy_string(strtok_r(NULL, ", ", &ptr));
     parsed->arg4 = copy_string(strtok_r(NULL, ", ", &ptr));
-
-    //parsed->type = get_instruction_type(parsed->mnemonic);
-    //??
+    
 }
