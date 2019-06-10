@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "readLabels.h"
 #include "../assembler_utility/table.h"
-#include "../emulator_utility/DefinedTypes.h"
+#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
 #include "../assembler_utility/assembler_utility.h"
 #include <string.h>
 

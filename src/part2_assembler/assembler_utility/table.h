@@ -10,8 +10,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "../emulator_utility/DefinedTypes.h"
-#include "../emulator_utility/instruction.h"
+#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
+#include "../../part1_emulator/emulator_utility/instruction.h"
 
 
 //find out how to make hash map/ hash table?? in C an implement it here
@@ -67,12 +67,10 @@ typedef struct {
 } assembler_instruction;
 
 int numOfAddress=0;
-typedef char *label;
-typedef uint32_t address;
 
 
-typedef struct {
 
+typedef struct label_address{
     label label;
     address address;
     struct label_address *prev;
@@ -90,16 +88,16 @@ label_address *aPair;
 label_address_list *list;
 
 //do these have to be static?
-static label_address_list *initialize_list();
+label_address_list *initialize_list();
 
-static label_address *initialize_pair();
+label_address *initialize_pair();
 
 void insert_pair(label_address* pair, label_address_list *list);
 
 
-static address lookup_address(label label);
+address lookup_address(label label);
 
-static label_address *allocList(void);
+label_address *allocList(void);
 
 
 #endif //SRC_TABLE_H

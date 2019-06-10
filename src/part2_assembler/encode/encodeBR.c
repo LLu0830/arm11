@@ -1,12 +1,12 @@
 //
 // Created by Katarina Kulkova on 02.06.2019.
 //
-#include "../emulator_utility/DefinedTypes.h"
+#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
 #include <stdlib.h>
-#include <assembler_utility.h>
+#include "../assembler_utility/assembler_utility.h"
 #include "encodeBR.h"
 #include "../assembler_utility/table.h"
-#include "table.h"
+#include "encodeMUL.h"
 
 uint32_t getCond(char *condition) {
     uint32_t result = 1110;
@@ -40,7 +40,7 @@ void encodeBR(assembler_instruction *instruction) {
     if (isLabel(instruction->arg1)) {
         target=lookup_address(instruction->arg1);
     } else {
-        target = instruction->arg1;
+        target = getPosFromChar(instruction->arg1);
     }
     uint32_t offset = target - (instruction->currentAddress) - 8;
     char *result = (instruction->mnemonic);

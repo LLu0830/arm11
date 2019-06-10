@@ -87,7 +87,7 @@ void encodeSDT(assembler_instruction *instruction){
         offset = 0;
         //interpreting as a mov instruction
         if (getValue(instruction->arg2)<MAX_MOV){
-            instruction->mnemonic = mov;
+            instruction->operationType = mov;
             char *mov_expression = "#";
             strcat(mov_expression, &instruction->arg2[1]);
             instruction->arg2 = mov_expression;
