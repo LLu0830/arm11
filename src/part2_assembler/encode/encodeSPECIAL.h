@@ -8,4 +8,5 @@
 #include "../assembler_utility/table.h"
 
 void encodeSPECIAL(assembler_instruction *instruction);
+
 #endif //ARM11_31_ENCODESPECIAL_H

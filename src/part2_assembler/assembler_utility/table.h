@@ -13,9 +13,6 @@
 #include "../emulator_utility/DefinedTypes.h"
 #include "../emulator_utility/instruction.h"
 
-//#include "assembler_utility.h"
-
-
 
 //find out how to make hash map/ hash table?? in C an implement it here
 typedef enum {
@@ -89,8 +86,11 @@ typedef struct {
 } label_address_list;
 
 
+label_address *aPair;
+label_address_list *list;
+
 //do these have to be static?
-static label_address_list* initialize_list();
+static label_address_list *initialize_list();
 
 static label_address *initialize_pair();
 
@@ -100,37 +100,6 @@ void insert_pair(label_address* pair, label_address_list *list);
 static address lookup_address(label label);
 
 static label_address *allocList(void);
-//struct label_address_list *allocList(void);
-
-
-//typedef struct {
-//    /** Array of strings. */
-//    char **array;
-//    /** The number of strings in the array. */
-//    uint16_t size;
-//} string_array;
-//
-//typedef struct {
-//    /** The label string, with maximum length of MAX_LABEL_LENGTH */
-//    char label[MAX_LABEL_LENGTH + 1];
-//    /** The address of this label */
-//    address address;
-//} table_row;
-//
-//typedef struct {
-//    /** Maximum number of rows in symbol table. */
-//    uint16_t max_size;
-//    /** Number of rows in symbol table. */
-//    uint16_t size;
-//    /** An array of symbol table rows. */
-//    table_row *rows;
-//} table;
-//
-//table *generate_symbol_table(string_arrays *tokens);
-//address get_address(table_t *table, char *label);
-//void free_table(symbol_table_t *table);
-
-
 
 
 #endif //SRC_TABLE_H
