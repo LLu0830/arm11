@@ -13,14 +13,14 @@
 label_address *aPair;
 label_address_list *list;
 
-label_address_list *initialize_list() {
+static label_address_list *initialize_list() {
     label_address_list *list;
     list->header = NULL;
     list->footer = NULL;
     return list;
 }
 
-label_address *initialize_pair() {
+static label_address *initialize_pair() {
     label_address pair;
     pair.label = NULL;
     pair.address = NULL;
@@ -30,10 +30,10 @@ label_address *initialize_pair() {
 }
 
 void insert_pair(label_address *pair, label_address_list *list) {
-    aPair = (struct label_address *) malloc(sizeof(struct label_address *));
+    label_address *aPair = allocList;
     aPair->label = pair->label;
     aPair->address = pair->address;
-    strncpy(aPair->label, *pair->label, sizeof(aPair->label));
+    //strncpy(aPair->label, *pair->label, sizeof(aPair->label));
     aPair->next = NULL;
 
     if (list->header == NULL) {
@@ -47,7 +47,7 @@ void insert_pair(label_address *pair, label_address_list *list) {
     free(aPair);
 }
 
-address lookup_pair(label *label) {
+static address lookup_address(label label) {
     label_address *i = list->header;
     while (i != NULL) {
         if (i->label = label)
@@ -58,14 +58,14 @@ address lookup_pair(label *label) {
 }
 
 
-//struct label_address_list *allocList(void) {
-//    struct label_address *aPair = (label_address *) malloc(sizeof(struct label_address *));
-//    if (aPair == NULL) {
-//        perror("allocList");
-//        exit(EXIT_FAILURE);
-//    }
-//    return aPair;
-//}
+static label_address *allocList(void) {
+    struct label_address *aPair = (label_address *) malloc(sizeof(struct label_address *));
+    if (aPair == NULL) {
+        perror("allocList");
+        exit(EXIT_FAILURE);
+    }
+    return aPair;
+}
 
 
 

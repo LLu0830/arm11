@@ -6,7 +6,7 @@
 #include <assembler_utility.h>
 #include "encodeBR.h"
 #include "../assembler_utility/table.h"
-
+#include "table.h"
 
 uint32_t getCond(char *condition) {
     uint32_t result = 1110;
@@ -35,12 +35,14 @@ uint32_t getCond(char *condition) {
     return result;
 }
 
+
+
 void encodeBR(assembler_instruction *instruction) {
     address target;
-    if (isLabel(*instruction->arg1)) {
-        target = lookup_pair(*instruction->arg1);
+    if (isLabel(instruction->arg1)) {
+        target=lookup_address(instruction->arg1);
     } else {
-        target = *instruction->arg1;
+        target = instruction->arg1;
     }
     uint32_t offset = target - (instruction->currentAddress) - 8;
     char *result = (instruction->mnemonic);

@@ -23,7 +23,7 @@
 
 uint32_t getValue(char *string) {
     char *ptr;
-    return (uint32_t) strtol(reg + 1, &ptr, 2);
+    return (uint32_t) strtol(string + 1, &ptr, 2);
 }
 
 //helper function to concatenate all the parts of an SDT instruction
@@ -46,25 +46,38 @@ uint32_t concatSDT(uint32_t cond, uint32_t bit_value_1, uint32_t I_bit, uint32_t
 void encodeSDT(assembler_instruction *instruction){
 
     //all parts of a SDT instruction
-    uint32_t cond = 14; //always condition code: 1110
-    uint32_t bit_value_1 = 1;
-    uint32_t I_bit;
-    uint32_t P_bit;
-    uint32_t U_bit;
-    uint32_t L_bit;
-    uint32_t rn;
-    uint32_t rd;
-    uint32_t offset;
+    uint32_t cond = 14;         //always condition code: 1110
+    uint32_t bit_value_1 = 1;   //1
+    uint32_t I_bit;             //shifted register/immediate offset flag
+    uint32_t P_bit;             //pre-indexing flag
+    uint32_t U_bit = 1;         //add/subtract flag (upbit)
+    uint32_t L_bit;             //load/store flag
+    uint32_t rn;                //base register
+    uint32_t rd;                //destination register
+    uint32_t offset;            //offset of register
+
 
     //load or store differentiation
+    //<ldr/str>
     if (instruction->operationType == ldr) {
         L_bit = 1;
     }
-    if (instruction->operationType == str) {
+    else if (instruction->operationType == str) {
         L_bit = 0;
     }
+    else {
+        perror('Invalid operation type');
+        exit(EXIT_FAILURE);
+        return;
+    }
+
+
+    //setting destination register Rd
+    rd = getValue(instruction->arg1);
+
 
     //general loading case
+    //address has form <=expression>
     if(L_bit && (instruction->arg2 == '=')) {
 
         //pre-indexing
@@ -75,19 +88,19 @@ void encodeSDT(assembler_instruction *instruction){
         //interpreting as a mov instruction
         if (getValue(instruction->arg2)<MAX_MOV){
             instruction->mnemonic = mov;
-            //instruction->arg2 = '#'+strcpy();
+            char *mov_expression = '#';
+            strcat(mov_expression, instruction->arg2[1]);
+            instruction->arg2 = mov_expression;
             encodeDP(instruction);
         }
         //not interpreting as a mov instruction
         else{
-            offset = instruction->target_address - instruction->currentAddress - PIPELINE_OFFSET;
+            offset = numOfAddress - instruction->currentAddress - PIPELINE_OFFSET;
             U_bit = 1;
         }
 
     }
 
-
-    rd = getValue(instruction->arg1);
 
     if(instruction->arg2 == '[') {
         rn = getValue(instruction->arg2+1);
@@ -104,22 +117,24 @@ void encodeSDT(assembler_instruction *instruction){
                 offset = 0;
             }
                 //[Rn]<#expression>
-            //post-indexing
+            //post-indexing, offset not zero
             else {
                 P_bit = 0;
-                offset = getValue(instruction->arg3 + 1);
+                offset = getValue(instruction->arg3);
                 I_bit = 1;
             }
         }
-        //
+        //[Rn, <#expression>]
+        //pre-indexing, offset not 0
         else {
             P_bit = 1;
             I_bit = 1;
-            offset = getValue(instruction->arg3 + 1);
+            offset = getValue(instruction->arg3);
         }
     }
 
     //puts encoded SDT instruction to instruction->encoded
+    //I_bit, P_bit, rn, offset have been initialized at some point
     instruction->encoded = concatSDT(cond, bit_value_1, I_bit, P_bit, U_bit, L_bit, rn, rd, offset);
 
 }

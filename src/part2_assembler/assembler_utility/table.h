@@ -65,11 +65,11 @@ typedef struct {
 
     address target_address;
     address currentAddress;
-    int counter;//counter in readInstruction
+    uint32_t counter;//counter in readInstruction
 
 } assembler_instruction;
 
-
+int numOfAddress=0;
 typedef char *label;
 typedef uint32_t address;
 
@@ -90,13 +90,16 @@ typedef struct {
 
 
 //do these have to be static?
-label_address_list* initialize_list();
+static label_address_list* initialize_list();
 
-label_address *initialize_pair();
+static label_address *initialize_pair();
 
 void insert_pair(label_address* pair, label_address_list *list);
 
-address lookup_pair(label *label);
+
+static address lookup_address(label label);
+
+static label_address *allocList(void);
 //struct label_address_list *allocList(void);
 
 
