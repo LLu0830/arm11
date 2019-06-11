@@ -12,7 +12,7 @@
 void prints(FILE *file) {
     printf("start!!");
 
-    uint32_t *buffer = malloc(sizeof(uint32_t));
+    uint32_t *buffer = calloc(1, sizeof(uint32_t));
 
 
     for (int curr = 0; curr < max; curr = curr + 4) {

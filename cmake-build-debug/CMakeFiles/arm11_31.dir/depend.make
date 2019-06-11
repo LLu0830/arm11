@@ -15,13 +15,6 @@ CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o: ../src/part1_emula
 CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o: ../src/part1_emulator/execute/executeSDT.h
 
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate.c
-CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate/binaryFileLoader.h
-CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate/pipeline.h
-CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate/printOutput.h
-CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/DefinedTypes.h
-CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/instruction.h
-CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/state.h
-CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/utility.h
 
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o: ../src/part1_emulator/emulate/binaryFileLoader.c
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o: ../src/part1_emulator/emulate/binaryFileLoader.h
