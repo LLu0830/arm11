@@ -30,8 +30,6 @@ int main(int argc, char **argv) {
     }
 
 
-//    prints(fp_write);
-
     fclose(fp_write);
     fclose(fp_read);
 //    not sure how to implement this - depends on Katarina's readInstruction function

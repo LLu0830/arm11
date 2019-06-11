@@ -1,4 +1,4 @@
-# Install script for directory: /homes/mw6118/CLionProjects/arm11_31
+# Install script for directory: /homes/rb3018/arm11_31
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/homes/mw6118/CLionProjects/arm11_31/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/homes/rb3018/arm11_31/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
