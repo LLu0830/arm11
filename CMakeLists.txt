@@ -63,4 +63,4 @@ add_executable(arm11_31
     src/part2_assembler/readLabels/readLabels.h
     src/part2_assembler/tokenizer/tokenizer.c
     src/part2_assembler/tokenizer/tokenizer.h
-    src/part2_assembler/assemble.c)
+    src/part2_assembler/assemble.c src/part4_extension/main.c src/part4_extension/part4_utility.c src/part4_extension/part4_utility.h)
