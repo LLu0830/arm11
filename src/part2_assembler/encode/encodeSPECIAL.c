@@ -22,10 +22,15 @@ void encodeSPECIAL(assembler_instruction *instruction) {
     //lsl gets converted to move instruction: mov Rn, Rn, lsl <#expression>
     else if (type == lsl) {
 
+        free(instruction->mnemonic);
         instruction->mnemonic = copy_string("mov");
 
         char* mov_arg2 = copy_string(instruction->arg1);
         char* mov_arg4 = copy_string(instruction->arg2);
+
+        free(instruction->arg2);
+        free(instruction->arg3);
+        free(instruction->arg3);
 
         instruction->arg2 = copy_string(mov_arg2);
         instruction->arg3 = copy_string("lsl");
