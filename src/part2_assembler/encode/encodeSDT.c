@@ -24,8 +24,7 @@
 #define PIPELINE_OFFSET 8
 
 uint32_t getValue(char *string) {
-    char *ptr;
-    return (uint32_t) strtol(string + 1, &ptr, 10);
+    return (uint32_t) strtol(string + 1, NULL, 10);
 }
 
 //helper function to concatenate all the parts of an SDT instruction
