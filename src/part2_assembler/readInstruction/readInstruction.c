@@ -25,6 +25,10 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
     //reads one line from file
     else {
         char *line = malloc(MAX_LINE_SIZE * sizeof(char));
+        if (line == NULL) {
+            perror("calloc in readInstruction");
+             exit(EXIT_FAILURE);
+        }
 
         if (fgets(line, sizeof(line), file) == NULL) {
             return false;

@@ -10,7 +10,7 @@ all: emulate assemble
 
 emulate: emulate.o pipeline.o utility.o fetch.o decode.o execute.o executeDP.o executeSDT.o executeMUL.o executeBR.o binaryFileLoader.o printOutput.o
 
-assemble: utility.o assembler_utility.o table.o encode.o encodeBR.o encodeDP.o encodeMUL.o encodeSDT.o encodeSPECIAL.o readInstruction.o readLabels.o  tokenizer.o assemble.o
+assemble: utility.o assembler_utility.o table.o encode.o encodeBR.o encodeDP.o encodeMUL.o encodeSDT.o encodeSPECIAL.o readInstruction.o readLabels.o  tokenizer.o assemble.o prints.o
 
 
 

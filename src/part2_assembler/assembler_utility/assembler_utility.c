@@ -34,6 +34,9 @@ bool isLabel(char *string){
 
 //function to copy string
 char *copy_string(char *string){
+    if (string == NULL) {
+        return "";
+    }
     char *result = malloc(strlen(string) + 1);
     strcpy(result, string);
     return result;
