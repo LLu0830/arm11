@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.12)
 project(arm11_31 C)
 
 set(CMAKE_C_STANDARD 11)
@@ -63,4 +63,6 @@ add_executable(arm11_31
     src/part2_assembler/readLabels/readLabels.h
     src/part2_assembler/tokenizer/tokenizer.c
     src/part2_assembler/tokenizer/tokenizer.h
-    src/part2_assembler/assemble.c)
+    src/part2_assembler/assemble.c src/part2_assembler/assembler_utility/prints.c src/part2_assembler/assembler_utility/prints.h)
+
+

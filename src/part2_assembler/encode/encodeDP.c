@@ -11,7 +11,9 @@
 
 uint32_t getRegisterNumber(token reg) {
 //  ignoring the 'r' character to get the number from the register
-    return (uint32_t) strtol(reg + 1, NULL, 10);
+//    char *ptr;
+//    return (uint32_t) strtol(reg + 1, &ptr, 10);
+    return strtol(reg + 1, NULL, 10);
 }
 
 uint32_t getValueFromOp2(token op2Pointer) {
@@ -41,9 +43,11 @@ uint32_t getValueFromOp2(token op2Pointer) {
 //   gets Operand2
         int result = expression | count;
         return result;
-    } else {
+    } else if (*op2Pointer == 'r') {
 //   operand2 is set to have a shift of 0, and the register number is set to what has been specified
         return getRegisterNumber(op2Pointer);
+    } else {
+        return getValueFromOp2(op2Pointer + 1);
     }
 
 }
@@ -55,6 +59,7 @@ void encodeDPCompute(assembler_instruction *assembler_instruction, Instruction *
     emulator_instruction->rd = getRegisterNumber(assembler_instruction->arg1);
 
 //  getting number of base register rd
+    printf("arg2: %s\n", assembler_instruction->arg2);
     emulator_instruction->rn = getRegisterNumber(assembler_instruction->arg2);
 
 //  getting value from operand2
@@ -100,14 +105,15 @@ void encodeDP(assembler_instruction *assembler_instruction) {
     Instruction emulator_instruction;
     switch (*mnemonic) {
         case 'm':
-            encodeDPCompute(assembler_instruction, &emulator_instruction);
+            printf("m");
+            encodeDPAssign(assembler_instruction, &emulator_instruction);
             break;
         case 't':
         case 'c':
-            encodeDPAssign(assembler_instruction, &emulator_instruction);
+            encodeDPSetFlags(assembler_instruction, &emulator_instruction);
             break;
         default:
-            encodeDPSetFlags(assembler_instruction, &emulator_instruction);
+            encodeDPCompute(assembler_instruction, &emulator_instruction);
             break;
     }
 

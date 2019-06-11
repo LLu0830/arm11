@@ -12,41 +12,45 @@
 
 void encodeSPECIAL(assembler_instruction *instruction) {
 
-    Mnemonic type = instruction->operationType;
 
-    //halt instruction - returns zero
-    if (type == andeq) {
-        instruction->encoded = 0x00000000;
+    switch (instruction->operationType) {
+        case andeq:
+            //maybe need to check if operand1,2,3 all = 0;
+            if (!strcmp(instruction->arg1, "r0")
+                && !strcmp(instruction->arg2, "r0")
+                && !strcmp(instruction->arg3, "r0")) {
+                instruction->encoded = 0x0;
+            }
+            break;
+        case lsl: {
+            //lsl gets converted to move instruction: mov Rn, Rn, lsl <#expression>
+
+
+            free(instruction->mnemonic);
+            instruction->mnemonic = copy_string("mov");
+
+            char *mov_arg2 = copy_string(instruction->arg1);
+            char *mov_arg4 = copy_string(instruction->arg2);
+
+            free(instruction->arg2);
+            free(instruction->arg3);
+            free(instruction->arg3);
+
+            instruction->arg2 = copy_string(mov_arg2);
+            instruction->arg3 = copy_string("lsl");
+            instruction->arg4 = copy_string(mov_arg4);
+
+            free(mov_arg2);
+            free(mov_arg4);
+
+            encodeDP(instruction);
+            break;
+        }
+        default:
+            perror("Invalid operation type");
+            exit(EXIT_FAILURE);
     }
 
-    //lsl gets converted to move instruction: mov Rn, Rn, lsl <#expression>
-    else if (type == lsl) {
 
-        free(instruction->mnemonic);
-        instruction->mnemonic = copy_string("mov");
-
-        char* mov_arg2 = copy_string(instruction->arg1);
-        char* mov_arg4 = copy_string(instruction->arg2);
-
-        free(instruction->arg2);
-        free(instruction->arg3);
-        free(instruction->arg3);
-
-        instruction->arg2 = copy_string(mov_arg2);
-        instruction->arg3 = copy_string("lsl");
-        instruction->arg4 = copy_string(mov_arg4);
-
-        free(mov_arg2);
-        free(mov_arg4);
-
-        encodeDP(instruction);
-    }
-
-    //error message
-    else {
-        perror("Invalid operation type");
-        exit(EXIT_FAILURE);
-    }
 
 }
-

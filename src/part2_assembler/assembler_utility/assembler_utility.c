@@ -34,6 +34,9 @@ bool isLabel(char *string){
 
 //function to copy string
 char *copy_string(char *string){
+    if (string == NULL) {
+        return NULL;
+    }
     char *result = malloc(strlen(string) + 1);
     strcpy(result, string);
     return result;
@@ -41,6 +44,7 @@ char *copy_string(char *string){
 
 assembler_instruction *instruction_create(void) {
     assembler_instruction *instruction = malloc(sizeof(assembler_instruction));
+ //MALLOC CHAR*
     return instruction;
 }
 
