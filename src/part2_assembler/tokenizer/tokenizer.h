@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "../assembler_utility/table.h"
+#include <string.h>
 
 void tokenizer(char *instruction, assembler_instruction *parsed);
 
