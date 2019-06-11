@@ -4,7 +4,7 @@
 #include "../part2_assembler/encode/encode.h"
 #include "../part2_assembler/assembler_utility/table.h"
 #include "assembler_utility/prints.h"
-
+#include "../part2_assembler/assembler_utility/assembler_utility.h"
 
 int main(int argc, char **argv) {
 //  File pointers for reading from (fpr) and writing to (fpw)
@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
 printf("readI\n");
         encode(instruction);
         fwrite(&instruction->encoded, sizeof(uint32_t), 1, fp_write);
-        free(instruction);
+        instruction_free(instruction);
     }
 
     prints(fp_write);

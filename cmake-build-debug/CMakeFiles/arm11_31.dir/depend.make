@@ -15,6 +15,13 @@ CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o: ../src/part1_emula
 CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o: ../src/part1_emulator/execute/executeSDT.h
 
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate.c
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate/binaryFileLoader.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate/pipeline.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulate/printOutput.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/DefinedTypes.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/instruction.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/state.h
+CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o: ../src/part1_emulator/emulator_utility/utility.h
 
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o: ../src/part1_emulator/emulate/binaryFileLoader.c
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o: ../src/part1_emulator/emulate/binaryFileLoader.h
@@ -94,6 +101,7 @@ CMakeFiles/arm11_31.dir/src/part1_emulator/fetch/fetch.c.o: ../src/part1_emulato
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part1_emulator/emulator_utility/DefinedTypes.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part1_emulator/emulator_utility/instruction.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part2_assembler/assemble.c
+CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part2_assembler/assembler_utility/assembler_utility.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part2_assembler/assembler_utility/prints.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part2_assembler/assembler_utility/table.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part2_assembler/encode/encode.h
@@ -163,6 +171,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/par
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part1_emulator/emulator_utility/utility.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/assembler_utility/assembler_utility.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/assembler_utility/table.h
+CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeDP.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeSPECIAL.c
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeSPECIAL.h
 

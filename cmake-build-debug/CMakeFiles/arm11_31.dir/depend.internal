@@ -16,6 +16,13 @@ CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/execute/executeSDT.h
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate.c
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/binaryFileLoader.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/pipeline.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/printOutput.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/DefinedTypes.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/instruction.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/state.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/utility.h
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/binaryFileLoader.c
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/binaryFileLoader.h
@@ -95,6 +102,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/DefinedTypes.h
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/instruction.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assemble.c
+ /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assembler_utility/assembler_utility.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assembler_utility/prints.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assembler_utility/table.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/encode/encode.h
@@ -164,6 +172,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/utility.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assembler_utility/assembler_utility.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assembler_utility/table.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/encode/encodeDP.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/encode/encodeSPECIAL.c
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/encode/encodeSPECIAL.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o
