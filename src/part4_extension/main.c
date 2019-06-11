@@ -16,8 +16,8 @@
 #define MAX_LINE_NUM 7
 
 int main(int argc, char **argv) {
-    int end, loop, line;
-    char str[MAX_CHAR_NUM];
+    //int end, loop, line;
+    //char str[MAX_CHAR_NUM];
     char *lines[MAX_LINE_NUM];
     FILE *fd = fopen("extension.txt", "r");
     if (fd == NULL) {
@@ -38,8 +38,8 @@ int main(int argc, char **argv) {
         shine(dec2bin(atoi(lines[1])));
     }
 
-    int bin_result= operate_arith(n1,n2,lines[5]);
-    shine(bin_result);
+    int bin_result = operate_arith(n1, n2, lines[5]);
+    shine(int_to_str(bin_result));
 
 //
 //    for (end = loop = 0; loop < MAX_LINE_NUM; ++loop) {

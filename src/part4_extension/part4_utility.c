@@ -101,18 +101,21 @@ char *dec2bin(int n) {
 //    }
 //}
 
+char *int_to_str(int n) {
+    char str1[(int) ((ceil(log10(n)) + 1) * sizeof(char))];
+    sprintf(str1, "%d", n);
+    return str1;
+}
 
 int operate_arith(int n1, int n2, char *operator) {
-    int result = 0;
-    if (isValid(n1)) {
-        char str1[(int) ((ceil(log10(n1)) + 1) * sizeof(char))];
-        sprintf(str1, "%d", n1);
-        n1 = bin2dec(str1);
+    int result;
+    char *strOfn1 = int_to_str(n1);
+    char *strOfn2 = int_to_str(n2);
+    if (isBin(strOfn1)) {
+        n1 = bin2dec(strOfn1);
     }
-    if (isValid(n2)) {
-        char str2[(int) ((ceil(log10(n2)) + 1) * sizeof(char))];
-        sprintf(str2, "%d", n2);
-        n2 = bin2dec(str2);
+    if (isBin(strOfn2)) {
+        n2 = bin2dec(strOfn2);
     }
 
     if (!strcmp(operator, "add")) {
