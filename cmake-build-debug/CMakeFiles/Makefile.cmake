@@ -9,10 +9,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
   "CMakeFiles/3.12.0/CMakeCCompiler.cmake"
+<<<<<<< HEAD
   "CMakeFiles/3.12.0/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.12.0/CMakeSystem.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CMakeCInformation.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CMakeCXXInformation.cmake"
+=======
+  "CMakeFiles/3.12.0/CMakeSystem.cmake"
+  "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CMakeCInformation.cmake"
+>>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CMakeFindCodeBlocks.cmake"
@@ -23,10 +28,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Compiler/GNU-C.cmake"
+<<<<<<< HEAD
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Compiler/GNU-CXX.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Compiler/GNU.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Platform/Linux-GNU-CXX.cmake"
+=======
+  "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Compiler/GNU.cmake"
+  "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Platform/Linux-GNU-C.cmake"
+>>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Platform/Linux-GNU.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Platform/Linux.cmake"
   "/usr/lib/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/Platform/UnixPaths.cmake"

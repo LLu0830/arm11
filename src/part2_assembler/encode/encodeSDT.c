@@ -9,6 +9,7 @@
 #include "encodeDP.h"
 #include "../assembler_utility/table.h"
 #include "../../part1_emulator/emulator_utility/utility.h"
+#include "../assembler_utility/assembler_utility.h"
 
 #define MAX_MOV 0xFF
 #define COND_POSITION 28

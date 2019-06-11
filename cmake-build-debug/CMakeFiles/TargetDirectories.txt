@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /homes/ll7818/Desktop/arm11_31/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /homes/ll7818/Desktop/arm11_31/cmake-build-debug/CMakeFiles/edit_cache.dir
 /homes/ll7818/Desktop/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir
+=======
+/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/edit_cache.dir
+/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir
+>>>>>>> ac39de637d00853cb3b571cc60ef99272464b320

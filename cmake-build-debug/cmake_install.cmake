@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /homes/ll7818/Desktop/arm11_31
+=======
+# Install script for directory: /homes/rb3018/arm11_31
+>>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +49,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/homes/ll7818/Desktop/arm11_31/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/homes/rb3018/arm11_31/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -48,10 +48,17 @@ RM = /usr/lib/clion-2018.2.2/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /homes/ll7818/Desktop/arm11_31
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /homes/ll7818/Desktop/arm11_31/cmake-build-debug
+=======
+CMAKE_SOURCE_DIR = /homes/rb3018/arm11_31
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /homes/rb3018/arm11_31/cmake-build-debug
+>>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +87,15 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /homes/ll7818/Desktop/arm11_31/cmake-build-debug/CMakeFiles /homes/ll7818/Desktop/arm11_31/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /homes/ll7818/Desktop/arm11_31/cmake-build-debug/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles /homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles 0
+>>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
 .PHONY : all
 
 # The main clean target
@@ -500,6 +513,33 @@ src/part2_assembler/assembler_utility/assembler_utility.s: src/part2_assembler/a
 src/part2_assembler/assembler_utility/assembler_utility.c.s:
 	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.s
 .PHONY : src/part2_assembler/assembler_utility/assembler_utility.c.s
+
+src/part2_assembler/assembler_utility/prints.o: src/part2_assembler/assembler_utility/prints.c.o
+
+.PHONY : src/part2_assembler/assembler_utility/prints.o
+
+# target to build an object file
+src/part2_assembler/assembler_utility/prints.c.o:
+	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o
+.PHONY : src/part2_assembler/assembler_utility/prints.c.o
+
+src/part2_assembler/assembler_utility/prints.i: src/part2_assembler/assembler_utility/prints.c.i
+
+.PHONY : src/part2_assembler/assembler_utility/prints.i
+
+# target to preprocess a source file
+src/part2_assembler/assembler_utility/prints.c.i:
+	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.i
+.PHONY : src/part2_assembler/assembler_utility/prints.c.i
+
+src/part2_assembler/assembler_utility/prints.s: src/part2_assembler/assembler_utility/prints.c.s
+
+.PHONY : src/part2_assembler/assembler_utility/prints.s
+
+# target to generate assembly for a file
+src/part2_assembler/assembler_utility/prints.c.s:
+	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.s
+.PHONY : src/part2_assembler/assembler_utility/prints.c.s
 
 src/part2_assembler/assembler_utility/table.o: src/part2_assembler/assembler_utility/table.c.o
 
@@ -930,6 +970,9 @@ help:
 	@echo "... src/part2_assembler/assembler_utility/assembler_utility.o"
 	@echo "... src/part2_assembler/assembler_utility/assembler_utility.i"
 	@echo "... src/part2_assembler/assembler_utility/assembler_utility.s"
+	@echo "... src/part2_assembler/assembler_utility/prints.o"
+	@echo "... src/part2_assembler/assembler_utility/prints.i"
+	@echo "... src/part2_assembler/assembler_utility/prints.s"
 	@echo "... src/part2_assembler/assembler_utility/table.o"
 	@echo "... src/part2_assembler/assembler_utility/table.i"
 	@echo "... src/part2_assembler/assembler_utility/table.s"
