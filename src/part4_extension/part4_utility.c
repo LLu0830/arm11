@@ -16,6 +16,10 @@ bool isBin(char *number) {
     return 1;
 }
 
+bool isValid(int d) {
+    return d >= 0 && d <= 7;
+}
+
 int bin2dec(char *bin) {
     int b, k, n;
     int len, sum = 0;
@@ -46,6 +50,11 @@ int bin2dec(char *binstr) {
     }
     return dec;
 }
+
+//char*dec2bin(int n){
+//    int b=0;
+//    b=n%2;
+//}
 
 char *dec2bin(int n) {
     int c, d, count;
@@ -105,8 +114,8 @@ int subtract(int n1, int n2) {
 
 int multiply(int n1, int n2) {
     convert_both_to_dec(n1, n2);
-    if ((n1 * n2) >= 0 && (n1 * n2) <= 7) { return dec2bin((int) (n1 * n2)); }
-    else {
+    if ((isValid(n1 * n2)) { return dec2bin((int) (n1 * n2)); }
+            else {
         perror("Invalid Result");
 
     }
