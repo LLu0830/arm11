@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
     int n1 = atoi(lines[3]);
     int n2 = atoi(lines[4]);
     assert(isValid(n));
-    if (isValid(n) && isValid(n1) && isValid(n2)) {
+    if (isValid(n)) {
         //shines the led according to binary number
         shine(dec2bin(atoi(lines[1])));
     }
@@ -58,29 +58,47 @@ int main(int argc, char **argv) {
 }
 
 
+void anotherMain{
+        int n, c, k, b_int;
+        int n1, n2;
+        char *b_str;
+        char *operation_type;
 
-//    {
-//    int n, c, k, b;
-//    int n1, n2;
-//    char *dTob;
-//
-//    printf("Enter an integer in decimal number system\n");
-//    scanf("%d", &n);
-//
-//    dTob = dec2bin(n);
-//    b = atoi(dTob);
-//    printf("Binary string of %d is: %s\n", n, dTob);
-//
-//    printf("Enter 2 integers in decimal or binary number system\n");
-//    scanf("%d", "%d", &n1, &n2);
-//
-//    add(n1,n2);
-//
-//
-//    free(dTob);
-//
-//    return 0;
-//}
+        printf("This is a 3-bit binary counter using raspberry pi");
+        printf("Enter an integer(range from 0 to 7) in decimal number system\n");
+        scanf("%d", &n);
+        if (!isValid(n)){
+            perror("Please enter a valid number")
+        }
+        b_str = dec2bin(n);
+        b_int = atoi(b_str);
+        printf("Binary string of %d is: %s\n", n, b_str);
+        shine(b_str);
+        printf("Look at the LEDs!!")
+
+
+
+        printf("Let's do some calculation");
+        printf("Enter first of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
+        scanf("%d", &n1);
+
+        printf("Enter the type of operation(add,sub,mul,div\n");
+        scanf("%s", &operation_type);
+
+        printf("Enter second of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
+        scanf("%d", &n2);
+
+        int bin_result=operate_arith(n1, n2, operation_type);
+        printf("The result of the operation is %d\n", bin_result);
+        shine(int_to_str(bin_result));
+        printf("Look at the LEDs!!")
+        );
+
+
+        free(dTob);
+
+        return 0;
+}
 
 //taking a 32_bit decimal int and convert it to binary number as a string
 

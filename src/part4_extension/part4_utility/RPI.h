@@ -14,6 +14,7 @@
 #include <unistd.h>
 
 #define BCM2708_PERI_BASE       0x20000000
+// 0x3F000000
 #define GPIO_BASE               (BCM2708_PERI_BASE + 0x200000)    // GPIO controller
 #define BLOCK_SIZE        (4*1024)
 // GPIO setup macros. Always use INP_GPIO(x) before using OUT_GPIO(x)
