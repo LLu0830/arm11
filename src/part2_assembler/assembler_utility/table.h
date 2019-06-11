@@ -66,7 +66,7 @@ typedef struct {
 
 } assembler_instruction;
 
-int numOfAddress=0;
+extern int numOfAddress;
 
 
 

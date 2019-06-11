@@ -11,6 +11,7 @@
 
 #define MAX_LINE_SIZE 512
 
+int numOfAddress = 0;
 
 void readLabels(label_address_list *table, FILE *file) {
     //check if the file is empty
