@@ -20,7 +20,7 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
     if (*op2Pointer == '#') {
         emulator_instruction->I = 1;
         uint32_t expression;
-        if (*(op2Pointer + 1) == 'x') {
+        if (*(op2Pointer + 2) == 'x') {
             expression = (uint32_t) strtol(op2Pointer + 3, NULL, 16);
         } else {
             expression = (uint32_t) strtol(op2Pointer + 1, NULL, 10);
@@ -31,7 +31,7 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
         while (count <= 30) {
             if (expression <= 0xff) {
                 count /= 2;
-                count = count << 8U;
+                count = count << 9U;
 //   gets Operand2
                 uint32_t result = expression | count;
                 return result;
