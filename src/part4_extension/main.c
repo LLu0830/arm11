@@ -10,7 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "part4_utility.h"
+#include <part4_utility/shine.h>
+#include "part4_utility/part4_utility.h"
 
 #define MAX_CHAR_NUM 512
 #define MAX_LINE_NUM 7
@@ -122,4 +123,3 @@ int main(int argc, char **argv) {
 //    close(fd);
 //    printf("Done.\n");
 //    exit(EXIT_SUCCESS);
-}

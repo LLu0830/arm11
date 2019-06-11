@@ -47,16 +47,16 @@ int bin2dec(char *bin) {
     return (sum);
 }
 
-int bin2dec(char *binstr) {
-    int dec = 0;
-    int len = strlen(binstr);
-    int i = 0;
-    while (i < len) {
-        dec = (dec << 1) + (binstr[i] - 0x30);
-        i++;
-    }
-    return dec;
-}
+//int bin2dec(char *binstr) {
+//    int dec = 0;
+//    int len = strlen(binstr);
+//    int i = 0;
+//    while (i < len) {
+//        dec = (dec << 1) + (binstr[i] - 0x30);
+//        i++;
+//    }
+//    return dec;
+//}
 
 //char*dec2bin(int n){
 //    int b=0;

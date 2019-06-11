@@ -70,7 +70,7 @@ add_executable(arm11_31
     src/part2_assembler/tokenizer/tokenizer.h
     src/part2_assembler/assemble.c
     src/part4_extension/main.c
-    src/part4_extension/part4_utility.c
-    src/part4_extension/part4_utility.h
+        src/part4_extension/part4_utility/part4_utility.c
+        src/part4_extension/part4_utility/part4_utility.h
     src/emulate
-    src/Makefile)
+    src/Makefile src/part4_extension/part4_utility/RPI.h src/part4_extension/part4_utility/RPI.c src/part4_extension/part4_utility/shine.c src/part4_extension/part4_utility/shine.h)
