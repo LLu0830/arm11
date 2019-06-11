@@ -9,10 +9,52 @@
 //#include "linux/i2c-dev.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "part4_utility.h"
 
-int main(int argc, char **argv) {
+#define MAX_CHAR_NUM 512
+#define MAX_LINE_NUM 7
 
+int main(int argc, char **argv) {
+    int end, loop, line;
+    char str[MAX_CHAR_NUM];
+    char *lines[MAX_LINE_NUM];
+    FILE *fd = fopen("extension.txt", "r");
+    if (fd == NULL) {
+        perror("Empty File\n");
+        EXIT_FAILURE;
+
+    }
+//        printf("Enter the line number to read : ");
+//        scanf("%d", &line);
+
+    fread(lines, sizeof(char), MAX_LINE_NUM, fd);
+    int n = atoi(lines[1]);
+    int n1 = atoi(lines[3]);
+    int n2 = atoi(lines[4]);
+    assert(isValid(n));
+    if (isValid(n) && isValid(n1) && isValid(n2)) {
+        //shines the led according to binary number
+        shine(dec2bin(atoi(lines[1])));
+    }
+
+    int bin_result= operate_arith(n1,n2,lines[5]);
+    shine(bin_result);
+
+//
+//    for (end = loop = 0; loop < MAX_LINE_NUM; ++loop) {
+//        if (0 == fgets(str, sizeof(str), fd)) {//include '\n'
+//            end = 1;//can't input (EOF)
+//            break;
+//        }
+//    }
+//
+//    if (!end)
+//        printf("\nLine-%d: %s\n", line, str);
+    fclose(fd);
+
+    return 0;
+}
 
 
 

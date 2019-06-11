@@ -10,10 +10,9 @@
 #include "math.h"
 
 bool isBin(char *number) {
-    int b, n;
+    int n;
     int length = strlen(number) - 1;
     for (int l = 0; l <= length; l++) {
-        b = 1;
         n = (number[l] - '0');
         if ((n > 1) || (n < 0)) {
             return 0;
@@ -22,9 +21,11 @@ bool isBin(char *number) {
     return 1;
 }
 
+
 bool isValid(int d) {
     return d >= 0 && d <= 7;
 }
+
 
 int bin2dec(char *bin) {
     int b, k, n;
@@ -87,51 +88,98 @@ char *dec2bin(int n) {
     return pointer;
 }
 
-void convert_both_to_dec(int n1, int n2) {
-    if (isBin(n1)) {
+//void convert_both_to_dec(int n1, int n2) {
+//    if (isBin(n1)) {
+//        char str1[(int) ((ceil(log10(n1)) + 1) * sizeof(char))];
+//        sprintf(str1, "%d", n1);
+//        n1 = bin2dec(str1);
+//    }
+//    if (isBin(n2)) {
+//        char str2[(int) ((ceil(log10(n2)) + 1) * sizeof(char))];
+//        sprintf(str2, "%d", n2);
+//        n2 = bin2dec(str2);
+//    }
+//}
+
+
+int operate_arith(int n1, int n2, char *operator) {
+    int result = 0;
+    if (isValid(n1)) {
         char str1[(int) ((ceil(log10(n1)) + 1) * sizeof(char))];
         sprintf(str1, "%d", n1);
         n1 = bin2dec(str1);
     }
-    if (isBin(n2)) {
+    if (isValid(n2)) {
         char str2[(int) ((ceil(log10(n2)) + 1) * sizeof(char))];
         sprintf(str2, "%d", n2);
         n2 = bin2dec(str2);
     }
-}
 
-int add(int n1, int n2) {
-    convert_both_to_dec(n1, n2);
-    if ((n1 + n2) >= 0 && (n1 + n2) <= 7) { return dec2bin((int) (n1 + n2)); }
+    if (!strcmp(operator, "add")) {
+        result = n1 + n2;
+    } else if (!strcmp(operator, "sub")) {
+        result = n1 - n2;
+    } else if (!strcmp(operator, "mul")) {
+        result = n1 * n2;
+    } else if (!strcmp(operator, "div")) {
+        result = n1 / n2;
+    } else {
+        perror("Invalid arithmetic command on last line of the file.");
+        EXIT_FAILURE;
+    }
+    if (isValid(result))
+        return atoi(dec2bin(result));
     else {
-        perror("Invalid Result");
-
+        perror("Invalid result");
+        EXIT_FAILURE;
     }
+
 }
 
-int subtract(int n1, int n2) {
-    convert_both_to_dec(n1, n2);
-    if ((n1 - n2) >= 0 && (n1 - n2) <= 7) { return dec2bin((int) (n1 - n2)); }
-    else {
-        perror("Invalid Result");
-
-    }
-}
-
-int multiply(int n1, int n2) {
-    convert_both_to_dec(n1, n2);
-    if ((isValid(n1 * n2)) { return dec2bin((int) (n1 * n2)); }
-            else {
-        perror("Invalid Result");
-
-    }
-}
-
-int divide(int n1, int n2) {
-    convert_both_to_dec(n1, n2);
-    if ((n1 / n2) >= 0 && (n1 / n2) <= 7) { return dec2bin((int) (n1 / n2)); }
-    else {
-        perror("Invalid Result");
-
-    }
-}
+//int add(int n1, int n2) {
+////    convert_both_to_dec(n1, n2);
+//    if (isBin(n1)) {
+//        char str1[(int) ((ceil(log10(n1)) + 1) * sizeof(char))];
+//        sprintf(str1, "%d", n1);
+//        n1 = bin2dec(str1);
+//    }
+//    if (isBin(n2)) {
+//        char str2[(int) ((ceil(log10(n2)) + 1) * sizeof(char))];
+//        sprintf(str2, "%d", n2);
+//        n2 = bin2dec(str2);
+//    }
+//
+//    if ((n1 + n2) >= 0 && (n1 + n2) <= 7) { return atoi(dec2bin((int) (n1 + n2))); }
+//    else {
+//        perror("Invalid Result");
+//        EXIT_FAILURE;
+//
+//    }
+//}
+//
+//int subtract(int n1, int n2) {
+//    convert_both_to_dec(n1, n2);
+//    if ((isValid(n1 * n2))) { return atoi(dec2bin((int) (n1 - n2))); }
+//    else {
+//        perror("Invalid Result");
+//        EXIT_FAILURE;
+//    }
+//}
+//
+//int multiply(int n1, int n2) {
+//    convert_both_to_dec(n1, n2);
+//    if ((isValid(n1 * n2))) { return atoi(dec2bin((int) (n1 * n2))); }
+//    else {
+//        perror("Invalid Result");
+//
+//    }
+//}
+//
+//int divide(int n1, int n2) {
+//    convert_both_to_dec(n1, n2);
+//    if ((isValid(n1 * n2))) { return atoi(dec2bin((int) (n1 / n2))); }
+//    else {
+//        perror("Invalid Result");
+//
+//    }
+//}

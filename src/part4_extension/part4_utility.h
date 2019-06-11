@@ -12,9 +12,17 @@ bool isBin(char *number);
 int bin2dec(char *bin);
 //int bin2dec(char * binstr);
 char *dec2bin(int n);
-void convert_both_to_dec(int n1, int n2);
-int add(int n1, int n2);
-int subtract(int n1,int n2);
-int multiply(int n1,int n2);
-int divide(int n1,int n2);
+int operate_arith(int n1, int n2,char* operator);
+//void convert_both_to_dec(int n1, int n2);
+//int add(int n1, int n2);
+//int subtract(int n1,int n2);
+//int multiply(int n1,int n2);
+//int divide(int n1,int n2);
 #endif //ARM11_31_PART4_UTILITY_H
+
+typedef enum{
+    ADD=1,
+    MUL=2,
+    SUB=3,
+    DIV=4,
+}arith_type;
