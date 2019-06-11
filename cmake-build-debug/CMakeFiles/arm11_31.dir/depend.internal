@@ -161,6 +161,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/instruction.h
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/state.h
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/utility.h
+ /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assembler_utility/assembler_utility.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/assembler_utility/table.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/encode/encodeDP.h
  /homes/mw6118/CLionProjects/arm11_31/src/part2_assembler/encode/encodeSDT.c

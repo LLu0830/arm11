@@ -160,6 +160,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part1_e
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part1_emulator/emulator_utility/instruction.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part1_emulator/emulator_utility/state.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part1_emulator/emulator_utility/utility.h
+CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part2_assembler/assembler_utility/assembler_utility.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part2_assembler/assembler_utility/table.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part2_assembler/encode/encodeDP.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part2_assembler/encode/encodeSDT.c

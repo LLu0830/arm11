@@ -23,10 +23,10 @@ int main(int argc, char **argv) {
     while (1) {
         assembler_instruction *instruction = calloc(1, sizeof(assembler_instruction));
         if (!readInstruction(fp_read, &counter, instruction)) {
-            printf("readI\n");
+            printf("readI false\n");
             break;
         }
-printf("readI\n");
+        printf("read   I\n");
         encode(instruction);
         fwrite(&instruction->encoded, sizeof(uint32_t), 1, fp_write);
         instruction_free(instruction);

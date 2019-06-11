@@ -16,10 +16,9 @@ void prints(FILE *file) {
 
 
     for (int curr = 0; curr < max; curr = curr + 4) {
-        printf("curr = %d", curr);
         if (!feof(file)) {
             fread(buffer, sizeof(uint32_t), 1, file);
-            printf("0x%08x: 0x%08x\n", curr, *buffer);
+            printf("%08x: %08x\n", curr, *buffer);
         } else {
             return;
         }
