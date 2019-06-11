@@ -19,6 +19,7 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
     //prints error if file pointer is NULL
     if (file == NULL) {
         printf("Error: file pointer is null.");
+        return false;
     }
 
     //reads one line from file
@@ -32,7 +33,7 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         //if the line exists and is not a label, it is passed to the tokenizer
         if (!isLabel(line) && (line != NULL)) {
             counter++;
-            instruction->currentAddress = (address) counter;
+            instruction->currentAddress = (address) *counter;
             tokenizer(line, instruction);
         }
         return true;

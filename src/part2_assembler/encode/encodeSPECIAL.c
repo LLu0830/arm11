@@ -22,28 +22,28 @@ void encodeSPECIAL(assembler_instruction *instruction) {
             }
             break;
         case 'l': {
-            // case DP: Operand2 is a register, shifted by a constant amount
-
-            //cond field set to 1110
-            uint32_t cond = 0xe;
-
-            //set i bit to 0
-            uint32_t IBit = 0;
-            //set opcode to mov
-
-
-            //set s bit to 0
-            uint32_t SBit = 0;
-
-            // shifted amount
-            token shiftAmount = instruction->arg3;
-            uint32_t shiftA = (uint32_t) strtol(shiftAmount + 1, NULL, 16);
-
-            //shift type = lsl 00
-            uint32_t shiftType = 0;
-            //get Rn from org2
-            token rn = instruction->arg2;
-            uint32_t positionRn = (uint32_t) strtol((rn + 1), NULL, 16);
+//            // case DP: Operand2 is a register, shifted by a constant amount
+//
+//            //cond field set to 1110
+//            uint32_t cond = 0xe;
+//
+//            //set i bit to 0
+//            uint32_t IBit = 0;
+//            //set opcode to mov
+//
+//
+//            //set s bit to 0
+//            uint32_t SBit = 0;
+//
+//            // shifted amount
+//            token shiftAmount = instruction->arg3;
+//            uint32_t shiftA = (uint32_t) strtol(shiftAmount + 1, NULL, 16);
+//
+//            //shift type = lsl 00
+//            uint32_t shiftType = 0;
+//            //get Rn from org2
+//            token rn = instruction->arg2;
+//            uint32_t positionRn = (uint32_t) strtol((rn + 1), NULL, 16);
 
             break;
         }
