@@ -8,12 +8,13 @@
 #include "../assembler_utility/table.h"
 #include "../../part1_emulator/emulator_utility/utility.h"
 #include "../assembler_utility/assembler_utility.h"
+#include "encodeDP.h"
 
 void encodeSPECIAL(assembler_instruction *instruction) {
-    token mnemonic = instruction->mnemonic;
 
-    switch (*mnemonic) {
-        case 'a':
+
+    switch (instruction->operationType) {
+        case andeq:
             //maybe need to check if operand1,2,3 all = 0;
             if (!strcmp(instruction->arg1, "r0")
                 && !strcmp(instruction->arg2, "r0")
@@ -21,33 +22,35 @@ void encodeSPECIAL(assembler_instruction *instruction) {
                 instruction->encoded = 0x0;
             }
             break;
-        case 'l': {
-//            // case DP: Operand2 is a register, shifted by a constant amount
-//
-//            //cond field set to 1110
-//            uint32_t cond = 0xe;
-//
-//            //set i bit to 0
-//            uint32_t IBit = 0;
-//            //set opcode to mov
-//
-//
-//            //set s bit to 0
-//            uint32_t SBit = 0;
-//
-//            // shifted amount
-//            token shiftAmount = instruction->arg3;
-//            uint32_t shiftA = (uint32_t) strtol(shiftAmount + 1, NULL, 16);
-//
-//            //shift type = lsl 00
-//            uint32_t shiftType = 0;
-//            //get Rn from org2
-//            token rn = instruction->arg2;
-//            uint32_t positionRn = (uint32_t) strtol((rn + 1), NULL, 16);
+        case lsl: {
+            //lsl gets converted to move instruction: mov Rn, Rn, lsl <#expression>
 
+
+            free(instruction->mnemonic);
+            instruction->mnemonic = copy_string("mov");
+
+            char *mov_arg2 = copy_string(instruction->arg1);
+            char *mov_arg4 = copy_string(instruction->arg2);
+
+            free(instruction->arg2);
+            free(instruction->arg3);
+            free(instruction->arg3);
+
+            instruction->arg2 = copy_string(mov_arg2);
+            instruction->arg3 = copy_string("lsl");
+            instruction->arg4 = copy_string(mov_arg4);
+
+            free(mov_arg2);
+            free(mov_arg4);
+
+            encodeDP(instruction);
             break;
         }
         default:
-            break;
+            perror("Invalid operation type");
+            exit(EXIT_FAILURE);
     }
+
+
+
 }

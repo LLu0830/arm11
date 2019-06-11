@@ -193,6 +193,12 @@
 		<Unit filename="/homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/assembler_utility.h">
 			<Option target="arm11_31"/>
 		</Unit>
+		<Unit filename="/homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/prints.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/prints.h">
+			<Option target="arm11_31"/>
+		</Unit>
 		<Unit filename="/homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/table.c">
 			<Option target="arm11_31"/>
 		</Unit>

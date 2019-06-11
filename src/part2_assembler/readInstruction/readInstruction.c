@@ -25,8 +25,12 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
     //reads one line from file
     else {
         char *line = malloc(MAX_LINE_SIZE * sizeof(char));
+        if (line == NULL) {
+            perror("calloc in readInstruction");
+             exit(EXIT_FAILURE);
+        }
 
-        if (fgets(line, sizeof(line), file) == NULL) {
+        if (fgets(line, MAX_LINE_SIZE, file) == NULL) {
             return false;
         }
 
@@ -36,6 +40,8 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
             instruction->currentAddress = (address) *counter;
             tokenizer(line, instruction);
         }
+
+        free(line);
         return true;
 
     }

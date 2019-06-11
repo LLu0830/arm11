@@ -3,13 +3,15 @@
 #include "../part2_assembler/readInstruction/readInstruction.h"
 #include "../part2_assembler/encode/encode.h"
 #include "../part2_assembler/assembler_utility/table.h"
+#include "assembler_utility/prints.h"
+#include "../part2_assembler/assembler_utility/assembler_utility.h"
 
 int main(int argc, char **argv) {
 //  File pointers for reading from (fpr) and writing to (fpw)
     FILE *fp_read;
     FILE *fp_write;
     fp_read = fopen(argv[1], "r");
-    fp_write = fopen(argv[2], "wb");
+    fp_write = fopen(argv[2], "wb+");
     label_address_list table = {NULL, NULL};
     readLabels(&table, fp_read);
     fclose(fp_read);
@@ -24,8 +26,12 @@ int main(int argc, char **argv) {
         }
         encode(instruction);
         fwrite(&instruction->encoded, sizeof(uint32_t), 1, fp_write);
-        free(instruction);
+        instruction_free(instruction);
     }
+
+
+//    prints(fp_write);
+
     fclose(fp_write);
     fclose(fp_read);
 //    not sure how to implement this - depends on Katarina's readInstruction function

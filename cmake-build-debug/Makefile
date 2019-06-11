@@ -501,6 +501,33 @@ src/part2_assembler/assembler_utility/assembler_utility.c.s:
 	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.s
 .PHONY : src/part2_assembler/assembler_utility/assembler_utility.c.s
 
+src/part2_assembler/assembler_utility/prints.o: src/part2_assembler/assembler_utility/prints.c.o
+
+.PHONY : src/part2_assembler/assembler_utility/prints.o
+
+# target to build an object file
+src/part2_assembler/assembler_utility/prints.c.o:
+	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o
+.PHONY : src/part2_assembler/assembler_utility/prints.c.o
+
+src/part2_assembler/assembler_utility/prints.i: src/part2_assembler/assembler_utility/prints.c.i
+
+.PHONY : src/part2_assembler/assembler_utility/prints.i
+
+# target to preprocess a source file
+src/part2_assembler/assembler_utility/prints.c.i:
+	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.i
+.PHONY : src/part2_assembler/assembler_utility/prints.c.i
+
+src/part2_assembler/assembler_utility/prints.s: src/part2_assembler/assembler_utility/prints.c.s
+
+.PHONY : src/part2_assembler/assembler_utility/prints.s
+
+# target to generate assembly for a file
+src/part2_assembler/assembler_utility/prints.c.s:
+	$(MAKE) -f CMakeFiles/arm11_31.dir/build.make CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.s
+.PHONY : src/part2_assembler/assembler_utility/prints.c.s
+
 src/part2_assembler/assembler_utility/table.o: src/part2_assembler/assembler_utility/table.c.o
 
 .PHONY : src/part2_assembler/assembler_utility/table.o
@@ -822,6 +849,9 @@ help:
 	@echo "... src/part2_assembler/assembler_utility/assembler_utility.o"
 	@echo "... src/part2_assembler/assembler_utility/assembler_utility.i"
 	@echo "... src/part2_assembler/assembler_utility/assembler_utility.s"
+	@echo "... src/part2_assembler/assembler_utility/prints.o"
+	@echo "... src/part2_assembler/assembler_utility/prints.i"
+	@echo "... src/part2_assembler/assembler_utility/prints.s"
 	@echo "... src/part2_assembler/assembler_utility/table.o"
 	@echo "... src/part2_assembler/assembler_utility/table.i"
 	@echo "... src/part2_assembler/assembler_utility/table.s"

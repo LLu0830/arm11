@@ -226,9 +226,22 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/assembler_utility.c -o CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.s
 
+CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o: CMakeFiles/arm11_31.dir/flags.make
+CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o: ../src/part2_assembler/assembler_utility/prints.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/prints.c
+
+CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/prints.c > CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.i
+
+CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/prints.c -o CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.s
+
 CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o: ../src/part2_assembler/assembler_utility/table.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/table.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.i: cmake_force
@@ -241,7 +254,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.s: cmake_f
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o: ../src/part2_assembler/encode/encode.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/encode/encode.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.s: cmake_force
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o: ../src/part2_assembler/encode/encodeBR.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/encode/encodeBR.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.s: cmake_force
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o: ../src/part2_assembler/encode/encodeDP.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/encode/encodeDP.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.s: cmake_force
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.o: ../src/part2_assembler/encode/encodeMUL.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/encode/encodeMUL.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.i: cmake_force
@@ -293,7 +306,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.s: cmake_force
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o: ../src/part2_assembler/encode/encodeSDT.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/encode/encodeSDT.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.i: cmake_force
@@ -306,7 +319,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.s: cmake_force
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeSPECIAL.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/encode/encodeSPECIAL.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.i: cmake_force
@@ -319,7 +332,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.s: cmake_forc
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o: ../src/part2_assembler/readInstruction/readInstruction.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/readInstruction/readInstruction.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.i: cmake_force
@@ -332,7 +345,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.s:
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o: ../src/part2_assembler/readLabels/readLabels.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/readLabels/readLabels.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.i: cmake_force
@@ -345,7 +358,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.s: cmake_for
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o: ../src/part2_assembler/tokenizer/tokenizer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/tokenizer/tokenizer.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.i: cmake_force
@@ -358,7 +371,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.s: cmake_force
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: CMakeFiles/arm11_31.dir/flags.make
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o: ../src/part2_assembler/assemble.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o   -c /homes/rb3018/arm11_31/src/part2_assembler/assemble.c
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.i: cmake_force
@@ -384,6 +397,7 @@ arm11_31_OBJECTS = \
 "CMakeFiles/arm11_31.dir/src/part1_emulator/fetch/fetch.c.o" \
 "CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o" \
 "CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.o" \
+"CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o" \
 "CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o" \
 "CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o" \
 "CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o" \
@@ -412,6 +426,7 @@ arm11_31: CMakeFiles/arm11_31.dir/src/part1_emulator/execute/executeSDT.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part1_emulator/fetch/fetch.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.o
+arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o
@@ -425,7 +440,7 @@ arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o
 arm11_31: CMakeFiles/arm11_31.dir/build.make
 arm11_31: CMakeFiles/arm11_31.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking C executable arm11_31"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable arm11_31"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/arm11_31.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
