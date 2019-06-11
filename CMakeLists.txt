@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.14)
-project(arm11_31 C)
+cmake_minimum_required(VERSION 3.12)
+project(arm11_31)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 include_directories(src/part1_emulator/decode)
 include_directories(src/part1_emulator/emulate)
@@ -13,8 +13,13 @@ include_directories(src/part2_assembler/encode)
 include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
 include_directories(src/part2_assembler/tokenizer)
+include_directories(src/part4_extension)
 
 add_executable(arm11_31
+    doc/Checkpoint.tex
+    doc/Makefile
+    doc/Report.tex
+    programs/gpio.s
     src/part1_emulator/decode/decode.c
     src/part1_emulator/decode/decode.h
     src/part1_emulator/emulate/binaryFileLoader.c
@@ -63,4 +68,9 @@ add_executable(arm11_31
     src/part2_assembler/readLabels/readLabels.h
     src/part2_assembler/tokenizer/tokenizer.c
     src/part2_assembler/tokenizer/tokenizer.h
-    src/part2_assembler/assemble.c src/part4_extension/main.c src/part4_extension/part4_utility.c src/part4_extension/part4_utility.h)
+    src/part2_assembler/assemble.c
+    src/part4_extension/main.c
+    src/part4_extension/part4_utility.c
+    src/part4_extension/part4_utility.h
+    src/emulate
+    src/Makefile)

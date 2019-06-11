@@ -4,6 +4,9 @@
 
 #ifndef ARM11_31_PART4_UTILITY_H
 #define ARM11_31_PART4_UTILITY_H
+
+#include <stdbool.h>
+
 bool isValid(int d);
 bool isBin(char *number);
 int bin2dec(char *bin);

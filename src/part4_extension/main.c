@@ -7,30 +7,37 @@
 //#include <time.h>
 //#include <sys/ioctl.h>
 //#include "linux/i2c-dev.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include "part4_utility.h"
 
 int main(int argc, char **argv) {
-    int n, c, k, b;
-    int n1, n2;
-    char *dTob;
-
-    printf("Enter an integer in decimal number system\n");
-    scanf("%d", &n);
-
-    dTob = dec2bin(n);
-    b = atoi(dTob);
-    printf("Binary string of %d is: %s\n", n, dTob);
-
-    printf("Enter 2 integers in decimal or binary number system\n");
-    scanf("%d", "%d", &n1, &n2);
-
-    add(n1,n2);
 
 
-    free(dTob);
 
-    return 0;
-}
+
+//    {
+//    int n, c, k, b;
+//    int n1, n2;
+//    char *dTob;
+//
+//    printf("Enter an integer in decimal number system\n");
+//    scanf("%d", &n);
+//
+//    dTob = dec2bin(n);
+//    b = atoi(dTob);
+//    printf("Binary string of %d is: %s\n", n, dTob);
+//
+//    printf("Enter 2 integers in decimal or binary number system\n");
+//    scanf("%d", "%d", &n1, &n2);
+//
+//    add(n1,n2);
+//
+//
+//    free(dTob);
+//
+//    return 0;
+//}
 
 //taking a 32_bit decimal int and convert it to binary number as a string
 

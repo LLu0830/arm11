@@ -1,7 +1,13 @@
 //
 // Created by ASUS on 2019/6/11.
 //
+#include <stdbool.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <bits/mathcalls.h>
 #include "part4_utility.h"
+#include "math.h"
 
 bool isBin(char *number) {
     int b, n;
@@ -90,7 +96,7 @@ void convert_both_to_dec(int n1, int n2) {
     if (isBin(n2)) {
         char str2[(int) ((ceil(log10(n2)) + 1) * sizeof(char))];
         sprintf(str2, "%d", n2);
-        n2 = bin2dec(str1);
+        n2 = bin2dec(str2);
     }
 }
 
