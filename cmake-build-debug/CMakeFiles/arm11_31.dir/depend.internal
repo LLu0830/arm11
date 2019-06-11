@@ -16,13 +16,6 @@ CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/execute/executeSDT.h
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate.c
- /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/binaryFileLoader.h
- /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/pipeline.h
- /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/printOutput.h
- /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/DefinedTypes.h
- /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/instruction.h
- /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/state.h
- /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulator_utility/utility.h
 CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/binaryFileLoader.c
  /homes/mw6118/CLionProjects/arm11_31/src/part1_emulator/emulate/binaryFileLoader.h

@@ -13,7 +13,6 @@
 
 
 void encode(assembler_instruction *instruction) {
-    printf("start encode\n");
 
 
     token mnemonic = instruction->mnemonic;
@@ -57,7 +56,6 @@ void encode(assembler_instruction *instruction) {
             }
             break;
         case 'm':
-            printf("in encode, case m\n");
             if (snd == 'o') {
                 instruction->type = DP;
                 instruction->operationType = mov;
@@ -123,7 +121,6 @@ void encode(assembler_instruction *instruction) {
 
     switch (instruction->type) {
         case DP:
-            printf("in DP\n");
             encodeDP(instruction);
             break;
         case MUL:

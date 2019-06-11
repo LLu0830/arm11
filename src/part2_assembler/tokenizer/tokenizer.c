@@ -14,11 +14,9 @@
 void tokenizer(char *instruction, assembler_instruction *parsed) {
 
     char* ptr;
-    printf("instruction: %s\n", instruction);
     parsed->mnemonic = copy_string(strtok_r(instruction, " ", &ptr));
     parsed->arg1 = copy_string(strtok_r(NULL, ", ", &ptr));
     parsed->arg2 = copy_string(strtok_r(NULL, ", ", &ptr));
-    printf("arg2 in tokenizer: %s\n", parsed->arg2);
     parsed->arg3 = copy_string(strtok_r(NULL, ", ", &ptr));
     parsed->arg4 = copy_string(strtok_r(NULL, ", ", &ptr));
 
