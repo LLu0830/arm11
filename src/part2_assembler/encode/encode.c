@@ -13,6 +13,8 @@
 
 
 void encode(assembler_instruction *instruction) {
+
+
     token mnemonic = instruction->mnemonic;
     char snd = *(mnemonic + 1);
     switch (*mnemonic) {

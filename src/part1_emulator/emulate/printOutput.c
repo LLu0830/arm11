@@ -36,8 +36,7 @@ void printOut(struct stateOfMachine *state) {
     for (int curr = 0; curr < numOfAddresses; curr = curr + 4) {
         uint32_t f = *((uint32_t *) (state->mem + curr)); // this is fetch
 
-        if (f == 0) {
-        } else {
+        if (f != 0) {
             f = flip(f);
             printf("0x%08x: 0x%08x\n", curr, f);
         }

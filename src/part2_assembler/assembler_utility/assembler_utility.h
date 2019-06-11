@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "table.h"
 
 uint32_t rotateLeft(uint32_t b, int n);
 uint32_t rotateLeftNtimes(uint32_t b, int n);

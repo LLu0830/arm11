@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/arm11_31.dir/src/part1_emulator/fetch/fetch.c.o"
   "CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o"
   "CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.o"
+  "CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o"
   "CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o"
   "CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o"
   "CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o"
