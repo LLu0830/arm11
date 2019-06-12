@@ -11,8 +11,6 @@
 
 uint32_t getRegisterNumber(token reg) {
 //  ignoring the 'r' character to get the number from the register
-//    char *ptr;
-//    return (uint32_t) strtol(reg + 1, &ptr, 10);
     return (uint32_t) strtol(reg + 1, NULL, 10);
 }
 
