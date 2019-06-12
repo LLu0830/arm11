@@ -45,6 +45,7 @@ void encodeBR(assembler_instruction *instruction, label_address_list *table) {
 //    } else {
 //        target = getValue(instruction->arg1);
 //    }
+    printf("%p", instruction);
     uint32_t offset = instruction->currentAddress;
     printf("%u", offset);
 //    if (instruction->currentAddress + 8 <= target) {
