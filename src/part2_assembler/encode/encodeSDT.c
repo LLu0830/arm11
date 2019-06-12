@@ -12,20 +12,34 @@
 #include "../assembler_utility/assembler_utility.h"
 
 #define MAX_MOV 0xFF
-#define COND_POSITION 28
-#define BIT_VALUE_1_POSITION 26
-#define I_BIT_POSITION 25
-#define P_BIT_POSITION 24
-#define U_BIT_POSITION 23
-#define L_BIT_POSITION 20
-#define RN_POSITION 16
-#define RD_POSITION 12
-#define OFFSET_POSITION 0
-#define PIPELINE_OFFSET 8
+#define COND_POSITION 28U
+#define BIT_VALUE_1_POSITION 26U
+#define I_BIT_POSITION 25U
+#define P_BIT_POSITION 24U
+#define U_BIT_POSITION 23U
+#define L_BIT_POSITION 20U
+#define RN_POSITION 16U
+#define RD_POSITION 12U
+#define OFFSET_POSITION 0U
+#define PIPELINE_OFFSET 2
 
 uint32_t getValue(char *string) {
-    return (uint32_t) strtol(string + 1, NULL, 10);
+    return (uint32_t) strtol(string + 1, NULL, 0);
 }
+
+void set_I_bit(assembler_instruction* instruction, uint32_t *I_bit) {
+    if (instruction->arg3[0] == '#') {
+        *I_bit = 0;
+    }
+//shifted register
+    else if (instruction->arg3[0] == 'r') {
+        *I_bit = 1;
+    } else {
+        perror("Wrong input");
+        exit(EXIT_FAILURE);
+    }
+}
+
 
 //helper function to concatenate all the parts of an SDT instruction
 uint32_t concatSDT(uint32_t cond, uint32_t bit_value_1, uint32_t I_bit, uint32_t P_bit, uint32_t U_bit,
@@ -43,19 +57,25 @@ uint32_t concatSDT(uint32_t cond, uint32_t bit_value_1, uint32_t I_bit, uint32_t
     return cond | bit_value_1 | I_bit | P_bit | U_bit | L_bit | rn | rd | offset;
 }
 
+void put_in_array(uint32_t expression) {
+    instruction_array[array_counter] = expression;
+    array_counter++;
+
+}
+
 //encodes Single Data Transfer instructions
 void encodeSDT(assembler_instruction *instruction){
 
     //all parts of a SDT instruction
     uint32_t cond = 14;         //always condition code: 1110
     uint32_t bit_value_1 = 1;   //1
-    uint32_t I_bit;             //shifted register/immediate offset flag
-    uint32_t P_bit;             //pre-indexing flag
+    uint32_t I_bit = 1;             //shifted register/immediate offset flag
+    uint32_t P_bit = 0;             //pre-indexing flag
     uint32_t U_bit = 1;         //add/subtract flag (upbit)
-    uint32_t L_bit;             //load/store flag
-    uint32_t rn;                //base register
-    uint32_t rd;                //destination register
-    uint32_t offset;            //offset of register
+    uint32_t L_bit = 0;             //load/store flag
+    uint32_t rn = 0;                //base register
+    uint32_t rd = 0;                //destination register
+    uint32_t offset = 0;            //offset of register
 
 
     //load or store differentiation
@@ -72,40 +92,64 @@ void encodeSDT(assembler_instruction *instruction){
     }
 
 
+
+    printf("L_bit: %i \n", L_bit);
+
     //setting destination register Rd
     rd = getValue(instruction->arg1);
 
-
     //general loading case
     //address has form <=expression>
-    if (L_bit && (!strcmp(instruction->arg2, "="))) {
 
+    if (L_bit && ((instruction->arg2[0] == '='))) {
+
+        printf("arg2 is expression \n");
         //pre-indexing
         P_bit = 1;
         I_bit = 0;
         rn = 15;
-        offset = 0;
+        //offset = 0;
         //interpreting as a mov instruction
         if (getValue(instruction->arg2)<MAX_MOV){
+            printf("mov \n");
+
             free(instruction->mnemonic);
+            //printf("mnemonic freed \n");
+
             instruction->operationType = mov;
+            //printf("new operationType assigned \n");
+
             instruction->mnemonic = copy_string("mov");
+            //printf("new mnemonic \n");
+
+            //printf("arg2:%s \n", instruction->arg2);
+
             instruction->arg2[0] = '#';
 
+            instruction->type = DP;
             encodeDP(instruction);
+
+            return;
         }
         //not interpreting as a mov instruction
         else{
+            printf("not mov \n");
             offset = numOfAddress - instruction->currentAddress - PIPELINE_OFFSET;
+            offset = 4 * offset;
+            printf("Num of Address: %i \n", numOfAddress);
+            printf("Current address: %i \n", instruction->currentAddress);
+            numOfAddress++;
             U_bit = 1;
+            put_in_array(getValue(instruction->arg2));
         }
 
     }
-    else if (!strcmp(instruction->arg2, "[")) {
+    else if ((instruction->arg2[0] == '[')) {
         rn = getValue(instruction->arg2+1);
+        printf("rn:%i \n", rn);
         U_bit = 1;
 
-        if (!strcmp(instruction->arg2 + 3, "]") || !strcmp(instruction->arg2 + 4, "]")) {
+        if ((instruction->arg2[3] == ']') || (instruction->arg2[4] == ']')) {
 
             //rn is a register with offset 0
             //[Rn]
@@ -114,28 +158,52 @@ void encodeSDT(assembler_instruction *instruction){
                 P_bit = 1;
                 I_bit = 0;
                 offset = 0;
+               printf("[Rn] \n");
             }
                 //[Rn]<#expression>
             //post-indexing, offset not zero
             else {
                 P_bit = 0;
                 offset = getValue(instruction->arg3);
-                I_bit = 1;
+                //immediate value
+                set_I_bit(instruction, &I_bit);
+                printf("[Rn]<#expression> \n");
+
             }
+
         }
         //[Rn, <#expression>]
         //pre-indexing, offset not 0
         else {
             P_bit = 1;
-            I_bit = 1;
             offset = getValue(instruction->arg3);
+            printf("offset: %i \n", offset);
+            set_I_bit(instruction, &I_bit);
+            printf("I_Bit: %i \n", I_bit);
+            printf("[Rn, <#expression>] \n");
+
+            printf("mnemonic: %s \n", instruction->mnemonic);
+            printf("arg1: %s \n", instruction->arg1);
+            printf("arg2: %s \n", instruction->arg2);
+            printf("arg3: %s \n", instruction->arg3);
+            printf("arg4: %s \n", instruction->arg4);
         }
 
     } else {
+        printf("failure \n");
         exit(EXIT_FAILURE);
+    }
+
+    if ((int32_t) offset < 0) {
+        offset = -offset;
+        U_bit = 0;
+        printf("offset: %i \n", offset);
     }
 
     //puts encoded SDT instruction to instruction->encoded
     //I_bit, P_bit, rn, offset have been initialized at some point
+
+
     instruction->encoded = concatSDT(cond, bit_value_1, I_bit, P_bit, U_bit, L_bit, rn, rd, offset);
+    printf("encoded: %i \n", instruction->encoded);
 }
