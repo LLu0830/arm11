@@ -1,11 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
-<<<<<<< HEAD
-project(arm11_31)
-=======
 project(arm11_31 C)
->>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 include_directories(src)
@@ -22,68 +18,9 @@ include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
 include_directories(src/part2_assembler/tokenizer)
 include_directories(src/part4_extension)
+include_directories(src/part4_extension/part4_utility)
 
 add_executable(arm11_31
-<<<<<<< HEAD
-    doc/Checkpoint.tex
-    doc/Makefile
-    doc/Report.tex
-    programs/gpio.s
-    src/part1_emulator/decode/decode.c
-    src/part1_emulator/decode/decode.h
-    src/part1_emulator/emulate/binaryFileLoader.c
-    src/part1_emulator/emulate/binaryFileLoader.h
-    src/part1_emulator/emulate/pipeline.c
-    src/part1_emulator/emulate/pipeline.h
-    src/part1_emulator/emulate/printOutput.c
-    src/part1_emulator/emulate/printOutput.h
-    src/part1_emulator/emulator_utility/DefinedTypes.h
-    src/part1_emulator/emulator_utility/instruction.h
-    src/part1_emulator/emulator_utility/state.h
-    src/part1_emulator/emulator_utility/utility.c
-    src/part1_emulator/emulator_utility/utility.h
-    src/part1_emulator/execute/execute.c
-    src/part1_emulator/execute/execute.h
-    src/part1_emulator/execute/executeBR.c
-    src/part1_emulator/execute/executeBR.h
-    src/part1_emulator/execute/executeDP.c
-    src/part1_emulator/execute/executeDP.h
-    src/part1_emulator/execute/executeMUL.c
-    src/part1_emulator/execute/executeMUL.h
-    src/part1_emulator/execute/executeSDT.c
-    src/part1_emulator/execute/executeSDT.h
-    src/part1_emulator/fetch/fetch.c
-    src/part1_emulator/fetch/fetch.h
-    src/part1_emulator/emulate.c
-    src/part2_assembler/assembler_utility/assembler_utility.c
-    src/part2_assembler/assembler_utility/assembler_utility.h
-    src/part2_assembler/assembler_utility/table.c
-    src/part2_assembler/assembler_utility/table.h
-    src/part2_assembler/encode/encode.c
-    src/part2_assembler/encode/encode.h
-    src/part2_assembler/encode/encodeBR.c
-    src/part2_assembler/encode/encodeBR.h
-    src/part2_assembler/encode/encodeDP.c
-    src/part2_assembler/encode/encodeDP.h
-    src/part2_assembler/encode/encodeMUL.c
-    src/part2_assembler/encode/encodeMUL.h
-    src/part2_assembler/encode/encodeSDT.c
-    src/part2_assembler/encode/encodeSDT.h
-    src/part2_assembler/encode/encodeSPECIAL.c
-    src/part2_assembler/encode/encodeSPECIAL.h
-    src/part2_assembler/readInstruction/readInstruction.c
-    src/part2_assembler/readInstruction/readInstruction.h
-    src/part2_assembler/readLabels/readLabels.c
-    src/part2_assembler/readLabels/readLabels.h
-    src/part2_assembler/tokenizer/tokenizer.c
-    src/part2_assembler/tokenizer/tokenizer.h
-    src/part2_assembler/assemble.c
-    src/part4_extension/main.c
-        src/part4_extension/part4_utility/part4_utility.c
-        src/part4_extension/part4_utility/part4_utility.h
-    src/emulate
-    src/Makefile src/part4_extension/part4_utility/RPI.h src/part4_extension/part4_utility/RPI.c src/part4_extension/part4_utility/shine.c src/part4_extension/part4_utility/shine.h)
-=======
         src/part1_emulator/decode/decode.c
         src/part1_emulator/decode/decode.h
         src/part1_emulator/emulate/binaryFileLoader.c
@@ -134,5 +71,11 @@ add_executable(arm11_31
         src/part2_assembler/readLabels/readLabels.h
         src/part2_assembler/tokenizer/tokenizer.c
         src/part2_assembler/tokenizer/tokenizer.h
-        src/part2_assembler/assemble.c)
->>>>>>> ac39de637d00853cb3b571cc60ef99272464b320
+        src/part2_assembler/assemble.c
+        src/part4_extension/part4_utility/part4_utility.c
+        src/part4_extension/part4_utility/part4_utility.h
+        src/part4_extension/part4_utility/RPI.c
+        src/part4_extension/part4_utility/RPI.h
+        src/part4_extension/part4_utility/shine.c
+        src/part4_extension/part4_utility/shine.h
+        src/part4_extension/main.c)
