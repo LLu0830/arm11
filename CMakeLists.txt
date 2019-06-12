@@ -70,6 +70,16 @@ add_executable(C_Group_31
         src/part2_assembler/readLabels/readLabels.h
         src/part2_assembler/tokenizer/tokenizer.c
         src/part2_assembler/tokenizer/tokenizer.h
+<<<<<<< HEAD
+        src/part2_assembler/assemble.c)
+
+target_link_libraries(C_GROUP_31 m)
+=======
         src/part2_assembler/assemble.c
         src/part4_extension/part4_utility/part4_utility.c
+<<<<<<< HEAD
         src/part4_extension/main.c src/part4_extension/part4_utility/shine.c src/part4_extension/part4_utility/shine.h)
+=======
+        src/part4_extension/main.c)
+>>>>>>> 09c1ab9f6a6b86d558976deafbe5376998078d18
+>>>>>>> e96c3e877be8aa210ea517f7edce6fca1e713e85
