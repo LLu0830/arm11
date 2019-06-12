@@ -43,4 +43,3 @@ void unmap_peripheral(struct bcm2835_peripheral *p);
 
 #endif //ARM11_31_RPI_H
 
-
