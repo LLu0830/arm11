@@ -40,6 +40,6 @@ void readLabels(label_address_list *table, FILE *file) {
             pair->address = lineNum + 1;
             insert_pair(pair, table);
         }
-        free(currentLabel);
     }
+    free(currentLabel);
 }
