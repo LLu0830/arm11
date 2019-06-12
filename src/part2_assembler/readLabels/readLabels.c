@@ -8,6 +8,7 @@
 #include "../../part1_emulator/emulator_utility/DefinedTypes.h"
 #include "../assembler_utility/assembler_utility.h"
 #include <string.h>
+#include <assert.h>
 
 #define MAX_LINE_SIZE 512
 
@@ -18,6 +19,7 @@ void readLabels(label_address_list *table, FILE *file) {
     if (file == NULL) {
         perror("Error: file is empty.");
     }
+    assert(table != 0);
     //generalize a new table if there isn't one
 //    if (table == NULL) {
 //        table = initialize_list();
@@ -36,6 +38,7 @@ void readLabels(label_address_list *table, FILE *file) {
             char *label = calloc(512, sizeof(char));
             label = strncpy(label, temp, strcspn(temp, ":"));
             label_address *pair = initialize_pair();
+            assert(pair != 0);
             pair->label = label;
             pair->address = lineNum + 1;
             insert_pair(pair, table);

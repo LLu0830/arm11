@@ -17,7 +17,6 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
 
     token mnemonic = instruction->mnemonic;
     char snd = *(mnemonic + 1);
-    mnemonic[0] = 'b';
     switch (*mnemonic) {
         case 't':
             if (snd == 's') {
