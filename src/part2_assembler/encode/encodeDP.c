@@ -11,8 +11,6 @@
 
 uint32_t getRegisterNumber(token reg) {
 //  ignoring the 'r' character to get the number from the register
-//    char *ptr;
-//    return (uint32_t) strtol(reg + 1, &ptr, 10);
     return (uint32_t) strtol(reg + 1, NULL, 10);
 }
 
@@ -20,6 +18,7 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
     if (*op2Pointer == '#') {
         emulator_instruction->I = 1;
         uint32_t expression;
+//      checks is expression is hexadecimal or decimal
         if (*(op2Pointer + 2) == 'x') {
             expression = (uint32_t) strtol(op2Pointer + 3, NULL, 16);
         } else {
@@ -28,17 +27,15 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
         uint32_t count = 0;
 
 //  checks if immediate value can be stored
-        while (count <= 30) {
+        while (count <= 0xf) {
             if (expression <= 0xff) {
-                count /= 2;
                 count = count << 9U;
 //   gets Operand2
                 uint32_t result = expression | count;
                 return result;
-
             }
             expression = rotateLeftNtimes(expression, 2);
-            count += 2;
+            count++;
         }
         if (count > 30) {
             perror("This numeric constant cannot be represented.");

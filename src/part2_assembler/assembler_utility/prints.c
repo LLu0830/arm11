@@ -2,7 +2,6 @@
 // Created by mw6118 on 11/06/19.
 //
 
-#include <bits/types/FILE.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
