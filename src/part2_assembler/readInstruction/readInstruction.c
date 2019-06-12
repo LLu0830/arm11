@@ -22,6 +22,7 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         return false;
     }
 
+
         //reads one line from file
     else {
         char *line = malloc(MAX_LINE_SIZE * sizeof(char));
