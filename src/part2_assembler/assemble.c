@@ -21,12 +21,14 @@ int main(int argc, char **argv) {
     int counter = 0;
     fp_read = fopen(argv[1], "r");
 //    not sure on what to put as the loop condition
+
     while (1) {
         assembler_instruction *instruction = malloc(sizeof(assembler_instruction));
         if (!readInstruction(fp_read, &counter, instruction)) {
             break;
         }
         encode(instruction, table);
+
         fwrite(&instruction->encoded, sizeof(uint32_t), 1, fp_write);
         instruction_free(instruction);
     }

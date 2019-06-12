@@ -132,6 +132,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o: ../src/part2_as
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o: ../src/part2_assembler/encode/encodeBR.c
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o: ../src/part2_assembler/encode/encodeBR.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o: ../src/part2_assembler/encode/encodeMUL.h
+CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o: ../src/part2_assembler/encode/encodeSDT.h
 
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o: ../src/part1_emulator/emulator_utility/DefinedTypes.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o: ../src/part1_emulator/emulator_utility/instruction.h
@@ -165,7 +166,7 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/par
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part1_emulator/emulator_utility/utility.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/assembler_utility/assembler_utility.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/assembler_utility/table.h
-CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeDP.h
+CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encode.h
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeSPECIAL.c
 CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o: ../src/part2_assembler/encode/encodeSPECIAL.h
 
@@ -193,12 +194,5 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o: ../src/part
 
 CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o: ../src/part4_extension/main.c
 
-CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o: ../src/part4_extension/part4_utility/RPI.c
-CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o: ../src/part4_extension/part4_utility/RPI.h
-
 CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o: ../src/part4_extension/part4_utility/part4_utility.c
-CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o: ../src/part4_extension/part4_utility/part4_utility.h
-
-CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o: ../src/part4_extension/part4_utility/RPI.h
-CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o: ../src/part4_extension/part4_utility/shine.c
 

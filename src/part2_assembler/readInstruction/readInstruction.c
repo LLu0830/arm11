@@ -39,6 +39,8 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
             counter++;
             instruction->currentAddress = (address) *counter;
             tokenizer(line, instruction);
+        } else {
+            return false;
         }
 
         free(line);

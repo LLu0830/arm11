@@ -26,6 +26,7 @@ label_address *initialize_pair(void) {
         exit(EXIT_FAILURE);
     }
 
+
 //    pair->label = NULL;
 //    pair->address = 0;
 //    pair->next = NULL;
@@ -63,8 +64,9 @@ void insert_pair(label_address *pair, label_address_list *list) {
 address lookup_address(label label, label_address_list *table) {
     label_address *i = table->header;
     while (i != NULL) {
-        if (i->label == label)
+        if (strcmp(i->label, label) == 0) {
             return i->address;
+        }
         i = i->next;
     }
     return 0;

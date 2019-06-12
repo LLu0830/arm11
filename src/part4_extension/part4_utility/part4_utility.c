@@ -5,10 +5,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <bits/mathcalls.h>
-#include "part4_utility.h"
+#include <math.h>
+//#include "part4_utility.h"
 #include "math.h"
-#include "shine.h"
+//#include "shine.h"
 
 void rec2(int val, int count, int b) {
     if (count <= 1) {

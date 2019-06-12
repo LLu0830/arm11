@@ -41,8 +41,10 @@ void readLabels(label_address_list *table, FILE *file) {
             assert(pair != 0);
             pair->label = label;
             pair->address = lineNum + 1;
+            printf("Adding label: \"%s\"\n", label);
             insert_pair(pair, table);
         }
     }
+
 //    free(currentLabel);
 }
