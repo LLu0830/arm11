@@ -22,12 +22,12 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         return false;
     }
 
-    //reads one line from file
+        //reads one line from file
     else {
         char *line = malloc(MAX_LINE_SIZE * sizeof(char));
         if (line == NULL) {
             perror("calloc in readInstruction");
-             exit(EXIT_FAILURE);
+            exit(EXIT_FAILURE);
         }
 
         if (fgets(line, MAX_LINE_SIZE, file) == NULL) {
@@ -35,9 +35,9 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         }
 
         //if the line exists and is not a label, it is passed to the tokenizer
-        if (!isLabel(line)) {
-            counter++;
+        if (!isLabel(line) && (line != NULL)) {
             instruction->currentAddress = (address) *counter;
+            (*counter)++;
             tokenizer(line, instruction);
         }
 
