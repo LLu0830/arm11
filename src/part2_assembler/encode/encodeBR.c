@@ -39,20 +39,24 @@ uint32_t getCond(char *condition) {
 
 
 void encodeBR(assembler_instruction *instruction, label_address_list *table) {
-    address target;
-    if (isContainedInTable(instruction->arg1, table)) {
-        target = lookup_address(instruction->arg1, table);
-    } else {
-        target = getValue(instruction->arg1);
-    }
-    uint32_t offset;
-    if (instruction->currentAddress + 8 > target) {
-        offset = instruction->currentAddress - target;
-    } else {
-        offset = target - instruction->currentAddress;
-    }
-    char *result = (instruction->mnemonic);
+//    address target;
+//    if (isContainedInTable(instruction->arg1, table)) {
+//        target = lookup_address(instruction->arg1, table);
+//    } else {
+//        target = getValue(instruction->arg1);
+//    }
+    uint32_t offset = instruction->currentAddress;
+    printf("%u", offset);
+//    if (instruction->currentAddress + 8 <= target) {
+//        offset = target - instruction->currentAddress - 8;
+//    } else {
+//        offset = instruction->currentAddress - target - 8;
+//    }
+    char *result = instruction->mnemonic;
+    printf("%s", result);
     uint32_t condition = getCond(result);
+    printf("%u", condition);
     instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
+    printf("%u", instruction->encoded);
     //printf("%u",instruction->encoded);
 }
