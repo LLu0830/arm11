@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <bits/mathcalls.h>
-#include "part4_utility.h"
+#include "../part4_utility/part4_utility.h"
 #include "math.h"
 #include "shine.h"
 
@@ -26,14 +26,14 @@ void rec2(int val, int count, int b) {
 void counter(unsigned int x)
 {   char buffer[3];
     sprintf(buffer,"%u%u%u\n",
-           //(x>>3)&0x1,
-           (x>>2)&0x1,
-           (x>>1)&0x1,
-           x&0x1);
+            //(x>>3)&0x1,
+            (x>>2)&0x1,
+            (x>>1)&0x1,
+            x&0x1);
     printf("%s",buffer)
     shine(buffer);
     if(x==0x7U) return;
-    else f(x+1);
+    else counter(x+1);
 }
 
 int counter_main(void)
@@ -50,6 +50,7 @@ int main() {
     rec(1, 4);
     return 0;
 }
+
 
 bool isBin(char *number) {
     int n;
