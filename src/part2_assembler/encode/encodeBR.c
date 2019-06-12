@@ -45,7 +45,12 @@ void encodeBR(assembler_instruction *instruction, label_address_list *table) {
     } else {
         target = getValue(instruction->arg1);
     }
-    uint32_t offset = target - (instruction->currentAddress) - 8;
+    uint32_t offset;
+    if (instruction->currentAddress + 8 > target) {
+        offset = instruction->currentAddress - target;
+    } else {
+        offset = target - instruction->currentAddress;
+    }
     char *result = (instruction->mnemonic);
     uint32_t condition = getCond(result);
     instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
