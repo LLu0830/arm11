@@ -50,7 +50,7 @@ void insert_pair(label_address *pair, label_address_list *list) {
 //    }
 //    free(aPair);
 
-    if (list->header == NULL) {
+    if (list->header->label == NULL) {
         list->header = pair;
         list->footer = pair;
     } else {

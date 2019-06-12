@@ -19,9 +19,9 @@ void readLabels(label_address_list *table, FILE *file) {
         perror("Error: file is empty.");
     }
     //generalize a new table if there isn't one
-    if (table == NULL) {
-        table = initialize_list();
-    }
+//    if (table == NULL) {
+//        table = initialize_list();
+//    }
     uint32_t lineNum = 0;
 
     char *currentLabel = calloc(MAX_LINE_SIZE, sizeof(char));
@@ -41,5 +41,5 @@ void readLabels(label_address_list *table, FILE *file) {
             insert_pair(pair, table);
         }
     }
-    free(currentLabel);
+//    free(currentLabel);
 }
