@@ -35,7 +35,7 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         }
 
         //if the line exists and is not a label, it is passed to the tokenizer
-        if (!isLabel(line) && (line != NULL)) {
+        if (!isLabel(line)) {
             counter++;
             instruction->currentAddress = (address) *counter;
             tokenizer(line, instruction);

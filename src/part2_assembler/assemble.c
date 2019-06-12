@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     fp_read = fopen(argv[1], "r");
 //    not sure on what to put as the loop condition
     while (1) {
-        assembler_instruction *instruction = calloc(1, sizeof(assembler_instruction));
+        assembler_instruction *instruction = malloc(sizeof(assembler_instruction));
         if (!readInstruction(fp_read, &counter, instruction)) {
             break;
         }

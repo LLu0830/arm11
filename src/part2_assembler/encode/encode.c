@@ -29,7 +29,7 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
             break;
         case 'b':
             instruction->type = BR;
-            switch (snd) {
+            switch (snd)) {
                 case 'e':
                     instruction->operationType = beq;
                     break;
