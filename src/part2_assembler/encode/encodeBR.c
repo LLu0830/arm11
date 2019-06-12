@@ -46,6 +46,7 @@ void encodeBR(assembler_instruction *instruction) {
     char *result = (instruction->mnemonic);
     uint32_t condition = getCond(result);
     instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
+    printf("%u",instruction->encoded);
 }
 
 
