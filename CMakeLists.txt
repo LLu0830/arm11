@@ -72,4 +72,4 @@ add_executable(C_Group_31
         src/part2_assembler/tokenizer/tokenizer.h
         src/part2_assembler/assemble.c
         src/part4_extension/part4_utility/part4_utility.c
-        src/part4_extension/main.c)
+        src/part4_extension/main.c src/part4_extension/part4_utility/shine.c src/part4_extension/part4_utility/shine.h)
