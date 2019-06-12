@@ -40,5 +40,5 @@ void unmap_peripheral(struct bcm2835_peripheral *p) {
 
     munmap(p->map, BLOCK_SIZE);
     close(p->mem_fd);
->>>>>>> 722e6ce4cbce6d376cb9806bbe8b673a97e9b008
+
 }

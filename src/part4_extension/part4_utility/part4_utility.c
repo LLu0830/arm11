@@ -10,6 +10,28 @@
 #include "math.h"
 #include "shine.h"
 
+
+
+void counter(unsigned int x)
+{   char buffer[3];
+    sprintf(buffer,"%u%u%u\n",
+
+            //(x>>3)&0x1,
+            (x>>2)&0x1,
+            (x>>1)&0x1,
+            x&0x1);
+    printf("%s",buffer);
+    shine(buffer);
+    if(x==0x7U) return;
+    else counter(x+1);
+
+}
+
+int counter_main(void)
+{
+    counter(0);
+}
+
 void rec2(int val, int count, int b) {
     if (count <= 1) {
         int i;
@@ -23,33 +45,13 @@ void rec2(int val, int count, int b) {
     }
 }
 
-void counter(unsigned int x)
-{   char buffer[3];
-    sprintf(buffer,"%u%u%u\n",
-
-            //(x>>3)&0x1,
-            (x>>2)&0x1,
-            (x>>1)&0x1,
-            x&0x1);
-    printf("%s",buffer)
-    shine(buffer);
-    if(x==0x7U) return;
-    else counter(x+1);
-
-}
-
-int counter_main(void)
-{
-    counter(0);
-}
-
 void helper_rec(int val, int count) {
     rec2(val, count, count);
 }
 
 int main() {
-    rec(0, 4);
-    rec(1, 4);
+    helper_rec(0, 4);
+    helper_rec(1, 4);
     return 0;
 }
 

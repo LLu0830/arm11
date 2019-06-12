@@ -10,12 +10,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include <part4_utility/shine.h>
+#include "part4_utility/shine.h"
 #include "part4_utility/part4_utility.h"
 
 #define MAX_CHAR_NUM 512
 #define MAX_LINE_NUM 7
 
+
+//reading commands from a file
 int main(int argc, char **argv) {
     //int end, loop, line;
     //char str[MAX_CHAR_NUM];
@@ -58,6 +60,7 @@ int main(int argc, char **argv) {
 }
 
 
+//reading commands from std input
 void anotherMain(void) {
     int n, c, k, b_int, m;
     int n1, n2;
@@ -71,17 +74,17 @@ void anotherMain(void) {
             break;
 
     }
-    printf("This is a 3-bit binary counter using raspberry pi");
+    printf("Mode 1, this is a 3-bit binary counter using raspberry pi");
     printf("Enter an integer(range from 0 to 7) in decimal number system\n");
     scanf("%d", &n);
     if (!isValid(n)) {
-        perror("Please enter a valid number")
+        perror("Please enter a valid number");
     }
     b_str = dec2bin(n);
     b_int = atoi(b_str);
     printf("Binary string of %d is: %s\n", n, b_str);
     shine(b_str);
-    printf("Look at the LEDs!!")
+    printf("Look at the LEDs!!");
 
 
     printf("Let's do some calculation");
@@ -97,13 +100,12 @@ void anotherMain(void) {
     int bin_result = operate_arith(n1, n2, operation_type);
     printf("The result of the operation is %d\n", bin_result);
     shine(int_to_str(bin_result));
-    printf("Look at the LEDs!!")
-    );
+    printf("Look at the LEDs!!");
 
 
-    free(dTob);
+    free(b_str);
 
-    return 0;
+    //return 0;
 }
 
 //taking a 32_bit decimal int and convert it to binary number as a string

@@ -34,9 +34,10 @@ struct bcm2835_peripheral {
     volatile unsigned int *addr;
 };
 
-struct bcm2835_peripheral gpio = {GPIO_BASE};
+//struct bcm2835_peripheral gpio = {GPIO_BASE};
 
-extern struct bcm2835_peripheral gpio;  // They have to be found somewhere, but can't be in the header
+extern struct bcm2835_peripheral gpio;
+// They have to be found somewhere, but can't be in the header
 int map_peripheral(struct bcm2835_peripheral *p);
 
 void unmap_peripheral(struct bcm2835_peripheral *p);
