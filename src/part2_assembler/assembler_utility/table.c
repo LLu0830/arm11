@@ -70,6 +70,15 @@ address lookup_address(label label) {
     return 0;
 }
 
+bool isContainedInTable(label label){
+    label_address *i=list->header;
+    while (i != NULL) {
+        if (!strcmp(i->label,label))
+            return true;
+        i = (label_address *) i->next;
+    }
+    return 0;
+}
 
 //label_address *allocList(void) {
 //    label_address *aPair = malloc(sizeof(label_address *));

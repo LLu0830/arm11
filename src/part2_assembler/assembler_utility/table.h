@@ -92,6 +92,8 @@ label_address_list *initialize_list();
 
 label_address *initialize_pair();
 
+bool isContainedInTable(label label);
+
 void insert_pair(label_address* pair, label_address_list *list);
 
 
