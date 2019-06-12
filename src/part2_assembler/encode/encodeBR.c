@@ -37,18 +37,10 @@ uint32_t getCond(char *condition) {
 
 void encodeBR(assembler_instruction *instruction) {
     address target;
-<<<<<<< HEAD
-    token expression = instruction->arg1;
-    if (isLabel(expression)) {
-        target = lookup_address(expression);
-    } else {
-        target = getPosFromChar(expression);
-=======
     if (isLabel(instruction->arg3)) {
         target=lookup_address(instruction->arg3);
     } else {
         target = getPosFromChar(instruction->arg3);
->>>>>>> 000245e60dcae46a9d4420f54591de8ce1faf97b
     }
     uint32_t offset = target - (instruction->currentAddress) - 8;
     char *result = (instruction->mnemonic);
