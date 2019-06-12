@@ -12,7 +12,7 @@
 #include "../assembler_utility/table.h"
 
 
-void encode(assembler_instruction *instruction) {
+void encode(assembler_instruction *instruction, label_address_list *table) {
 
 
     token mnemonic = instruction->mnemonic;
@@ -101,15 +101,19 @@ void encode(assembler_instruction *instruction) {
             }
             break;
         case 'e':
+            instruction->type = DP;
             instruction->operationType = eor;
             break;
         case 'o':
+            instruction->type = DP;
             instruction->operationType = orr;
             break;
         case 'r':
+            instruction->type = DP;
             instruction->operationType = rsb;
             break;
         case 'c':
+            instruction->type = DP;
             instruction->operationType = cmp;
             break;
 
@@ -121,6 +125,8 @@ void encode(assembler_instruction *instruction) {
 
     switch (instruction->type) {
         case DP:
+            printf("Before entering DP");
+            printf("New commit");
             encodeDP(instruction);
             break;
         case MUL:
@@ -130,10 +136,12 @@ void encode(assembler_instruction *instruction) {
             encodeSDT(instruction);
             break;
         case BR:
-            encodeBR(instruction);
+            printf("Before executing encodeBR :(");
+//            encodeBR(instruction, table);
+            printf("After executing encodeBR :)");
             break;
         case SPECIAL:
-            encodeSPECIAL(instruction);
+            encodeSPECIAL(instruction, table);
             break;
         default:
             break;

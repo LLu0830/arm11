@@ -7,6 +7,7 @@
 #include "encodeBR.h"
 #include "../assembler_utility/table.h"
 #include "encodeMUL.h"
+#include "encodeSDT.h"
 
 uint32_t getCond(char *condition) {
     uint32_t result = 1110;
@@ -29,28 +30,34 @@ uint32_t getCond(char *condition) {
         case bne:
             result = 0001;
             break;
+//        case b:
+//            result = 1110;
     }
     return result;
 }
 
 
 
-void encodeBR(assembler_instruction *instruction) {
-    address target;
-    if (isLabel(instruction->arg3)) {
-        target=lookup_address(instruction->arg3);
-    } else {
-        target = getPosFromChar(instruction->arg3);
-    }
-    uint32_t offset = target - (instruction->currentAddress) - 8;
-    char *result = (instruction->mnemonic);
-    uint32_t condition = getCond(result);
-    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
+void encodeBR(assembler_instruction *instruction, label_address_list *table) {
+//    address target;
+//    if (isContainedInTable(instruction->arg1, table)) {
+//        target = lookup_address(instruction->arg1, table);
+//    } else {
+//        target = getValue(instruction->arg1);
+//    }
+    printf("%p", (void *) instruction);
+//    uint32_t offset = instruction->currentAddress;
+//    printf("%u", offset);
+//    if (instruction->currentAddress + 8 <= target) {
+//        offset = target - instruction->currentAddress - 8;
+//    } else {
+//        offset = instruction->currentAddress - target - 8;
+//    }
+//    char *result = instruction->mnemonic;
+//    printf("%s", result);
+//    uint32_t condition = getCond(result);
+//    printf("%u", condition);
+//    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
+//    printf("%u", instruction->encoded);
     //printf("%u",instruction->encoded);
 }
-
-
-
-
-
-

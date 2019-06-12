@@ -1,21 +1,90 @@
-\documentclass[11pt]{article}
+%++++++++++++++++++++++++++++++++++++++++
+% Don't modify this section unless you know what you're doing!
+\documentclass[letterpaper,11pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{dirtytalk}
+\usepackage{textcomp}
+\hypersetup{
+colorlinks=true,       % false: boxed links; true: colored links
+linkcolor=blue,        % color of internal links
+citecolor=blue,        % color of links to bibliography
+filecolor=magenta,     % color of file links
+urlcolor=blue
+}
+%++++++++++++++++++++++++++++++++++++++++
 
-\usepackage{fullpage}
 
 \begin{document}
 
-\title{Our Extension...}
-\author{TODO}
+    \title{\textbf{Final Report}}
+    \author{C Group 31\\* Rini Banerjee (rb3018), Katarina Kulkova (kk6418),\\* Lize Lu (ll7818), Manshu Wang (mw6118)}
+    \date{June 2019}
+    \maketitle
 
-\maketitle
+    \section{Project Structure}
+    \subsection{Part I - The Emulator}
+    For details on how we structured Part I, please see our Checkpoint Report.
 
-\section{Introduction}
+    \subsection{Part II - The Assembler}
+    \noindent{In a similar style to that of our emulator, we have divided our assembler into five directories: \* \textit{assembler\_utility}, \textit{encode}, \textit{readInstruction}, \textit{readLabels} and \textit{tokenizer}. The \texttt{assemble.c} file (which contains the main function for Part II) is outside the directories, and all of the aforementioned directories and files are inside the \textit{part2\_emulator} directory in \textit{src}.\\*
+    }
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+    \noindent Here is a brief synopsis of how we structured each directory:
+
+    \begin{itemize}
+        \item \textit{assembler\_utility}: includes \texttt{assembler\_utility.c}, \textt{table.c} and corresponding header files. \textt{assembler\_utility.c} contains utility functions that we need for the assembler specifically - they had not been written in Part I's \textt{utility.c} because we wrote them after finishing Part I. \textt{table.c} includes functions that are needed for the symbol table
+        \item \textit{encode}:
+        \item \textit{readInstruction}:
+        \item \textit{readLabels}:
+        \item \textit{tokenizer}:
+    \end{itemize}
+
+    \subsection{Part III - General Purpose Input/Output on a Raspberry Pi}
+    \subsection{Part IV - The Extension}
+    \section{Testing our implementation}
+    \section{Reflecting on the project}
+    \subsection{Group reflection}
+    \subsection{Individual reflections}
+    \subsubsection{Rini}
+    \subsubsection{Katarina}
+    \subsubsection{Lize}
+    The cooperation in this project was sound and every group member worked hard and fitted in well. Take the way we divided work as an example, The plan we made narrowed our disadvantages and extended our strengths on some level. I had no experience with C language before and the IDE on my own laptop was not fully-functioning, so I tended to demand more time writing correct code and debugging. This tends to be my weakness, the solution I thought about before started working in the group was simply spend more time working on the project in order to finish my part in time. However, I am willing to spend more time reading the spec and working. A positive attitude is the only thing I can think of as a strength of mine. To make up for my weakness, my original thought was simply to spend more time working on the project in order to finish my part in time.\\*
+
+    \noindent The plan we made after finishing part 1 was Rini and Manshu kept debugging to pass tests. I did not do much of the debugging work which I am not good at, instead, Katarina and I started figuring out the general structure and schema of part 2 and start working on it. The project was done in a well-organized way. It was a pleasure working in this group.
+    \subsubsection{Manshu}
+    % \noindent{We have been meeting regularly, so that if anyone has any questions or suggestions for any part of the code, we can get through it quickly and efficiently. We each have our own branch on GitLab, and always communicate with each other before merging into the master branch; this is to ensure no member\textquotesingle s code is mistakenly overwritten by another\textquotesingle s.\\*
+    % }
+
+    % \noindent{We think our group is working together quite well. One possible improvement for the next parts of our project would be to come up with the overall structure for our code earlier, since this would help us split the work among ourselves more quickly and waste less time figuring out what we need to do.}
+
+
+    % \section{Implementation Strategies}
+    % \subsection{How we structured our emulator}
+    % We have divided our emulator into five directories: \textit{fetch}, \textit{decode}, \textit{execute}, \textit{emulate} and \textit{emulator\_utility}. The \texttt{emulate.c} file (which contains the main function for Part I) is outside all of these directories, and all of these are included in the part1\_emulator directory inside src.\\*
+
+    % \noindent Here is a brief synopsis of how we structured each directory:
+
+    % \begin{itemize}
+    %     \item \textit{fetch}: includes \texttt{fetch.c} and a corresponding header file. \texttt{fetch.c} uses the current value of the PC and the ARM11 structure we have created to fetch the next instruction from memory
+    %     \item \textit{decode}: includes \texttt{decode.c} and a corresponding header file. \texttt{decode.c} contains the decode function, which takes an instruction, works out what type of instruction it is and then decodes it, splitting it into its components and storing this information in the struct instruction\_type
+    %     \item \textit{execute}: includes \texttt{execute.c}, \texttt{executeBR.c}, \texttt{executeDP.c}, \texttt{executeMUL.c}, \texttt{executeSDT.c} and corresponding header files. \texttt{execute.c} has a function, execute, which executes a decoded instruction in our struct for representing ARM11 (stateOfMachine), using a switch-case statement on the type of instruction to call functions from \texttt{executeBR.c}, \texttt{executeDP.c}, \texttt{executeMUL.c}, or \texttt{executeSDT.c}
+    %     \item \textit{emulate}: includes \texttt{binaryFileLoader.c}, \texttt{pipeline.c}, \texttt{printOutput.c} and corresponding header files. The function binaryFileLoader in \texttt{binaryFileLoader.c} loads instructions from the binary file specified in the command line argument into memory, and \texttt{pipeline.c} runs the three-stage pipeline needed to simulate the fetch-decode-execute cycle in the main function of \texttt{emulate.c}. \texttt{printOutput.c} prints the values of the registers in ARM11; this is particularly useful when debugging our program
+    %     \item \textit{emulator\_utility}: contains \texttt{utility.c} and a corresponding header file, \texttt{DefinedTypes.h},\\* \texttt{instruction.h} and \texttt{state.h}. \texttt{utility.c} contains utility functions for manipulation of binary numbers (e.g., masks). \texttt{DefinedTypes.h} contains enums that are used to define constants (e.g., an enum for the different types of instruction that the emulator should be able to recognise). \texttt{instruction.h} defines a struct called instruction\_type that is used to store the decoded parts of an instruction. \texttt{state.h} defines a struct for representing ARM11, called stateOfMachine - this contains the 17 registers and their contents; the instructions taken from the binary file specified as a command line argument; and a boolean that represents whether or not the processor is running (i.e., whether the program has been terminated)
+    % \end{itemize}
+    % \texttt{emulate.c} contains the main function for running the emulator.
+
+    % \subsection{Which bits from Part I might we be able to reuse in Part II?}
+    % We believe that \texttt{state.h} and \texttt{DefinedTypes.h} may be useful in Part II. \texttt{state.h} could be useful for representing the ARM11 registers and instructions, while \texttt{DefinedTypes.h} contains many enums that seem to be relevant for Part II as well - for example, when recognising assembly language instructions.
+
+    % \subsection{Future implementation tasks that may be challenging}
+
+    % Although we cannot predict exactly which parts of the project we will find challenging in the future, we anticipate that some sections of Part II will be difficult for us (for example, creating the symbol table abstract data type). In addition, none of us have used a Raspberry Pi before, so we may need some time to adjust to using such a new form of technology.\\*
+
+    % \noindent In order to make such tasks easier to complete, we have started making a detailed outline of how we would like to structure our code in Part II; improving our project organisation will allow us to spend more time tackling difficult tasks like the ones mentioned above.
 
 \end{document}
