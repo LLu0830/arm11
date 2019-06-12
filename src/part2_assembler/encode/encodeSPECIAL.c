@@ -8,11 +8,11 @@
 #include "../assembler_utility/table.h"
 #include "../../part1_emulator/emulator_utility/utility.h"
 #include "../assembler_utility/assembler_utility.h"
-#include "encode.h"
+#include "encodeDP.h"
 
 void encodeSPECIAL(assembler_instruction *instruction) {
 
-    printf("Entering encodeSPECIAL");
+    printf("Entering encodeSPECIAL \n");
 
     switch (instruction->operationType) {
         case andeq:
@@ -22,36 +22,42 @@ void encodeSPECIAL(assembler_instruction *instruction) {
 //                && !strcmp(instruction->arg3, "r0")) {
 //                instruction->encoded = 0x0;
 //            }
-            printf("andeq");
+            printf("andeq \n");
             instruction->encoded = 0;
             break;
         case lsl: {
             //lsl gets converted to move instruction: mov Rn, Rn, lsl <#expression>
 
 
+            printf("calling mov \n");
             free(instruction->mnemonic);
             instruction->mnemonic = copy_string("mov");
 
 
             token rn = instruction->arg1;
-            token expression = instruction->arg2;
+            printf("arg2 before: %s\n", instruction->arg2);
+            char *expression = copy_string(instruction->arg2);
+            printf("expression: %s \n", expression);
 
             free(instruction->arg2);
             free(instruction->arg3);
+            free(instruction->arg4);
 
             instruction->arg1 = rn;
             instruction->arg2 = rn;
             instruction->arg3 = copy_string("lsl");
-            instruction->arg4 = expression;
-            printf("%s\n", instruction->arg1);
-            printf("%s\n", instruction->arg2);
-            printf("%s\n", instruction->arg3);
-            printf("%s\n", instruction->arg4);
+            printf("expression before being put into arg4: %s \n", expression);
+            instruction->arg4 = copy_string(expression);
+            printf("expression after arg4: %s \n", expression);
 
+            printf("arg1: %s\n", instruction->arg1);
+            printf("arg2: %s\n", instruction->arg2);
+            printf("arg3: %s\n", instruction->arg3);
+            printf("expression: %s \n", expression);
+            printf("arg4: %s\n", instruction->arg4);
+            free(expression);
 
-
-
-            encode(instruction);
+            encodeDP(instruction);
             break;
         }
         default:
