@@ -1,7 +1,0 @@
-Enter an integer in decimal number system
-3
-Enter 2 integers in either decimal or binary system
-2
-3
-Enter the type of operation you want to do to the two number entered before (either "add","sub","mul" or "div"
-add
