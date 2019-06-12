@@ -98,6 +98,7 @@ void encodeDPSetFlags(assembler_instruction *assembler_instruction, Instruction 
 }
 
 void encodeDP(assembler_instruction *assembler_instruction) {
+
     token mnemonic = assembler_instruction->mnemonic;
     Instruction emulator_instruction;
     switch (*mnemonic) {
