@@ -37,10 +37,10 @@ uint32_t getCond(char *condition) {
 
 
 
-void encodeBR(assembler_instruction *instruction) {
+void encodeBR(assembler_instruction *instruction, label_address_list *table) {
     address target;
-    if (isContainedInTable(instruction->arg1)) {
-        target=lookup_address(instruction->arg1);
+    if (isContainedInTable(instruction->arg1, table)) {
+        target=lookup_address(instruction->arg1, table);
     } else {
         target = getPosFromChar(instruction->arg1);
     }

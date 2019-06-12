@@ -84,20 +84,20 @@ typedef struct {
 } label_address_list;
 
 
-label_address *aPair;
-label_address_list *list;
+//label_address *aPair;
+//label_address_list *list;
 
 //do these have to be static?
 label_address_list *initialize_list();
 
 label_address *initialize_pair();
 
-bool isContainedInTable(label label);
+bool isContainedInTable(label label, label_address_list *table);
 
 void insert_pair(label_address* pair, label_address_list *list);
 
 
-address lookup_address(label label);
+address lookup_address(label label, label_address_list *table);
 
 label_address *allocList(void);
 
