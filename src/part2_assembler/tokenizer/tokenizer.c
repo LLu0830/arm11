@@ -15,9 +15,10 @@ void tokenizer(char *instruction, assembler_instruction *parsed) {
 
     char* ptr;
     parsed->mnemonic = copy_string(strtok_r(instruction, " ", &ptr));
-    parsed->arg1 = copy_string(strtok_r(NULL, ", ", &ptr));
-    parsed->arg2 = copy_string(strtok_r(NULL, ", ", &ptr));
-    parsed->arg3 = copy_string(strtok_r(NULL, ", ", &ptr));
-    parsed->arg4 = copy_string(strtok_r(NULL, ", ", &ptr));
+    printf("%s", parsed->mnemonic);
+    parsed->arg1 = copy_string(strtok_r(NULL, ", \n", &ptr));
+    parsed->arg2 = copy_string(strtok_r(NULL, ", \n", &ptr));
+    parsed->arg3 = copy_string(strtok_r(NULL, ", \n", &ptr));
+    parsed->arg4 = copy_string(strtok_r(NULL, ", \n", &ptr));
 
 }

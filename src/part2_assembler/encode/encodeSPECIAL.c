@@ -10,7 +10,7 @@
 #include "../assembler_utility/assembler_utility.h"
 #include "encodeDP.h"
 
-void encodeSPECIAL(assembler_instruction *instruction) {
+void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table) {
 
     printf("Entering encodeSPECIAL \n");
 
@@ -57,7 +57,13 @@ void encodeSPECIAL(assembler_instruction *instruction) {
             printf("arg4: %s\n", instruction->arg4);
             free(expression);
 
-            encodeDP(instruction);
+
+            //encodeDP(instruction);
+
+
+
+            encode(instruction, table);
+
             break;
         }
         default:
