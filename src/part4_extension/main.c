@@ -58,46 +58,52 @@ int main(int argc, char **argv) {
 }
 
 
-void anotherMain{
-        int n, c, k, b_int;
-        int n1, n2;
-        char *b_str;
-        char *operation_type;
+void anotherMain(void) {
+    int n, c, k, b_int, m;
+    int n1, n2;
+    char *b_str;
+    char *operation_type;
+    printf("Please select the mode, enter 1 for 3 bits binary counter, 2 for 3-bit binary numeroscope, 3 for numeroscope\nthat has enbeded arithmetic operation for 2 numbers");
+    scanf("%d", &m);
+    switch (m) {
+        case 1:
+            counter_main();
+            break;
 
-        printf("This is a 3-bit binary counter using raspberry pi");
-        printf("Enter an integer(range from 0 to 7) in decimal number system\n");
-        scanf("%d", &n);
-        if (!isValid(n)){
-            perror("Please enter a valid number")
-        }
-        b_str = dec2bin(n);
-        b_int = atoi(b_str);
-        printf("Binary string of %d is: %s\n", n, b_str);
-        shine(b_str);
-        printf("Look at the LEDs!!")
-
-
-
-        printf("Let's do some calculation");
-        printf("Enter first of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
-        scanf("%d", &n1);
-
-        printf("Enter the type of operation(add,sub,mul,div\n");
-        scanf("%s", &operation_type);
-
-        printf("Enter second of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
-        scanf("%d", &n2);
-
-        int bin_result=operate_arith(n1, n2, operation_type);
-        printf("The result of the operation is %d\n", bin_result);
-        shine(int_to_str(bin_result));
-        printf("Look at the LEDs!!")
-        );
+    }
+    printf("This is a 3-bit binary counter using raspberry pi");
+    printf("Enter an integer(range from 0 to 7) in decimal number system\n");
+    scanf("%d", &n);
+    if (!isValid(n)) {
+        perror("Please enter a valid number")
+    }
+    b_str = dec2bin(n);
+    b_int = atoi(b_str);
+    printf("Binary string of %d is: %s\n", n, b_str);
+    shine(b_str);
+    printf("Look at the LEDs!!")
 
 
-        free(dTob);
+    printf("Let's do some calculation");
+    printf("Enter first of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
+    scanf("%d", &n1);
 
-        return 0;
+    printf("Enter the type of operation(add,sub,mul,div\n");
+    scanf("%s", &operation_type);
+
+    printf("Enter second of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
+    scanf("%d", &n2);
+
+    int bin_result = operate_arith(n1, n2, operation_type);
+    printf("The result of the operation is %d\n", bin_result);
+    shine(int_to_str(bin_result));
+    printf("Look at the LEDs!!")
+    );
+
+
+    free(dTob);
+
+    return 0;
 }
 
 //taking a 32_bit decimal int and convert it to binary number as a string
