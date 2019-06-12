@@ -49,6 +49,9 @@ typedef char *token;
 typedef char *label;
 typedef uint32_t address;
 
+extern uint32_t instruction_array[10];
+extern int array_counter;
+
 
 typedef struct {
     token mnemonic;

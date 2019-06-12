@@ -1,57 +1,44 @@
 //
 // Created by ll7818 on 11/06/19.
 //
-#include <stdlib.h>
+
+
+#include <bits/fcntl-linux.h>
+#include <fcntl.h>
 #include "RPI.h"
 
-void shine(char *n) {
-    if (map_peripheral(&gpio) == -1) {
-        perror("Failed to map the physical GPIO registers into the virtual memory space.\n");
-        EXIT_FAILURE;
+struct bcm2835_peripheral gpio = {GPIO_BASE};
+
+// Exposes the physical address defined in the passed structure using mmap on /dev/mem
+int map_peripheral(struct bcm2835_peripheral *p) {
+    // Open /dev/mem
+    if ((p->mem_fd = open("/dev/mem", O_RDWR | O_SYNC)) < 0) {
+        printf("Failed to open /dev/mem, try checking permissions.\n");
+        return -1;
     }
 
-    if (n[0]) {
-        // Define pin 7 as output
-        INP_GPIO(4);
-        OUT_GPIO(4);
+    p->map = mmap(
+            NULL,
+            BLOCK_SIZE,
+            PROT_READ | PROT_WRITE,
+            MAP_SHARED,
+            p->mem_fd,      // File descriptor to physical memory virtual file '/dev/mem'
+            p->addr_p       // Address in physical map that we want this memory block to expose
+    );
 
-//    while(n=='1')
-//    {
-        // Toggle pin 7 (blink a led!)
-
-
-        //makes the led shine
-        GPIO_SET = 1 << 4;
-        //sleep(1);
-
-
+    if (p->map == MAP_FAILED) {
+        perror("mmap");
+        return -1;
     }
 
-    if (n[1]) {
-        //define pin 21 as output
-        INP_GPIO(5);
-        OUT_GPIO(5);
+    p->addr = (volatile unsigned int *) p->map;
 
-        //toggle pin 21
-        GPIO_SET = 1 << 5;
+    return 0;
+}
 
+void unmap_peripheral(struct bcm2835_peripheral *p) {
 
-    }
-    if (n[2]) {
-
-        //define pin 22 as output
-        INP_GPIO(6);
-        OUT_GPIO(6);
-
-        //toggle pin 22
-        GPIO_SET = 1 << 6;
-    }
-
-    //reset the pin to shot the led
-    GPIO_CLR = 1 << 4;
-    GPIO_CLR = 1 << 5;
-    GPIO_CLR = 1 << 6;
-    sleep(1);
-
-    //return 0;
+    munmap(p->map, BLOCK_SIZE);
+    close(p->mem_fd);
+>>>>>>> 722e6ce4cbce6d376cb9806bbe8b673a97e9b008
 }

@@ -50,7 +50,9 @@ void shine(char *n) {
     //reset the pin to shot the led
     GPIO_CLR = 1 << 4;
     GPIO_CLR = 1 << 5;
-    GPIO_CLR = 1 << 7;
+
+    GPIO_CLR = 1 << 6;
+
     sleep(1);
 
     //return 0;

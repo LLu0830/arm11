@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../part4_extension/part4_utility/shine.h"
+#include <part4_utility/shine.h>
 #include "part4_utility/part4_utility.h"
 
 #define MAX_CHAR_NUM 512
@@ -97,13 +97,13 @@ void anotherMain(void) {
     int bin_result = operate_arith(n1, n2, operation_type);
     printf("The result of the operation is %d\n", bin_result);
     shine(int_to_str(bin_result));
-    printf("Look at the LEDs!!");
-
+    printf("Look at the LEDs!!")
+    );
 
 
     free(dTob);
 
-    //return 0;
+    return 0;
 }
 
 //taking a 32_bit decimal int and convert it to binary number as a string
