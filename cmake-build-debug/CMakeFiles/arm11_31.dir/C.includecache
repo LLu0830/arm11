@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/rb3018/arm11_31/src/part1_emulator/emulate.c
+
+/homes/rb3018/arm11_31/src/part4_extension/main.c
+
