@@ -12,7 +12,7 @@
 #include "../assembler_utility/table.h"
 
 
-void encode(assembler_instruction *instruction) {
+void encode(assembler_instruction *instruction, label_address_list *table) {
 
 
     token mnemonic = instruction->mnemonic;
@@ -130,10 +130,10 @@ void encode(assembler_instruction *instruction) {
             encodeSDT(instruction);
             break;
         case BR:
-            encodeBR(instruction);
+            encodeBR(instruction, table);
             break;
         case SPECIAL:
-            encodeSPECIAL(instruction);
+            encodeSPECIAL(instruction, table);
             break;
         default:
             break;

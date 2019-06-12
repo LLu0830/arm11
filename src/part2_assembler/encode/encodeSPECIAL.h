@@ -7,6 +7,7 @@
 
 #include "../assembler_utility/table.h"
 
-void encodeSPECIAL(assembler_instruction *instruction);
+//void encodeSPECIAL(assembler_instruction *instruction);
+void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table);
 
 #endif //ARM11_31_ENCODESPECIAL_H

@@ -42,5 +42,4 @@ void readLabels(label_address_list *table, FILE *file) {
         }
         free(currentLabel);
     }
-
 }

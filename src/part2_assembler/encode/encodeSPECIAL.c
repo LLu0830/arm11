@@ -8,9 +8,9 @@
 #include "../assembler_utility/table.h"
 #include "../../part1_emulator/emulator_utility/utility.h"
 #include "../assembler_utility/assembler_utility.h"
-#include "encodeDP.h"
+#include "encode.h"
 
-void encodeSPECIAL(assembler_instruction *instruction) {
+void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table) {
 
 
     switch (instruction->operationType) {
@@ -29,28 +29,31 @@ void encodeSPECIAL(assembler_instruction *instruction) {
             free(instruction->mnemonic);
             instruction->mnemonic = copy_string("mov");
 
-            char *mov_arg2 = copy_string(instruction->arg1);
-            char *mov_arg4 = copy_string(instruction->arg2);
+
+            token rn = instruction->arg1;
+            token expression = instruction->arg2;
 
             free(instruction->arg2);
             free(instruction->arg3);
-            free(instruction->arg3);
 
-            instruction->arg2 = copy_string(mov_arg2);
+            instruction->arg1 = rn;
+            instruction->arg2 = rn;
             instruction->arg3 = copy_string("lsl");
-            instruction->arg4 = copy_string(mov_arg4);
+            instruction->arg4 = expression;
+            printf("%s\n", instruction->arg1);
+            printf("%s\n", instruction->arg2);
+            printf("%s\n", instruction->arg3);
+            printf("%s\n", instruction->arg4);
 
-            free(mov_arg2);
-            free(mov_arg4);
 
-            encodeDP(instruction);
+
+
+            encode(instruction, table);
             break;
         }
         default:
             perror("Invalid operation type");
             exit(EXIT_FAILURE);
     }
-
-
 
 }

@@ -29,16 +29,18 @@ uint32_t getCond(char *condition) {
         case bne:
             result = 0001;
             break;
+//        case b:
+//            result = 1110;
     }
     return result;
 }
 
 
 
-void encodeBR(assembler_instruction *instruction) {
+void encodeBR(assembler_instruction *instruction, label_address_list *table) {
     address target;
-    if (isLabel(instruction->arg1)) {
-        target=lookup_address(instruction->arg1);
+    if (isContainedInTable(instruction->arg1, table)) {
+        target=lookup_address(instruction->arg1, table);
     } else {
         target = getPosFromChar(instruction->arg1);
     }
@@ -46,7 +48,10 @@ void encodeBR(assembler_instruction *instruction) {
     char *result = (instruction->mnemonic);
     uint32_t condition = getCond(result);
     instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
+    //printf("%u",instruction->encoded);
 }
+
+
 
 
 

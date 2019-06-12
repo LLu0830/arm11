@@ -60,8 +60,8 @@ void insert_pair(label_address *pair, label_address_list *list) {
     }
 }
 
-address lookup_address(label label) {
-    label_address *i = list->header;
+address lookup_address(label label, label_address_list *table) {
+    label_address *i = table->header;
     while (i != NULL) {
         if (i->label == label)
             return i->address;
@@ -70,6 +70,15 @@ address lookup_address(label label) {
     return 0;
 }
 
+bool isContainedInTable(label label, label_address_list *table){
+    label_address *i = table->header;
+    while (i != NULL) {
+        if (!strcmp(i->label,label))
+            return 1;
+        i = (label_address *) i->next;
+    }
+    return 0;
+}
 
 //label_address *allocList(void) {
 //    label_address *aPair = malloc(sizeof(label_address *));

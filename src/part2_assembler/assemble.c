@@ -12,8 +12,9 @@ int main(int argc, char **argv) {
     FILE *fp_write;
     fp_read = fopen(argv[1], "r");
     fp_write = fopen(argv[2], "wb+");
-    label_address_list table = {NULL, NULL};
-    readLabels(&table, fp_read);
+    label_address_list *table = initialize_list();
+//    label_address_list table = {NULL, NULL};
+    readLabels(table, fp_read);
     fclose(fp_read);
 //    only have this for now for Katarina's readInstruction function below - may be removed later
     int counter = 0;
@@ -24,7 +25,7 @@ int main(int argc, char **argv) {
         if (!readInstruction(fp_read, &counter, instruction)) {
             break;
         }
-        encode(instruction);
+        encode(instruction, table);
         fwrite(&instruction->encoded, sizeof(uint32_t), 1, fp_write);
         instruction_free(instruction);
     }
