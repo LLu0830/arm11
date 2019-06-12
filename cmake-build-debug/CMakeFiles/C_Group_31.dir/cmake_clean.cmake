@@ -25,8 +25,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
   "CMakeFiles/C_Group_31.dir/src/part2_assembler/assemble.c.o"
   "CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/part4_utility.c.o"
-  "CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/RPI.c.o"
-  "CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/shine.c.o"
   "CMakeFiles/C_Group_31.dir/src/part4_extension/main.c.o"
   "C_Group_31.pdb"
   "C_Group_31"

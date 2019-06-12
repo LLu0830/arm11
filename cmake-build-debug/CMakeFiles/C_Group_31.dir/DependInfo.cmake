@@ -30,30 +30,22 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readLabels/readLabels.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/C_Group_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/tokenizer/tokenizer.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/C_Group_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/main.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/C_Group_31.dir/src/part4_extension/main.c.o"
-  "/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/RPI.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/RPI.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/part4_utility.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/part4_utility.c.o"
-  "/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/shine.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/shine.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../."
-  "../src"
-  "../src/part1_emulator"
   "../src/part1_emulator/decode"
   "../src/part1_emulator/emulate"
   "../src/part1_emulator/emulator_utility"
   "../src/part1_emulator/execute"
   "../src/part1_emulator/fetch"
-  "../src/part2_assembler"
   "../src/part2_assembler/assembler_utility"
   "../src/part2_assembler/encode"
   "../src/part2_assembler/readInstruction"
   "../src/part2_assembler/readLabels"
   "../src/part2_assembler/tokenizer"
-  "../src/part4_extension"
-  "../src/part4_extension/part4_utility"
   )
 
 # Targets to which this target links.
