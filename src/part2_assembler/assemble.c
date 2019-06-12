@@ -7,6 +7,7 @@
 #include "../part2_assembler/assembler_utility/assembler_utility.h"
 
 int main(int argc, char **argv) {
+    printf("HELLO WE ARE STARTING ASSEMBLER\n");
 //  File pointers for reading from (fpr) and writing to (fpw)
     FILE *fp_read;
     FILE *fp_write;
