@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 #include "../assembler_utility/table.h"
 #include "../../part1_emulator/emulator_utility/DefinedTypes.h"
 
@@ -15,6 +16,9 @@ label_address_list *initialize_list(void) {
 
     list->header = header;
     list->footer = footer;
+
+    header->next = footer;
+    footer->prev = header;
 
     return list;
 }
@@ -51,19 +55,15 @@ void insert_pair(label_address *pair, label_address_list *list) {
 //    }
 //    free(aPair);
 
-    if (list->header->label == NULL) {
-        list->header = pair;
-        list->footer = pair;
-    } else {
-        list->footer->prev->next = pair;
-        pair->prev = list->footer->prev;
-        list->footer = pair;
-    }
+    pair->prev = list->footer->prev;
+    pair->next = list->footer;
+    list->footer->prev = pair;
+    pair->prev->next = pair;
 }
 
 address lookup_address(label label, label_address_list *table) {
-    label_address *i = table->header;
-    while (i != NULL) {
+    label_address *i = table->header->next;
+    while (i != table->footer) {
         if (strcmp(i->label, label) == 0) {
             return i->address;
         }
@@ -73,8 +73,8 @@ address lookup_address(label label, label_address_list *table) {
 }
 
 bool isContainedInTable(label label, label_address_list *table){
-    label_address *i = table->header;
-    while (i != NULL) {
+    label_address *i = table->header->next;
+    while (i != table->footer) {
         if (!strcmp(i->label,label)) {
             return 1;
         }

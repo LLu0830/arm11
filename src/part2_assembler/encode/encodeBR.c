@@ -52,12 +52,13 @@ void encodeBR(assembler_instruction *instruction, label_address_list *table) {
         target = getPosFromChar(instruction->arg1);
     }
     printf("Current address: %u\n", instruction->currentAddress);
-    uint32_t offset = target - (instruction->currentAddress) - 8;
+    uint32_t offset = target - (instruction->currentAddress) - 2;
 //    if (instruction->currentAddress + 8 <= target) {
 //        offset = target - instruction->currentAddress - 8;
 //    } else {
 //        offset = instruction->currentAddress - target - 8;
 //    }
     uint32_t condition = getCond(instruction->operationType);
-    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
+    printf("Offset: %x\n", offset);
+    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset) & 0x00ffffffU);
 }
