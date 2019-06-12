@@ -29,7 +29,8 @@ typedef enum {
     SDT,
     BR,
     HLT,
-    SPECIAL
+    SPECIAL,
+    ERROR
 
 } InstructionType;
 
