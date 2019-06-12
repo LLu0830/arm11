@@ -46,18 +46,18 @@ void encodeBR(assembler_instruction *instruction, label_address_list *table) {
 //        target = getValue(instruction->arg1);
 //    }
     printf("%p", (void *) instruction);
-    uint32_t offset = instruction->currentAddress;
-    printf("%u", offset);
+//    uint32_t offset = instruction->currentAddress;
+//    printf("%u", offset);
 //    if (instruction->currentAddress + 8 <= target) {
 //        offset = target - instruction->currentAddress - 8;
 //    } else {
 //        offset = instruction->currentAddress - target - 8;
 //    }
-    char *result = instruction->mnemonic;
-    printf("%s", result);
-    uint32_t condition = getCond(result);
-    printf("%u", condition);
-    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
-    printf("%u", instruction->encoded);
+//    char *result = instruction->mnemonic;
+//    printf("%s", result);
+//    uint32_t condition = getCond(result);
+//    printf("%u", condition);
+//    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
+//    printf("%u", instruction->encoded);
     //printf("%u",instruction->encoded);
 }

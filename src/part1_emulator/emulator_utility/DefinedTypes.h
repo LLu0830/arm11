@@ -30,7 +30,6 @@ typedef enum {
     BR,
     HLT,
     SPECIAL,
-    ERROR
 
 } InstructionType;
 

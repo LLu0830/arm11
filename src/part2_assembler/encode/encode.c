@@ -17,6 +17,7 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
 
     token mnemonic = instruction->mnemonic;
     char snd = *(mnemonic + 1);
+    mnemonic[0] = 'b';
     switch (*mnemonic) {
         case 't':
             if (snd == 's') {
@@ -137,7 +138,7 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
             break;
         case BR:
             printf("Before executing encodeBR :(");
-//            encodeBR(instruction, table);
+            encodeBR(instruction, table);
             printf("After executing encodeBR :)");
             break;
         case SPECIAL:
