@@ -65,7 +65,7 @@ address lookup_address(label label, label_address_list *table) {
     while (i != NULL) {
         if (i->label == label)
             return i->address;
-        i = (label_address *) i->next;
+        i = i->next;
     }
     return 0;
 }
@@ -73,9 +73,10 @@ address lookup_address(label label, label_address_list *table) {
 bool isContainedInTable(label label, label_address_list *table){
     label_address *i = table->header;
     while (i != NULL) {
-        if (!strcmp(i->label,label))
+        if (!strcmp(i->label,label)) {
             return 1;
-        i = (label_address *) i->next;
+        }
+        i = i->next;
     }
     return 0;
 }

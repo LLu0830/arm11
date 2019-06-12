@@ -7,6 +7,7 @@
 #include "encodeBR.h"
 #include "../assembler_utility/table.h"
 #include "encodeMUL.h"
+#include "encodeSDT.h"
 
 uint32_t getCond(char *condition) {
     uint32_t result = 1110;
@@ -40,9 +41,9 @@ uint32_t getCond(char *condition) {
 void encodeBR(assembler_instruction *instruction, label_address_list *table) {
     address target;
     if (isContainedInTable(instruction->arg1, table)) {
-        target=lookup_address(instruction->arg1, table);
+        target = lookup_address(instruction->arg1, table);
     } else {
-        target = getPosFromChar(instruction->arg1);
+        target = getValue(instruction->arg1);
     }
     uint32_t offset = target - (instruction->currentAddress) - 8;
     char *result = (instruction->mnemonic);
@@ -50,9 +51,3 @@ void encodeBR(assembler_instruction *instruction, label_address_list *table) {
     instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
     //printf("%u",instruction->encoded);
 }
-
-
-
-
-
-
