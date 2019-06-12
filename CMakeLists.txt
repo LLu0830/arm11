@@ -48,8 +48,6 @@ add_executable(C_Group_31
         src/part1_emulator/emulate.c
         src/part2_assembler/assembler_utility/assembler_utility.c
         src/part2_assembler/assembler_utility/assembler_utility.h
-        src/part2_assembler/assembler_utility/prints.c
-        src/part2_assembler/assembler_utility/prints.h
         src/part2_assembler/assembler_utility/table.c
         src/part2_assembler/assembler_utility/table.h
         src/part2_assembler/encode/encode.c
