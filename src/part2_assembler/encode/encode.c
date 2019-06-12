@@ -101,15 +101,19 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
             }
             break;
         case 'e':
+            instruction->type = DP;
             instruction->operationType = eor;
             break;
         case 'o':
+            instruction->type = DP;
             instruction->operationType = orr;
             break;
         case 'r':
+            instruction->type = DP;
             instruction->operationType = rsb;
             break;
         case 'c':
+            instruction->type = DP;
             instruction->operationType = cmp;
             break;
 
@@ -121,6 +125,7 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
 
     switch (instruction->type) {
         case DP:
+            printf("Before entering DP");
             encodeDP(instruction);
             break;
         case MUL:
