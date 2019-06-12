@@ -24,6 +24,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
   "CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
   "CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o"
+  "CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o"
+  "CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o"
+  "CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o"
+  "CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o"
   "arm11_31.pdb"
   "arm11_31"
 )

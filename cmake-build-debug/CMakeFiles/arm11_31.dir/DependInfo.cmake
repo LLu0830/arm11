@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+<<<<<<< HEAD
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/decode/decode.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part1_emulator/emulate/binaryFileLoader.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o"
@@ -29,6 +30,37 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readInstruction/readInstruction.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readLabels/readLabels.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
   "/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/tokenizer/tokenizer.c" "/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
+=======
+  "/homes/rb3018/arm11_31/src/part1_emulator/decode/decode.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/emulate.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/emulate.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/emulate/binaryFileLoader.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/binaryFileLoader.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/emulate/pipeline.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/pipeline.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/emulate/printOutput.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/emulate/printOutput.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/emulator_utility/utility.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/emulator_utility/utility.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/execute/execute.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/execute/execute.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/execute/executeBR.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/execute/executeBR.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/execute/executeDP.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/execute/executeDP.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/execute/executeMUL.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/execute/executeMUL.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/execute/executeSDT.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/execute/executeSDT.c.o"
+  "/homes/rb3018/arm11_31/src/part1_emulator/fetch/fetch.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part1_emulator/fetch/fetch.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/assemble.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/assembler_utility.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/assembler_utility.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/prints.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/prints.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/assembler_utility/table.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/assembler_utility/table.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/encode/encode.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encode.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/encode/encodeBR.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeBR.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/encode/encodeDP.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeDP.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/encode/encodeMUL.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeMUL.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/encode/encodeSDT.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSDT.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/encode/encodeSPECIAL.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/encode/encodeSPECIAL.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/readInstruction/readInstruction.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/readLabels/readLabels.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o"
+  "/homes/rb3018/arm11_31/src/part2_assembler/tokenizer/tokenizer.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o"
+  "/homes/rb3018/arm11_31/src/part4_extension/main.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o"
+  "/homes/rb3018/arm11_31/src/part4_extension/part4_utility/RPI.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o"
+  "/homes/rb3018/arm11_31/src/part4_extension/part4_utility/part4_utility.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o"
+  "/homes/rb3018/arm11_31/src/part4_extension/part4_utility/shine.c" "/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o"
+>>>>>>> fb918558250fd050fe1022281f5dacc84ecc711e
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
@@ -48,6 +80,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../src/part2_assembler/readInstruction"
   "../src/part2_assembler/readLabels"
   "../src/part2_assembler/tokenizer"
+  "../src/part4_extension"
+  "../src/part4_extension/part4_utility"
   )
 
 # Targets to which this target links.

@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.12)
-project(arm11_31 C)
+cmake_minimum_required(VERSION 3.14)
+project(C_Group_31 C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -17,8 +17,10 @@ include_directories(src/part2_assembler/encode)
 include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
 include_directories(src/part2_assembler/tokenizer)
+include_directories(src/part4_extension)
+include_directories(src/part4_extension/part4_utility)
 
-add_executable(arm11_31
+add_executable(C_Group_31
         src/part1_emulator/decode/decode.c
         src/part1_emulator/decode/decode.h
         src/part1_emulator/emulate/binaryFileLoader.c
@@ -69,4 +71,11 @@ add_executable(arm11_31
         src/part2_assembler/readLabels/readLabels.h
         src/part2_assembler/tokenizer/tokenizer.c
         src/part2_assembler/tokenizer/tokenizer.h
-        src/part2_assembler/assemble.c)
+        src/part2_assembler/assemble.c
+        src/part4_extension/part4_utility/part4_utility.c
+        src/part4_extension/part4_utility/part4_utility.h
+        src/part4_extension/part4_utility/RPI.c
+        src/part4_extension/part4_utility/RPI.h
+        src/part4_extension/part4_utility/shine.c
+        src/part4_extension/part4_utility/shine.h
+        src/part4_extension/main.c)

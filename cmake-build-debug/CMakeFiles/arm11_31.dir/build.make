@@ -382,6 +382,58 @@ CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/assemble.c -o CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.s
 
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o: CMakeFiles/arm11_31.dir/flags.make
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o: ../src/part4_extension/part4_utility/part4_utility.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o   -c /homes/rb3018/arm11_31/src/part4_extension/part4_utility/part4_utility.c
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/rb3018/arm11_31/src/part4_extension/part4_utility/part4_utility.c > CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.i
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/rb3018/arm11_31/src/part4_extension/part4_utility/part4_utility.c -o CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.s
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o: CMakeFiles/arm11_31.dir/flags.make
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o: ../src/part4_extension/part4_utility/RPI.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o   -c /homes/rb3018/arm11_31/src/part4_extension/part4_utility/RPI.c
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/rb3018/arm11_31/src/part4_extension/part4_utility/RPI.c > CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.i
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/rb3018/arm11_31/src/part4_extension/part4_utility/RPI.c -o CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.s
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o: CMakeFiles/arm11_31.dir/flags.make
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o: ../src/part4_extension/part4_utility/shine.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o   -c /homes/rb3018/arm11_31/src/part4_extension/part4_utility/shine.c
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/rb3018/arm11_31/src/part4_extension/part4_utility/shine.c > CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.i
+
+CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/rb3018/arm11_31/src/part4_extension/part4_utility/shine.c -o CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.s
+
+CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o: CMakeFiles/arm11_31.dir/flags.make
+CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o: ../src/part4_extension/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o   -c /homes/rb3018/arm11_31/src/part4_extension/main.c
+
+CMakeFiles/arm11_31.dir/src/part4_extension/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/arm11_31.dir/src/part4_extension/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /homes/rb3018/arm11_31/src/part4_extension/main.c > CMakeFiles/arm11_31.dir/src/part4_extension/main.c.i
+
+CMakeFiles/arm11_31.dir/src/part4_extension/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/arm11_31.dir/src/part4_extension/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /homes/rb3018/arm11_31/src/part4_extension/main.c -o CMakeFiles/arm11_31.dir/src/part4_extension/main.c.s
+
 # Object files for target arm11_31
 arm11_31_OBJECTS = \
 "CMakeFiles/arm11_31.dir/src/part1_emulator/decode/decode.c.o" \
@@ -408,7 +460,11 @@ arm11_31_OBJECTS = \
 "CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstruction.c.o" \
 "CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o" \
 "CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o" \
-"CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o"
+"CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o" \
+"CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o" \
+"CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o" \
+"CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o" \
+"CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o"
 
 # External object files for target arm11_31
 arm11_31_EXTERNAL_OBJECTS =
@@ -438,9 +494,17 @@ arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/readInstruction/readInstru
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/readLabels/readLabels.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/tokenizer/tokenizer.c.o
 arm11_31: CMakeFiles/arm11_31.dir/src/part2_assembler/assemble.c.o
+arm11_31: CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/part4_utility.c.o
+arm11_31: CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/RPI.c.o
+arm11_31: CMakeFiles/arm11_31.dir/src/part4_extension/part4_utility/shine.c.o
+arm11_31: CMakeFiles/arm11_31.dir/src/part4_extension/main.c.o
 arm11_31: CMakeFiles/arm11_31.dir/build.make
 arm11_31: CMakeFiles/arm11_31.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rinibanerjee/Desktop/C_Group_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable arm11_31"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/rb3018/arm11_31/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking C executable arm11_31"
+>>>>>>> fb918558250fd050fe1022281f5dacc84ecc711e
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/arm11_31.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
