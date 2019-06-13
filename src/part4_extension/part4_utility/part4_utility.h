@@ -7,6 +7,8 @@
 
 
 #include <stdbool.h>
+void counter(unsigned int x);
+int counter_main(void);
 
 int counter_main(void);
 void counter(unsigned int x);
