@@ -8,16 +8,10 @@
 
 #include <stdbool.h>
 
-int counter_main(void);
-
-void counter(unsigned int x);
-
-void rec2(int val, int count, int b);
-
-void helper_rec(int val, int count);
 
 int main();
 
+void strrev(char *s);
 
 bool isValid(int d);
 

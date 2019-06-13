@@ -56,7 +56,7 @@ void shine(char *n) {
     GPIO_CLR = 1 << 5;
     GPIO_CLR = 1 << 6;
 
-
+    sleep(1);
 
     //return 0;
 }

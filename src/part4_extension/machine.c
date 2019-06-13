@@ -12,65 +12,66 @@
 #include <assert.h>
 #include "part4_utility/shine.h"
 #include "part4_utility/part4_utility.h"
-#include "part4_utility/presenter.h"
-#include "part4_utility/calculator.h"
+#include "presenter/presenter.h"
+#include "calculator/calculator.h"
+#include "counter/counter.h"
 
 
 #define MAX_CHAR_NUM 512
 #define MAX_LINE_NUM 7
 
 
-//reading commands from a file
-int main(int argc, char **argv) {
-    //int end, loop, line;
-    //char str[MAX_CHAR_NUM];
-    char *lines[MAX_LINE_NUM];
-    FILE *fd = fopen("extension.txt", "r");
-    if (fd == NULL) {
-        perror("Empty File\n");
-        EXIT_FAILURE;
-
-    }
-//        printf("Enter the line number to read : ");
-//        scanf("%d", &line);
-
-    fread(lines, sizeof(char), MAX_LINE_NUM, fd);
-    int n = atoi(lines[1]);
-    int n1 = atoi(lines[3]);
-    int n2 = atoi(lines[4]);
-    assert(isValid(n));
-    if (isValid(n)) {
-        //shines the led according to binary number
-        shine(dec2bin(atoi(lines[1])));
-    }
-
-    int bin_result = operate_arith(n1, n2, lines[5]);
-    shine(int_to_str(bin_result));
-
+////reading commands from a file
+//int main2(int argc, char **argv) {
+//    //int end, loop, line;
+//    //char str[MAX_CHAR_NUM];
+//    char *lines[MAX_LINE_NUM];
+//    FILE *fd = fopen("extension.txt", "r");
+//    if (fd == NULL) {
+//        perror("Empty File\n");
+//        EXIT_FAILURE;
 //
-//    for (end = loop = 0; loop < MAX_LINE_NUM; ++loop) {
-//        if (0 == fgets(str, sizeof(str), fd)) {//include '\n'
-//            end = 1;//can't input (EOF)
-//            break;
-//        }
+//    }
+////        printf("Enter the line number to read : ");
+////        scanf("%d", &line);
+//
+//    fread(lines, sizeof(char), MAX_LINE_NUM, fd);
+//    int n = atoi(lines[1]);
+//    int n1 = atoi(lines[3]);
+//    int n2 = atoi(lines[4]);
+//    assert(isValid(n));
+//    if (isValid(n)) {
+//        //shines the led according to binary number
+//        shine(dec2bin(atoi(lines[1])));
 //    }
 //
-//    if (!end)
-//        printf("\nLine-%d: %s\n", line, str);
-    fclose(fd);
-
-    return 0;
-}
+//    int bin_result = operate_arith(n1, n2, lines[5]);
+//    shine(int_to_str(bin_result));
+//
+////
+////    for (end = loop = 0; loop < MAX_LINE_NUM; ++loop) {
+////        if (0 == fgets(str, sizeof(str), fd)) {//include '\n'
+////            end = 1;//can't input (EOF)
+////            break;
+////        }
+////    }
+////
+////    if (!end)
+////        printf("\nLine-%d: %s\n", line, str);
+//    fclose(fd);
+//
+//    return 0;
+//}
 
 
 //reading commands from std input
-void machine(void) {
+int main(int argc,char** argv) {
     int m;
-    printf("Please select the mode, enter 1 for 3 bits binary counter, 2 for 3-bit binary numeroscope, 3 for numeroscope\nthat has enbeded arithmetic operation for 2 numbers");
+    printf("Please select the mode, enter 1 for 3 bits binary counter, 2 for 3-bit representer, 3 for calculator\nthat has enbeded arithmetic operation for 2 numbers");
     scanf("%d", &m);
     switch (m) {
         case 1:
-            counter_main();
+            counter(0);
             break;
         case 2:
             presenter();
@@ -78,7 +79,11 @@ void machine(void) {
         case 3:
             calculator();
             break;
+        default :
+            perror("Invalid input string");
+            EXIT_FAILURE;
     }
+    return 1;
 }
 
 
