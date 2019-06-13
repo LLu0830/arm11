@@ -108,7 +108,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         //Loads word from memory or stores word to memory
         if (lFlag) {
             //word loaded from memory
-            if (address == 0x20200004) {
+            if (address >= GPIO_0_TO_9) {
                 state->registers[rd] = address;
             } else {
                 state->registers[rd] = *((uint32_t * )(state->mem + address));
