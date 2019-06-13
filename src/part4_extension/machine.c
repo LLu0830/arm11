@@ -12,8 +12,9 @@
 #include <assert.h>
 #include "part4_utility/shine.h"
 #include "part4_utility/part4_utility.h"
-#include "part4_utility/presenter.h"
-#include "part4_utility/calculator.h"
+#include "presenter/presenter.h"
+#include "calculator/calculator.h"
+#include "counter/counter.c"
 
 
 #define MAX_CHAR_NUM 512

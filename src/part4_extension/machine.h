@@ -9,7 +9,4 @@
 #include "part4_utility/part4_utility.h"
 void anotherMain(void);
 
-
-
-void mode_3(void);
 #endif //ARM11_31_MAIN_H
