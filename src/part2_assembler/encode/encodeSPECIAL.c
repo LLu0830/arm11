@@ -39,12 +39,13 @@ void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table
             free(instruction->arg3);
             free(instruction->arg4);
 
-            instruction->arg1 = rn;
-            instruction->arg2 = rn;
+            instruction->arg1 = copy_string(rn);
+            instruction->arg2 = copy_string(rn);
             instruction->arg3 = copy_string("lsl");
             instruction->arg4 = copy_string(expression);
 
             free(expression);
+            free(rn);
 
             //free(instruction->operationType);
             instruction->operationType = mov;

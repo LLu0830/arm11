@@ -128,7 +128,7 @@ void encodeSDT(assembler_instruction *instruction){
         }
 
     }
-    else if ((instruction->arg2[0] == '[')) {
+    else if (instruction->arg2[0] == '[') {
         rn = getValue(instruction->arg2+1);
         U_bit = 1;
 
