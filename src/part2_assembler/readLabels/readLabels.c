@@ -14,16 +14,14 @@
 
 int numOfAddress = 0;
 
+// reads from file and stores labels in a table
 void readLabels(label_address_list *table, FILE *file) {
     //check if the file is empty
     if (file == NULL) {
         perror("Error: file is empty.");
     }
     assert(table != 0);
-    //generalize a new table if there isn't one
-//    if (table == NULL) {
-//        table = initialize_list();
-//    }
+
     uint32_t lineNum = 0;
 
     char *currentLabel = calloc(MAX_LINE_SIZE, sizeof(char));
@@ -46,5 +44,4 @@ void readLabels(label_address_list *table, FILE *file) {
         }
     }
 
-//    free(currentLabel);
 }

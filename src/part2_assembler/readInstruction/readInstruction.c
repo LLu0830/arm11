@@ -13,13 +13,14 @@
 #include "../assembler_utility/assembler_utility.h"
 
 #define MAX_LINE_SIZE 512
+
 bool is_empty(char *line) {
-  for (char *curr = line; *curr != '\0'; curr++) {
-      if (!isspace(*curr)) {
-          return false;
-      }
-  }
-  return true;
+    for (char *curr = line; *curr != '\0'; curr++) {
+        if (!isspace(*curr)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 //reads one instruction at a time and passes it to the tokenizer
@@ -31,8 +32,7 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         return false;
     }
 
-
-        //reads one line from file
+    //reads one line from file
     else {
         char *line = malloc(MAX_LINE_SIZE * sizeof(char));
         if (line == NULL) {

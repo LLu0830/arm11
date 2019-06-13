@@ -12,6 +12,13 @@
 #include "../emulator_utility/state.h"
 #include "../emulator_utility/utility.h"
 
+static const uint32_t CLEAR_ADDRESS = 0x20200028;
+static const uint32_t SET_ADDRESS = 0x2020001C;
+static const uint32_t GPIO_0_TO_9 = 0x20200000;
+static const uint32_t GPIO_10_TO_19 = 0x20200004;
+static const uint32_t GPIO_20_TO_29 = 0x20200008;
+
+
 void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
 
@@ -26,7 +33,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     uint32_t address;
 
     //Offset is immediate offset or shifted register
-    if  (iFlag) {
+    if (iFlag) {
         //offset is shifted register
         uint32_t shift;
         uint32_t rm = get_n_bits(offset, 0, 4);
@@ -34,11 +41,10 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         uint32_t intOrReg = get_n_bits(offset, 4, 1);
         uint32_t shiftType = get_n_bits(offset, 5, 2);
 
-        if (intOrReg) {
+        if (!intOrReg) {
             //shift specified by constant amount
             shift = get_n_bits(offset, 7, 5);
-        }
-        else {
+        } else {
             //shift specified by register rs
             uint32_t rs = get_n_bits(offset, 8, 4);
             uint32_t rsContent = state->registers[rs];
@@ -53,7 +59,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
     //decides whether to add or subtract the offset
     if (!uFlag) {
-        offset = - offset;
+        offset = -offset;
     }
 
     //Uses post or pre indexing
@@ -62,8 +68,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         //pre-indexing
         // should not change base register
         address = state->registers[rn] + offset;
-    }
-    else {
+    } else {
         //add/subtract offset from base register after transferring data
         //post-indexing
         //changes base register
@@ -72,18 +77,46 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     }
 
 
-    if (address > numOfAddresses || address < minAddress) {
-        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
+    if (address == CLEAR_ADDRESS) {
+        printf("PIN OFF\n");
+//        return;
     }
-    else {
+
+    if (address == SET_ADDRESS) {
+        printf("PIN ON\n");
+//        return;
+    }
+
+    if (address == GPIO_0_TO_9) {
+        printf("One GPIO pin from 0 to 9 has been accessed\n");
+//        return;
+    } else if (address == GPIO_10_TO_19) {
+        printf("One GPIO pin from 10 to 19 has been accessed\n");
+//        return;
+    } else if (address == GPIO_20_TO_29) {
+        printf("One GPIO pin from 20 to 29 has been accessed\n");
+//        return;
+    }
+
+
+//    if (address < minAddress || address > CLEAR_ADDRESS) {
+//        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
+    if (address >= minAddress && address <= numOfAddresses) {
         //Loads word from memory or stores word to memory
         if (lFlag) {
             //word loaded from memory
-            state->registers[rd] = *((uint32_t * )(state->mem + address));
+            state->registers[rd] = *((uint32_t *) (state->mem + address));
         } else {
             //word stored into memory
-            *((uint32_t * )(state->mem + address)) = state->registers[rd];
+            *((uint32_t *) (state->mem + address)) = state->registers[rd];
         }
+
+    } else if (address >= GPIO_0_TO_9 && address <= CLEAR_ADDRESS) {
+        if (lFlag) {
+            state->registers[rd] = address;
+        }
+    } else {
+        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
     }
 }
 
