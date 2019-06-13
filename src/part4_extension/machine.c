@@ -71,12 +71,15 @@ int main(int argc,char** argv) {
     scanf("%d", &m);
     switch (m) {
         case 1:
+            mode_LED(1);
             counter(0);
             break;
         case 2:
+            mode_LED(2);
             presenter();
             break;
         case 3:
+            mode_LED(3);
             calculator();
             break;
         default :

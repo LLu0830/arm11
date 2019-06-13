@@ -13,7 +13,6 @@ include_directories(src/part2_assembler/encode)
 include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
 include_directories(src/part2_assembler/tokenizer)
-include_directories(src/part4_extension)
 include_directories(src/part4_extension/calculator)
 include_directories(src/part4_extension/counter)
 include_directories(src/part4_extension/part4_utility)
@@ -81,9 +80,4 @@ add_executable(arm11_31
         src/part4_extension/part4_utility/shine.h
         src/part4_extension/presenter/presenter.c
         src/part4_extension/presenter/presenter.h
-        src/part4_extension/machine.c
-<<<<<<< HEAD
-        )
-=======
-        src/part4_extension/machine.h)
->>>>>>> 233bddd98e963148901cf8b14d0e942c631e49ab
+        src/part4_extension/machine.c)
