@@ -12,6 +12,13 @@
 #include "../emulator_utility/state.h"
 #include "../emulator_utility/utility.h"
 
+static const uint32_t CLEAR_ADDRESS = 0x20200028;
+static const uint32_t SET_ADDRESS = 0x2020001C;
+static const uint32_t GPIO_0_TO_9 = 0x20200000;
+static const uint32_t GPIO_10_TO_19 = 0x20200004;
+static const uint32_t GPIO_20_TO_29 = 0x20200008;
+
+
 void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
 
@@ -69,6 +76,30 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         //changes base register
         address = state->registers[rn];
         state->registers[rn] = address + offset;
+    }
+
+    if (state->registers[rn] == CLEAR_ADDRESS) {
+        printf("PIN OFF\n");
+        return;
+    }
+
+    if (state->registers[rn] == SET_ADDRESS) {
+        printf("PIN ON\n");
+        return;
+    }
+
+    switch (state->registers[rn]) {
+        case GPIO_0_TO_9:
+            printf("One GPIO pin from 0 to 9 has been accessed\n");
+            break;
+        case GPIO_10_TO_19:
+            printf("One GPIO pin from 10 to 19 has been accessed\n");
+            break;
+        case GPIO_20_TO_29:
+            printf("One GPIO pin from 20 to 29 has been accessed\n");
+            break;
+        default:
+            break;
     }
 
 
