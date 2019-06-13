@@ -88,18 +88,12 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         return;
     }
 
-    switch (state->registers[rn]) {
-        case GPIO_0_TO_9:
-            printf("One GPIO pin from 0 to 9 has been accessed\n");
-            break;
-        case GPIO_10_TO_19:
-            printf("One GPIO pin from 10 to 19 has been accessed\n");
-            break;
-        case GPIO_20_TO_29:
-            printf("One GPIO pin from 20 to 29 has been accessed\n");
-            break;
-        default:
-            break;
+    if (state->registers[rn] == GPIO_0_TO_9) {
+        printf("One GPIO pin from 0 to 9 has been accessed\n");
+    } else if (state->registers[rn] == GPIO_10_TO_19) {
+        printf("One GPIO pin from 10 to 19 has been accessed\n");
+    } else if (state->registers[rn] == GPIO_20_TO_29) {
+        printf("One GPIO pin from 20 to 29 has been accessed\n");
     }
 
 
