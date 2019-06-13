@@ -78,8 +78,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         state->registers[rn] = address + offset;
     }
 
-    printf("state->registers[rn] is: %d\n", state->registers[rn]);
-    printf("Address taken by program is: %d\n", address);
+
     if (address == CLEAR_ADDRESS) {
         printf("PIN OFF\n");
         return;
