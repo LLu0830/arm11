@@ -5,15 +5,17 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 #include <bits/mathcalls.h>
 #include "../part4_utility/part4_utility.h"
-#include "math.h"
-#include "shine.h"
+#include <math.h>
 
-<<<<<<< HEAD
-=======
+//#include "part4_utility.h"
 
->>>>>>> c7975281b3aeca591f24c933b4e4a48041c6e580
+//#include "math.h"
+//#include "shine.h"
+
+
 
 void counter(unsigned int x) {
     char buffer[3];

@@ -7,52 +7,58 @@
 #include "encodeBR.h"
 #include "../assembler_utility/table.h"
 #include "encodeMUL.h"
+#include "encodeSDT.h"
 
-uint32_t getCond(char *condition) {
-    uint32_t result = 1110;
-    switch (*condition) {
+uint32_t getCond(Mnemonic operationType) {
+    uint32_t result;
+    switch (operationType) {
         case beq:
-            result = 0000;
+            result = EQ;
             break;
         case bge:
-            result = 1010;
+            result = GE;
             break;
         case bgt:
-            result = 1100;
+            result = GT;
             break;
         case ble:
-            result = 1101;
+            result = LE;
             break;
         case blt:
-            result = 1011;
+            result = LT;
             break;
         case bne:
-            result = 0001;
+            result = NE;
             break;
-//        case b:
-//            result = 1110;
+        case b:
+            result = AL;
+            break;
+        default:
+            exit(EXIT_FAILURE);
     }
     return result;
 }
 
 
-
 void encodeBR(assembler_instruction *instruction, label_address_list *table) {
     address target;
+    printf("Encoding BR\n");
+    printf("Label: \"%s\"\n", instruction->arg1);
     if (isContainedInTable(instruction->arg1, table)) {
-        target=lookup_address(instruction->arg1, table);
+        printf("Found in table\n");
+        target = lookup_address(instruction->arg1, table);
+        printf("Target: %u\n", target);
     } else {
         target = getPosFromChar(instruction->arg1);
     }
-    uint32_t offset = target - (instruction->currentAddress) - 8;
-    char *result = (instruction->mnemonic);
-    uint32_t condition = getCond(result);
-    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset >> 2U) & 0x00ffffffU);
-    //printf("%u",instruction->encoded);
+    printf("Current address: %u\n", instruction->currentAddress);
+    uint32_t offset = target - (instruction->currentAddress) - 2;
+//    if (instruction->currentAddress + 8 <= target) {
+//        offset = target - instruction->currentAddress - 8;
+//    } else {
+//        offset = instruction->currentAddress - target - 8;
+//    }
+    uint32_t condition = getCond(instruction->operationType);
+    printf("Offset: %x\n", offset);
+    instruction->encoded = (condition << 28U) | (5U << 25U) | ((offset) & 0x00ffffffU);
 }
-
-
-
-
-
-
