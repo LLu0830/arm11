@@ -13,8 +13,6 @@
 #define MAX_BINARY_DIGIT 10
 
 
-
-
 //check if a number(String) is in binary form
 bool isBin(char *number) {
     int n;
