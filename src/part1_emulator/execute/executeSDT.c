@@ -61,25 +61,35 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         //add/subtract offset from base register before transferring data
         //pre-indexing
         // should not change base register
+
         address = state->registers[rn] + offset;
     }
     else {
         //add/subtract offset from base register after transferring data
         //post-indexing
         //changes base register
+
         address = state->registers[rn];
         state->registers[rn] = address + offset;
+
     }
 
 
-    if (address > numOfAddresses || address < minAddress) {
+    if (address < minAddress) {
         printf("Error: Out of bounds memory access at address 0x%08x\n", address);
     }
+
     else {
         //Loads word from memory or stores word to memory
         if (lFlag) {
             //word loaded from memory
-            state->registers[rd] = *((uint32_t * )(state->mem + address));
+            if (address < numOfAddresses) {
+                state->registers[rd] = *((uint32_t * )(state->mem + address));
+            }
+            else {
+                state->registers[rd] = address;
+            }
+            //printf("rd value: %d", state->registers[rd]);
         } else {
             //word stored into memory
             *((uint32_t * )(state->mem + address)) = state->registers[rd];
