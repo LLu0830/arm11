@@ -28,15 +28,16 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
         uint32_t count = 0;
 
 //  checks if immediate value can be stored
-        while (count <= 0xf) {
+        while (count <= 30) {
             if (expression <= 0xff) {
-                count = count << 9U;
+                count /= 2;
+                count = count << 8U;
 //   gets Operand2
                 uint32_t result = expression | count;
                 return result;
             }
-            expression = rotateLeftNtimes(expression, 2);
-            count++;
+            expression = rotateLeft(expression, 2);
+            count += 2;
         }
         if (count > 30) {
             perror("This numeric constant cannot be represented.");
