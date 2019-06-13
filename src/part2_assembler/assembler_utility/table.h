@@ -38,7 +38,7 @@ typedef enum {
     ble,
     b,
     lsl,
-    andeq
+    andeq,
 } Mnemonic;
 
 
