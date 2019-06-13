@@ -12,8 +12,6 @@
 
 void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table) {
 
-    printf("Entering encodeSPECIAL \n");
-
     switch (instruction->operationType) {
         case andeq:
             //maybe need to check if operand1,2,3 all = 0;
@@ -22,12 +20,10 @@ void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table
 //                && !strcmp(instruction->arg3, "r0")) {
 //                instruction->encoded = 0x0;
 //            }
-            printf("andeq \n");
             instruction->encoded = 0;
             break;
         case lsl: {
             //lsl gets converted to move instruction: mov Rn, Rn, lsl <#expression>
-
             free(instruction->mnemonic);
             instruction->mnemonic = copy_string("mov");
 
@@ -47,7 +43,6 @@ void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table
             free(expression);
             free(rn);
 
-            //free(instruction->operationType);
             instruction->operationType = mov;
 
             encodeDP(instruction);

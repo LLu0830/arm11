@@ -67,14 +67,18 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         //add/subtract offset from base register before transferring data
         //pre-indexing
         // should not change base register
+
         address = state->registers[rn] + offset;
     } else {
         //add/subtract offset from base register after transferring data
         //post-indexing
         //changes base register
+
         address = state->registers[rn];
         state->registers[rn] = address + offset;
+
     }
+
 
 
     if (address == CLEAR_ADDRESS) {
