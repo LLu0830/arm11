@@ -6,8 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-#include <bits/mathcalls.h>
+//#include <bits/mathcalls.h>
 #include "../part4_utility/part4_utility.h"
 #include <math.h>
 
@@ -55,17 +54,15 @@ int bin2dec(char *binstr) {
 }
 
 
-
 //convert decimal number to binary
 char *dec2bin(int n) {
-    int decimal=n, tempDecimal;
-    char binary[MAX_BINARY_DIGIT];
+    int decimal = n, tempDecimal;
+    char* binary=malloc(MAX_BINARY_DIGIT*sizeof(char));
     int index = 0;
 
     tempDecimal = decimal;
 
-    while(tempDecimal!=0)
-    {
+    while (tempDecimal != 0) {
         binary[index] = (tempDecimal % 2) + '0';
 
         tempDecimal /= 2;
@@ -76,10 +73,31 @@ char *dec2bin(int n) {
     return binary;
 }
 
+void strrev(char *s) {
+    int length, c;
+    char *begin, *end, temp;
+
+    length = strlen(s);
+    begin = s;
+    end = s;
+
+    for (c = 0; c < length - 1; c++)
+        end++;
+
+    for (c = 0; c < length / 2; c++) {
+        temp = *end;
+        *end = *begin;
+        *begin = temp;
+
+        begin++;
+        end--;
+    }
+}
+
 
 //convert an integer to a string
 char *int_to_str(int n) {
-    char str1[MAX_BINARY_DIGIT];
+    char* str1=malloc(MAX_BINARY_DIGIT*sizeof(char));
     sprintf(str1, "%d", n);
     return str1;
 }
@@ -115,5 +133,7 @@ int operate_arith(int n1, int n2, char *operator) {
         perror("Invalid result");
         EXIT_FAILURE;
     }
+    return result;
 
 }
+
