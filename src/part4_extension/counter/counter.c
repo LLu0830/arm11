@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include <part4_utility/shine.h>
+#include "../part4_utility/shine.h"
 #include <stdlib.h>
 #include "../part4_utility/part4_utility.h"
 #define MAX_SIZE 64

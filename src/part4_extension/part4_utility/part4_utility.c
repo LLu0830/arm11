@@ -133,5 +133,7 @@ int operate_arith(int n1, int n2, char *operator) {
         perror("Invalid result");
         EXIT_FAILURE;
     }
+    return result;
 
 }
+

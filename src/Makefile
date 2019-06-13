@@ -12,7 +12,7 @@ emulate: emulate.o pipeline.o utility.o fetch.o decode.o execute.o executeDP.o e
 
 assemble: utility.o assembler_utility.o table.o encode.o encodeBR.o encodeDP.o encodeMUL.o encodeSDT.o encodeSPECIAL.o readInstruction.o readLabels.o  tokenizer.o assemble.o
 
-machine: machine.o calculator.o counter.o par4_utility.o RPI.o shine.o presenter.o
+machine: machine.o calculator.o counter.o part4_utility.o RPI.o shine.o presenter.o
 
 clean:
 	rm -f $(wildcard *.o)

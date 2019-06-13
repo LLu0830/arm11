@@ -9,7 +9,7 @@
 
 void calculator(void) {
     int n1, n2;
-    char *operation_type;
+    char *operation_type=malloc(4*sizeof(char));
     printf("Mode 3, do arithmetic operation on 2 numbers entered and represent the result with LEDs.\n");
     printf("Enter first of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
     scanf("%d", &n1);
