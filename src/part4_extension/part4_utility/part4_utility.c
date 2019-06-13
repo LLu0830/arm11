@@ -8,7 +8,7 @@
 #include <bits/mathcalls.h>
 #include "../part4_utility/part4_utility.h"
 #include "math.h"
-#include "shine.h"
+//#include "shine.h"
 
 
 
