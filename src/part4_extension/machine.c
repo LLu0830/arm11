@@ -29,7 +29,7 @@ int main(int argc,char** argv) {
     switch (m) {
         case 1:
             mode_LED(1);
-            counter(0);
+            counter(1);
             break;
         case 2:
             mode_LED(2);

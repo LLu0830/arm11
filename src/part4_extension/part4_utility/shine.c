@@ -13,7 +13,7 @@
 void shine(char *n) {
 
     wiringPiSetup();
-    delay(100);
+    //delay(100);
 
 // LED Pin - wiringPi pin 0 is BCM_GPIO 17
 //1 is 18
@@ -33,11 +33,11 @@ void shine(char *n) {
         digitalWrite(LED3, 1);
     }
 
-    delay(1200);
+    delay(800);
     digitalWrite(LED1, 0);
     digitalWrite(LED2, 0);
     digitalWrite(LED3, 0);
-    delay(1000);
+    delay(200);
 }
 
 void mode_LED(int n) {
