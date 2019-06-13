@@ -92,10 +92,13 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
     if (address == GPIO_0_TO_9) {
         printf("One GPIO pin from 0 to 9 has been accessed\n");
+        return;
     } else if (address == GPIO_10_TO_19) {
         printf("One GPIO pin from 10 to 19 has been accessed\n");
+        return;
     } else if (address == GPIO_20_TO_29) {
         printf("One GPIO pin from 20 to 29 has been accessed\n");
+        return;
     }
 
 
