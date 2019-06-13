@@ -10,9 +10,10 @@
 #include "../part4_utility/part4_utility.h"
 
 void presenter(void) {
-    int n, b_int;
+    int n;
+    //int b_int;
     char *b_str;
-    printf("Mode 2, the LEDs are representing a decimal number entered\n")
+    printf("Mode 2, the LEDs are representing a decimal number entered\n");
     printf("Enter an integer(range from 0 to 7) in decimal number system\n");
 
     if (!isValid(n)) {
@@ -20,7 +21,7 @@ void presenter(void) {
     }
     scanf("%d", &n);
     b_str = dec2bin(n);
-    b_int = atoi(b_str);
+//    b_int = atoi(b_str);
     printf("Binary form of %d is: %s\n", n, b_str);
     shine(b_str);
     printf("Look at the LEDs!!\n");
