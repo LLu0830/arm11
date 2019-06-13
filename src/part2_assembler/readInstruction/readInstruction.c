@@ -45,14 +45,18 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
         }
 
         //if the line exists and is not a label, it is passed to the tokenizer
-        if (!isLabel(line) && (line != NULL) && !is_empty(line)) {
+        if (!isLabel(line) && !is_empty(line)) {
+            char *at_sign = strchr(line, '@');
+            if (at_sign != 0) {
+                *at_sign = '\0';
+            }
+            printf("Line: %s\n", line);
             instruction->currentAddress = (address) *counter;
             (*counter)++;
             tokenizer(line, instruction);
         } else {
             instruction->currentAddress = -1;
         }
-        printf("Line: %s\n", line);
 
         free(line);
         return true;
