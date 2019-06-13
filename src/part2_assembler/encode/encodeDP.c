@@ -37,7 +37,6 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
                 return result;
             }
             expression = rotateLeft(expression, 2);
-            printf("Expression after rotation: %u, count: %i\n", expression, count);
             count += 2;
         }
         if (count > 30) {
