@@ -40,30 +40,29 @@
 
 //void mode_LED(int n) {
 //    wiringPiSetup();
+//    pinMode(LED1, OUTPUT);
 //    int t = 0;
 //    if (n == 1) {
-//        pinMode(LED1, OUTPUT);
 //        digitalWrite(LED1, 1);
 //        delay(500);
 //        digitalWrite(LED1, 0);
 //        delay(300);
 //    }
 //    if (n == 2) {
-//        pinMode(LED1, OUTPUT);
 //        while (t < 2) {
 //            digitalWrite(LED1, 1);
 //            delay(500);
 //            digitalWrite(LED1, 0);
-//            delay(300);
+//            delay(200);
 //            t++;
 //        }
 //    }
 //    if (n == 3) {
-//        while (t < 2) {
+//        while (t < 3) {
 //            digitalWrite(LED1, 1);
 //            delay(500);
 //            digitalWrite(LED1, 0);
-//            delay(300);
+//            delay(200);
 //            t++;
 //        }
 //    }
