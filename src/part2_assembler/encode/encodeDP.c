@@ -80,7 +80,6 @@ uint32_t getValueFromOp2Optional(assembler_instruction *instruction, Instruction
         default:
             perror("Invalid shift type");
             exit(EXIT_FAILURE);
-            break;
     }
 
     if (instruction->arg4[0] == '#'){
