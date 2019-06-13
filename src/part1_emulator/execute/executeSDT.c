@@ -114,6 +114,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     } else if (address >= GPIO_0_TO_9 && address <= CLEAR_ADDRESS) {
         if (lFlag) {
             state->registers[rd] = address;
+        }
     } else {
         printf("Error: Out of bounds memory access at address 0x%08x\n", address);
     }
