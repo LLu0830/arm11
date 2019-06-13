@@ -28,16 +28,12 @@ void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table
         case lsl: {
             //lsl gets converted to move instruction: mov Rn, Rn, lsl <#expression>
 
-
-            printf("calling mov \n");
             free(instruction->mnemonic);
             instruction->mnemonic = copy_string("mov");
 
 
             token rn = instruction->arg1;
-            printf("arg2 before: %s\n", instruction->arg2);
             char *expression = copy_string(instruction->arg2);
-            printf("expression: %s \n", expression);
 
             free(instruction->arg2);
             free(instruction->arg3);
@@ -46,23 +42,14 @@ void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table
             instruction->arg1 = rn;
             instruction->arg2 = rn;
             instruction->arg3 = copy_string("lsl");
-            printf("expression before being put into arg4: %s \n", expression);
             instruction->arg4 = copy_string(expression);
-            printf("expression after arg4: %s \n", expression);
 
-            printf("arg1: %s\n", instruction->arg1);
-            printf("arg2: %s\n", instruction->arg2);
-            printf("arg3: %s\n", instruction->arg3);
-            printf("expression: %s \n", expression);
-            printf("arg4: %s\n", instruction->arg4);
             free(expression);
 
+            //free(instruction->operationType);
+            instruction->operationType = mov;
 
-            //encodeDP(instruction);
-
-
-
-            encode(instruction, table);
+            encodeDP(instruction);
 
             break;
         }
