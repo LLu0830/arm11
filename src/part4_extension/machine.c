@@ -14,7 +14,7 @@
 #include "part4_utility/part4_utility.h"
 #include "presenter/presenter.h"
 #include "calculator/calculator.h"
-#include "counter/counter.c"
+#include "counter/counter.h"
 
 
 #define MAX_CHAR_NUM 512
@@ -65,7 +65,7 @@
 
 
 //reading commands from std input
-void machine(char** argv) {
+int main(int argc,char** argv) {
     int m;
     printf("Please select the mode, enter 1 for 3 bits binary counter, 2 for 3-bit representer, 3 for calculator\nthat has enbeded arithmetic operation for 2 numbers");
     scanf("%d", &m);
@@ -83,6 +83,7 @@ void machine(char** argv) {
             perror("Invalid input string");
             EXIT_FAILURE;
     }
+    return 1;
 }
 
 

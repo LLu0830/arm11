@@ -4,11 +4,12 @@
 
 #include <stdio.h>
 #include <part4_utility/shine.h>
+#include <stdlib.h>
 #include "../part4_utility/part4_utility.h"
-
+#define MAX_SIZE 64
 //binary counter
 void counter_helper(int x) {
-    char buffer[3];
+    char* buffer=malloc(MAX_SIZE*sizeof(char));
     sprintf(buffer, "%u%u%u\n",
             //(x>>3)&0x1,
             (x >> 2) & 0x1,

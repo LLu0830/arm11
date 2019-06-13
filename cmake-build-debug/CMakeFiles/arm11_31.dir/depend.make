@@ -207,7 +207,7 @@ CMakeFiles/arm11_31.dir/src/part4_extension/counter/counter.c.o: ../src/part4_ex
 CMakeFiles/arm11_31.dir/src/part4_extension/counter/counter.c.o: ../src/part4_extension/part4_utility/part4_utility.h
 
 CMakeFiles/arm11_31.dir/src/part4_extension/machine.c.o: ../src/part4_extension/calculator/calculator.h
-CMakeFiles/arm11_31.dir/src/part4_extension/machine.c.o: ../src/part4_extension/counter/counter.c
+CMakeFiles/arm11_31.dir/src/part4_extension/machine.c.o: ../src/part4_extension/counter/counter.h
 CMakeFiles/arm11_31.dir/src/part4_extension/machine.c.o: ../src/part4_extension/machine.c
 CMakeFiles/arm11_31.dir/src/part4_extension/machine.c.o: ../src/part4_extension/part4_utility/part4_utility.h
 CMakeFiles/arm11_31.dir/src/part4_extension/machine.c.o: ../src/part4_extension/part4_utility/shine.h

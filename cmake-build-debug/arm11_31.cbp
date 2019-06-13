@@ -270,9 +270,6 @@
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/machine.c">
 			<Option target="arm11_31"/>
 		</Unit>
-		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/machine.h">
-			<Option target="arm11_31"/>
-		</Unit>
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/RPI.c">
 			<Option target="arm11_31"/>
 		</Unit>
