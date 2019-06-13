@@ -4,7 +4,6 @@
 #include "../part2_assembler/readInstruction/readInstruction.h"
 #include "../part2_assembler/encode/encode.h"
 #include "../part2_assembler/assembler_utility/table.h"
-#include "assembler_utility/prints.h"
 #include "../part2_assembler/assembler_utility/assembler_utility.h"
 
 uint32_t instruction_array[10];

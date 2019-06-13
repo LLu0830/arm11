@@ -37,11 +37,12 @@ urlcolor=blue
     \noindent Here is a brief synopsis of how we structured each directory:
 
     \begin{itemize}
-        \item \textit{assembler\_utility}: includes \texttt{assembler\_utility.c}, \textt{table.c} and corresponding header files. \textt{assembler\_utility.c} contains utility functions that we need for the assembler specifically - they had not been written in Part I's \textt{utility.c} because we wrote them after finishing Part I. \textt{table.c} includes functions that are needed for the symbol table
-        \item \textit{encode}:
-        \item \textit{readInstruction}:
+        \item \textit{assembler\_utility}: includes \texttt{assembler\_utility.c}, \textt{table.c} and corresponding header files. \texttt{assembler\_utility.c} contains utility functions that we need for the assembler specifically - they had not been written in Part I's \texttt{utility.c} because we wrote them after finishing Part I. \texttt{table.c} includes functions that are needed for creating and accessing elements of the symbol table, while \texttt{table.h} contains enums and typedef structs we created specifically for Part II - e.g., the typedef struct assembler\_instruction, which represents an instruction in assembly code
+        \item \textit{readInstruction}: includes \texttt{readInstruction.c} and a corresponding header file. The function readInstruction in \texttt{readInstruction.c} ...................................
         \item \textit{readLabels}:
-        \item \textit{tokenizer}:
+        \item \textit{tokenizer}: includes \texttt{tokenizer.c} and a corresponding header file. The function tokenizer in \texttt{tokenizer.c} takes an instruction string (char *), parses it to separate it into its mnemonic and arguments and then stores these values in an assembler\_instruction
+        \item \textit{encode}: includes \texttt{encode.c}, \texttt{encodeBR.c}, \texttt{encodeDP.c}, \texttt{encodeMUL.c}, \texttt{encodeSDT.c}, \\* \texttt{encodeSPECIAL.c} and corresponding header files. Every \texttt{.c} file other than \texttt{encode.c} contains a function of the same name which performs the encoding for that type of instruction. The function encode in \texttt{encode.c} turns an assembler instruction into its binary representation. Depending on which mnemonic an instruction has been assigned by the tokenizer in \texttt{tokenizer.c}, the operation type and instruction type are assigned to the instruction using enums defined previously in \texttt{table.h} and \texttt{DefinedTypes.h} (the latter header file being from Part I). Then, depending on the operation type, one of encodeDP (Data Processing), encodeMUL (Multiply), encodeSDT (Single Data Transfer), encodeBR (Branch) and encodeSPECIAL (Special) is called, returning the encoded binary instruction
+
     \end{itemize}
 
     \subsection{Part III - General Purpose Input/Output on a Raspberry Pi}

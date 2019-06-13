@@ -14,15 +14,9 @@
 
 //rotate left function
 uint32_t rotateLeft(uint32_t b, int n) {
-    return (b << n) | (b >> (32 - n));
+    return (b << (unsigned) n) | (b >> (unsigned) (32 - n));
 }
 
-uint32_t rotateLeftNtimes(uint32_t b, int n) {
-    for (int i = 0; i < n; i++) {
-        b = rotateLeft(b, n);
-    }
-    return b;
-}
 
 //static bool is_label(char *instruction) {
 //    return instruction[strlen(instruction) - 1] == ':';
@@ -68,6 +62,10 @@ void instruction_free(assembler_instruction *instruction) {
     }
 
     free(instruction);
+}
+
+uint32_t getValue(char *string) {
+    return (uint32_t) strtol(string + 1, NULL, 0);
 }
 
 

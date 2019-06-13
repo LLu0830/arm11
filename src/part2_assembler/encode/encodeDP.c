@@ -8,6 +8,7 @@
 #include <string.h>
 #include "../../part1_emulator/emulator_utility/instruction.h"
 #include "../assembler_utility/assembler_utility.h"
+#include "../../part1_emulator/emulator_utility/utility.h"
 
 uint32_t getRegisterNumber(token reg) {
 //  ignoring the 'r' character to get the number from the register
@@ -27,15 +28,16 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
         uint32_t count = 0;
 
 //  checks if immediate value can be stored
-        while (count <= 0xf) {
+        while (count <= 30) {
             if (expression <= 0xff) {
-                count = count << 9U;
+                count /= 2;
+                count = count << 8U;
 //   gets Operand2
                 uint32_t result = expression | count;
                 return result;
             }
-            expression = rotateLeftNtimes(expression, 2);
-            count++;
+            expression = rotateLeft(expression, 2);
+            count += 2;
         }
         if (count > 30) {
             perror("This numeric constant cannot be represented.");
@@ -48,6 +50,64 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
         return getRegisterNumber(op2Pointer);
     }
     return getValueFromOp2(op2Pointer + 1, emulator_instruction);
+}
+
+uint32_t getValueFromOp2Optional(assembler_instruction *instruction, Instruction *emulator_instruction){
+
+    emulator_instruction->I = 0;
+
+    uint32_t reg_or_val_flag = 0;
+    uint32_t shift_type = 0;
+    uint32_t expression_value = getValue(instruction->arg4);
+    uint32_t result;
+    uint32_t rm = getValue(instruction->arg2);
+
+    switch(instruction->arg3[0]) {
+        case 'l':
+            if (instruction->arg3[2] == 'l') {
+                shift_type = 0;
+            }
+            if (instruction->arg3[2] == 'r') {
+                shift_type = 1;
+            }
+            break;
+        case 'a':
+            shift_type = 2;
+            break;
+        case 'r':
+            shift_type = 3;
+            break;
+        default:
+            perror("Invalid shift type");
+            exit(EXIT_FAILURE);
+            break;
+    }
+
+    if (instruction->arg4[0] == '#'){
+        reg_or_val_flag = 0;
+    }
+    else if (instruction->arg4[0] == 'r') {
+        reg_or_val_flag = 1;
+    }
+    else {
+        perror("Invalid argument");
+        exit(EXIT_FAILURE);
+    }
+
+    shift_type = shiftLeft(shift_type, 5U);
+
+    if (reg_or_val_flag){
+        expression_value = shiftLeft(expression_value, 8U);
+    }
+    else {
+        expression_value = shiftLeft(expression_value, 7U);
+    }
+
+    reg_or_val_flag = shiftLeft(reg_or_val_flag, 4U);
+
+    result = expression_value | shift_type | reg_or_val_flag| rm;
+    return result;
+
 }
 
 
@@ -75,7 +135,13 @@ void encodeDPAssign(assembler_instruction *assembler_instruction, Instruction *e
     emulator_instruction->rd = getRegisterNumber(assembler_instruction->arg1);
 
 //  getting value from operand2
-    emulator_instruction->offsets_or_operand2 = getValueFromOp2(assembler_instruction->arg2, emulator_instruction);
+    if (assembler_instruction->arg3 == NULL) {
+        emulator_instruction->offsets_or_operand2 = getValueFromOp2(assembler_instruction->arg2, emulator_instruction);
+    }
+    else {
+        emulator_instruction->offsets_or_operand2 = getValueFromOp2Optional(assembler_instruction, emulator_instruction);
+        printf("Optional case \n");
+    }
 
 //  setting S bit to 0
     emulator_instruction->S = 0;
@@ -117,6 +183,7 @@ void encodeDP(assembler_instruction *assembler_instruction) {
     emulator_instruction.conditionType = AL;
     emulator_instruction.operationType = (int) assembler_instruction->operationType;
     assembler_instruction->encoded = concatDP(&emulator_instruction);
+    printf("encoded: %d", assembler_instruction->encoded);
 
 }
 
