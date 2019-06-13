@@ -2,17 +2,19 @@
 // Created by ASUS on 2019/6/13.
 //
 
+#include <stdio.h>
+#include <part4_utility/shine.h>
 #include "../part4_utility/part4_utility.h"
 
 //binary counter
-void counter_helper(unsigned int x) {
+void counter_helper(int x) {
     char buffer[3];
     sprintf(buffer, "%u%u%u\n",
             //(x>>3)&0x1,
             (x >> 2) & 0x1,
             (x >> 1) & 0x1,
             x & 0x1);
-    printf("%s", buffer)
+    printf("%s", buffer);
     shine(buffer);
     printf("Now it's representing %s\n", buffer);
     if (x == 0x7U) return;
@@ -20,7 +22,7 @@ void counter_helper(unsigned int x) {
 }
 
 //counter's main function
-int counter(void) {
+void counter(int x) {
     printf("Mode 1, this is a 3-bit binary counter using raspberry pi and 3 LEDs\n");
-    counter_helper(0);
+    counter_helper(x);
 }

@@ -54,7 +54,11 @@
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/readInstruction"/>
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/readLabels"/>
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/tokenizer"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/calculator"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/counter"/>
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/presenter"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -85,7 +89,11 @@
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/readInstruction"/>
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/readLabels"/>
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/tokenizer"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/calculator"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/counter"/>
 					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility"/>
+					<Add directory="/homes/ll7818/Desktop/arm11_31/src/part4_extension/presenter"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -187,12 +195,6 @@
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/assembler_utility/assembler_utility.h">
 			<Option target="arm11_31"/>
 		</Unit>
-		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/assembler_utility/prints.c">
-			<Option target="arm11_31"/>
-		</Unit>
-		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/assembler_utility/prints.h">
-			<Option target="arm11_31"/>
-		</Unit>
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/assembler_utility/table.c">
 			<Option target="arm11_31"/>
 		</Unit>
@@ -253,7 +255,22 @@
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part2_assembler/tokenizer/tokenizer.h">
 			<Option target="arm11_31"/>
 		</Unit>
-		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/main.c">
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/calculator/calculator.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/calculator/calculator.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/counter/counter.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/counter/counter.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/machine.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/machine.h">
 			<Option target="arm11_31"/>
 		</Unit>
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/RPI.c">
@@ -272,6 +289,12 @@
 			<Option target="arm11_31"/>
 		</Unit>
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/shine.h">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/presenter/presenter.c">
+			<Option target="arm11_31"/>
+		</Unit>
+		<Unit filename="/homes/ll7818/Desktop/arm11_31/src/part4_extension/presenter/presenter.h">
 			<Option target="arm11_31"/>
 		</Unit>
 		<Unit filename="/homes/ll7818/Desktop/arm11_31/CMakeLists.txt">

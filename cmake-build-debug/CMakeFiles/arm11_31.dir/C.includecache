@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/calculator/calculator.h
+
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/counter/counter.c
+stdio.h
+-
+part4_utility/shine.h
+-
+../part4_utility/part4_utility.h
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/part4_utility.h
+
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/machine.c
+stdio.h
+-
+stdlib.h
+-
+assert.h
+-
+part4_utility/shine.h
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/shine.h
+part4_utility/part4_utility.h
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/part4_utility.h
+presenter/presenter.h
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/presenter/presenter.h
+calculator/calculator.h
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/calculator/calculator.h
+counter/counter.c
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/counter/counter.c
+
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/part4_utility.h
+stdbool.h
+-
+
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/part4_utility/shine.h
+
+/homes/ll7818/Desktop/arm11_31/src/part4_extension/presenter/presenter.h
+

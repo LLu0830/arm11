@@ -12,7 +12,7 @@
 void presenter(void) {
     int n, b_int;
     char *b_str;
-    printf("Mode 2, the LEDs are representing a decimal number entered\n")
+    printf("Mode 2, the LEDs are representing a decimal number entered\n");
     printf("Enter an integer(range from 0 to 7) in decimal number system\n");
 
     if (!isValid(n)) {
