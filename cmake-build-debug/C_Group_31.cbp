@@ -59,6 +59,7 @@
 					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readLabels"/>
 					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/tokenizer"/>
 					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -94,6 +95,7 @@
 					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/readLabels"/>
 					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part2_assembler/tokenizer"/>
 					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension"/>
+					<Add directory="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -258,7 +260,25 @@
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/main.c">
 			<Option target="C_Group_31"/>
 		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/main.h">
+			<Option target="C_Group_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/RPI.c">
+			<Option target="C_Group_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/RPI.h">
+			<Option target="C_Group_31"/>
+		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/part4_utility.c">
+			<Option target="C_Group_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/part4_utility.h">
+			<Option target="C_Group_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/shine.c">
+			<Option target="C_Group_31"/>
+		</Unit>
+		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/src/part4_extension/part4_utility/shine.h">
 			<Option target="C_Group_31"/>
 		</Unit>
 		<Unit filename="/Users/rinibanerjee/Desktop/C_Group_31/CMakeLists.txt">

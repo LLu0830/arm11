@@ -70,5 +70,9 @@ void instruction_free(assembler_instruction *instruction) {
     free(instruction);
 }
 
+uint32_t getValue(char *string) {
+    return (uint32_t) strtol(string + 1, NULL, 0);
+}
+
 
 

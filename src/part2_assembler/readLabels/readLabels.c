@@ -40,9 +40,11 @@ void readLabels(label_address_list *table, FILE *file) {
             label_address *pair = initialize_pair();
             assert(pair != 0);
             pair->label = label;
-            pair->address = lineNum + 1;
+            pair->address = lineNum;
+            printf("Adding label: \"%s\"\n", label);
             insert_pair(pair, table);
         }
     }
+
 //    free(currentLabel);
 }

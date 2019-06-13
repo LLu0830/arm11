@@ -18,6 +18,7 @@ include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
 include_directories(src/part2_assembler/tokenizer)
 include_directories(src/part4_extension)
+include_directories(src/part4_extension/part4_utility)
 
 add_executable(C_Group_31
         src/part1_emulator/decode/decode.c
@@ -70,4 +71,10 @@ add_executable(C_Group_31
         src/part2_assembler/tokenizer/tokenizer.h
         src/part2_assembler/assemble.c
         src/part4_extension/part4_utility/part4_utility.c
-        src/part4_extension/main.c)
+        src/part4_extension/part4_utility/part4_utility.h
+        src/part4_extension/part4_utility/RPI.c
+        src/part4_extension/part4_utility/RPI.h
+        src/part4_extension/part4_utility/shine.c
+        src/part4_extension/part4_utility/shine.h
+        src/part4_extension/main.c
+        src/part4_extension/main.h)

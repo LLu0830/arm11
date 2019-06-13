@@ -798,6 +798,33 @@ src/part4_extension/main.c.s:
 	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/main.c.s
 .PHONY : src/part4_extension/main.c.s
 
+src/part4_extension/part4_utility/RPI.o: src/part4_extension/part4_utility/RPI.c.o
+
+.PHONY : src/part4_extension/part4_utility/RPI.o
+
+# target to build an object file
+src/part4_extension/part4_utility/RPI.c.o:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/RPI.c.o
+.PHONY : src/part4_extension/part4_utility/RPI.c.o
+
+src/part4_extension/part4_utility/RPI.i: src/part4_extension/part4_utility/RPI.c.i
+
+.PHONY : src/part4_extension/part4_utility/RPI.i
+
+# target to preprocess a source file
+src/part4_extension/part4_utility/RPI.c.i:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/RPI.c.i
+.PHONY : src/part4_extension/part4_utility/RPI.c.i
+
+src/part4_extension/part4_utility/RPI.s: src/part4_extension/part4_utility/RPI.c.s
+
+.PHONY : src/part4_extension/part4_utility/RPI.s
+
+# target to generate assembly for a file
+src/part4_extension/part4_utility/RPI.c.s:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/RPI.c.s
+.PHONY : src/part4_extension/part4_utility/RPI.c.s
+
 src/part4_extension/part4_utility/part4_utility.o: src/part4_extension/part4_utility/part4_utility.c.o
 
 .PHONY : src/part4_extension/part4_utility/part4_utility.o
@@ -824,6 +851,33 @@ src/part4_extension/part4_utility/part4_utility.s: src/part4_extension/part4_uti
 src/part4_extension/part4_utility/part4_utility.c.s:
 	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/part4_utility.c.s
 .PHONY : src/part4_extension/part4_utility/part4_utility.c.s
+
+src/part4_extension/part4_utility/shine.o: src/part4_extension/part4_utility/shine.c.o
+
+.PHONY : src/part4_extension/part4_utility/shine.o
+
+# target to build an object file
+src/part4_extension/part4_utility/shine.c.o:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/shine.c.o
+.PHONY : src/part4_extension/part4_utility/shine.c.o
+
+src/part4_extension/part4_utility/shine.i: src/part4_extension/part4_utility/shine.c.i
+
+.PHONY : src/part4_extension/part4_utility/shine.i
+
+# target to preprocess a source file
+src/part4_extension/part4_utility/shine.c.i:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/shine.c.i
+.PHONY : src/part4_extension/part4_utility/shine.c.i
+
+src/part4_extension/part4_utility/shine.s: src/part4_extension/part4_utility/shine.c.s
+
+.PHONY : src/part4_extension/part4_utility/shine.s
+
+# target to generate assembly for a file
+src/part4_extension/part4_utility/shine.c.s:
+	$(MAKE) -f CMakeFiles/C_Group_31.dir/build.make CMakeFiles/C_Group_31.dir/src/part4_extension/part4_utility/shine.c.s
+.PHONY : src/part4_extension/part4_utility/shine.c.s
 
 # Help Target
 help:
@@ -909,9 +963,15 @@ help:
 	@echo "... src/part4_extension/main.o"
 	@echo "... src/part4_extension/main.i"
 	@echo "... src/part4_extension/main.s"
+	@echo "... src/part4_extension/part4_utility/RPI.o"
+	@echo "... src/part4_extension/part4_utility/RPI.i"
+	@echo "... src/part4_extension/part4_utility/RPI.s"
 	@echo "... src/part4_extension/part4_utility/part4_utility.o"
 	@echo "... src/part4_extension/part4_utility/part4_utility.i"
 	@echo "... src/part4_extension/part4_utility/part4_utility.s"
+	@echo "... src/part4_extension/part4_utility/shine.o"
+	@echo "... src/part4_extension/part4_utility/shine.i"
+	@echo "... src/part4_extension/part4_utility/shine.s"
 .PHONY : help
 
 

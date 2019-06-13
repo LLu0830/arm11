@@ -23,9 +23,6 @@
 #define OFFSET_POSITION 0U
 #define PIPELINE_OFFSET 2
 
-uint32_t getValue(char *string) {
-    return (uint32_t) strtol(string + 1, NULL, 0);
-}
 
 void set_I_bit(assembler_instruction* instruction, uint32_t *I_bit) {
     if (instruction->arg3[0] == '#') {
@@ -92,9 +89,6 @@ void encodeSDT(assembler_instruction *instruction){
     }
 
 
-
-    printf("L_bit: %i \n", L_bit);
-
     //setting destination register Rd
     rd = getValue(instruction->arg1);
 
@@ -103,7 +97,6 @@ void encodeSDT(assembler_instruction *instruction){
 
     if (L_bit && ((instruction->arg2[0] == '='))) {
 
-        printf("arg2 is expression \n");
         //pre-indexing
         P_bit = 1;
         I_bit = 0;
@@ -111,18 +104,12 @@ void encodeSDT(assembler_instruction *instruction){
         //offset = 0;
         //interpreting as a mov instruction
         if (getValue(instruction->arg2)<MAX_MOV){
-            printf("mov \n");
 
             free(instruction->mnemonic);
-            //printf("mnemonic freed \n");
 
             instruction->operationType = mov;
-            //printf("new operationType assigned \n");
 
             instruction->mnemonic = copy_string("mov");
-            //printf("new mnemonic \n");
-
-            //printf("arg2:%s \n", instruction->arg2);
 
             instruction->arg2[0] = '#';
 
@@ -133,11 +120,8 @@ void encodeSDT(assembler_instruction *instruction){
         }
         //not interpreting as a mov instruction
         else{
-            printf("not mov \n");
             offset = numOfAddress - instruction->currentAddress - PIPELINE_OFFSET;
             offset = 4 * offset;
-            printf("Num of Address: %i \n", numOfAddress);
-            printf("Current address: %i \n", instruction->currentAddress);
             numOfAddress++;
             U_bit = 1;
             put_in_array(getValue(instruction->arg2));
@@ -146,7 +130,6 @@ void encodeSDT(assembler_instruction *instruction){
     }
     else if ((instruction->arg2[0] == '[')) {
         rn = getValue(instruction->arg2+1);
-        printf("rn:%i \n", rn);
         U_bit = 1;
 
         if ((instruction->arg2[3] == ']') || (instruction->arg2[4] == ']')) {
@@ -158,7 +141,6 @@ void encodeSDT(assembler_instruction *instruction){
                 P_bit = 1;
                 I_bit = 0;
                 offset = 0;
-               printf("[Rn] \n");
             }
                 //[Rn]<#expression>
             //post-indexing, offset not zero
@@ -167,8 +149,6 @@ void encodeSDT(assembler_instruction *instruction){
                 offset = getValue(instruction->arg3);
                 //immediate value
                 set_I_bit(instruction, &I_bit);
-                printf("[Rn]<#expression> \n");
-
             }
 
         }
@@ -177,16 +157,7 @@ void encodeSDT(assembler_instruction *instruction){
         else {
             P_bit = 1;
             offset = getValue(instruction->arg3);
-            printf("offset: %i \n", offset);
             set_I_bit(instruction, &I_bit);
-            printf("I_Bit: %i \n", I_bit);
-            printf("[Rn, <#expression>] \n");
-
-            printf("mnemonic: %s \n", instruction->mnemonic);
-            printf("arg1: %s \n", instruction->arg1);
-            printf("arg2: %s \n", instruction->arg2);
-            printf("arg3: %s \n", instruction->arg3);
-            printf("arg4: %s \n", instruction->arg4);
         }
 
     } else {
@@ -197,13 +168,9 @@ void encodeSDT(assembler_instruction *instruction){
     if ((int32_t) offset < 0) {
         offset = -offset;
         U_bit = 0;
-        printf("offset: %i \n", offset);
     }
 
     //puts encoded SDT instruction to instruction->encoded
     //I_bit, P_bit, rn, offset have been initialized at some point
-
-
     instruction->encoded = concatSDT(cond, bit_value_1, I_bit, P_bit, U_bit, L_bit, rn, rd, offset);
-    printf("encoded: %i \n", instruction->encoded);
 }
