@@ -81,34 +81,34 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
     if (address == CLEAR_ADDRESS) {
         printf("PIN OFF\n");
-        return;
+//        return;
     }
 
     if (address == SET_ADDRESS) {
         printf("PIN ON\n");
-        return;
+//        return;
     }
 
     if (address == GPIO_0_TO_9) {
         printf("One GPIO pin from 0 to 9 has been accessed\n");
-        return;
+//        return;
     } else if (address == GPIO_10_TO_19) {
         printf("One GPIO pin from 10 to 19 has been accessed\n");
-        return;
+//        return;
     } else if (address == GPIO_20_TO_29) {
         printf("One GPIO pin from 20 to 29 has been accessed\n");
-        return;
+//        return;
     }
 
 
-    if (address > numOfAddresses || address < minAddress) {
-        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
-    }
-    else {
+//    if (address > numOfAddresses || address < minAddress) {
+//        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
+//    }
+//    else {
         //Loads word from memory or stores word to memory
         if (lFlag) {
             //word loaded from memory
-            if (address >= GPIO_0_TO_9) {
+            if (address == 0x20200004) {
                 state->registers[rd] = address;
             } else {
                 state->registers[rd] = *((uint32_t * )(state->mem + address));
@@ -117,7 +117,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
             //word stored into memory
             *((uint32_t * )(state->mem + address)) = state->registers[rd];
         }
-    }
+//    }
 }
 
 
