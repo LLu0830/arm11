@@ -10,36 +10,23 @@
 #include "math.h"
 #include "shine.h"
 
-void rec2(int val, int count, int b) {
-    if (count <= 1) {
-        int i;
-        for (i = b - 1; i >= 0; i--) {
-            printf("%d", (val >> i) & 1);
-        }
-        printf("\n");
-    } else {
-        rec2(val * 2, count - 1, b);
-        rec2(val * 2 + 1, count - 1, b);
-    }
-}
 
-void counter(unsigned int x)
-{   char buffer[3];
-    sprintf(buffer,"%u%u%u\n",
+void counter(unsigned int x) {
+    char buffer[3];
+    sprintf(buffer, "%u%u%u\n",
 
             //(x>>3)&0x1,
-            (x>>2)&0x1,
-            (x>>1)&0x1,
-            x&0x1);
-    printf("%s",buffer)
+            (x >> 2) & 0x1,
+            (x >> 1) & 0x1,
+            x & 0x1);
+    printf("%s", buffer)
     shine(buffer);
-    if(x==0x7U) return;
-    else counter(x+1);
+    if (x == 0x7U) return;
+    else counter(x + 1);
 
 }
 
-int counter_main(void)
-{
+int counter_main(void) {
     counter(0);
 }
 
@@ -51,6 +38,18 @@ int main() {
     rec(0, 4);
     rec(1, 4);
     return 0;
+}
+void rec2(int val, int count, int b) {
+    if (count <= 1) {
+        int i;
+        for (i = b - 1; i >= 0; i--) {
+            printf("%d", (val >> i) & 1);
+        }
+        printf("\n");
+    } else {
+        rec2(val * 2, count - 1, b);
+        rec2(val * 2 + 1, count - 1, b);
+    }
 }
 
 bool isBin(char *number) {
