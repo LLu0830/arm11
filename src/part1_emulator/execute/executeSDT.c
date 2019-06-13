@@ -78,21 +78,23 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         state->registers[rn] = address + offset;
     }
 
-    if (state->registers[rn] == CLEAR_ADDRESS) {
+    printf("state->registers[rn] is: %d\n", state->registers[rn]);
+    printf("Address taken by program is: %d\n", address);
+    if (address == CLEAR_ADDRESS) {
         printf("PIN OFF\n");
         return;
     }
 
-    if (state->registers[rn] == SET_ADDRESS) {
+    if (address == SET_ADDRESS) {
         printf("PIN ON\n");
         return;
     }
 
-    if (state->registers[rn] == GPIO_0_TO_9) {
+    if (address == GPIO_0_TO_9) {
         printf("One GPIO pin from 0 to 9 has been accessed\n");
-    } else if (state->registers[rn] == GPIO_10_TO_19) {
+    } else if (address == GPIO_10_TO_19) {
         printf("One GPIO pin from 10 to 19 has been accessed\n");
-    } else if (state->registers[rn] == GPIO_20_TO_29) {
+    } else if (address == GPIO_20_TO_29) {
         printf("One GPIO pin from 20 to 29 has been accessed\n");
     }
 
