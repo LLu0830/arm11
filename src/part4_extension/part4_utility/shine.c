@@ -31,11 +31,11 @@
 //        digitalWrite(LED3, 1);
 //    }
 //
-//    delay(500);
+//    delay(600);
 //    digitalWrite(LED1, 0);
 //    digitalWrite(LED2, 0);
 //    digitalWrite(LED3, 0);
-//    delay(500);
+//    delay(400);
 //}
 
 //void mode_LED(int n) {

@@ -67,7 +67,7 @@
 //reading commands from std input
 int main(int argc,char** argv) {
     int m;
-    printf("Please select the mode, enter 1 for 3 bits binary counter, 2 for 3-bit representer, 3 for calculator\nthat has enbeded arithmetic operation for 2 numbers");
+    printf("Please select the mode, enter 1 for 3 bits binary counter, 2 for 3-bit representer, 3 for calculator\nfor 2 numbers");
     scanf("%d", &m);
     switch (m) {
         case 1:
@@ -83,7 +83,7 @@ int main(int argc,char** argv) {
             calculator();
             break;
         default :
-            perror("Invalid input string");
+            perror("Invalid mode input");
             EXIT_FAILURE;
     }
     return 1;
