@@ -30,7 +30,3 @@ delay2_loop:
   cmp r2, #0            @ compare value in r2 and 0
   ble end2_loop         @ if r2 <= 0, branch to end2_loop
   b delay2_loop         @ otherwise loop through delay1_loop again
-
-
-
-

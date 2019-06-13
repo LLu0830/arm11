@@ -62,6 +62,7 @@ uint32_t getValueFromOp2Optional(assembler_instruction *instruction, Instruction
     uint32_t result;
     uint32_t rm = getValue(instruction->arg2);
 
+    printf("%s\n", instruction->arg3);
     switch(instruction->arg3[0]) {
         case 'l':
             if (instruction->arg3[2] == 'l') {
@@ -78,7 +79,7 @@ uint32_t getValueFromOp2Optional(assembler_instruction *instruction, Instruction
             shift_type = 3;
             break;
         default:
-            perror("Invalid shift type");
+            printf("Invalid shift type\n");
             exit(EXIT_FAILURE);
     }
 
@@ -89,7 +90,7 @@ uint32_t getValueFromOp2Optional(assembler_instruction *instruction, Instruction
         reg_or_val_flag = 1;
     }
     else {
-        perror("Invalid argument");
+        printf("Invalid argument\n");
         exit(EXIT_FAILURE);
     }
 
