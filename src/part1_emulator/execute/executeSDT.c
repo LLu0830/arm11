@@ -41,7 +41,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         uint32_t intOrReg = get_n_bits(offset, 4, 1);
         uint32_t shiftType = get_n_bits(offset, 5, 2);
 
-        if (intOrReg) {
+        if (!intOrReg) {
             //shift specified by constant amount
             shift = get_n_bits(offset, 7, 5);
         }
