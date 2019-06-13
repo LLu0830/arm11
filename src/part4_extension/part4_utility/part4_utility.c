@@ -22,14 +22,11 @@
 void counter(unsigned int x) {
     char buffer[3];
     sprintf(buffer, "%u%u%u\n",
-
             //(x>>3)&0x1,
-
             (x >> 2) & 0x1,
             (x >> 1) & 0x1,
             x & 0x1);
     printf("%s", buffer)
-
     shine(buffer);
     printf("Now it's representing %s\n",buffer);
     if (x == 0x7U) return;
@@ -40,29 +37,6 @@ void counter(unsigned int x) {
 int counter_main(void) {
     printf("Mode 1, this is a 3-bit binary counter using raspberry pi and 3 LEDs\n");
     counter(0);
-}
-
-void rec2(int val, int count, int b) {
-    if (count <= 1) {
-        int i;
-        for (i = b - 1; i >= 0; i--) {
-            printf("%d", (val >> i) & 1);
-        }
-        printf("\n");
-    } else {
-        rec2(val * 2, count - 1, b);
-        rec2(val * 2 + 1, count - 1, b);
-    }
-}
-
-void helper_rec(int val, int count) {
-    rec2(val, count, count);
-}
-
-int main() {
-    helper_rec(0, 4);
-    helper_rec(1, 4);
-    return 0;
 }
 
 
@@ -84,26 +58,6 @@ bool isValid(int d) {
     return d >= 0 && d <= 7;
 }
 
-//convert binary number to decimal
-//int bin2dec(char *bin) {
-//    int b, k, n;
-//    int len, sum = 0;
-//
-//    len = strlen(bin) - 1;
-//    for (k = 0; k <= len; k++) {
-//        b = 1;
-//        n = (bin[k] - '0'); // char to numeric value
-//        if ((n > 1) || (n < 0)) {
-//            puts("\n\n ERROR! BINARY has only 1 and 0!\n");
-//            return (0);
-//        }
-//        b = b << (len - k);
-//        // sum it up
-//        sum = sum + n * b;
-//        //printf("%d*%d + ",n,b);  // uncomment to show the way this works
-//    }
-//    return (sum);
-//}
 
 //convert binary number to decimal
 int bin2dec(char *binstr) {
@@ -122,10 +76,7 @@ int bin2dec(char *binstr) {
     return dec;
 }
 
-//char*dec2bin(int n){
-//    int b=0;
-//    b=n%2;
-//}
+
 
 //convert decimal number to binary
 char *dec2bin(int n) {
