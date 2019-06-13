@@ -33,7 +33,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     uint32_t address;
 
     //Offset is immediate offset or shifted register
-    if  (iFlag) {
+    if (iFlag) {
         //offset is shifted register
         uint32_t shift;
         uint32_t rm = get_n_bits(offset, 0, 4);
@@ -44,8 +44,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         if (!intOrReg) {
             //shift specified by constant amount
             shift = get_n_bits(offset, 7, 5);
-        }
-        else {
+        } else {
             //shift specified by register rs
             uint32_t rs = get_n_bits(offset, 8, 4);
             uint32_t rsContent = state->registers[rs];
@@ -60,7 +59,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
 
     //decides whether to add or subtract the offset
     if (!uFlag) {
-        offset = - offset;
+        offset = -offset;
     }
 
     //Uses post or pre indexing
@@ -69,8 +68,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
         //pre-indexing
         // should not change base register
         address = state->registers[rn] + offset;
-    }
-    else {
+    } else {
         //add/subtract offset from base register after transferring data
         //post-indexing
         //changes base register
@@ -101,23 +99,20 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     }
 
 
-    if (address > numOfAddresses || address < minAddress) {
-        if (address < GPIO_0_TO_9 || address > CLEAR_ADDRESS) {
-            printf("Error: Out of bounds memory access at address 0x%08x\n", address);
-        }
-    }
-    else {
+    if ((address > numOfAddresses || address < minAddress) && (address < GPIO_0_TO_9 || address > CLEAR_ADDRESS)) {
+        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
+    } else {
         //Loads word from memory or stores word to memory
         if (lFlag) {
             //word loaded from memory
-            if (address >= GPIO_0_TO_9) {
+            if (address > numOfAddresses) {
                 state->registers[rd] = address;
             } else {
-                state->registers[rd] = *((uint32_t * )(state->mem + address));
+                state->registers[rd] = *((uint32_t *) (state->mem + address));
             }
         } else {
             //word stored into memory
-            *((uint32_t * )(state->mem + address)) = state->registers[rd];
+            *((uint32_t *) (state->mem + address)) = state->registers[rd];
         }
     }
 }
