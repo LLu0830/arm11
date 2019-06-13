@@ -185,7 +185,7 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
 
         case RSB:
             // operand2 - rn
-            setC(ARM11, (uint32_t) (op2Value >= rnValue));
+            setC(ARM11, (uint32_t) (op2Value > rnValue));
             break;
         default:
             break;
@@ -195,7 +195,10 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
 
     if (result == 0) {
         setZ(ARM11, 1);
+    } else {
+        setZ(ARM11, 0);
     }
+
 
 //    Sets N bit
 
