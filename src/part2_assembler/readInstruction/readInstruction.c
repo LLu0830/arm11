@@ -50,13 +50,13 @@ bool readInstruction(FILE *file, int *counter, assembler_instruction *instructio
             if (at_sign != 0) {
                 *at_sign = '\0';
             }
+            printf("Line: %s\n", line);
             instruction->currentAddress = (address) *counter;
             (*counter)++;
             tokenizer(line, instruction);
         } else {
             instruction->currentAddress = -1;
         }
-        printf("Line: %s\n", line);
 
         free(line);
         return true;
