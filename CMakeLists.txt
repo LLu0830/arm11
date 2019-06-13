@@ -14,6 +14,10 @@ include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
 include_directories(src/part2_assembler/tokenizer)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< CMakeLists.txt
+>>>>>>> 24198318d609486b9c1485180b78daff54350caa
 include_directories(src/part4_extension/part4_utility)
 
 add_executable(arm11_31
@@ -128,13 +132,17 @@ add_executable(arm11_31
         src/part2_assembler/readLabels/readLabels.h
         src/part2_assembler/tokenizer/tokenizer.c
         src/part2_assembler/tokenizer/tokenizer.h
-<<<<<<< HEAD
+
         src/part2_assembler/assemble.c)
 
 target_link_libraries(C_GROUP_31 m)
-=======
+
         src/part2_assembler/assemble.c
         src/part4_extension/part4_utility/part4_utility.c
         src/part4_extension/main.c)
+<<<<<<< HEAD
 >>>>>>> 09c1ab9f6a6b86d558976deafbe5376998078d18
 >>>>>>> 063e89e005b9c71ef2913d877b1fa0f4737cbbca
+=======
+
+>>>>>>> 24198318d609486b9c1485180b78daff54350caa

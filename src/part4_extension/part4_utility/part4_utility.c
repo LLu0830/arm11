@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 
 #include <bits/mathcalls.h>
 #include "../part4_utility/part4_utility.h"
@@ -13,6 +14,7 @@
 //#include "part4_utility.h"
 
 //#include "math.h"
+
 //#include "shine.h"
 
 
