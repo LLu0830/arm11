@@ -16,5 +16,6 @@ char *copy_string(char *string);
 bool isLabel(char *string);
 assembler_instruction *instruction_create(void);
 void instruction_free(assembler_instruction *instruction);
+uint32_t getValue(char *string);
 
 #endif //SRC_ASSEMBLER_UTILITY_H
