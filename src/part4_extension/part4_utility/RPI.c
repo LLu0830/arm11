@@ -2,6 +2,7 @@
 // Created by ll7818 on 11/06/19.
 //
 
+
 #include <bits/fcntl-linux.h>
 #include <fcntl.h>
 #include "RPI.h"
@@ -39,4 +40,5 @@ void unmap_peripheral(struct bcm2835_peripheral *p) {
 
     munmap(p->map, BLOCK_SIZE);
     close(p->mem_fd);
+
 }

@@ -47,11 +47,16 @@ void shine(char *n) {
         GPIO_SET = 1 << 6;
     }
 
+
+    //make it shine for 2 seconds
+    sleep(2);
+
     //reset the pin to shot the led
     GPIO_CLR = 1 << 4;
     GPIO_CLR = 1 << 5;
     GPIO_CLR = 1 << 6;
-    sleep(1);
+
+
 
     //return 0;
 }

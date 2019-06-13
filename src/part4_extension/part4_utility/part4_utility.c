@@ -6,20 +6,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <bits/mathcalls.h>
-#include "part4_utility.h"
+#include "../part4_utility/part4_utility.h"
 #include "math.h"
 #include "shine.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c7975281b3aeca591f24c933b4e4a48041c6e580
 
 void counter(unsigned int x) {
     char buffer[3];
     sprintf(buffer, "%u%u%u\n",
 
             //(x>>3)&0x1,
+
             (x >> 2) & 0x1,
             (x >> 1) & 0x1,
             x & 0x1);
     printf("%s", buffer)
+
     shine(buffer);
     if (x == 0x7U) return;
     else counter(x + 1);
@@ -30,13 +36,26 @@ int counter_main(void) {
     counter(0);
 }
 
+void rec2(int val, int count, int b) {
+    if (count <= 1) {
+        int i;
+        for (i = b - 1; i >= 0; i--) {
+            printf("%d", (val >> i) & 1);
+        }
+        printf("\n");
+    } else {
+        rec2(val * 2, count - 1, b);
+        rec2(val * 2 + 1, count - 1, b);
+    }
+}
+
 void helper_rec(int val, int count) {
     rec2(val, count, count);
 }
 
 int main() {
-    rec(0, 4);
-    rec(1, 4);
+    helper_rec(0, 4);
+    helper_rec(1, 4);
     return 0;
 }
 void rec2(int val, int count, int b) {
@@ -51,6 +70,7 @@ void rec2(int val, int count, int b) {
         rec2(val * 2 + 1, count - 1, b);
     }
 }
+
 
 bool isBin(char *number) {
     int n;
