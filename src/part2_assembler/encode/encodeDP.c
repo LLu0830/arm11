@@ -30,8 +30,8 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
 //  checks if immediate value can be stored
         while (count <= 30) {
             if (expression <= 0xff) {
-//                count /= 2;
-                count = count << 8U;
+                count /= 2;
+                count = count << 9U;
 //   gets Operand2
                 uint32_t result = expression | count;
                 return result;
