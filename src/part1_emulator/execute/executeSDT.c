@@ -101,10 +101,12 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
     }
 
 
-//    if (address > numOfAddresses || address < minAddress) {
-//        printf("Error: Out of bounds memory access at address 0x%08x\n", address);
-//    }
-//    else {
+    if (address > numOfAddresses || address < minAddress) {
+        if (address < GPIO_0_TO_9 || address > CLEAR_ADDRESS) {
+            printf("Error: Out of bounds memory access at address 0x%08x\n", address);
+        }
+    }
+    else {
         //Loads word from memory or stores word to memory
         if (lFlag) {
             //word loaded from memory
@@ -117,7 +119,7 @@ void executeSDT(Instruction instruction, struct stateOfMachine *state) {
             //word stored into memory
             *((uint32_t * )(state->mem + address)) = state->registers[rd];
         }
-//    }
+    }
 }
 
 
