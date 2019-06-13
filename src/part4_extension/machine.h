@@ -10,6 +10,6 @@
 void anotherMain(void);
 
 
-void presenter(void);
+
 void mode_3(void);
 #endif //ARM11_31_MAIN_H
