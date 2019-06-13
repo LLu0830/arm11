@@ -28,8 +28,9 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
         uint32_t count = 0;
 
 //  checks if immediate value can be stored
-        while (count <= 0xf) {
+        while (count <= 30) {
             if (expression < 0xff) {
+                count /= 2;
                 count = count << 9U;
 //   gets Operand2
                 uint32_t result = expression | count;
@@ -37,9 +38,9 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
             }
             expression = rotateLeftNtimes(expression, 2);
             printf("Expression after rotation: %u, count: %i\n", expression, count);
-            count++;
+            count += 2;
         }
-        if (count > 15) {
+        if (count > 30) {
             perror("This numeric constant cannot be represented.");
             return EXIT_FAILURE;
         }
