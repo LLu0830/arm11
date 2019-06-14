@@ -25,7 +25,6 @@ void readLabels(label_address_list *table, FILE *file) {
     uint32_t lineNum = 0;
 
     char *currentLabel = calloc(MAX_LINE_SIZE, sizeof(char));
-//    char *temp =  calloc(MAX_LINE_SIZE, sizeof(char));
     char *temp = currentLabel;
     int cnt = 0;
     while (fgets(temp, MAX_LINE_SIZE, file) != NULL) {

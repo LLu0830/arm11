@@ -58,15 +58,8 @@ void encodeMUL(assembler_instruction *instruction) {
 
     uint32_t result = 0;
 
-    result |= cond << 28U;
-//            | ABit << 21U | SBit << 20U | positionRd << 16U | positionRn << 12U | positionRs << 8U | const1 << 4U | positionRm;
-    result |= ABit << 21U;
-    result |= SBit << 20U;
-    result |= positionRd << 16U;
-    result |= positionRn << 12U;
-    result |= positionRs << 8U;
-    result |= const1 << 4U;
-    result |= positionRm;
+    result = cond << 28U | ABit << 21U | SBit << 20U | positionRd << 16U
+             | positionRn << 12U | positionRs << 8U | const1 << 4U | positionRm;
 
     instruction->encoded = result;
 }
