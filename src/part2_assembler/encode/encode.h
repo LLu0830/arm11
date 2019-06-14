@@ -7,7 +7,6 @@
 
 #include "../assembler_utility/table.h"
 
-//void encode(assembler_instruction *instruction);
 void encode(assembler_instruction *instruction, label_address_list *table);
 
 #endif //SRC_ENCODE_H
