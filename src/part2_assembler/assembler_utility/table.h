@@ -35,7 +35,6 @@ typedef struct {
 
     address target_address;
     address currentAddress;
-    uint32_t counter;//counter in readInstruction
 
 } assembler_instruction;
 
@@ -65,10 +64,7 @@ bool isContainedInTable(label label, label_address_list *table);
 
 void insert_pair(label_address* pair, label_address_list *list);
 
-
 address lookup_address(label label, label_address_list *table);
-
-label_address *allocList(void);
 
 
 #endif //SRC_TABLE_H
