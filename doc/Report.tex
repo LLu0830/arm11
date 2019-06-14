@@ -37,7 +37,7 @@ urlcolor=blue
     \noindent Here is a brief synopsis of how we structured each directory:
 
     \begin{itemize}
-        \item \textit{assembler\_utility}: includes \texttt{assembler\_utility.c}, \textt{table.c} and corresponding header files. \texttt{assembler\_utility.c} contains utility functions that we need for the assembler specifically - they had not been written in Part I's \texttt{utility.c} because we wrote them after finishing Part I. \texttt{table.c} includes functions that are needed for creating and accessing elements of the symbol table, while \texttt{table.h} contains enums and typedef structs we created specifically for Part II - e.g., the typedef struct assembler\_instruction, which represents an instruction in assembly code
+        \item \textit{assembler\_utility}: includes \texttt{assembler\_utility.c}, \textt{table.c} and corresponding header files. \texttt{assembler\_utility.c} contains utility functions that we need for the assembler specifically - they had not been written in Part I\textquotesingle s \texttt{utility.c} because we wrote them after finishing Part I. \texttt{table.c} includes functions that are needed for creating and accessing elements of the symbol table, while \texttt{table.h} contains enums and typedef structs we created specifically for Part II - e.g., the typedef struct assembler\_instruction, which represents an instruction in assembly code
         \item \textit{readInstruction}: includes \texttt{readInstruction.c} and a corresponding header file. The function readInstruction in \texttt{readInstruction.c} reads one instruction at a time from the file that is passed in as a parameter, and passes this instruction to the tokenizer (see below). If the instruction cannot be read (e.g., if the file pointer is null or the file is empty), the function returns false; otherwise, it returns true
         \item \textit{readLabels}: includes \texttt{readLabels.c} and a corresponding header file. The function readLabels reads labels and their corresponding addresses from the file that is passed in as a parameter, one label-address pair at a time, and stores them in the symbol table
         \item \textit{tokenizer}: includes \texttt{tokenizer.c} and a corresponding header file. The function tokenizer in \texttt{tokenizer.c} takes an instruction string (char *), parses it to separate it into its mnemonic and arguments and then stores these values in an assembler\_instruction
@@ -46,46 +46,79 @@ urlcolor=blue
     \end{itemize}
 
     \subsection{Part III - General Purpose Input/Output on a Raspberry Pi}
+    Our assembly program for Part III is in the file gpio.s, inside the programs directory. It contains a main loop for switching the LED on and off infinitely many times (\textit{LED\_loop}), as well as delay loops for pausing the LED for a few seconds while the LED is on and off.
     \subsection{Part IV - The Extension}
+
+    For the extension, we built a 3 bits binary machine, which uses the Raspberry Pi and three LEDs. There are 3 modes of the main program: the binary counter, the presenter and the calculator. One LED will blink different times to present which mode the machine is on.\\*
+
+    \noindent The first mode is the binary counter, which causes the LEDs to light up a few times in order to count through the decimal integers from 0 to the number the user entered. The highest number that can be represented in binary by three bits is 7, so this is the maximum user input. Each LED lights up for 0.8 seconds, and switches off for 0.2 seconds before lighting up again. Therefore, since there is a 1 second time interval between each time the LED lights up, the first mode can also be used as a clock. \\*
+
+    \noindent The second mode is a presenter, which requires one decimal integer input from the user. The program causes the LEDs to light up in a way that represents the user input. \\*
+
+    \noindent The third mode is a calculator which presents the result using the LEDs. It requires three inputs: the first two are integer inputs (in either decimal or binary form), and the third is the type of arithmetic operation the user wants to perform on the two integers. The LEDs present the result of this arithmetic operation.
+
+    \subsubsection{Implementation}
+    Part IV was divided into four directories: \textit{counter}, \textit{presenter}, \textit{calculator} and \textit{part4\_utility}. The \texttt{machine.c} file which contains the main function for Part 4 is outside those directories. All the directories are included in part4\_extension directory inside src.\\*
+
+    \noindent Here is a brief synopsis of how we structured each directory:
+
+    \begin{itemize}
+        \item \textit{part4\_utility}: contains \texttt{part4\_utility.c}, \textttt{shine.c} and the corresponding header files.
+        \begin{itemize}
+            \item \texttt{part4\_utility.c} contains the functions bin2dec and dec2bin, which convert a binary number to decimal form and vice versa. It also contains two bool functions. The first one is isValid, which checks if the number is in the range 0 - 7, and this is needed to ensure that the LEDs can represent the user input. The second bool function is isBin, which checks if a number is in binary form. There is also a function called operate\_arith in this file, which does the calculation for mode 3 of the binary machine (the calculator)
+
+            \item \texttt{shine.c} contains the functions shine and mode\_LED. We included the Pi library \\* \texttt{<WiringPi.h>} in the function shine to manipulate the GPIO pins (defining a pin as an input, an output and clearing it to reset it); this allowed us to switch the three LEDs on and off according to the binary input. WiringPi pins 0, 1 and 2 were mapped to BCM\_GPIO pins 17, 18 and 21 respectively. mode\_LED makes one of the LEDs blink 1, 2 or 3 times to indicate which mode the machine is in. mode\_LED is called in the main function.
+        \end{itemize}
+
+        \item \textit{counter}: includes \texttt{counter.c} and the corresponding header file. It represents the first mode of the binary machine.
+        \begin{itemize}
+            \item \texttt{counter.c} includes the function counter, which prints out instructions for the user and calls the helper function counter\_helper.  counter\_helper loops through the decimal numbers from 1 to the number entered and causes the LEDs to shine accordingly (using the function shine from part4\_utility). The LEDs blink at most 8 times in a call to counter.
+        \end{itemize}
+        \item \textit{presenter}: includes \texttt{presenter.c} and the corresponding header file. It represents the second mode of the binary machine.
+        \begin{itemize}
+            \item \texttt{presenter.c} includes the presenter function. It prints out instructions for the user and takes in a decimal number from user; it then presents it using the LEDs. presenter calls the function dec2bin, which converts the decimal number to binary form, and then calls the function shine to control the LEDs.
+        \end{itemize}
+        \item \textit{calculator}: includes \texttt{calculator.c} and the corresponding header file. It represents the third mode of the binary machine.
+        \begin{itemize}
+            \item \texttt{calculator.c} includes the function calculator.  It prints out instructions for the user and takes in two integers (either in binary or decimal form) and a string representing the operation type from the user. It then presents the arithmetic result using the LEDs. calculator converts the binary input to decimal form and calls the function operate\_arith to compute the result. It then calls the function shine to control the LEDs to represent the result.
+        \end{itemize}
+    \end{itemize}
+
+    \noindent \texttt{machine.c} contains the main function, which prints the instruction telling the user to input an integer to choose a mode. It then switches on the input and calls mode\_LED and the corresponding mode function.
+
+
     \section{Testing our implementation}
+    The majority of our testing for Parts I and II was done using the provided test suite. This proved to be helpful
+
     \section{Reflecting on the project}
     \subsection{Group reflection}
     \subsection{Individual reflections}
     \subsubsection{Rini}
     \subsubsection{Katarina}
+    My personal experience working in this group has been a positive one. Besides some minor issues that we managed to overcome, our group was working together quite well.\\*
+
+    \noindent While working on the first part of the project, we did not split the work in an optimal way, which often resulted in merge conflicts. We learned from that, however, and we organised our work significantly better in the subsequent parts of the project. Good organisation and planning is something I would definitely want to see in any future projects I have to take part in, as it can facilitate the given task and it is very good to avoid confusion. This project has helped me achieve a better understanding on how to work in a group.\\*
+
+    \noindent In my opinion, our group was well balanced and everyone, despite having different strengths and weaknesses, was on a similar ability level, which means I fitted in the group well. I also greatly appreciated the fact that we were communicating with each other on a regular basis, and the communication was carried out effectively, which meant we could promptly discuss and subsequently resolve most problems that arose during the time we were working on the project. Although I had some doubts about my own abilities, as I have never done C before,  and thus was worried that my contribution to the project may not on par with the standards required, my doubts were dispelled after I started working and the encouraging and friendly working environment maintained in our group was especially helpful in getting me started and gaining more confidence in myself. I am especially glad that I managed to maintain a strong work ethic while working on this project, as did everyone in our group, for that matter.\\*
+
+    \noindent The most significant problems I personally encountered were related to the fact that I had no prior experience with C and found the beginning quite challenging. One unforeseen issue was that the IDE on my laptop was only displaying some of the warnings it should have, despite my attempts to fix the problem, so debugging on my laptop took more time than on a different machine. Despite all the challenges, I had a very positive experience working on this project and with this particular group of people.
+
     \subsubsection{Lize}
-    The cooperation in this project was sound and every group member worked hard and fitted in well. Take the way we divided work as an example, The plan we made narrowed our disadvantages and extended our strengths on some level. I had no experience with C language before and the IDE on my own laptop was not fully-functioning, so I tended to demand more time writing correct code and debugging. This tends to be my weakness, the solution I thought about before started working in the group was simply spend more time working on the project in order to finish my part in time. However, I am willing to spend more time reading the spec and working. A positive attitude is the only thing I can think of as a strength of mine. To make up for my weakness, my original thought was simply to spend more time working on the project in order to finish my part in time.\\*
+    The cooperation in this project was sound and every group member worked very hard and fitted in well. All the group members were on the same ability level and the communication we made was efficient. Due to the lack of experience of using git, we encountered a lot of merge conflicts at the beginning. However, we learned our lesson and the remaining part of the project was done in a way better-organized way. The optimized plan we made enabled me to make up for my weakness by practising in the process and extended our strengths on some level.\\*
 
-    \noindent The plan we made after finishing part 1 was Rini and Manshu kept debugging to pass tests. I did not do much of the debugging work which I am not good at, instead, Katarina and I started figuring out the general structure and schema of part 2 and start working on it. The project was done in a well-organized way. It was a pleasure working in this group.
+    \noindent I had no experience with C language before, so I tended to demand more time writing correct code and debugging, which was definitely a weakness. However, just like other group members, I was very willing to spend more time reading the spec and working on the project. A positive working attitude is what I can think of as a strength of mine. To make up for my weakness, my original thought was simply to spend more time working on the project in order to finish my part in time.\\*
+
+    \noindent The plan we made after finishing part 1 was Rini and Manshu kept debugging to pass tests. I did not do much of the debugging work which I am not good at, instead, Katarina and I started figuring out the general structure and schema of part 2 and started working on it. After two weeks of struggling during the process of finishing part 1 and part 2, my programming and debugging skills enhanced, which means my weakness was made up to some extent. I was able to code and debug the extension part by the end of the project.\\*
+
+    \noindent Before starting working in the group, I was worried about my limited ability and lack of communication among members. It turned out the sound working atmosphere among our group members dispelled my concerns, everyone was hard-working and we encouraged each other while struggling at some point of the project. The project was done in a well-organized way and it was a true pleasure working in this group.\\*
+
     \subsubsection{Manshu}
-    % \noindent{We have been meeting regularly, so that if anyone has any questions or suggestions for any part of the code, we can get through it quickly and efficiently. We each have our own branch on GitLab, and always communicate with each other before merging into the master branch; this is to ensure no member\textquotesingle s code is mistakenly overwritten by another\textquotesingle s.\\*
-    % }
+    For our group, I think our weakness is that we are about same level of programming and that none of us knew C before this semester. That was the thing I worried most but now I think this is also one of the advantages. Since the purpose of this project is to handle C programming language well instead of just an excellent outcome. I feel like we did really well on that as we learnt and progressed together during practices, and we all spent lots of time working on this project. We always explain to others what we did and how we did it, so all of us know how the program works well. If I were in a different group, with some experts in C programming, I won’t actually make such a huge progress and I won’t be so joyful when we pass all the test cases.\\*
 
-    % \noindent{We think our group is working together quite well. One possible improvement for the next parts of our project would be to come up with the overall structure for our code earlier, since this would help us split the work among ourselves more quickly and waste less time figuring out what we need to do.}
+    \noindent How to start working on a project is always the hardest thing. The basic structure was the key of the whole project but quite confusing to me when first time reading the spec. I did go through the spec quite a few times reading every sentence carefully and asked help from mentors and UTAs. After building a nice structure, everything worked out well.\\*
+
+    \noindent I really feel a comfortable atmosphere working in such a group, all the group members are positive, encouraging and hard-working. And of course, we followed our schedule, all of us were able to finish our work by the deadline we\textquotesingle ve set, also help each other. Besides, we split our parts efficiently and so everyone is doing some work all the time.
 
 
-    % \section{Implementation Strategies}
-    % \subsection{How we structured our emulator}
-    % We have divided our emulator into five directories: \textit{fetch}, \textit{decode}, \textit{execute}, \textit{emulate} and \textit{emulator\_utility}. The \texttt{emulate.c} file (which contains the main function for Part I) is outside all of these directories, and all of these are included in the part1\_emulator directory inside src.\\*
-
-    % \noindent Here is a brief synopsis of how we structured each directory:
-
-    % \begin{itemize}
-    %     \item \textit{fetch}: includes \texttt{fetch.c} and a corresponding header file. \texttt{fetch.c} uses the current value of the PC and the ARM11 structure we have created to fetch the next instruction from memory
-    %     \item \textit{decode}: includes \texttt{decode.c} and a corresponding header file. \texttt{decode.c} contains the decode function, which takes an instruction, works out what type of instruction it is and then decodes it, splitting it into its components and storing this information in the struct instruction\_type
-    %     \item \textit{execute}: includes \texttt{execute.c}, \texttt{executeBR.c}, \texttt{executeDP.c}, \texttt{executeMUL.c}, \texttt{executeSDT.c} and corresponding header files. \texttt{execute.c} has a function, execute, which executes a decoded instruction in our struct for representing ARM11 (stateOfMachine), using a switch-case statement on the type of instruction to call functions from \texttt{executeBR.c}, \texttt{executeDP.c}, \texttt{executeMUL.c}, or \texttt{executeSDT.c}
-    %     \item \textit{emulate}: includes \texttt{binaryFileLoader.c}, \texttt{pipeline.c}, \texttt{printOutput.c} and corresponding header files. The function binaryFileLoader in \texttt{binaryFileLoader.c} loads instructions from the binary file specified in the command line argument into memory, and \texttt{pipeline.c} runs the three-stage pipeline needed to simulate the fetch-decode-execute cycle in the main function of \texttt{emulate.c}. \texttt{printOutput.c} prints the values of the registers in ARM11; this is particularly useful when debugging our program
-    %     \item \textit{emulator\_utility}: contains \texttt{utility.c} and a corresponding header file, \texttt{DefinedTypes.h},\\* \texttt{instruction.h} and \texttt{state.h}. \texttt{utility.c} contains utility functions for manipulation of binary numbers (e.g., masks). \texttt{DefinedTypes.h} contains enums that are used to define constants (e.g., an enum for the different types of instruction that the emulator should be able to recognise). \texttt{instruction.h} defines a struct called instruction\_type that is used to store the decoded parts of an instruction. \texttt{state.h} defines a struct for representing ARM11, called stateOfMachine - this contains the 17 registers and their contents; the instructions taken from the binary file specified as a command line argument; and a boolean that represents whether or not the processor is running (i.e., whether the program has been terminated)
-    % \end{itemize}
-    % \texttt{emulate.c} contains the main function for running the emulator.
-
-    % \subsection{Which bits from Part I might we be able to reuse in Part II?}
-    % We believe that \texttt{state.h} and \texttt{DefinedTypes.h} may be useful in Part II. \texttt{state.h} could be useful for representing the ARM11 registers and instructions, while \texttt{DefinedTypes.h} contains many enums that seem to be relevant for Part II as well - for example, when recognising assembly language instructions.
-
-    % \subsection{Future implementation tasks that may be challenging}
-
-    % Although we cannot predict exactly which parts of the project we will find challenging in the future, we anticipate that some sections of Part II will be difficult for us (for example, creating the symbol table abstract data type). In addition, none of us have used a Raspberry Pi before, so we may need some time to adjust to using such a new form of technology.\\*
-
-    % \noindent In order to make such tasks easier to complete, we have started making a detailed outline of how we would like to structure our code in Part II; improving our project organisation will allow us to spend more time tackling difficult tasks like the ones mentioned above.
 
 \end{document}
