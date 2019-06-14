@@ -14,7 +14,7 @@
 
 void encode(assembler_instruction *instruction, label_address_list *table) {
 
-
+    //according to the mnemonic we get, classify its operation type and type
     token mnemonic = instruction->mnemonic;
     char snd = *(mnemonic + 1);
     switch (*mnemonic) {
@@ -123,6 +123,7 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
     }
 
 
+    //call separate functions
     switch (instruction->type) {
         case DP:
             encodeDP(instruction);
