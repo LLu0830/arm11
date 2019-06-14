@@ -37,6 +37,18 @@ void set_I_bit(assembler_instruction* instruction, uint32_t *I_bit) {
     }
 }
 
+uint32_t set_U_bit_and_get_offset(char *reg, uint32_t offset, uint32_t *U_bit){
+    uint32_t reg_val = getValue(reg);
+    if ((int32_t) reg_val < 0) {
+        offset = -offset;
+        *U_bit = 0;
+    }
+    else {
+        *U_bit = 1;
+    }
+    return offset;
+}
+
 
 //helper function to concatenate all the parts of an SDT instruction
 uint32_t concatSDT(uint32_t cond, uint32_t bit_value_1, uint32_t I_bit, uint32_t P_bit, uint32_t U_bit,
@@ -64,16 +76,15 @@ void put_in_array(uint32_t expression) {
 void encodeSDT(assembler_instruction *instruction){
 
     //all parts of a SDT instruction
-    uint32_t cond = 14;         //always condition code: 1110
-    uint32_t bit_value_1 = 1;   //1
+    uint32_t cond = 14;             //always condition code: 1110
+    uint32_t bit_value_1 = 1;       //1
     uint32_t I_bit = 1;             //shifted register/immediate offset flag
     uint32_t P_bit = 0;             //pre-indexing flag
-    uint32_t U_bit = 1;         //add/subtract flag (upbit)
+    uint32_t U_bit = 1;             //add/subtract flag (upbit)
     uint32_t L_bit = 0;             //load/store flag
     uint32_t rn = 0;                //base register
     uint32_t rd = 0;                //destination register
     uint32_t offset = 0;            //offset of register
-
 
     //load or store differentiation
     //<ldr/str>
@@ -142,22 +153,37 @@ void encodeSDT(assembler_instruction *instruction){
                 I_bit = 0;
                 offset = 0;
             }
-                //[Rn]<#expression>
+            //[Rn]<#expression>
             //post-indexing, offset not zero
-            else {
+            else if (instruction->arg3[0] == '#' || (instruction->arg3[0] == 'r' && instruction->arg4 == NULL)){
                 P_bit = 0;
                 offset = getValue(instruction->arg3);
                 //immediate value
                 set_I_bit(instruction, &I_bit);
             }
+            //optional case
+            //[Rn],{+/-}Rm{,<shift>}
+            else {
+                P_bit = 0;
+                I_bit = 1;
+                offset = getValueFromOp2Optional(instruction->arg3, instruction->arg4, instruction->arg5);
+            }
 
         }
-        //[Rn, <#expression>]
         //pre-indexing, offset not 0
         else {
+            //[Rn, <#expression>]
             P_bit = 1;
-            offset = getValue(instruction->arg3);
-            set_I_bit(instruction, &I_bit);
+            if (instruction->arg3[0] == '#' || (instruction->arg3[0] == 'r' && instruction->arg4 == NULL)) {
+                offset = getValue(instruction->arg3);
+                set_I_bit(instruction, &I_bit);
+            }
+            //optional case
+            //[Rn,{+/-}Rm{,<shift>}]
+            else {
+                I_bit = 1;
+                offset = getValueFromOp2Optional(instruction->arg3, instruction->arg4, instruction->arg5);
+            }
         }
 
     } else {
@@ -165,6 +191,7 @@ void encodeSDT(assembler_instruction *instruction){
         exit(EXIT_FAILURE);
     }
 
+    //sets U_bit to 0 if offset is negative
     if ((int32_t) offset < 0) {
         offset = -offset;
         U_bit = 0;
