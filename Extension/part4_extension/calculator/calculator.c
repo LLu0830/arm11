@@ -4,10 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "shine.h"
-#include "part4_utility.h"
+#include "../part4_utility/shine.h"
+#include "../part4_utility/part4_utility.h"
 #include <wiringPi.h>
 
+//mode 3
 void calculator(void) {
     int n1, n2;
     char *operation_type = malloc(4 * sizeof(char));
@@ -20,6 +21,8 @@ void calculator(void) {
     scanf("%d", &n2);
     int bin_result = operate_arith(n1, n2, operation_type);
     printf("The integer result of the operation in binary form is %d\n", bin_result);
+
+    //wait for 0.5s
     delay(500);
     shine(int_to_str(bin_result));
     printf("Look at the LEDs!!");

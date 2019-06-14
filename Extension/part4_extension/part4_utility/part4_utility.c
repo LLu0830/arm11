@@ -5,8 +5,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-
 #include "part4_utility.h"
 #include <math.h>
 

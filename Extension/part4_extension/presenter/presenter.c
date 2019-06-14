@@ -6,10 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "shine.h"
-#include "part4_utility.h"
+#include "../part4_utility/shine.h"
+#include "../part4_utility/part4_utility.h"
 #include <string.h>
 
+//mode 2
 void presenter(void) {
     int n;
     char *b_str;

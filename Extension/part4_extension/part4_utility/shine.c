@@ -3,13 +3,13 @@
 //
 #include <stdlib.h>
 #include <string.h>
-//#include "RPI.h"
 #include <wiringPi.h>
 
 #define LED1 0
 #define LED2 1
 #define LED3 2
 
+//light up 3 LEDs
 void shine(char *n) {
 
     wiringPiSetup();
@@ -19,6 +19,7 @@ void shine(char *n) {
 //2 is 21
     if (*n == '1') {
         pinMode(LED1, OUTPUT);
+        //light LED up
         digitalWrite(LED3, 1);
     }
 
@@ -33,22 +34,29 @@ void shine(char *n) {
     }
 
     delay(800);
+    //shot LED down
     digitalWrite(LED1, 0);
     digitalWrite(LED2, 0);
     digitalWrite(LED3, 0);
     delay(200);
 }
 
+
+//making one LED blink 1,2,3 times to present which mode is the machine on
 void mode_LED(int n) {
     wiringPiSetup();
     pinMode(LED1, OUTPUT);
     int t = 0;
+
+    //mode1
     if (n == 1) {
         digitalWrite(LED1, 1);
         delay(500);
         digitalWrite(LED1, 0);
         delay(300);
     }
+
+    //mode2
     if (n == 2) {
         while (t < 2) {
             digitalWrite(LED1, 1);
@@ -58,6 +66,8 @@ void mode_LED(int n) {
             t++;
         }
     }
+
+    //mode3
     if (n == 3) {
         while (t < 3) {
             digitalWrite(LED1, 1);

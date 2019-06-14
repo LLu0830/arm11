@@ -10,11 +10,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "shine.h"
-#include "part4_utility.h"
-#include "presenter.h"
-#include "calculator.h"
-#include "counter.h"
+#include "part4_utility/shine.h"
+#include "part4_utility/part4_utility.h"
+#include "presenter/presenter.h"
+#include "calculator/calculator.h"
+#include "counter/counter.h"
 #include <wiringPi.h>
 
 #define MAX_CHAR_NUM 512

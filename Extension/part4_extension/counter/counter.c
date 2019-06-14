@@ -6,9 +6,12 @@
 #include "shine.h"
 #include <stdlib.h>
 #include <string.h>
-#include "part4_utility.h"
+#include "../part4_utility/part4_utility.h"
 #define MAX_SIZE 64
 #define MAX_INT 21474836
+//mode2
+
+
 //binary counter
 void counter_helper(int x, int ceil) {
     char* buffer=malloc(MAX_SIZE*sizeof(char));
