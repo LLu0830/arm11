@@ -23,7 +23,7 @@ urlcolor=blue
 
     \title{\textbf{Final Report}}
     \author{C Group 31\\* Rini Banerjee (rb3018), Katarina Kulkova (kk6418),\\* Lize Lu (ll7818), Manshu Wang (mw6118)}
-    \date{June 2019}
+    \date{}
     \maketitle
 
     \section{Project Structure}
@@ -49,75 +49,94 @@ urlcolor=blue
     Our assembly program for Part III is in the file gpio.s, inside the programs directory. It contains a main loop for switching the LED on and off infinitely many times (\textit{LED\_loop}), as well as delay loops for pausing the LED for a few seconds while the LED is on and off.
     \subsection{Part IV - The Extension}
 
-    For the extension, we built a 3 bits binary machine, which uses the Raspberry Pi and three LEDs. There are 3 modes of the main program: the binary counter, the presenter and the calculator. One LED will blink different times to present which mode the machine is on.\\*
+    For the extension, we built a 3 bits binary machine, which uses the Raspberry Pi and three LEDs. There are 3 modes of the main program: the binary counter, the presenter and the calculator.Due to the fact that the extension uses wiringPi library which is only pre-installed in Raspberry Pi in order to access pins on pi, the program will only compile while run on Pi.\\*
 
-    \noindent The first mode is the binary counter, which causes the LEDs to light up a few times in order to count through the decimal integers from 0 to the number the user entered. The highest number that can be represented in binary by three bits is 7, so this is the maximum user input. Each LED lights up for 0.8 seconds, and switches off for 0.2 seconds before lighting up again. Therefore, since there is a 1 second time interval between each time the LED lights up, the first mode can also be used as a clock. \\*
+    \noindent The first mode is the binary counter, which causes the LEDs to light up a few times in order to count through the decimal integers from 0 to the number the user entered. The highest number that can be fully represented in binary by three bits is 7,for numbers bigger than 7 the LEDs will present 3 least significant bits. Each LED lights up for 0.8 seconds, and switches off for 0.2 seconds before lighting up again. Therefore, since there is a 1 second time interval between each time the LED lights up, the first mode can also be used as a timer (to activate, enter "timer" while on mode 1 ). \\*
 
-    \noindent The second mode is a presenter, which requires one decimal integer input from the user. The program causes the LEDs to light up in a way that represents the user input. \\*
+    \noindent The second mode is a presenter, which requires one decimal integer input from the user. The program causes the LEDs to light up and represent the user input. For inputs that are bigger than 7, the presenter will only present 3 most significant bits.\\*
 
-    \noindent The third mode is a calculator which presents the result using the LEDs. It requires three inputs: the first two are integer inputs (in either decimal or binary form), and the third is the type of arithmetic operation the user wants to perform on the two integers. The LEDs present the result of this arithmetic operation.
+    \noindent The third mode is a calculator which presents the integer result using the LEDs. It requires three inputs: the first two are integer inputs (in either decimal or binary form), and the third is the type of arithmetic operation the user wants to perform on the two integers. The LEDs present the result of this arithmetic operation. If the result is smaller than 0 or bigger than 7, the LEDs will represent 3 most significant bits.
 
     \subsubsection{Implementation}
-    Part IV was divided into four directories: \textit{counter}, \textit{presenter}, \textit{calculator} and \textit{part4\_utility}. The \texttt{machine.c} file which contains the main function for Part 4 is outside those directories. All the directories are included in part4\_extension directory inside src.\\*
+    Part IV was divided into four directories: \textit{counter}, \textit{presenter}, \textit{calculator} and \textit{part4\_utility}. The \texttt{machine.c} file which contains the main function for Part 4 is outside those directories. All the directories are included in part4\_extension directory inside programs.\\*
 
     \noindent Here is a brief synopsis of how we structured each directory:
 
     \begin{itemize}
         \item \textit{part4\_utility}: contains \texttt{part4\_utility.c}, \textttt{shine.c} and the corresponding header files.
         \begin{itemize}
-            \item \texttt{part4\_utility.c} contains the functions bin2dec and dec2bin, which convert a binary number to decimal form and vice versa. It also contains two bool functions. The first one is isValid, which checks if the number is in the range 0 - 7, and this is needed to ensure that the LEDs can represent the user input. The second bool function is isBin, which checks if a number is in binary form. There is also a function called operate\_arith in this file, which does the calculation for mode 3 of the binary machine (the calculator)
+            \item \texttt{part4\_utility.c} contains the functions bin2dec and dec2bin, which convert a binary number to decimal form and vice versa. It also contains two bool functions. The first one is isValid, which checks if the number is in the range 0 - 7, which is needed to ensure the LEDs can represent the complete user input, otherwise the LEDs will only present 3 bits. The second bool function is isBin, which checks if a number is in binary form. There is also a function called operate\_arith in this file, which does the calculation for mode 3 of the binary machine (the calculator)
 
-            \item \texttt{shine.c} contains the functions shine and mode\_LED. We included the Pi library \\* \texttt{<WiringPi.h>} in the function shine to manipulate the GPIO pins (defining a pin as an input, an output and clearing it to reset it); this allowed us to switch the three LEDs on and off according to the binary input. WiringPi pins 0, 1 and 2 were mapped to BCM\_GPIO pins 17, 18 and 21 respectively. mode\_LED makes one of the LEDs blink 1, 2 or 3 times to indicate which mode the machine is in. mode\_LED is called in the main function.
+            \item \texttt{shine.c} contains the functions shine and mode\_LED. We included the Pi library \\* \texttt{<WiringPi.h>} in the function shine to manipulate the GPIO pins (defining a pin as an input, an output and clearing it to reset it); this allowed us to switch the three LEDs on and off according to the binary input. WiringPi pins 0, 1 and 2 were mapped to BCM\_GPIO pins 17, 18 and 21 respectively. mode\_LED makes one of the LEDs blink 1, 2 or 3 times to indicate which mode the machine is in. mode\_LED is called in the main function
         \end{itemize}
 
         \item \textit{counter}: includes \texttt{counter.c} and the corresponding header file. It represents the first mode of the binary machine.
         \begin{itemize}
-            \item \texttt{counter.c} includes the function counter, which prints out instructions for the user and calls the helper function counter\_helper.  counter\_helper loops through the decimal numbers from 1 to the number entered and causes the LEDs to shine accordingly (using the function shine from part4\_utility). The LEDs blink at most 8 times in a call to counter.
+            \item \texttt{counter.c} includes the function counter, which prints out instructions for the user and calls the helper function counter\_helper.  counter\_helper loops through the decimal numbers from 1 to the number entered and causes the LEDs to shine accordingly (using the function shine from part4\_utility). The LEDs blink at most 8 times in a call to counter
         \end{itemize}
         \item \textit{presenter}: includes \texttt{presenter.c} and the corresponding header file. It represents the second mode of the binary machine.
         \begin{itemize}
-            \item \texttt{presenter.c} includes the presenter function. It prints out instructions for the user and takes in a decimal number from user; it then presents it using the LEDs. presenter calls the function dec2bin, which converts the decimal number to binary form, and then calls the function shine to control the LEDs.
+            \item \texttt{presenter.c} includes the presenter function. It prints out instructions for the user and takes in a decimal number from user; it then presents it using the LEDs. presenter calls the function dec2bin, which converts the decimal number to binary form, and then calls the function shine to control the LEDs
         \end{itemize}
+
         \item \textit{calculator}: includes \texttt{calculator.c} and the corresponding header file. It represents the third mode of the binary machine.
         \begin{itemize}
-            \item \texttt{calculator.c} includes the function calculator.  It prints out instructions for the user and takes in two integers (either in binary or decimal form) and a string representing the operation type from the user. It then presents the arithmetic result using the LEDs. calculator converts the binary input to decimal form and calls the function operate\_arith to compute the result. It then calls the function shine to control the LEDs to represent the result.
+            \item \texttt{calculator.c} includes the calculator function. It prints out instructions for the user and takes in two integers (either in binary or decimal form) and a string representing the operation type from the user. It then presents the arithmetic result using the LEDs. calculator converts the binary input to decimal form and calls the function operate\_arith to compute the result. It then calls the function shine to control the LEDs to represent the result. If the result is out of range (0 to 7), the LEDs will represent 3 most significant bits
         \end{itemize}
     \end{itemize}
 
-    \noindent \texttt{machine.c} contains the main function, which prints the instruction telling the user to input an integer to choose a mode. It then switches on the input and calls mode\_LED and the corresponding mode function.
+    \noindent \texttt{machine.c} contains the main function, which prints the instruction telling the user to input an integer to choose a mode. It then switches on the input and calls mode\_LED and the corresponding mode function. \\*
 
+    \subsubsection{Examples of Applications}
+    One of the possible applications of the first mode is to be used as a binary clock counting up to 7 seconds. It can also be used for timing in circuits. Count
+    ers are also the widest application of flip-flops. The second mode can be used as a cheap synchronized presenter. It can work perfectly to present which stage a large-scale machine in a factory is working on. The third mode can be used to teach young children to do simple arithmetic. The blinking LEDs would catch their eyes and makes learning arithmetic a pleasure for kids.
 
     \section{Testing our implementation}
-    The majority of our testing for Parts I and II was done using the provided test suite. This proved to be helpful
+    The majority of our testing for Parts I and II was done using the provided test suite. This proved to be very helpful when we were debugging, since we could get a full view of the registers and their values (Emulator) and the 32-bit encoded binary instructions (Assembler). We found this extremely useful, as we were actually able to see which functions or subsections of functions were failing,   which saved us a lot of time during the debugging process.\\*
+
+    \noindent Part III was fairly easy to test once we had finished Part II (Assembler), since we just passed our assembly code file \texttt{gpio.s} into our assembler and checked if the LED on the Raspberry Pi corresponding to GPIO pin 16 was flashing on and off. We extended our emulator to print "PIN ON" and "PIN OFF" when a pin was being switched on and off (thus allowing the three GPIO tests in the test suite to pass); this also helped us when we were debugging and testing this section. \\*
+
+    \noindent We tested Part IV by running the program we had written on our Raspberry Pi, and checking the printed out results and if the LEDs switched on and off in the way we expected them to.\\*
+
+    \noindent Throughout the project, all four of us worked in CLion, and used its debugging tools frequently - for example, adding breakpoints and stepping through our code, and using the in-built Clang-Tidy linter tool.
+
+    \subsection{A reflection on our testing strategy}
+    One thing that would have improved our testing strategy is writing our own tests. We did not try writing any tests of our own, which may have been useful for testing edge cases.
 
     \section{Reflecting on the project}
     \subsection{Group reflection}
+    One major issue we had to face was that none of us had any prior experience with C before, which was a hindrance especially at the beginning of our work. We also experienced a considerable amount of merge conflicts while working on part 1, mostly because we did not know how to use git properly when working on the same project with other people, despite the fact that everyone had their own branch on git. Both of those issues were mostly resolved in the further stages of the project, as we gained more experience in programming in C and using git. In later parts of the project, we greatly improved our planning, which in turn improved our efficiency. We had a separate group chat dedicated to the project, as well as a Google Drive folder, in which we shared plans for the code and drafts for the report. Our communication was effective and enabled us to tackle issues we encountered while working on the project. All of us agreed that working in this particular group was an enjoyable experience, as we maintained a friendly working environment.
+
     \subsection{Individual reflections}
     \subsubsection{Rini}
+    Working with Katarina, Lize and Manshu on this C project has been a very rewarding experience for me overall. I believe that working with them has improved my programming and team communication skills, while also helping me realise what my strengths and weaknesses are.\\*
+
+    \noindent One major problem we dealt with at the beginning of the project was that none of us had programmed in C before, and we were all unfamiliar with Gitlab - specifically, using branches and dealing with merge conflicts. Also, three of our group members (including myself) are JMC students, so not having done any Architecture at the time of starting the project was also a major disadvantage. This combination of issues led to a bit of a slow start to Part I for our group. However, I was really impressed with the speed at which we were able to learn and apply our newfound knowledge to the project.\\*
+
+    \noindent I believe my strengths are my positive attitude and my work ethic. One weakness of mine is my inability to cope with stress well - as deadlines approached for the project, me becoming stressed would often hinder my programming abilities, which is something I would like to improve upon in the future. \\*
+
+    \noindent Overall, I have really enjoyed working in this group. My groupmates have always been friendly, focused and approachable whenever I have encountered problems with the project, and I am grateful for the improvement in my coding and teamwork skills as a result of doing this.
+
     \subsubsection{Katarina}
-    My personal experience working in this group has been a positive one. Besides some minor issues that we managed to overcome, our group was working together quite well.\\*
+    My personal experience working in this group has been a positive one. Besides some minor issues that we managed to overcome, our group was working together quite well. While working on the first part of the project, we did not split the work in an optimal way, which often resulted in merge conflicts. We learned from that, however, and we organised our work significantly better in the subsequent parts of the project. Good organisation and planning is something I would definitely want to see in any future projects I have to take part in. This project has helped me achieve a better understanding on how to work in a group.\\*
 
-    \noindent While working on the first part of the project, we did not split the work in an optimal way, which often resulted in merge conflicts. We learned from that, however, and we organised our work significantly better in the subsequent parts of the project. Good organisation and planning is something I would definitely want to see in any future projects I have to take part in, as it can facilitate the given task and it is very good to avoid confusion. This project has helped me achieve a better understanding on how to work in a group.\\*
-
-    \noindent In my opinion, our group was well balanced and everyone, despite having different strengths and weaknesses, was on a similar ability level, which means I fitted in the group well. I also greatly appreciated the fact that we were communicating with each other on a regular basis, and the communication was carried out effectively, which meant we could promptly discuss and subsequently resolve most problems that arose during the time we were working on the project. Although I had some doubts about my own abilities, as I have never done C before,  and thus was worried that my contribution to the project may not on par with the standards required, my doubts were dispelled after I started working and the encouraging and friendly working environment maintained in our group was especially helpful in getting me started and gaining more confidence in myself. I am especially glad that I managed to maintain a strong work ethic while working on this project, as did everyone in our group, for that matter.\\*
+    \noindent Our group was well balanced and everyone was on a similar ability level, which means I fitted in the group well. I appreciated the fact that we were communicating with each other on a regular basis, meaning we could promptly resolve most problems that arose during the time we were working on the project. Although I had some doubts about my own abilities, as I have never done C before, my doubts were dispelled after I started working and the encouraging and friendly working environment maintained in our group was especially helpful in getting me started and gaining more confidence in myself. I am especially glad that I managed to maintain a strong work ethic while working on this project, as did everyone in our group, for that matter.\\*
 
     \noindent The most significant problems I personally encountered were related to the fact that I had no prior experience with C and found the beginning quite challenging. One unforeseen issue was that the IDE on my laptop was only displaying some of the warnings it should have, despite my attempts to fix the problem, so debugging on my laptop took more time than on a different machine. Despite all the challenges, I had a very positive experience working on this project and with this particular group of people.
 
     \subsubsection{Lize}
-    The cooperation in this project was sound and every group member worked very hard and fitted in well. All the group members were on the same ability level and the communication we made was efficient. Due to the lack of experience of using git, we encountered a lot of merge conflicts at the beginning. However, we learned our lesson and the remaining part of the project was done in a way better-organized way. The optimized plan we made enabled me to make up for my weakness by practising in the process and extended our strengths on some level.\\*
+    The cooperation in this project was sound and every group member worked very hard and communicated well. Due to our lack of experience of using git, we encountered a lot of merge conflicts at the beginning. However, we learned our lesson and the remaining part of the project was done in a way better-organized way. The optimized plan we made enabled me to make up for my weakness by practising in the process and extended our strengths on some level. I had no experience with C language before, so I tended to demand more time writing correct code and debugging, which was definitely a weakness. However, just like other group members, I was very willing to spend more time reading the spec and working on the project. A positive working attitude and strong work ethic is what I can think of as a strength of mine. \\*
 
-    \noindent I had no experience with C language before, so I tended to demand more time writing correct code and debugging, which was definitely a weakness. However, just like other group members, I was very willing to spend more time reading the spec and working on the project. A positive working attitude is what I can think of as a strength of mine. To make up for my weakness, my original thought was simply to spend more time working on the project in order to finish my part in time.\\*
+    \noindent The plan we made after finishing Part I was Rini and Manshu kept debugging to pass tests. I did not do much of the debugging work which I am not good at; instead, Katarina and I started figuring out the general structure and schema of Part II and started working on it. After two weeks of struggling during the process of finishing Parts I and II, my programming and debugging skills improved, which means my weakness was made up to some extent. I was able to code and debug the extension part by the end of the project.\\*
 
-    \noindent The plan we made after finishing part 1 was Rini and Manshu kept debugging to pass tests. I did not do much of the debugging work which I am not good at, instead, Katarina and I started figuring out the general structure and schema of part 2 and started working on it. After two weeks of struggling during the process of finishing part 1 and part 2, my programming and debugging skills enhanced, which means my weakness was made up to some extent. I was able to code and debug the extension part by the end of the project.\\*
-
-    \noindent Before starting working in the group, I was worried about my limited ability and lack of communication among members. It turned out the sound working atmosphere among our group members dispelled my concerns, everyone was hard-working and we encouraged each other while struggling at some point of the project. The project was done in a well-organized way and it was a true pleasure working in this group.\\*
+    \noindent Before starting working in the group, I was worried about my limited ability and lack of communication among members. It turned out the sound working atmosphere among our group members dispelled my concerns; it was a true pleasure working in this group.
 
     \subsubsection{Manshu}
     For our group, I think our weakness is that we are about same level of programming and that none of us knew C before this semester. That was the thing I worried most but now I think this is also one of the advantages. Since the purpose of this project is to handle C programming language well instead of just an excellent outcome. I feel like we did really well on that as we learnt and progressed together during practices, and we all spent lots of time working on this project. We always explain to others what we did and how we did it, so all of us know how the program works well. If I were in a different group, with some experts in C programming, I won’t actually make such a huge progress and I won’t be so joyful when we pass all the test cases.\\*
 
-    \noindent How to start working on a project is always the hardest thing. The basic structure was the key of the whole project but quite confusing to me when first time reading the spec. I did go through the spec quite a few times reading every sentence carefully and asked help from mentors and UTAs. After building a nice structure, everything worked out well.\\*
+    \noindent Organisation and structure was key to the whole project but quite confusing to me the first time I read the specification, so I went through it quite a few times, and asked for help from mentors and UTAs. After building a nice structure, everything worked out well.\\*
 
-    \noindent I really feel a comfortable atmosphere working in such a group, all the group members are positive, encouraging and hard-working. And of course, we followed our schedule, all of us were able to finish our work by the deadline we\textquotesingle ve set, also help each other. Besides, we split our parts efficiently and so everyone is doing some work all the time.
+    \noindent I really feel a comfortable atmosphere working in such a group; all the group members are positive, encouraging and hard-working. And of course, we followed our schedule, all of us were able to finish our work by the deadline we set, and also helped each other. Besides, we split our parts efficiently and so everyone was doing some work all the time.
 
 
 
