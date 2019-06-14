@@ -12,6 +12,8 @@ emulate: emulate.o pipeline.o utility.o fetch.o decode.o execute.o executeDP.o e
 
 assemble: utility.o assembler_utility.o table.o encode.o encodeBR.o encodeDP.o encodeMUL.o encodeSDT.o encodeSPECIAL.o readInstruction.o readLabels.o  tokenizer.o assemble.o
 
+
 clean:
 	rm -f $(wildcard *.o)
-	rm -f emulate assemble machine
+	rm -f emulate assemble
+
