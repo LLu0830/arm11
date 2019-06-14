@@ -19,6 +19,19 @@ typedef enum {
     CMP = 0xa,
     ORR = 0xc,
     MOV = 0xd,
+    mul,
+    MLA,
+    LDR,
+    STR,
+    BEQ,
+    BNE,
+    BGE,
+    BLT,
+    BGT,
+    BLE,
+    B,
+    lsl,
+    ANDEQ
 } OpCode;
 
 

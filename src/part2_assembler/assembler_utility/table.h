@@ -15,31 +15,31 @@
 
 
 //find out how to make hash map/ hash table?? in C an implement it here
-typedef enum {
-    and = 0x0,
-    eor = 0x1,
-    sub = 0x2,
-    rsb = 0x3,
-    add = 0x4,
-    tst = 0x8,
-    teq = 0x9,
-    cmp = 0xa,
-    orr = 0xc,
-    mov = 0xd,
-    mul,
-    mla,
-    ldr,
-    str,
-    beq,
-    bne,
-    bge,
-    blt,
-    bgt,
-    ble,
-    b,
-    lsl,
-    andeq,
-} Mnemonic;
+//typedef enum {
+//    and = 0x0,
+//    eor = 0x1,
+//    sub = 0x2,
+//    rsb = 0x3,
+//    add = 0x4,
+//    tst = 0x8,
+//    teq = 0x9,
+//    cmp = 0xa,
+//    orr = 0xc,
+//    mov = 0xd,
+//    mul,
+//    mla,
+//    ldr,
+//    str,
+//    beq,
+//    bne,
+//    bge,
+//    blt,
+//    bgt,
+//    ble,
+//    b,
+//    lsl,
+//    andeq,
+//} Mnemonic;
 
 
 //add the two structs
@@ -61,7 +61,7 @@ typedef struct {
     token arg4;
     token arg5;
     InstructionType type;
-    Mnemonic operationType;
+    OpCode operationType;
     uint32_t encoded;
 
     address target_address;

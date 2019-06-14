@@ -9,28 +9,28 @@
 #include "encodeMUL.h"
 #include "encodeSDT.h"
 
-uint32_t getCond(Mnemonic operationType) {
+uint32_t getCond(OpCode operationType) {
     uint32_t result;
     switch (operationType) {
-        case beq:
+        case BEQ:
             result = EQ;
             break;
-        case bge:
+        case BGE:
             result = GE;
             break;
-        case bgt:
+        case BGT:
             result = GT;
             break;
-        case ble:
+        case BLE:
             result = LE;
             break;
-        case blt:
+        case BLT:
             result = LT;
             break;
-        case bne:
+        case BNE:
             result = NE;
             break;
-        case b:
+        case B:
             result = AL;
             break;
         default:
