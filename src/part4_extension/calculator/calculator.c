@@ -13,12 +13,12 @@ void calculator(void) {
     printf("Mode 3, do arithmetic operation on 2 numbers entered and represent the result with LEDs.\n");
     printf("Enter first of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
     scanf("%d", &n1);
-    printf("Enter the type of operation(add,sub,mul,div\n");
+    printf("Enter the type of operation(add,sub,mul,div)\n");
     scanf("%s", operation_type);
     printf("Enter second of two integers you want to do arithmetic operation on (in decimal or binary number system)\n");
     scanf("%d", &n2);
     int bin_result = operate_arith(n1, n2, operation_type);
-    printf("The result of the operation is %d\n", bin_result);
+    printf("The result of the operation in binary form is %d\n", bin_result);
     shine(int_to_str(bin_result));
     printf("Look at the LEDs!!");
 }

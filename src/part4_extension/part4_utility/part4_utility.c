@@ -1,20 +1,16 @@
 //
-// Created by ASUS on 2019/6/11.
+// Created by ll7818 on 2019/6/11.
 //
 #include <stdbool.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-//#include <bits/mathcalls.h>
+
 #include "../part4_utility/part4_utility.h"
 #include <math.h>
 
 #define MAX_BINARY_DIGIT 10
-
-//#include "math.h"
-
-//#include "shine.h"
 
 
 //check if a number(String) is in binary form
@@ -73,6 +69,7 @@ char *dec2bin(int n) {
     return binary;
 }
 
+//used to reverse a string
 void strrev(char *s) {
     int length, c;
     char *begin, *end, temp;
