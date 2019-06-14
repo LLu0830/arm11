@@ -30,31 +30,10 @@ label_address *initialize_pair(void) {
         exit(EXIT_FAILURE);
     }
 
-
-//    pair->label = NULL;
-//    pair->address = 0;
-//    pair->next = NULL;
-//    pair->prev = NULL;
     return pair;
 }
 
 void insert_pair(label_address *pair, label_address_list *list) {
-//    label_address *aPair = allocList;
-//    aPair = initialize_list();
-//    aPair->label = pair->label;
-//    aPair->address = pair->address;
-//    aPair->next = NULL;
-//
-//    if (list->header == NULL) {
-//        list->header = aPair;
-//        list->footer = aPair;
-//    } else {
-//        aPair->prev = list->footer;
-//        list->footer->next = aPair;
-//        list->footer = aPair;
-//    }
-//    free(aPair);
-
     pair->prev = list->footer->prev;
     pair->next = list->footer;
     list->footer->prev = pair;
@@ -82,15 +61,6 @@ bool isContainedInTable(label label, label_address_list *table){
     }
     return 0;
 }
-
-//label_address *allocList(void) {
-//    label_address *aPair = malloc(sizeof(label_address *));
-//    if (aPair == NULL) {
-//        perror("allocList");
-//        exit(EXIT_FAILURE);
-//    }
-//    return aPair;
-//}
 
 
 

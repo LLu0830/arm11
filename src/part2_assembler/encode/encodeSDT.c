@@ -37,19 +37,6 @@ void set_I_bit(assembler_instruction* instruction, uint32_t *I_bit) {
     }
 }
 
-uint32_t set_U_bit_and_get_offset(char *reg, uint32_t offset, uint32_t *U_bit){
-    uint32_t reg_val = getValue(reg);
-    if ((int32_t) reg_val < 0) {
-        offset = -offset;
-        *U_bit = 0;
-    }
-    else {
-        *U_bit = 1;
-    }
-    return offset;
-}
-
-
 //helper function to concatenate all the parts of an SDT instruction
 uint32_t concatSDT(uint32_t cond, uint32_t bit_value_1, uint32_t I_bit, uint32_t P_bit, uint32_t U_bit,
         uint32_t L_bit, uint32_t rn, uint32_t rd, uint32_t offset){

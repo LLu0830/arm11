@@ -132,8 +132,6 @@ void encodeDP(assembler_instruction *assembler_instruction) {
     emulator_instruction.conditionType = AL;
     emulator_instruction.operationType = (int) assembler_instruction->operationType;
     assembler_instruction->encoded = concatDP(&emulator_instruction);
-    printf("encoded: %d", assembler_instruction->encoded);
-
 }
 
 uint32_t concatDP(Instruction *emulator_instruction) {
