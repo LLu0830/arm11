@@ -9,7 +9,7 @@
 #include "../assembler_utility/assembler_utility.h"
 #include "../../part1_emulator/emulator_utility/utility.h"
 
-uint32_t getPosFromChar(token pos){
+uint32_t getPosFromChar(token pos) {
     return strtol((pos + 1), NULL, 16);
 }
 
@@ -26,15 +26,15 @@ void encodeMUL(assembler_instruction *instruction) {
 
     // set 16-19(Rd) with operand1
     token rd = instruction->arg1;
-    uint32_t positionRd  = getPosFromChar(rd);
+    uint32_t positionRd = getPosFromChar(rd);
 
     //set 0-3(Rm) with operand2
-    token rm =instruction->arg2;
-    uint32_t positionRm  = getPosFromChar(rm);
+    token rm = instruction->arg2;
+    uint32_t positionRm = getPosFromChar(rm);
 
     // set 8-11(Rs) with operand3
     token rs = instruction->arg3;
-    uint32_t positionRs  = getPosFromChar(rs);
+    uint32_t positionRs = getPosFromChar(rs);
 
 
     uint32_t positionRn = 0;
@@ -45,12 +45,12 @@ void encodeMUL(assembler_instruction *instruction) {
             // change A bit to 0
             ABit = 0;
             break;
-        case mla:
+        case MLA:
             // change A bit to 1
             ABit = 1;
             // set 12-15(Rn) with operand4
             token rn = instruction->arg4;
-            positionRn  = (unsigned int) *(rn + 1) - '0';
+            positionRn = (unsigned int) *(rn + 1) - '0';
             break;
         default:
             exit(EXIT_FAILURE);
@@ -59,6 +59,7 @@ void encodeMUL(assembler_instruction *instruction) {
     uint32_t result = 0;
 
     result |= cond << 28U;
+//            | ABit << 21U | SBit << 20U | positionRd << 16U | positionRn << 12U | positionRs << 8U | const1 << 4U | positionRm;
     result |= ABit << 21U;
     result |= SBit << 20U;
     result |= positionRd << 16U;

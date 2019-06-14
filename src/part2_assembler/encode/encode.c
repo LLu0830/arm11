@@ -21,50 +21,50 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
         case 't':
             if (snd == 's') {
                 instruction->type = DP;
-                instruction->operationType = tst;
+                instruction->operationType = TST;
             } else {
                 instruction->type = DP;
-                instruction->operationType = teq;
+                instruction->operationType = TEQ;
             }
             break;
         case 'b':
             instruction->type = BR;
             switch (snd) {
                 case 'e':
-                    instruction->operationType = beq;
+                    instruction->operationType = BEQ;
                     break;
                 case 'n':
-                    instruction->operationType = bne;
+                    instruction->operationType = BNE;
                     break;
                 case 'g':
                     if (*(mnemonic + 2) == 'e') {
-                        instruction->operationType = bge;
+                        instruction->operationType = BGE;
                     } else {
-                        instruction->operationType = bgt;
+                        instruction->operationType = BGT;
                     }
                     break;
                 case 'l':
                     if (*(mnemonic + 2) == 'e') {
-                        instruction->operationType = ble;
+                        instruction->operationType = BLE;
                     } else {
-                        instruction->operationType = blt;
+                        instruction->operationType = BLT;
                     }
                     break;
                 default:
-                    instruction->operationType = b;
+                    instruction->operationType = B;
                     break;
             }
             break;
         case 'm':
             if (snd == 'o') {
                 instruction->type = DP;
-                instruction->operationType = mov;
+                instruction->operationType = MOV;
             } else {
                 instruction->type = MUL;
                 if (snd == 'u') {
                     instruction->operationType = mul;
                 } else {
-                    instruction->operationType = mla;
+                    instruction->operationType = MLA;
                 }
             }
             break;
@@ -74,47 +74,47 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
                 instruction->operationType = lsl;
             } else {
                 instruction->type = SDT;
-                instruction->operationType = ldr;
+                instruction->operationType = LDR;
             }
             break;
         case 'a':
             if (snd == 'd') {
                 instruction->type = DP;
-                instruction->operationType = add;
+                instruction->operationType = ADD;
             } else {
                 if (*(mnemonic + 3) == 'e') {
                     instruction->type = SPECIAL;
-                    instruction->operationType = andeq;
+                    instruction->operationType = ANDEQ;
                 } else {
                     instruction->type = DP;
-                    instruction->operationType = and;
+                    instruction->operationType = AND;
                 }
             }
             break;
         case 's':
             if (snd == 'u') {
-                instruction->operationType = sub;
+                instruction->operationType = SUB;
                 instruction->type = DP;
             } else {
                 instruction->type = SDT;
-                instruction->operationType = str;
+                instruction->operationType = STR;
             }
             break;
         case 'e':
             instruction->type = DP;
-            instruction->operationType = eor;
+            instruction->operationType = EOR;
             break;
         case 'o':
             instruction->type = DP;
-            instruction->operationType = orr;
+            instruction->operationType = ORR;
             break;
         case 'r':
             instruction->type = DP;
-            instruction->operationType = rsb;
+            instruction->operationType = RSB;
             break;
         case 'c':
             instruction->type = DP;
-            instruction->operationType = cmp;
+            instruction->operationType = CMP;
             break;
 
         default:

@@ -13,7 +13,7 @@
 void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table) {
 
     switch (instruction->operationType) {
-        case andeq:
+        case ANDEQ:
             //maybe need to check if operand1,2,3 all = 0;
 //            if (!strcmp(instruction->arg1, "r0")
 //                && !strcmp(instruction->arg2, "r0")
@@ -43,7 +43,7 @@ void encodeSPECIAL(assembler_instruction *instruction, label_address_list *table
             free(expression);
             free(rn);
 
-            instruction->operationType = mov;
+            instruction->operationType = MOV;
 
             encodeDP(instruction);
 
