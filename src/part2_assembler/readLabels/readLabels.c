@@ -29,7 +29,7 @@ void readLabels(label_address_list *table, FILE *file) {
     int cnt = 0;
     while (fgets(temp, MAX_LINE_SIZE, file) != NULL) {
         //removes the \n at the end of every line
-        if (*temp != '\n' && temp != NULL) {
+        if (*temp != '\n') {
             if (!isLabel(temp) && *temp != '\0') {
                 lineNum++;
                 numOfAddress++;
@@ -41,7 +41,6 @@ void readLabels(label_address_list *table, FILE *file) {
                 assert(pair != 0);
                 pair->label = label;
                 pair->address = lineNum;
-                printf("Adding label: \"%s\"\n", label);
                 insert_pair(pair, table);
             }
         }

@@ -7,7 +7,6 @@
 
 #include "../assembler_utility/table.h"
 
-//void encodeBR(assembler_instruction *instruction);
 uint32_t getCond(OpCode operationType);
 void encodeBR(assembler_instruction *instruction, label_address_list *table);
 
