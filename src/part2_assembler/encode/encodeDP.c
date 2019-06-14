@@ -52,64 +52,6 @@ uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction) {
     return getValueFromOp2(op2Pointer + 1, emulator_instruction);
 }
 
-uint32_t getValueFromOp2Optional(assembler_instruction *instruction, Instruction *emulator_instruction){
-
-    emulator_instruction->I = 0;
-
-    uint32_t reg_or_val_flag = 0;
-    uint32_t shift_type = 0;
-    uint32_t expression_value = getValue(instruction->arg4);
-    uint32_t result;
-    uint32_t rm = getValue(instruction->arg2);
-
-    printf("%s\n", instruction->arg3);
-    switch(instruction->arg3[0]) {
-        case 'l':
-            if (instruction->arg3[2] == 'l') {
-                shift_type = 0;
-            }
-            if (instruction->arg3[2] == 'r') {
-                shift_type = 1;
-            }
-            break;
-        case 'a':
-            shift_type = 2;
-            break;
-        case 'r':
-            shift_type = 3;
-            break;
-        default:
-            printf("Invalid shift type\n");
-            exit(EXIT_FAILURE);
-    }
-
-    if (instruction->arg4[0] == '#'){
-        reg_or_val_flag = 0;
-    }
-    else if (instruction->arg4[0] == 'r') {
-        reg_or_val_flag = 1;
-    }
-    else {
-        printf("Invalid argument\n");
-        exit(EXIT_FAILURE);
-    }
-
-    shift_type = shiftLeft(shift_type, 5U);
-
-    if (reg_or_val_flag){
-        expression_value = shiftLeft(expression_value, 8U);
-    }
-    else {
-        expression_value = shiftLeft(expression_value, 7U);
-    }
-
-    reg_or_val_flag = shiftLeft(reg_or_val_flag, 4U);
-
-    result = expression_value | shift_type | reg_or_val_flag| rm;
-    return result;
-
-}
-
 
 void encodeDPCompute(assembler_instruction *assembler_instruction, Instruction *emulator_instruction) {
 
@@ -120,8 +62,14 @@ void encodeDPCompute(assembler_instruction *assembler_instruction, Instruction *
     emulator_instruction->rn = getRegisterNumber(assembler_instruction->arg2);
 
 //  getting value from operand2
-    emulator_instruction->offsets_or_operand2 = getValueFromOp2(assembler_instruction->arg3, emulator_instruction);
-
+    if (assembler_instruction->arg4 == NULL) {
+        emulator_instruction->offsets_or_operand2 = getValueFromOp2(assembler_instruction->arg3, emulator_instruction);
+    }
+    else {
+        emulator_instruction->I = 0;
+        emulator_instruction->offsets_or_operand2 = getValueFromOp2Optional(assembler_instruction->arg3,
+                assembler_instruction->arg4, assembler_instruction->arg5);
+    }
 //  setting S bit to 0
     emulator_instruction->S = 0;
 }
@@ -139,8 +87,9 @@ void encodeDPAssign(assembler_instruction *assembler_instruction, Instruction *e
         emulator_instruction->offsets_or_operand2 = getValueFromOp2(assembler_instruction->arg2, emulator_instruction);
     }
     else {
-        emulator_instruction->offsets_or_operand2 = getValueFromOp2Optional(assembler_instruction, emulator_instruction);
-        printf("Optional case \n");
+        emulator_instruction->I = 0;
+        emulator_instruction->offsets_or_operand2 = getValueFromOp2Optional(assembler_instruction->arg2,
+                assembler_instruction->arg3, assembler_instruction->arg4);
     }
 
 //  setting S bit to 0
