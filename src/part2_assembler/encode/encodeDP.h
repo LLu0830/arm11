@@ -8,7 +8,6 @@
 #include "../assembler_utility/table.h"
 
 uint32_t getValueFromOp2(token op2Pointer, Instruction *emulator_instruction);
-uint32_t getValueFromOp2Optional(assembler_instruction *instruction, Instruction *emulator_instruction);
 uint32_t getRegisterNumber(token reg);
 void encodeDPCompute(assembler_instruction *assembler_instruction, Instruction *emulator_instruction);
 void encodeDPAssign(assembler_instruction *assembler_instruction, Instruction *emulator_instruction);

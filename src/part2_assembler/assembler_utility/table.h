@@ -59,6 +59,7 @@ typedef struct {
     token arg2;
     token arg3;
     token arg4;
+    token arg5;
     InstructionType type;
     Mnemonic operationType;
     uint32_t encoded;

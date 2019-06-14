@@ -125,8 +125,6 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
 
     switch (instruction->type) {
         case DP:
-            printf("Before entering DP\n");
-            printf("New commit\n");
             encodeDP(instruction);
             break;
         case MUL:
@@ -136,9 +134,7 @@ void encode(assembler_instruction *instruction, label_address_list *table) {
             encodeSDT(instruction);
             break;
         case BR:
-            printf("Before executing encodeBR :(");
             encodeBR(instruction, table);
-            printf("After executing encodeBR :)");
             break;
         case SPECIAL:
             encodeSPECIAL(instruction, table);
