@@ -13,10 +13,10 @@ include_directories(src/part2_assembler/encode)
 include_directories(src/part2_assembler/readInstruction)
 include_directories(src/part2_assembler/readLabels)
 include_directories(src/part2_assembler/tokenizer)
-include_directories(src/part4_extension/calculator)
-include_directories(src/part4_extension/counter)
-include_directories(src/part4_extension/part4_utility)
-include_directories(src/part4_extension/presenter)
+include_directories(Extension/part4_extension/calculator)
+include_directories(Extension/part4_extension/counter)
+include_directories(Extension/part4_extension/part4_utility)
+include_directories(Extension/part4_extension/presenter)
 
 add_executable(arm11_31
         src/part1_emulator/decode/decode.c
@@ -68,14 +68,14 @@ add_executable(arm11_31
         src/part2_assembler/tokenizer/tokenizer.c
         src/part2_assembler/tokenizer/tokenizer.h
         src/part2_assembler/assemble.c
-        src/part4_extension/calculator/calculator.c
-        src/part4_extension/calculator/calculator.h
-        src/part4_extension/counter/counter.c
-        src/part4_extension/counter/counter.h
-        src/part4_extension/part4_utility/part4_utility.c
-        src/part4_extension/part4_utility/part4_utility.h
-        src/part4_extension/part4_utility/shine.c
-        src/part4_extension/part4_utility/shine.h
-        src/part4_extension/presenter/presenter.c
-        src/part4_extension/presenter/presenter.h
-        src/part4_extension/machine.c)
+        Extension/part4_extension/calculator/calculator.c
+        Extension/part4_extension/calculator/calculator.h
+        Extension/part4_extension/counter/counter.c
+        Extension/part4_extension/counter/counter.h
+        Extension/part4_extension/part4_utility/part4_utility.c
+        Extension/part4_extension/part4_utility/part4_utility.h
+        Extension/part4_extension/part4_utility/shine.c
+        Extension/part4_extension/part4_utility/shine.h
+        Extension/part4_extension/presenter/presenter.c
+        Extension/part4_extension/presenter/presenter.h
+        Extension/part4_extension/machine.c)

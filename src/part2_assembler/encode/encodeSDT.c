@@ -88,10 +88,10 @@ void encodeSDT(assembler_instruction *instruction){
 
     //load or store differentiation
     //<ldr/str>
-    if (instruction->operationType == ldr) {
+    if (instruction->operationType == LDR) {
         L_bit = 1;
     }
-    else if (instruction->operationType == str) {
+    else if (instruction->operationType == STR) {
         L_bit = 0;
     }
     else {
@@ -118,7 +118,7 @@ void encodeSDT(assembler_instruction *instruction){
 
             free(instruction->mnemonic);
 
-            instruction->operationType = mov;
+            instruction->operationType = MOV;
 
             instruction->mnemonic = copy_string("mov");
 

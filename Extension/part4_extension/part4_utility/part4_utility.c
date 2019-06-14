@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-#include "../part4_utility/part4_utility.h"
+#include "part4_utility.h"
 #include <math.h>
 
 #define MAX_BINARY_DIGIT 10
@@ -36,16 +36,15 @@ bool isValid(int d) {
 int bin2dec(char *binstr) {
     int base = 1, dec = 0, rem;
     int bin = atoi(binstr);
-    if (isBin(binstr))
-        perror("\n ERROR! BINARY has only 1 and 0!\n");
-    else {
-        while (bin > 0) {
-            rem = bin % 10;
-            dec = dec + rem * base;
-            bin = bin / 10;
-            base = base * 2;
-        }
+
+
+    while (bin > 0) {
+        rem = bin % 10;
+        dec = dec + rem * base;
+        bin = bin / 10;
+        base = base * 2;
     }
+
     return dec;
 }
 
@@ -53,7 +52,7 @@ int bin2dec(char *binstr) {
 //convert decimal number to binary
 char *dec2bin(int n) {
     int decimal = n, tempDecimal;
-    char* binary=malloc(MAX_BINARY_DIGIT*sizeof(char));
+    char *binary = malloc(MAX_BINARY_DIGIT * sizeof(char));
     int index = 0;
 
     tempDecimal = decimal;
@@ -94,7 +93,7 @@ void strrev(char *s) {
 
 //convert an integer to a string
 char *int_to_str(int n) {
-    char* str1=malloc(MAX_BINARY_DIGIT*sizeof(char));
+    char *str1 = malloc(MAX_BINARY_DIGIT * sizeof(char));
     sprintf(str1, "%d", n);
     return str1;
 }
@@ -121,14 +120,13 @@ int operate_arith(int n1, int n2, char *operator) {
     } else if (!strcmp(operator, "div")) {
         result = n1 / n2;
     } else {
-        perror("Invalid arithmetic command on last line of the file.");
+        perror("Invalid arithmetic operand choice");
         EXIT_FAILURE;
     }
     if (isValid(result))
         return atoi(dec2bin(result));
     else {
-        perror("Invalid result");
-        EXIT_FAILURE;
+        printf("The result is out of range (0 to 7). \nThe LEDs will be presenting the 3 most significant bits of it's binary form.\n");
     }
     return result;
 

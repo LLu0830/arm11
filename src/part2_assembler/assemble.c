@@ -18,10 +18,8 @@ int main(int argc, char **argv) {
     label_address_list *table = initialize_list();
     readLabels(table, fp_read);
     fclose(fp_read);
-//    only have this for now for Katarina's readInstruction function below - may be removed later
     int counter = 0;
     fp_read = fopen(argv[1], "r");
-//    not sure on what to put as the loop condition
 
     while (1) {
         assembler_instruction *instruction = calloc(1, sizeof(assembler_instruction));
@@ -42,6 +40,5 @@ int main(int argc, char **argv) {
 
     fclose(fp_write);
     fclose(fp_read);
-//    not sure how to implement this - depends on Katarina's readInstruction function
     return EXIT_SUCCESS;
 }

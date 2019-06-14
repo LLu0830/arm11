@@ -13,14 +13,13 @@
 void shine(char *n) {
 
     wiringPiSetup();
-    //delay(100);
 
 // LED Pin - wiringPi pin 0 is BCM_GPIO 17
 //1 is 18
 //2 is 21
     if (*n == '1') {
         pinMode(LED1, OUTPUT);
-        digitalWrite(LED1, 1);
+        digitalWrite(LED3, 1);
     }
 
     if (*(n + 1) == '1') {
@@ -30,7 +29,7 @@ void shine(char *n) {
 
     if (*(n + 2) == '1') {
         pinMode(LED3, OUTPUT);
-        digitalWrite(LED3, 1);
+        digitalWrite(LED1, 1);
     }
 
     delay(800);
