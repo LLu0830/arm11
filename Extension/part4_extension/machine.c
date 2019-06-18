@@ -22,7 +22,7 @@
 
 
 //reading commands from std input
-int main(int argc,char** argv) {
+int main(int argc, char **argv) {
     int m;
     printf("Please select the mode, enter 1 for 3 bits binary counter, 2 for 3-bit \nrepresenter, 3 for calculator for 2 numbers\n");
     scanf("%d", &m);
