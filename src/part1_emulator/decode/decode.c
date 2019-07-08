@@ -33,21 +33,18 @@ Instruction decode(uint32_t fetched) {
 
     //HLT
     if (fetched == 0) {
-//        printf("type HLT in decoding\n");
         return decodeHLT(instruction, fetched);
     }
 
     //BR
     uint32_t branchCheck = get_n_bits(fetched, 27, 1);
     if (branchCheck != 0) {
-//        printf("type BR in decoding\n");
         return decodeBR(instruction, fetched);
     }
 
     //SDT
     uint32_t SDTCheck = get_n_bits(fetched, 26, 1);
     if (SDTCheck != 0) {
-//        printf("type SDT in decoding\n");
         return decodeSDT(instruction, fetched);
     }
 
@@ -55,20 +52,16 @@ Instruction decode(uint32_t fetched) {
     //MUL & DP
     uint32_t bit4Check = get_n_bits(fetched, 4, 1);
     if (!bit4Check) {
-//        printf("type DP in decoding\n");
         return decodeDP(instruction, fetched);
     } else {
         uint32_t i = get_n_bits(fetched, 25, 1);
         if (i) {
-//            printf("type DP in decoding\n");
             return decodeDP(instruction, fetched);
         } else {
             uint32_t bit7Check = get_n_bits(fetched, 7, 1);
             if (!bit7Check) {
-//                printf("type DP in decoding\n");
                 return decodeDP(instruction, fetched);
             } else {
-//                printf("type MUL in decoding\n");
                 return decodeMUL(instruction, fetched);
             }
         }
@@ -81,7 +74,7 @@ Instruction decodeMUL(Instruction *instruction, uint32_t fetched) {
 // holds the A bit
     instruction->accumulate = get_n_bits(fetched, 21, 1);
 // holds the S bit
-    instruction->scc = get_n_bits(fetched, 20, 1);
+    instruction->S = get_n_bits(fetched, 20, 1);
 // rd,rn,rs,rm  should be 4-bit addresses in the array registers, 0-12
     instruction->rd = get_n_bits(fetched, 16, 4);
     instruction->rn = get_n_bits(fetched, 12, 4);
@@ -95,11 +88,11 @@ Instruction decodeMUL(Instruction *instruction, uint32_t fetched) {
 Instruction decodeDP(Instruction *instruction, uint32_t fetched) {
     instruction->instructionType = DP;
 //    holds the I bit
-    instruction->immediateOperand = get_n_bits(fetched, 25, 1);
+    instruction->I = get_n_bits(fetched, 25, 1);
 //    holds opCOde
     instruction->operationType = get_n_bits(fetched, 21, 4);
 //    holds the S bit
-    instruction->scc = get_n_bits(fetched, 20, 1);
+    instruction->S = get_n_bits(fetched, 20, 1);
 // rn,rd should be 4-bit addresses in the array registers, 0-12
     instruction->rn = get_n_bits(fetched, 16, 4);
     instruction->rd = get_n_bits(fetched, 12, 4);
@@ -119,7 +112,7 @@ Instruction decodeSDT(Instruction *instruction, uint32_t fetched) {
     //    holds the U bit
     instruction->upBit = get_n_bits(fetched, 23, 1);
     //    holds the L bit
-    instruction->storeBit = get_n_bits(fetched, 20, 1);
+    instruction->L = get_n_bits(fetched, 20, 1);
     // rn,rd should be 4-bit addresses in the array registers, 0-12
     instruction->rn = get_n_bits(fetched, 16, 4); //base register
     instruction->rd = get_n_bits(fetched, 12, 4);  //source/destination register

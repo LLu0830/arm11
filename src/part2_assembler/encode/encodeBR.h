@@ -5,4 +5,9 @@
 #ifndef SRC_ENCODEBR_H
 #define SRC_ENCODEBR_H
 
+#include "../assembler_utility/table.h"
+
+uint32_t getCond(OpCode operationType);
+void encodeBR(assembler_instruction *instruction, label_address_list *table);
+
 #endif //SRC_ENCODEBR_H

@@ -55,7 +55,6 @@ void getValFromRegisterOp2(uint32_t op2, uint32_t *result, uint32_t *carryBit, s
                 default:
                     *result = 0;
                     *carryBit = 0;
-//                        printf("result - operand2 (shiftAmount > 32 and LSL or LSR): %x\n", *result);
                     return;
             }
 //        If 0 < shiftAmount < 32, helper function used
@@ -111,6 +110,7 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
             *writeFlag = 0;
             break;
         case CMP:
+
             result = rnValue - op2Value;
             *writeFlag = 0;
             break;
@@ -130,9 +130,9 @@ uint32_t getResult(uint32_t opCode, uint32_t rnValue, uint32_t op2Value, bool *w
 
 //Executes Data Processing Instruction
 void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
-    bool i = instruction.immediateOperand;
+    bool i = instruction.I;
     uint32_t opCode = instruction.operationType;
-    bool s = instruction.scc;
+    bool s = instruction.S;
     int rn = instruction.rn;
     int rd = instruction.rd;
     uint32_t op2 = instruction.offsets_or_operand2;
@@ -185,7 +185,7 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
 
         case RSB:
             // operand2 - rn
-            setC(ARM11, (uint32_t) (op2Value >= rnValue));
+            setC(ARM11, (uint32_t) (op2Value > rnValue));
             break;
         default:
             break;
@@ -195,7 +195,10 @@ void executeDP(Instruction instruction, struct stateOfMachine *ARM11) {
 
     if (result == 0) {
         setZ(ARM11, 1);
+    } else {
+        setZ(ARM11, 0);
     }
+
 
 //    Sets N bit
 

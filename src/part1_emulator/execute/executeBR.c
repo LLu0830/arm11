@@ -22,8 +22,10 @@ void executeBR(struct pipes *pipe, struct stateOfMachine *ARM11) {
         uint32_t mask = 0xffU << 24U;
         offset = offset | mask;
     }
+
     pipe->has_fetched = false;
     pipe->has_decoded = false;
+
 //    PC position updated
     ARM11->registers[PCPosition] += offset;
 }

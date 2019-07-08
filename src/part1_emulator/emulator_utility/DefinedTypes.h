@@ -18,7 +18,20 @@ typedef enum {
     TEQ = 0x9,
     CMP = 0xa,
     ORR = 0xc,
-    MOV = 0xd
+    MOV = 0xd,
+    mul,
+    MLA,
+    LDR,
+    STR,
+    BEQ,
+    BNE,
+    BGE,
+    BLT,
+    BGT,
+    BLE,
+    B,
+    lsl,
+    ANDEQ
 } OpCode;
 
 
@@ -29,7 +42,7 @@ typedef enum {
     SDT,
     BR,
     HLT,
-    NUL,
+    SPECIAL,
 
 } InstructionType;
 

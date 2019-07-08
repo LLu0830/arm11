@@ -2,59 +2,65 @@
 // Created by Lize Lu on 2019/6/4.
 //
 
-#ifndef SRC_TABLE_C
-#define SRC_TABLE_C
-#define SIZE 20
-
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
 #include "../assembler_utility/table.h"
+#include "../../part1_emulator/emulator_utility/DefinedTypes.h"
 
-typedef struct label_address {
-    *label label;
-    *address address;
-} label_address;
 
-struct label_address *labelArray[SIZE];
-struct label_address *aPair;
+label_address_list *initialize_list(void) {
+    label_address_list *list = malloc(sizeof(label_address_list));
+    label_address *header = initialize_pair();
+    label_address *footer = initialize_pair();
 
-int hashCode(
-        label *label
-) {
-    return label % SIZE;
+    list->header = header;
+    list->footer = footer;
+
+    header->next = footer;
+    footer->prev = header;
+
+    return list;
 }
 
-void insert_label(
-        label *label, address *address) {
-    struct label_address *aPair = (struct label_address *) malloc(sizeof(struct label_address *));
-    *aPair->label = label;
-    *aPair->address = address;
-    int hashIndex = hashCode(label);
-    while (labelArray[hashIndex])  != NULL && hashArray[hashIndex]->key != -1) {
-//go to next cell
-        ++hashIndex;
-
-//wrap around the table
-        hashIndex %= SIZE;
+label_address *initialize_pair(void) {
+    label_address *pair = calloc(1, sizeof(label_address));
+    if (pair == NULL) {
+        perror("allocList");
+        exit(EXIT_FAILURE);
     }
-    labelArray[hashIndex] = aPair;
+
+    return pair;
 }
 
-//static instruction *createNewTable(uint16_t numOfInstru)
-//
-//        string_arrays_t *make_string_arrays(void) {
-//    string_arrays_t *string_arrays = malloc(sizeof(string_arrays_t));
-//    if (!string_arrays) {
-//        perror("Unable to allocate memory for string arrays");
-//        exit(EXIT_FAILURE);
-//    }
-//    string_arrays->max_elements = INITIAL_ARRAY_SIZE;
-//    string_arrays->arrays = malloc(string_arrays->max_elements
-//                                   * sizeof(string_array_t *));
-//    if (!string_arrays->arrays) {
-//        perror("Unable to allocate memory for string arrays");
-//        exit(EXIT_FAILURE);
-//    }
-//    string_arrays->size = 0;
-//    return string_arrays;
-//}
+void insert_pair(label_address *pair, label_address_list *list) {
+    pair->prev = list->footer->prev;
+    pair->next = list->footer;
+    list->footer->prev = pair;
+    pair->prev->next = pair;
+}
+
+address lookup_address(label label, label_address_list *table) {
+    label_address *i = table->header->next;
+    while (i != table->footer) {
+        if (strcmp(i->label, label) == 0) {
+            return i->address;
+        }
+        i = i->next;
+    }
+    return 0;
+}
+
+bool isContainedInTable(label label, label_address_list *table){
+    label_address *i = table->header->next;
+    while (i != table->footer) {
+        if (!strcmp(i->label,label)) {
+            return 1;
+        }
+        i = i->next;
+    }
+    return 0;
+}
+
 
 

@@ -28,14 +28,13 @@ typedef struct {
 
     //12/24bits operand2
     uint32_t offsets_or_operand2;
-    //...
 
     // in data processing
-    bool immediateOperand;
+    bool I;
 
     // Set condition code
     // in dataProcessing, Multiply
-    bool scc;
+    bool S;
 
 
     //in Multiply
@@ -49,7 +48,7 @@ typedef struct {
     bool upBit;
 
 
-    bool storeBit;
+    bool L;
 
 }Instruction;
 
