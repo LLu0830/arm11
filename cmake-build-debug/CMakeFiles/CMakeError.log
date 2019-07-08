@@ -87,16 +87,27 @@ compilation terminated.
 Determining if the C compiler works failed with the following output:
 Change Dir: C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_02101/fast 
-C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_02101.dir\build.make CMakeFiles/cmTC_02101.dir/build
-mingw32-make.exe[1]: Entering directory 'C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_02101.dir/testCCompiler.c.obj
-C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_02101.dir\testCCompiler.c.obj   -c C:\Users\ASUS\Desktop\IC\arm11_31\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_41a8e/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_41a8e.dir\build.make CMakeFiles/cmTC_41a8e.dir/build
+
+mingw32-make.exe[1]: Entering directory 'C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Building C object CMakeFiles/cmTC_41a8e.dir/testCCompiler.c.obj
+
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_41a8e.dir\testCCompiler.c.obj   -c C:\Users\ASUS\Desktop\IC\arm11_31\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+
 gcc.exe: error: CreateProcess: No such file or directory
-CMakeFiles\cmTC_02101.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_02101.dir/testCCompiler.c.obj' failed
-mingw32-make.exe[1]: *** [CMakeFiles/cmTC_02101.dir/testCCompiler.c.obj] Error 1
-mingw32-make.exe[1]: Leaving directory 'C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:120: recipe for target 'cmTC_02101/fast' failed
-mingw32-make.exe: *** [cmTC_02101/fast] Error 2
+CMakeFiles\cmTC_41a8e.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_41a8e.dir/testCCompiler.c.obj' failed
+
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_41a8e.dir/testCCompiler.c.obj] Error 1
+
+mingw32-make.exe[1]: Leaving directory 'C:/Users/ASUS/Desktop/IC/arm11_31/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Makefile:120: recipe for target 'cmTC_41a8e/fast' failed
+
+mingw32-make.exe: *** [cmTC_41a8e/fast] Error 2
+
+
 
 

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.14)
 project(arm11_31 C)
 
 set(CMAKE_C_STANDARD 11)
@@ -25,9 +25,8 @@ add_executable(arm11_31
         src/part1_emulator/emulate/binaryFileLoader.h
         src/part1_emulator/emulate/pipeline.c
         src/part1_emulator/emulate/pipeline.h
-        src/part1_emulator/emulate/printOutput.c
-        src/part1_emulator/emulate/printOutput.h
         src/part1_emulator/emulator_utility/DefinedTypes.h
+        src/part1_emulator/emulator_utility/instruction.c
         src/part1_emulator/emulator_utility/instruction.h
         src/part1_emulator/emulator_utility/state.h
         src/part1_emulator/emulator_utility/utility.c
@@ -45,6 +44,7 @@ add_executable(arm11_31
         src/part1_emulator/fetch/fetch.c
         src/part1_emulator/fetch/fetch.h
         src/part1_emulator/emulate.c
+
         src/part2_assembler/assembler_utility/assembler_utility.c
         src/part2_assembler/assembler_utility/assembler_utility.h
         src/part2_assembler/assembler_utility/table.c
@@ -79,3 +79,4 @@ add_executable(arm11_31
         Extension/part4_extension/presenter/presenter.c
         Extension/part4_extension/presenter/presenter.h
         Extension/part4_extension/machine.c)
+
